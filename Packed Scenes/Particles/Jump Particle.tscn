@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://h12u1jcpkl33"]
+
+[ext_resource type="Texture2D" uid="uid://dqm0eq0nje16h" path="res://Sprites/Particles/Particle 1.png" id="1_4m48l"]
+[ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_yl8c5"]
+[ext_resource type="Material" uid="uid://drijph2mred7s" path="res://Materials/Particle Material.tres" id="2_8txsn"]
+[ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="2_e43po"]
+
+[sub_resource type="Curve" id="Curve_8avmp"]
+max_value = 75.0
+_data = [Vector2(0, 75), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nklpo"]
+curve = SubResource("Curve_8avmp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6fflb"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -2, 0)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 35.0
+initial_velocity_max = 45.0
+velocity_limit_curve = SubResource("CurveTexture_nklpo")
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_laph2"]
+max_value = 75.0
+_data = [Vector2(0, 75), 0.0, -0.992897, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_n2xed"]
+curve = SubResource("Curve_laph2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yke52"]
+lifetime_randomness = 0.39
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -2, 0)
+emission_shape = 3
+emission_box_extents = Vector3(4, 6, 0)
+direction = Vector3(0, -1, 0)
+spread = 10.0
+flatness = 0.145
+initial_velocity_min = 50.0
+initial_velocity_max = 80.0
+velocity_limit_curve = SubResource("CurveTexture_n2xed")
+gravity = Vector3(0, 0, 0)
+
+[node name="Jump Particle" type="Node2D"]
+script = ExtResource("1_yl8c5")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
+material = ExtResource("2_8txsn")
+emitting = false
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_6fflb")
+texture = ExtResource("1_4m48l")
+lifetime = 0.45
+one_shot = true
+preprocess = 0.1
+explosiveness = 1.0
+randomness = 0.35
+interpolate = false
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+z_index = -1
+material = ExtResource("2_8txsn")
+emitting = false
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_yke52")
+texture = ExtResource("1_4m48l")
+lifetime = 0.45
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+interpolate = false
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+script = ExtResource("2_e43po")

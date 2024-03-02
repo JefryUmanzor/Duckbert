@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch1y2djv7vpid"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_u853e"]
+[ext_resource type="Texture2D" uid="uid://cbppbqd62o1v" path="res://Sprites/Signs/None Sign.png" id="2_rodkv"]
+[ext_resource type="Texture2D" uid="uid://dfeck83rnyfbt" path="res://Sprites/Palettes/PAL Brown.png" id="2_wkkfx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bnci"]
+shader = ExtResource("1_u853e")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("2_wkkfx")
+
+[node name="None Sign" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -3
+material = SubResource("ShaderMaterial_1bnci")
+texture = ExtResource("2_rodkv")
+offset = Vector2(0, -12)

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://yiqot2saxnvm"]
+
+[ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_py34g"]
+[ext_resource type="Material" uid="uid://drijph2mred7s" path="res://Materials/Particle Material.tres" id="2_0l7sa"]
+[ext_resource type="Texture2D" uid="uid://dqm0eq0nje16h" path="res://Sprites/Particles/Particle 1.png" id="3_8ltt6"]
+[ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="4_aqct5"]
+
+[sub_resource type="Curve" id="Curve_laph2"]
+max_value = 75.0
+_data = [Vector2(0, 75), 0.0, -0.992897, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_n2xed"]
+curve = SubResource("Curve_laph2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_72sdc"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(4, 2, 0)
+direction = Vector3(0, -1, 0)
+spread = 30.0
+flatness = 0.145
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+velocity_limit_curve = SubResource("CurveTexture_n2xed")
+gravity = Vector3(0, 0, 0)
+
+[node name="Step Particle" type="Node2D"]
+script = ExtResource("1_py34g")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+z_index = 2
+material = ExtResource("2_0l7sa")
+emitting = false
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_72sdc")
+texture = ExtResource("3_8ltt6")
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+interpolate = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+script = ExtResource("4_aqct5")

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bbff42pqthcde"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_8w503"]
+[ext_resource type="Texture2D" uid="uid://clx72vktqc7nc" path="res://Sprites/Palettes/PAL Hazard.png" id="2_csukt"]
+
+[resource]
+shader = ExtResource("1_8w503")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("2_csukt")

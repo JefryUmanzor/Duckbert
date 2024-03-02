@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://ckya4u5x1eq8c"]
+
+[ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_3m2iq"]
+[ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="2_u5avv"]
+[ext_resource type="Shader" path="res://Shaders/PlayerParticleShader.gdshader" id="3_pigca"]
+[ext_resource type="Texture2D" uid="uid://ccxfuu7jupuja" path="res://Sprites/Duckbert Sprite.png" id="4_mo2wu"]
+[ext_resource type="Script" path="res://Scripts/PlayerParticleFollower.gd" id="5_hgq4v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1se0l"]
+noise_type = 2
+seed = 105
+frequency = 0.0465
+fractal_type = 0
+fractal_lacunarity = 1.4
+cellular_jitter = 1.49
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivymo"]
+seamless = true
+noise = SubResource("FastNoiseLite_1se0l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g35w1"]
+shader = ExtResource("3_pigca")
+shader_parameter/noise_scroll = Vector2(0, 1)
+shader_parameter/particle_time_scale = 1.0
+shader_parameter/use_palette = true
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_ivymo")
+
+[sub_resource type="Curve" id="Curve_nqvfr"]
+bake_resolution = 250
+_data = [Vector2(0, 0), 0.0, 4.12726, 0, 0, Vector2(0.395604, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.36574, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_b674x"]
+curve = SubResource("Curve_nqvfr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xgrrc"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_b674x")
+
+[node name="ParticleHandler" type="Node2D"]
+script = ExtResource("1_3m2iq")
+
+[node name="DestroyParent" type="Timer" parent="."]
+one_shot = true
+autostart = true
+script = ExtResource("2_u5avv")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 5
+material = SubResource("ShaderMaterial_g35w1")
+position = Vector2(0, -8)
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_xgrrc")
+texture = ExtResource("4_mo2wu")
+lifetime = 0.35
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+script = ExtResource("5_hgq4v")

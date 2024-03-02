@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://f8sfwakl5ih0"]
+
+[ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_2d3k8"]
+[ext_resource type="Shader" path="res://Shaders/ParticleFade.gdshader" id="2_tt603"]
+[ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Sprites/Palettes/PAL Red.png" id="3_0eqmi"]
+[ext_resource type="Texture2D" uid="uid://d3by1y7mkpk5k" path="res://Sprites/Particles/Gravity Particle.png" id="4_6k0g7"]
+[ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="5_fmjo2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_48aj2"]
+noise_type = 2
+seed = 15
+frequency = 0.029
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wkmns"]
+seamless = true
+seamless_blend_skirt = 0.2
+noise = SubResource("FastNoiseLite_48aj2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w0iqi"]
+shader = ExtResource("2_tt603")
+shader_parameter/noise_scroll = Vector2(0, 1)
+shader_parameter/use_palette = true
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_wkmns")
+shader_parameter/current_palette = ExtResource("3_0eqmi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ue80"]
+lifetime_randomness = 0.63
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -8, 0)
+emission_shape = 3
+emission_box_extents = Vector3(16, 12, 0)
+angle_min = 180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+
+[node name="ParticleHandler" type="Node2D"]
+script = ExtResource("1_2d3k8")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_w0iqi")
+emitting = false
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_2ue80")
+texture = ExtResource("4_6k0g7")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+interpolate = false
+local_coords = true
+
+[node name="DestroyParent" type="Timer" parent="."]
+one_shot = true
+autostart = true
+script = ExtResource("5_fmjo2")

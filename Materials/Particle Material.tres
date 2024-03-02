@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://drijph2mred7s"]
+
+[ext_resource type="Shader" path="res://Shaders/ParticleFade.gdshader" id="1_lfxs2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fkllk"]
+noise_type = 2
+frequency = 0.0325
+offset = Vector3(0, 262.1, 0)
+fractal_type = 0
+cellular_jitter = 1.345
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wd4if"]
+seamless = true
+seamless_blend_skirt = 0.2
+noise = SubResource("FastNoiseLite_fkllk")
+
+[resource]
+shader = ExtResource("1_lfxs2")
+shader_parameter/noise_scroll = Vector2(0, 1)
+shader_parameter/use_palette = false
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_wd4if")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfjnc6p3qiy2k"]
+
+[ext_resource type="Script" path="res://Scripts/PathFollower.gd" id="1_fh6ka"]
+[ext_resource type="Texture2D" uid="uid://b1vfybvf33s1h" path="res://Sprites/Assets/Path Trail.png" id="2_6sahj"]
+[ext_resource type="Script" path="res://Scripts/LineAutoGenerate.gd" id="3_vvij5"]
+
+[sub_resource type="Curve2D" id="Curve2D_hb6lq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -40, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[node name="Path" type="Path2D"]
+curve = SubResource("Curve2D_hb6lq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, -40)
+rotation = 1.5708
+rotates = false
+script = ExtResource("1_fh6ka")
+duration = 1.5
+transition_type = 7
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+update_rotation = false
+update_scale = false
+
+[node name="Line2D" type="Line2D" parent="."]
+z_index = -5
+width = 4.0
+texture = ExtResource("2_6sahj")
+texture_mode = 1
+script = ExtResource("3_vvij5")

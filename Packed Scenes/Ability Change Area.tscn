@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7jy4k5nkohpk"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerChangeArea.gd" id="1_4d2ha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1qtt"]
+
+[node name="Ability Change Area" type="Area2D"]
+collision_mask = 32768
+monitorable = false
+script = ExtResource("1_4d2ha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r1qtt")

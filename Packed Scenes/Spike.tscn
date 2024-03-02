@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0fbb18klyh1r"]
+
+[ext_resource type="Texture2D" uid="uid://dvw6c255y64j5" path="res://Sprites/Assets/Spike.png" id="1_1ghsf"]
+[ext_resource type="Material" uid="uid://bbff42pqthcde" path="res://Materials/Hazard Material.tres" id="1_nexjg"]
+[ext_resource type="Script" path="res://Scripts/BaseHazardScript.gd" id="2_2adb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syn15"]
+size = Vector2(4, 8)
+
+[node name="Spike" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_nexjg")
+texture = ExtResource("1_1ghsf")
+offset = Vector2(0, -8)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 32768
+script = ExtResource("2_2adb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_syn15")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_enter"]

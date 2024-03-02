@@ -1,0 +1,15 @@
+ParallaxBackground
+ParallaxLayer
+Sprite2D
+TileMap
+Node
+StaticBody2D
+AnimationTree
+AnimationPlayer
+CollisionShape2D
+Area2D
+AnimatableBody2D
+AnimatedSprite2D
+GPUParticles2D
+DestroyParent
+ParticleHandler

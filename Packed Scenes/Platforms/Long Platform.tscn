@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6vvdw6g7hqen"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_uxha2"]
+[ext_resource type="Texture2D" uid="uid://dfeck83rnyfbt" path="res://Sprites/Palettes/PAL Brown.png" id="2_2mw6e"]
+[ext_resource type="Texture2D" uid="uid://7k0a34i605dx" path="res://Sprites/Assets/Platforms/SPR Long Platform.png" id="3_c6r76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aij6c"]
+size = Vector2(64, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8w3kf"]
+shader = ExtResource("1_uxha2")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("2_2mw6e")
+
+[node name="Long Platform" type="AnimatableBody2D"]
+position = Vector2(24, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aij6c")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_8w3kf")
+texture = ExtResource("3_c6r76")

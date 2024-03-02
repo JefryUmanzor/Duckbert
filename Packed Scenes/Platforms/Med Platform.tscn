@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://rlluu6g1m7g0"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_rm08v"]
+[ext_resource type="Texture2D" uid="uid://dfeck83rnyfbt" path="res://Sprites/Palettes/PAL Brown.png" id="2_yxdgf"]
+[ext_resource type="Texture2D" uid="uid://3dsklpsyn3y6" path="res://Sprites/Assets/Platforms/SPR Med Platform.png" id="3_ajnwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r66b"]
+size = Vector2(32, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8w3kf"]
+shader = ExtResource("1_rm08v")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("2_yxdgf")
+
+[node name="Med Platform" type="AnimatableBody2D"]
+position = Vector2(24, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3r66b")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_8w3kf")
+texture = ExtResource("3_ajnwf")

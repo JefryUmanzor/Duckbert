@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbxlvdxnpt2j6"]
+
+[ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="1_j0x27"]
+[ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Hazard.tscn" id="2_hcdgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvlk7"]
+size = Vector2(16, 16)
+
+[sub_resource type="Gradient" id="Gradient_umh3d"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a2ac8"]
+gradient = SubResource("Gradient_umh3d")
+width = 16
+height = 16
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_j0x27")]
+position = Vector2(-514, 33)
+starting_action = 2
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1.00001, 94)
+scale = Vector2(85.52, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_dvlk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = SubResource("GradientTexture2D_a2ac8")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-290, 6)
+scale = Vector2(18.84, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_dvlk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+texture = SubResource("GradientTexture2D_a2ac8")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(304, -63)
+scale = Vector2(18.84, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+shape = SubResource("RectangleShape2D_dvlk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+texture = SubResource("GradientTexture2D_a2ac8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-575, 94)
+scale = Vector2(1, 80)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_dvlk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = SubResource("GradientTexture2D_a2ac8")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(662, 94)
+scale = Vector2(1, 80)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_dvlk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+texture = SubResource("GradientTexture2D_a2ac8")
+
+[node name="Hazard" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-425, 86)
+
+[node name="Hazard2" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-402, 86)
+
+[node name="Hazard3" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-378, 86)
+
+[node name="Hazard4" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-281, 47)
+
+[node name="Hazard5" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-258, 47)
+
+[node name="Hazard6" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-234, 47)
+
+[node name="Hazard7" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-182, 85)
+
+[node name="Hazard8" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-118, 77)
+
+[node name="Hazard9" parent="." instance=ExtResource("2_hcdgw")]
+position = Vector2(-39, 83)

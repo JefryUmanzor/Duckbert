@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://fw0l3a0tyrk1"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_dbu0k"]
+[ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Sprites/Palettes/PAL Yellow.png" id="2_3w2e5"]
+[ext_resource type="Texture2D" uid="uid://d4jfimi86f8wc" path="res://Sprites/Signs/Jump Sign.png" id="3_t2tix"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ows0f"]
+shader = ExtResource("1_dbu0k")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("2_3w2e5")
+
+[node name="Jump Sign" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -3
+material = SubResource("ShaderMaterial_ows0f")
+texture = ExtResource("3_t2tix")
+offset = Vector2(0, -12)
