@@ -420,6 +420,9 @@ rotation = 3.14159
 [node name="Big Spring" parent="Pausable/Springs" instance=ExtResource("14_phbk1")]
 position = Vector2(-536, 72)
 
+[node name="Big Spring3" parent="Pausable/Springs" instance=ExtResource("14_phbk1")]
+position = Vector2(448, 96)
+
 [node name="Big Spring2" parent="Pausable/Springs" instance=ExtResource("14_phbk1")]
 position = Vector2(-12, -128)
 rotation = -3.14159

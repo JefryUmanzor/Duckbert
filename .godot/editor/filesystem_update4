@@ -5,27 +5,11 @@ res://Shaders/PlayerParticleShader.gdshader
 res://Shaders/PaletteShader.gdshader
 res://Materials/Player Material.tres
 res://Materials/Hazard Material.tres
-res://Rooms/Test Room.tscn
-res://Packed Scenes/Particles/Ability Change Particle.tscn
-res://Packed Scenes/Hazard.tscn
-res://Packed Scenes/Spike.tscn
-res://Scripts/Player.gd
-res://Scripts/DuckbergAnimHandler.gd
-res://Scripts/PlayerJumpAction.gd
-res://Packed Scenes/Particles/Grav Step Particle.tscn
-res://Packed Scenes/Particles/Gravity Down Particle.tscn
-res://Packed Scenes/Particles/Gravity Up Particle.tscn
-res://Packed Scenes/Particles/Jump Particle.tscn
-res://Packed Scenes/Particles/Land Particle.tscn
-res://Packed Scenes/Particles/Step Particle.tscn
-res://Packed Scenes/Saw.tscn
-res://Scripts/SpringScript.gd
-res://Packed Scenes/Spring.tscn
-res://Packed Scenes/Signs/Jump Sign.tscn
-res://Packed Scenes/Signs/None Sign.tscn
-res://Packed Scenes/Signs/Gravity Sign.tscn
-res://Packed Scenes/Signs/Fly Sign.tscn
-res://Packed Scenes/Spring Big.tscn
-res://Tilesets/TS Pipes.tres
 res://Materials/Tileset Materials/MAT Pipe BG.tres
+res://Tilesets/TS Pipes.tres
 res://Materials/Tileset Materials/MAT Pipe Teal.tres
+res://Tilesets/TS Pipes BG.tres
+res://Packed Scenes/Spring Big.tscn
+res://Rooms/Test Room.tscn
+res://Packed Scenes/Saw.tscn
+res://Packed Scenes/Spike.tscn
