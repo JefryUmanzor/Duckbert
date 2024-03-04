@@ -17,6 +17,7 @@ func _ready():
 
 func _activate(player : Player):
 	if player.is_on_floor() or player.coyote_timer > 0:
+		player.sfx.play_gravity_sfx()
 		player.reset_coyote_timer();
 		
 		player.velocity.y *= y_vel_scale;

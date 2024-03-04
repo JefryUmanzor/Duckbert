@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709422577
+::res://::1709513242
 ::res://addons/::1709413554
 ::res://addons/anthonyec.camera_preview/::1709413555
 GuiResizerTopLeft.svg::CompressedTexture2D::3725702983604658859::1709413554::1709413555::1::::<><>::
@@ -9,22 +9,35 @@ plugin.cfg::TextFile::-1::1709413555::0::1::::<><>::
 plugin.gd::GDScript::-1::1709413555::0::1::::<>EditorPlugin<>::
 preview.gd::GDScript::-1::1709413555::0::1::::CameraPreview<>Control<>::
 preview.tscn::PackedScene::48940320948976937::1709413555::0::1::::<><>::res://addons/anthonyec.camera_preview/preview.gd<>uid://do6d60od41vmg::::res://addons/anthonyec.camera_preview/Pin.svg<>uid://btc01wc11tiid::::res://addons/anthonyec.camera_preview/GuiResizerTopLeft.svg<>uid://04l05jxuyt7k::::res://addons/anthonyec.camera_preview/GuiResizerTopRight.svg
-::res://Materials/::1709413448
-Hazard Material.tres::ShaderMaterial::2467288231143661466::1709399673::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://clx72vktqc7nc::::res://Sprites/Palettes/PAL Hazard.png
-Particle Material.tres::ShaderMaterial::8369561064743078350::1709399543::0::1::::<><>::res://Shaders/ParticleFade.gdshader
-Player Material.tres::ShaderMaterial::5166331136479421864::1709399543::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://b1i0afscagc2d::::res://Sprites/Palettes/PAL Yellow.png
-::res://Materials/Tileset Materials/::1709421809
-MAT Pipe BG.tres::ShaderMaterial::1464265389055649222::1709421809::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://bh8ckt0cts841::::res://Sprites/Palettes/Tileset Palettes/PAL Pipe BG.png
-MAT Pipe Teal.tres::ShaderMaterial::5683887578576737596::1709421809::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://8bid7mlfxh62::::res://Sprites/Palettes/Tileset Palettes/PAL Pipe Teal.png
-::res://Packed Scenes/::1709422120
+::res://Audio/::1709513216
+::res://Audio/Music/::1709513214
+::res://Audio/SFX/::1709514534
+::res://Audio/SFX/Assets/::1709516726
+SND Spring Bounce.wav::AudioStreamWAV::3169078385855695063::1709514796::1709514799::1::::<><>::
+SND Spring Down.wav::AudioStreamWAV::905401933550862914::1709516857::1709516858::1::::<><>::
+::res://Audio/SFX/Player/::1709516398
+SND Player Flap.wav::AudioStreamWAV::7765636959841753616::1709516232::1709516234::1::::<><>::
+SND Player Gravity.wav::AudioStreamWAV::8967837478423736380::1709516397::1709516398::1::::<><>::
+SND Player Jump.wav::AudioStreamWAV::1711051383574052097::1709514395::1709514397::1::::<><>::
+SND Player Land.wav::AudioStreamWAV::2006955105608094077::1709513868::1709513869::1::::<><>::
+SND Player Walk.wav::AudioStreamWAV::7847593207819579598::1709513850::1709513869::1::::<><>::
+::res://Materials/::1709513298
+Hazard Material.tres::ShaderMaterial::2467288231143661466::1709513298::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://clx72vktqc7nc::::res://Sprites/Palettes/PAL Hazard.png
+Particle Material.tres::ShaderMaterial::8369561064743078350::1709513298::0::1::::<><>::res://Shaders/ParticleFade.gdshader
+Player Material.tres::ShaderMaterial::5166331136479421864::1709513298::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://b1i0afscagc2d::::res://Sprites/Palettes/PAL Yellow.png
+::res://Materials/Tileset Materials/::1709513298
+MAT Pipe BG.tres::ShaderMaterial::1464265389055649222::1709513298::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://bh8ckt0cts841::::res://Sprites/Palettes/Tileset Palettes/PAL Pipe BG.png
+MAT Pipe Teal.tres::ShaderMaterial::5683887578576737596::1709513298::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://8bid7mlfxh62::::res://Sprites/Palettes/Tileset Palettes/PAL Pipe Teal.png
+::res://Packed Scenes/::1709516814
 Ability Change Area.tscn::PackedScene::4652552647928529108::1709349014::0::1::::<><>::res://Scripts/PlayerChangeArea.gd
 Flag.tscn::PackedScene::8038473768925932069::1709344262::0::1::::<><>::uid://cfuuypf4pwdxo::::res://Materials/Player Material.tres<>uid://ckxgl8k4lwc4q::::res://Sprites/Assets/Flag.png<>res://Scripts/StartDefaultAnim.gd
 PathFollower.tscn::PackedScene::5143159530546512896::1709353298::0::1::::<><>::res://Scripts/PathFollower.gd<>uid://b1vfybvf33s1h::::res://Sprites/Assets/Path Trail.png<>res://Scripts/LineAutoGenerate.gd
-Player.tscn::PackedScene::5720925801089310660::1709422120::0::1::::<><>::res://Scripts/Player.gd<>res://Scripts/PlayerAction.gd<>res://Scripts/DuckbergAnimHandler.gd<>res://Scripts/PlayerJumpAction.gd<>uid://cfuuypf4pwdxo::::res://Materials/Player Material.tres<>uid://ccxfuu7jupuja::::res://Sprites/Duckbert Sprite.png<>res://Scripts/PlayerGravityAction.gd<>uid://besa4mnmchhq8::::res://Sprites/Duckbert Walk Sprite.png<>res://Scripts/PlayerFlapAction.gd<>uid://b1rtpwgakcj66::::res://Sprites/Duckbert Flap Up Sprite.png<>res://Scripts/PlayerHoverAction.gd
-Saw.tscn::PackedScene::2681238742576324649::1709422120::0::1::::<><>::uid://bbff42pqthcde::::res://Materials/Hazard Material.tres<>uid://22c0ukia6jir::::res://Sprites/Assets/Saw.png<>res://Scripts/BaseHazardScript.gd<>res://Scripts/ConstantRotate.gd
-Spike.tscn::PackedScene::6537948266949637649::1709422120::0::1::::<><>::uid://dvw6c255y64j5::::res://Sprites/Assets/Spike.png<>uid://bbff42pqthcde::::res://Materials/Hazard Material.tres<>res://Scripts/BaseHazardScript.gd
-Spring Big.tscn::PackedScene::3351202709978386071::1709422120::0::1::::<><>::res://Scripts/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://bqp43o55tsqoe::::res://Sprites/Palettes/PAL Spring.png<>uid://biun4tdx0ursc::::res://Sprites/Assets/Spring Big.png
-Spring.tscn::PackedScene::5267307785675669766::1709406730::0::1::::<><>::res://Scripts/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://dsyxw83uvmy3c::::res://Sprites/Assets/Spring.png<>uid://bqp43o55tsqoe::::res://Sprites/Palettes/PAL Spring.png
+Player.tscn::PackedScene::5720925801089310660::1709516813::0::1::::<><>::res://Scripts/Player.gd<>res://Scripts/PlayerAction.gd<>res://Scripts/DuckbergAnimHandler.gd<>res://Scripts/PlayerJumpAction.gd<>uid://cfuuypf4pwdxo::::res://Materials/Player Material.tres<>uid://ccxfuu7jupuja::::res://Sprites/Duckbert Sprite.png<>res://Scripts/PlayerGravityAction.gd<>uid://besa4mnmchhq8::::res://Sprites/Duckbert Walk Sprite.png<>res://Scripts/PlayerFlapAction.gd<>uid://b1rtpwgakcj66::::res://Sprites/Duckbert Flap Up Sprite.png<>res://Scripts/PlayerHoverAction.gd<>res://Packed Scenes/PlayerSFXScript.gd<>uid://dj2oyi50okb1g::::res://Audio/SFX/Player/SND Player Walk.wav<>uid://3ugi0rwg3xvx::::res://Audio/SFX/Player/SND Player Land.wav<>uid://ym31b3v6dgjp::::res://Audio/SFX/Player/SND Player Jump.wav<>uid://d01c8c33wv4yq::::res://Audio/SFX/Player/SND Player Gravity.wav<>uid://divy52rrlefga::::res://Audio/SFX/Player/SND Player Flap.wav
+PlayerSFXScript.gd::GDScript::-1::1709516433::0::1::::PlayerSFX<>Node<>::
+Saw.tscn::PackedScene::2681238742576324649::1709516814::0::1::::<><>::uid://bbff42pqthcde::::res://Materials/Hazard Material.tres<>uid://22c0ukia6jir::::res://Sprites/Assets/Saw.png<>res://Scripts/BaseHazardScript.gd<>res://Scripts/ConstantRotate.gd
+Spike.tscn::PackedScene::6537948266949637649::1709516814::0::1::::<><>::uid://dvw6c255y64j5::::res://Sprites/Assets/Spike.png<>uid://bbff42pqthcde::::res://Materials/Hazard Material.tres<>res://Scripts/BaseHazardScript.gd
+Spring Big.tscn::PackedScene::3351202709978386071::1709516813::0::1::::<><>::res://Scripts/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://bqp43o55tsqoe::::res://Sprites/Palettes/PAL Spring.png<>uid://biun4tdx0ursc::::res://Sprites/Assets/Spring Big.png<>uid://blfei1ix50gm6::::res://Audio/SFX/Assets/SND Spring Bounce.wav<>uid://m5t3qhv4qsri::::res://Audio/SFX/Assets/SND Spring Down.wav
+Spring.tscn::PackedScene::5267307785675669766::1709516814::0::1::::<><>::res://Scripts/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://dsyxw83uvmy3c::::res://Sprites/Assets/Spring.png<>uid://bqp43o55tsqoe::::res://Sprites/Palettes/PAL Spring.png<>uid://blfei1ix50gm6::::res://Audio/SFX/Assets/SND Spring Bounce.wav<>uid://m5t3qhv4qsri::::res://Audio/SFX/Assets/SND Spring Down.wav
 ::res://Packed Scenes/Particles/::1709400154
 Ability Change Particle.tscn::PackedScene::5524327755778274244::1709400154::0::1::::<><>::res://Scripts/ParticleHandler.gd<>res://Scripts/DestroyParent.gd<>res://Shaders/PlayerParticleShader.gdshader<>uid://ccxfuu7jupuja::::res://Sprites/Duckbert Sprite.png<>res://Scripts/PlayerParticleFollower.gd
 Grav Step Particle.tscn::PackedScene::6256760578562111738::1709400154::0::1::::<><>::res://Scripts/ParticleHandler.gd<>uid://drijph2mred7s::::res://Materials/Particle Material.tres<>uid://dqm0eq0nje16h::::res://Sprites/Particles/Particle 1.png<>res://Scripts/DestroyParent.gd
@@ -42,9 +55,9 @@ Fly Sign.tscn::PackedScene::594540701972733925::1709404021::0::1::::<><>::res://
 Gravity Sign.tscn::PackedScene::6960959400798333720::1709404017::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://br81cva81rlfr::::res://Sprites/Palettes/PAL Red.png<>uid://bbbflnbf0v2xp::::res://Sprites/Signs/Gravity Sign.png
 Jump Sign.tscn::PackedScene::397899569147635778::1709404026::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://b1i0afscagc2d::::res://Sprites/Palettes/PAL Yellow.png<>uid://d4jfimi86f8wc::::res://Sprites/Signs/Jump Sign.png
 None Sign.tscn::PackedScene::5319342691190850135::1709404005::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://cbppbqd62o1v::::res://Sprites/Signs/None Sign.png<>uid://dfeck83rnyfbt::::res://Sprites/Palettes/PAL Brown.png
-::res://Rooms/::1709422120
-Test Room.tscn::PackedScene::2504795797978978085::1709422120::0::1::::<><>::uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://beg2u0tpfru78::::res://Packed Scenes/Saw.tscn<>res://Shaders/PaletteShader.gdshader<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Flag.tscn<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://c0fbb18klyh1r::::res://Packed Scenes/Spike.tscn<>uid://cfjnc6p3qiy2k::::res://Packed Scenes/PathFollower.tscn<>uid://c6vvdw6g7hqen::::res://Packed Scenes/Platforms/Long Platform.tscn<>uid://c6f68p42i5als::::res://Packed Scenes/Signs/Gravity Sign.tscn<>uid://bkd8fene3gwra::::res://Packed Scenes/Platforms/Short Platform.tscn<>uid://rlluu6g1m7g0::::res://Packed Scenes/Platforms/Med Platform.tscn<>uid://b7jy4k5nkohpk::::res://Packed Scenes/Ability Change Area.tscn<>uid://fw0l3a0tyrk1::::res://Packed Scenes/Signs/Jump Sign.tscn<>uid://ip887i73lacj::::res://Packed Scenes/Signs/Fly Sign.tscn<>uid://chbr134ce7pte::::res://Packed Scenes/Spring.tscn<>uid://bn0l231vh72il::::res://Packed Scenes/Spring Big.tscn<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres
-::res://Scripts/::1709422116
+::res://Rooms/::1709516814
+Test Room.tscn::PackedScene::2504795797978978085::1709516814::0::1::::<><>::uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://beg2u0tpfru78::::res://Packed Scenes/Saw.tscn<>res://Shaders/PaletteShader.gdshader<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Flag.tscn<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://c0fbb18klyh1r::::res://Packed Scenes/Spike.tscn<>uid://cfjnc6p3qiy2k::::res://Packed Scenes/PathFollower.tscn<>uid://c6vvdw6g7hqen::::res://Packed Scenes/Platforms/Long Platform.tscn<>uid://c6f68p42i5als::::res://Packed Scenes/Signs/Gravity Sign.tscn<>uid://bkd8fene3gwra::::res://Packed Scenes/Platforms/Short Platform.tscn<>uid://rlluu6g1m7g0::::res://Packed Scenes/Platforms/Med Platform.tscn<>uid://b7jy4k5nkohpk::::res://Packed Scenes/Ability Change Area.tscn<>uid://fw0l3a0tyrk1::::res://Packed Scenes/Signs/Jump Sign.tscn<>uid://ip887i73lacj::::res://Packed Scenes/Signs/Fly Sign.tscn<>uid://chbr134ce7pte::::res://Packed Scenes/Spring.tscn<>uid://bn0l231vh72il::::res://Packed Scenes/Spring Big.tscn<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres
+::res://Scripts/::1709516813
 BaseHazardScript.gd::GDScript::-1::1709180824::0::1::::<>Area2D<>::
 ConstantRotate.gd::GDScript::-1::1709255502::0::1::::<>Sprite2D<>::
 DestroyParent.gd::GDScript::-1::1709336827::0::1::::DestroyParent<>Timer<>::
@@ -52,20 +65,20 @@ DuckbergAnimHandler.gd::GDScript::-1::1709399859::0::1::::PlayerAnimationHandler
 LineAutoGenerate.gd::GDScript::-1::1709258323::0::1::::<>Line2D<>::
 ParticleHandler.gd::GDScript::-1::1709337025::0::1::::ParticleHandler<>Node2D<>::
 PathFollower.gd::GDScript::-1::1709257760::0::1::::<>PathFollow2D<>::
-Player.gd::GDScript::-1::1709422116::0::1::::Player<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1709514215::0::1::::Player<>CharacterBody2D<>::
 PlayerAction.gd::GDScript::-1::1709355109::0::1::::PlayerAction<>Node<>::
 PlayerChangeArea.gd::GDScript::-1::1709347783::0::1::::<>Area2D<>::
-PlayerFlapAction.gd::GDScript::-1::1709355611::0::1::::<>PlayerAction<>::
-PlayerGravityAction.gd::GDScript::-1::1709355159::0::1::::<>PlayerAction<>::
+PlayerFlapAction.gd::GDScript::-1::1709514927::0::1::::<>PlayerAction<>::
+PlayerGravityAction.gd::GDScript::-1::1709515480::0::1::::<>PlayerAction<>::
 PlayerHoverAction.gd::GDScript::-1::1709355193::0::1::::<>PlayerAction<>::
-PlayerJumpAction.gd::GDScript::-1::1709405443::0::1::::<>PlayerAction<>::
+PlayerJumpAction.gd::GDScript::-1::1709514215::0::1::::<>PlayerAction<>::
 PlayerParticleFollower.gd::GDScript::-1::1709353903::0::1::::<>GPUParticles2D<>::
-SpringScript.gd::GDScript::-1::1709421562::0::1::::<>Node2D<>::
+SpringScript.gd::GDScript::-1::1709516813::0::1::::<>Node2D<>::
 StartDefaultAnim.gd::GDScript::-1::1709254659::0::1::::<>AnimatedSprite2D<>::
-::res://Shaders/::1709422286
-PaletteShader.gdshader::Shader::-1::1709422286::0::1::::<><>::
-ParticleFade.gdshader::Shader::-1::1709422286::0::1::::<><>::
-PlayerParticleShader.gdshader::Shader::-1::1709422286::0::1::::<><>::
+::res://Shaders/::1709516814
+PaletteShader.gdshader::Shader::-1::1709516814::0::1::::<><>::
+ParticleFade.gdshader::Shader::-1::1709516814::0::1::::<><>::
+PlayerParticleShader.gdshader::Shader::-1::1709516814::0::1::::<><>::
 ::res://Sprites/::1709414087
 Duckbert Flap Up Sprite.png::CompressedTexture2D::4247606614668078609::1709346746::1709346748::1::::<><>::
 Duckbert Sprite.png::CompressedTexture2D::4961040144184574682::1709259870::1709259871::1::::<><>::
@@ -94,8 +107,8 @@ PAL Pink.png::CompressedTexture2D::1127187677449712581::1709218125::1709218129::
 PAL Red.png::CompressedTexture2D::3649338809348509871::1709218020::1709218129::1::::<><>::
 PAL Spring.png::CompressedTexture2D::3542219426292294432::1709401376::1709401405::1::::<><>::
 PAL Yellow.png::CompressedTexture2D::4229363855647922961::1709334689::1709335134::1::::<><>::
-::res://Sprites/Palettes/Tileset Palettes/::1709417245
-PAL Pipe BG.png::CompressedTexture2D::2946007383648653240::1709417241::1709417245::1::::<><>::
+::res://Sprites/Palettes/Tileset Palettes/::1709493323
+PAL Pipe BG.png::CompressedTexture2D::2946007383648653240::1709493319::1709493323::1::::<><>::
 PAL Pipe Teal.png::CompressedTexture2D::2318789010925216957::1709413480::1709413483::1::::<><>::
 ::res://Sprites/Particles/::1709340317
 Gravity Particle.png::CompressedTexture2D::9128118999719527494::1709340313::1709340315::1::::<><>::
@@ -107,6 +120,6 @@ Jump Sign.png::CompressedTexture2D::9213636431863519658::1709351937::1709352371:
 None Sign.png::CompressedTexture2D::143379684249226729::1709352036::1709352371::1::::<><>::
 ::res://Sprites/Tilesets/::1709417245
 SPR Pipe Tiles.png::CompressedTexture2D::8786343015091778749::1709416931::1709417245::1::::<><>::
-::res://Tilesets/::1709418007
-TS Pipes BG.tres::TileSet::4897504078777541557::1709417951::0::1::::<><>::uid://dxgf1ylon741f::::res://Sprites/Tilesets/SPR Pipe Tiles.png
-TS Pipes.tres::TileSet::1352582929336344856::1709418007::0::1::::<><>::uid://dxgf1ylon741f::::res://Sprites/Tilesets/SPR Pipe Tiles.png
+::res://Tilesets/::1709513298
+TS Pipes BG.tres::TileSet::4897504078777541557::1709513298::0::1::::<><>::uid://dxgf1ylon741f::::res://Sprites/Tilesets/SPR Pipe Tiles.png
+TS Pipes.tres::TileSet::1352582929336344856::1709513298::0::1::::<><>::uid://dxgf1ylon741f::::res://Sprites/Tilesets/SPR Pipe Tiles.png

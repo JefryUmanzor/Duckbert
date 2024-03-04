@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://m5t3qhv4qsri"
+path="res://.godot/imported/SND Spring Down.wav-4a7e9dc46ded6c2f9dee5a4d99b6c364.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Assets/SND Spring Down.wav"
+dest_files=["res://.godot/imported/SND Spring Down.wav-4a7e9dc46ded6c2f9dee5a4d99b6c364.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

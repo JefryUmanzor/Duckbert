@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d01c8c33wv4yq"
+path="res://.godot/imported/SND Player Gravity.wav-4a6fb44ceed3e2a57095080ff00f7de0.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Player/SND Player Gravity.wav"
+dest_files=["res://.godot/imported/SND Player Gravity.wav-4a6fb44ceed3e2a57095080ff00f7de0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -11,8 +11,9 @@ var m_player : Player;
 func _activate(player : Player):
 	m_player = player;
 	
-	if player.is_on_floor() or player.coyote_timer > 0:
+	if (player.is_on_floor() and not player.is_on_spring) or player.coyote_timer > 0:
 		player.reset_coyote_timer();
+		player.sfx.play_jump_sfx();
 		
 		create_jump_particle();
 		

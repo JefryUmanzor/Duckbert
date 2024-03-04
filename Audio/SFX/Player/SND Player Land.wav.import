@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3ugi0rwg3xvx"
+path="res://.godot/imported/SND Player Land.wav-4ce377e6d1c737c8a7ebc8bd666c4388.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Player/SND Player Land.wav"
+dest_files=["res://.godot/imported/SND Player Land.wav-4ce377e6d1c737c8a7ebc8bd666c4388.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

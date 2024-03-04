@@ -301,7 +301,6 @@ position = Vector2(-536, 76)
 [node name="Ability Areas" type="Node" parent="Pausable"]
 
 [node name="Ability Change Area3" parent="Pausable/Ability Areas" instance=ExtResource("9_7nair")]
-visible = false
 position = Vector2(-616, 0)
 action_index = 1
 metadata/_edit_group_ = true

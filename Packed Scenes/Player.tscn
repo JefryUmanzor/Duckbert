@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cnri2u2a1qkfs"]
+[gd_scene load_steps=43 format=3 uid="uid://cnri2u2a1qkfs"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fk0wl"]
 [ext_resource type="Script" path="res://Scripts/PlayerAction.gd" id="2_7voqr"]
@@ -11,6 +11,12 @@
 [ext_resource type="Script" path="res://Scripts/PlayerFlapAction.gd" id="5_ivpuk"]
 [ext_resource type="Texture2D" uid="uid://b1rtpwgakcj66" path="res://Sprites/Duckbert Flap Up Sprite.png" id="6_dqa8q"]
 [ext_resource type="Script" path="res://Scripts/PlayerHoverAction.gd" id="6_jgesx"]
+[ext_resource type="Script" path="res://Packed Scenes/PlayerSFXScript.gd" id="12_dxwt0"]
+[ext_resource type="AudioStream" uid="uid://dj2oyi50okb1g" path="res://Audio/SFX/Player/SND Player Walk.wav" id="12_ukcwm"]
+[ext_resource type="AudioStream" uid="uid://3ugi0rwg3xvx" path="res://Audio/SFX/Player/SND Player Land.wav" id="14_ca8fd"]
+[ext_resource type="AudioStream" uid="uid://ym31b3v6dgjp" path="res://Audio/SFX/Player/SND Player Jump.wav" id="15_4qd0n"]
+[ext_resource type="AudioStream" uid="uid://d01c8c33wv4yq" path="res://Audio/SFX/Player/SND Player Gravity.wav" id="16_4n5jt"]
+[ext_resource type="AudioStream" uid="uid://divy52rrlefga" path="res://Audio/SFX/Player/SND Player Flap.wav" id="17_3cneq"]
 
 [sub_resource type="Animation" id="Animation_hsmru"]
 resource_name = "Jump"
@@ -230,7 +236,7 @@ blend_point_1/pos = 1.0
 min_space = 0.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u5gae"]
-graph_offset = Vector2(-106.195, 204.245)
+graph_offset = Vector2(-504, 129)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_8gi2y")
 nodes/Add2/position = Vector2(580, 160)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_8p1ok")
@@ -264,7 +270,7 @@ acceleration = 500.0
 turnaround_accel = 1000.0
 decceleration = 1500.0
 max_vertical_speed = 350.0
-max_step_time = 0.15
+max_step_time = 0.2
 
 [node name="Sprite" type="Node2D" parent="."]
 script = ExtResource("2_pvdrx")
@@ -340,3 +346,29 @@ script = ExtResource("6_jgesx")
 acceleration = 1000.0
 start_hover_scale = 0.5
 palette_path = "res://Sprites/Palettes/PAL Ice.png"
+
+[node name="SFX" type="Node" parent="."]
+script = ExtResource("12_dxwt0")
+gravity_pitch_min = 1.4
+gravity_pitch_max = 1.5
+flap_pitch_min = 0.75
+flap_pitch_max = 0.9
+
+[node name="Step SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_ukcwm")
+
+[node name="Land SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("14_ca8fd")
+volume_db = -2.0
+
+[node name="Jump SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("15_4qd0n")
+volume_db = 4.0
+
+[node name="Gravity SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("16_4n5jt")
+volume_db = -3.0
+
+[node name="Flap SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("17_3cneq")
+volume_db = -3.5

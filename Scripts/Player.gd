@@ -34,6 +34,10 @@ var start_step_timer = 0.02;
 
 var coyote_timer = 0.0;
 @export var max_coyote_time = 0.15;
+var is_on_spring = false;
+var turning_around = false;
+
+@onready var sfx : PlayerSFX = $SFX
 
 func _ready():
 	starting_action = wrapi(starting_action, 0, actions.get_child_count());
@@ -48,6 +52,8 @@ func _process(delta):
 	
 	if is_on_floor() and not grounded and start_timer <= 0:
 		anim.play_land_squash();
+		if not is_on_spring:
+			sfx.play_land_sfx();
 	
 	if not is_on_floor() and grounded:
 		coyote_timer = max_coyote_time;
@@ -65,20 +71,27 @@ func _process(delta):
 	
 	if moving:
 		step_timer += delta;
+		if turning_around:
+			step_timer *= 1.5;
 	else:
 		step_timer = 0.0;
+		
 	if step_timer >= max_step_time:
 		step_timer = 0.0;
 		create_step_particle();
 	
 	coyote_timer -= min(delta, coyote_timer);
 	start_timer -= delta;
+	
+	if abs(velocity.y) > 0.0 and sign(velocity.y) == sign(up_direction.y):
+		coyote_timer = 0.0; 
 
 func reset_coyote_timer():
 	coyote_timer = 0.0;
 
 func create_step_particle():
 	if is_on_floor():
+		sfx.play_step_sfx();
 		var on_floor = up_direction.y < 0;
 		var particle = (STEP_PARTICLE if on_floor else GRAV_STEP_PARTICLE).instantiate();
 		get_tree().current_scene.get_node("Pausable").add_child(particle);
@@ -108,7 +121,7 @@ func _physics_process(delta):
 	if slowing:
 		accel = min(decceleration * delta, abs(target_speed - velocity.x)) * -sign(velocity.x);
 	else:
-		var turning_around = sign(velocity.x) != sign(move_input);
+		turning_around = sign(velocity.x) != sign(move_input);
 		if turning_around:
 			accel = turnaround_accel * delta * sign(move_input);
 		else:

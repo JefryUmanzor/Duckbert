@@ -9,9 +9,11 @@ var player_max_v_speed = 300;
 @onready var m_player = $"../.."
 
 func _activate(player : Player):
-	player.velocity.y = jump_strength;
-	player.anim.play_jump();
-	player.anim.play_flap();
+	if not player.is_on_spring:
+		player.sfx.play_flap_sfx();
+		player.velocity.y = jump_strength;
+		player.anim.play_jump();
+		player.anim.play_flap();
 
 func _on_enable_action():
 	super._on_enable_action();

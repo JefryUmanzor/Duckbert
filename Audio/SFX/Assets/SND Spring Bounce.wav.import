@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blfei1ix50gm6"
+path="res://.godot/imported/SND Spring Bounce.wav-5e258fc73daae69b03277203f48e6cd4.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Assets/SND Spring Bounce.wav"
+dest_files=["res://.godot/imported/SND Spring Bounce.wav-5e258fc73daae69b03277203f48e6cd4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

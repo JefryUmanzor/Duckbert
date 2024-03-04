@@ -1,0 +1,344 @@
+[gd_scene load_steps=37 format=3 uid="uid://cnri2u2a1qkfs"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fk0wl"]
+[ext_resource type="Script" path="res://Scripts/PlayerAction.gd" id="2_7voqr"]
+[ext_resource type="Script" path="res://Scripts/DuckbergAnimHandler.gd" id="2_pvdrx"]
+[ext_resource type="Script" path="res://Scripts/PlayerJumpAction.gd" id="3_ct67l"]
+[ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="3_gqi5b"]
+[ext_resource type="Texture2D" uid="uid://ccxfuu7jupuja" path="res://Sprites/Duckbert Sprite.png" id="3_rk5sj"]
+[ext_resource type="Script" path="res://Scripts/PlayerGravityAction.gd" id="4_5xush"]
+[ext_resource type="Texture2D" uid="uid://besa4mnmchhq8" path="res://Sprites/Duckbert Walk Sprite.png" id="5_2uoan"]
+[ext_resource type="Script" path="res://Scripts/PlayerFlapAction.gd" id="5_ivpuk"]
+[ext_resource type="Texture2D" uid="uid://b1rtpwgakcj66" path="res://Sprites/Duckbert Flap Up Sprite.png" id="6_dqa8q"]
+[ext_resource type="Script" path="res://Scripts/PlayerHoverAction.gd" id="6_jgesx"]
+
+[sub_resource type="Animation" id="Animation_hsmru"]
+resource_name = "Jump"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(4.5, 0.5, 0.0334929),
+"update": 0,
+"values": [Vector2(0.5, 1.5), Vector2(1.15, 0.75), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v7off"]
+resource_name = "Land"
+length = 0.2
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(4.5, 6.5, 3.36359),
+"update": 0,
+"values": [Vector2(1.5, 0.85), Vector2(0.8, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgnxn"]
+_data = {
+"Jump": SubResource("Animation_hsmru"),
+"Land": SubResource("Animation_v7off")
+}
+
+[sub_resource type="Animation" id="Animation_otna5"]
+resource_name = "Gavity Walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 0.5, 1, 0.5, 1),
+"update": 0,
+"values": [Vector2(0, 3), Vector2(0, 0), Vector2(0, 3), Vector2(0, 0), Vector2(0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 0.5, 1, 0.5, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pchdr"]
+resource_name = "Duckbert Animations"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uqrit"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_rk5sj")]
+}
+
+[sub_resource type="Animation" id="Animation_usji1"]
+resource_name = "SPR Flap"
+length = 0.4
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_dqa8q"), ExtResource("5_2uoan"), ExtResource("3_rk5sj"), ExtResource("3_rk5sj")]
+}
+
+[sub_resource type="Animation" id="Animation_uqg3r"]
+resource_name = "SPR Idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_rk5sj"), ExtResource("5_2uoan"), ExtResource("3_rk5sj")]
+}
+
+[sub_resource type="Animation" id="Animation_qgef2"]
+resource_name = "Walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 0.5, 1, 0.5, 1),
+"update": 0,
+"values": [Vector2(0, -3), Vector2(0, 0), Vector2(0, -3), Vector2(0, 0), Vector2(0, -3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cb31v"]
+_data = {
+"Gavity Walk": SubResource("Animation_otna5"),
+"Idle": SubResource("Animation_pchdr"),
+"RESET": SubResource("Animation_uqrit"),
+"SPR Flap": SubResource("Animation_usji1"),
+"SPR Idle": SubResource("Animation_uqg3r"),
+"Walk": SubResource("Animation_qgef2")
+}
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_8gi2y"]
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_283gn"]
+animation = &"SPR Flap"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8p1ok"]
+animation = &"SPR Idle"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_tsshr"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cjejn"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6ild5"]
+animation = &"Gavity Walk"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_65ere"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_cjejn")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_6ild5")
+blend_point_1/pos = 1.0
+min_space = 0.0
+sync = true
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_7anlw"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ld7ks"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_vbk5f"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bu7lx"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a2ot1"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_tni65"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_bu7lx")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_a2ot1")
+blend_point_1/pos = 1.0
+min_space = 0.0
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_u5gae"]
+graph_offset = Vector2(-106.195, 204.245)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_8gi2y")
+nodes/Add2/position = Vector2(580, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_8p1ok")
+nodes/Animation/position = Vector2(200, 440)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_283gn")
+"nodes/Animation 2/position" = Vector2(880, 300)
+"nodes/Flap Shot/node" = SubResource("AnimationNodeOneShot_tsshr")
+"nodes/Flap Shot/position" = Vector2(1020, 180)
+"nodes/Grav Walk Blend/node" = SubResource("AnimationNodeBlendSpace1D_65ere")
+"nodes/Grav Walk Blend/position" = Vector2(80, 280)
+"nodes/Gravity Switched/node" = SubResource("AnimationNodeBlend2_7anlw")
+"nodes/Gravity Switched/position" = Vector2(260, 140)
+"nodes/SPR Scale/node" = SubResource("AnimationNodeTimeScale_ld7ks")
+"nodes/SPR Scale/position" = Vector2(460, 360)
+"nodes/SPR Time/node" = SubResource("AnimationNodeTimeSeek_vbk5f")
+"nodes/SPR Time/position" = Vector2(340, 440)
+"nodes/Walk Blend/node" = SubResource("AnimationNodeBlendSpace1D_tni65")
+"nodes/Walk Blend/position" = Vector2(-80, 160)
+nodes/output/position = Vector2(1160, 160)
+node_connections = [&"Add2", 0, &"Gravity Switched", &"Add2", 1, &"SPR Scale", &"Flap Shot", 0, &"Add2", &"Flap Shot", 1, &"Animation 2", &"Gravity Switched", 0, &"Walk Blend", &"Gravity Switched", 1, &"Grav Walk Blend", &"SPR Scale", 0, &"SPR Time", &"SPR Time", 0, &"Animation", &"output", 0, &"Flap Shot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5soe"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 32768
+platform_on_leave = 1
+script = ExtResource("1_fk0wl")
+top_speed = 150.0
+acceleration = 500.0
+turnaround_accel = 1000.0
+decceleration = 1500.0
+starting_action = null
+max_vertical_speed = 350.0
+max_step_time = 0.15
+max_coyote_time = null
+
+[node name="Sprite" type="Node2D" parent="."]
+script = ExtResource("2_pvdrx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite"]
+z_index = 1
+material = ExtResource("3_gqi5b")
+texture = ExtResource("3_rk5sj")
+offset = Vector2(0, -8)
+
+[node name="Squash Animation" type="Node" parent="Sprite"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/Squash Animation"]
+libraries = {
+"": SubResource("AnimationLibrary_bgnxn")
+}
+
+[node name="Sprite Animation" type="Node" parent="Sprite"]
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite/Sprite Animation"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_cb31v")
+}
+tree_root = SubResource("AnimationNodeBlendTree_u5gae")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Add2/add_amount = 1.0
+"parameters/Flap Shot/active" = false
+"parameters/Flap Shot/internal_active" = false
+"parameters/Flap Shot/request" = 0
+"parameters/Grav Walk Blend/blend_position" = 0.0
+"parameters/Gravity Switched/blend_amount" = 0
+"parameters/SPR Scale/scale" = 0.0
+"parameters/SPR Time/seek_request" = -1.0
+"parameters/Walk Blend/blend_position" = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/Sprite Animation"]
+deterministic = true
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_cb31v")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_o5soe")
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="PlayerNullAction" type="Node" parent="Actions"]
+script = ExtResource("2_7voqr")
+
+[node name="PlayerJumpAction" type="Node" parent="Actions"]
+script = ExtResource("3_ct67l")
+jump_strength = -290.0
+jump_release_scale = 0.45
+palette_path = "res://Sprites/Palettes/PAL Yellow.png"
+
+[node name="PlayerGravityAction" type="Node" parent="Actions"]
+script = ExtResource("4_5xush")
+y_vel_scale = 0.25
+palette_path = "res://Sprites/Palettes/PAL Red.png"
+
+[node name="PlayerFlapAction" type="Node" parent="Actions"]
+script = ExtResource("5_ivpuk")
+jump_strength = -250.0
+gravity_scale = 0.75
+palette_path = "res://Sprites/Palettes/PAL Pink.png"
+
+[node name="PlayerHoverAction" type="Node" parent="Actions"]
+script = ExtResource("6_jgesx")
+acceleration = 1000.0
+start_hover_scale = 0.5
+palette_path = "res://Sprites/Palettes/PAL Ice.png"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dj2oyi50okb1g"
+path="res://.godot/imported/SND Player Walk.wav-c071ba3b8b0c55b546bc15e77f18cdc7.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Player/SND Player Walk.wav"
+dest_files=["res://.godot/imported/SND Player Walk.wav-c071ba3b8b0c55b546bc15e77f18cdc7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

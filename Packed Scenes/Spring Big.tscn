@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bn0l231vh72il"]
+[gd_scene load_steps=23 format=3 uid="uid://bn0l231vh72il"]
 
 [ext_resource type="Script" path="res://Scripts/SpringScript.gd" id="1_e1e0b"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="2_bce78"]
 [ext_resource type="Texture2D" uid="uid://bqp43o55tsqoe" path="res://Sprites/Palettes/PAL Spring.png" id="3_3xd8s"]
 [ext_resource type="Texture2D" uid="uid://biun4tdx0ursc" path="res://Sprites/Assets/Spring Big.png" id="4_t0wc0"]
+[ext_resource type="AudioStream" uid="uid://blfei1ix50gm6" path="res://Audio/SFX/Assets/SND Spring Bounce.wav" id="5_lts2j"]
+[ext_resource type="AudioStream" uid="uid://m5t3qhv4qsri" path="res://Audio/SFX/Assets/SND Spring Down.wav" id="6_ytqw7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_51x3d"]
 shader = ExtResource("2_bce78")
@@ -232,6 +234,14 @@ anim_player = NodePath("../AnimationPlayer")
 "parameters/Bounce Shot/internal_active" = false
 "parameters/Bounce Shot/request" = 0
 parameters/TimeScale/scale = 1.5
+
+[node name="Bounce SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lts2j")
+volume_db = 2.5
+
+[node name="Down SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ytqw7")
+volume_db = -2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="on_player_enter"]
 [connection signal="body_exited" from="Area2D" to="." method="on_player_exit"]
