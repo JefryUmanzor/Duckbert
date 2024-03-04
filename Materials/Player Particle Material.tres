@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c7lebohh7o7vc"]
+
+[ext_resource type="Shader" path="res://Shaders/PlayerParticleShader.gdshader" id="1_2lgtj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1se0l"]
+noise_type = 2
+seed = 105
+frequency = 0.0465
+fractal_type = 0
+fractal_lacunarity = 1.4
+cellular_jitter = 1.49
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivymo"]
+seamless = true
+noise = SubResource("FastNoiseLite_1se0l")
+
+[resource]
+shader = ExtResource("1_2lgtj")
+shader_parameter/noise_scroll = Vector2(0, 1)
+shader_parameter/particle_time_scale = 1.0
+shader_parameter/use_palette = true
+shader_parameter/initial_flash = true
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_ivymo")

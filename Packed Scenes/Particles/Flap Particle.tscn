@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjcdqvtqkg1n2"]
+
+[ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_njc8i"]
+[ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="2_c2yea"]
+[ext_resource type="Material" uid="uid://d03movyvcpo5w" path="res://Materials/Player Particle Material NoFlash.tres" id="3_vs6xg"]
+[ext_resource type="Texture2D" uid="uid://bjbmntitbpe3n" path="res://Sprites/Particles/SPR Feather Particle.png" id="4_hnxs0"]
+[ext_resource type="Texture2D" uid="uid://6mkxaocyipw6" path="res://Sprites/Particles/SPR Feather Particle 2.png" id="5_soee5"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u40ho"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 7.5
+direction = Vector3(1, -1, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 35, 0)
+
+[node name="ParticleHandler" type="Node2D"]
+script = ExtResource("1_njc8i")
+
+[node name="DestroyParent" type="Timer" parent="."]
+script = ExtResource("2_c2yea")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 2
+material = ExtResource("3_vs6xg")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_u40ho")
+texture = ExtResource("4_hnxs0")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.41
+interpolate = false
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+material = ExtResource("3_vs6xg")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_u40ho")
+texture = ExtResource("5_soee5")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.41
+interpolate = false

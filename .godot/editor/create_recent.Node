@@ -1,3 +1,6 @@
+GPUParticles2D
+DestroyParent
+ParticleHandler
 AudioStreamPlayer
 AudioStreamPlayer2D
 Node
@@ -10,5 +13,3 @@ AnimationTree
 AnimationPlayer
 CollisionShape2D
 Area2D
-AnimatableBody2D
-AnimatedSprite2D

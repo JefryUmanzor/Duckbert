@@ -9,6 +9,8 @@ global uniform sampler2D base_palette;
 global uniform sampler2D player_current_palette;
 uniform bool use_palette = false;
 
+uniform bool initial_flash = true;
+
 float fwrap(float x, float minimum, float maximum) {
 	float val = minimum;
 	if (x < 0.){
@@ -40,8 +42,12 @@ void fragment() {
 				}
 			}
 			
-			float t = clamp(particle_time / 0.4, 0.0, 1.0);
-			COLOR = mix(vec4(1.0), texture(player_current_palette, palette_uv), t*t*t);
+			if (initial_flash){
+				float t = clamp(particle_time / 0.4, 0.0, 1.0);
+				COLOR = mix(vec4(1.0), texture(player_current_palette, palette_uv), t*t*t);
+			}else{
+				COLOR = texture(player_current_palette, palette_uv);
+			}
 		}
 		else{
 			discard;
