@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://by5ufsi48dx7b"
+path="res://.godot/imported/MUS Pipes Loop.wav-2b679859ee3db78cea8b9248c88f1f5e.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Pipes/MUS Pipes Loop.wav"
+dest_files=["res://.godot/imported/MUS Pipes Loop.wav-2b679859ee3db78cea8b9248c88f1f5e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

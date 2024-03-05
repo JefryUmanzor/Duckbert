@@ -2,24 +2,13 @@ res://Packed Scenes/Player.tscn
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
 res://Shaders/PlayerParticleShader.gdshader
+res://Materials/Player Particle Material.tres
 res://Shaders/PaletteShader.gdshader
 res://Materials/Player Material.tres
+res://Materials/Player Particle Material NoFlash.tres
 res://Materials/Hazard Material.tres
 res://Materials/Tileset Materials/MAT Pipe BG.tres
 res://Tilesets/TS Pipes.tres
 res://Materials/Tileset Materials/MAT Pipe Teal.tres
 res://Tilesets/TS Pipes BG.tres
-res://Packed Scenes/PlayerSFXScript.gd
-res://Packed Scenes/Spring Big.tscn
 res://Rooms/Test Room.tscn
-res://Packed Scenes/Saw.tscn
-res://Packed Scenes/Spike.tscn
-res://Scripts/Player.gd
-res://Scripts/PlayerJumpAction.gd
-res://Packed Scenes/Spring.tscn
-res://Scripts/SpringScript.gd
-res://Scripts/PlayerFlapAction.gd
-res://Scripts/PlayerGravityAction.gd
-res://Materials/Player Particle Material.tres
-res://Packed Scenes/Particles/Flap Particle.tscn
-res://Packed Scenes/Particles/Ability Change Particle.tscn

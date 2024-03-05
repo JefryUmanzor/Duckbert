@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bbxlvdxnpt2j6"]
+[gd_scene load_steps=35 format=3 uid="uid://bbxlvdxnpt2j6"]
 
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="1_j0x27"]
 [ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Saw.tscn" id="2_hcdgw"]
@@ -20,6 +20,7 @@
 [ext_resource type="TileSet" uid="uid://tjg3w1mnba3i" path="res://Tilesets/TS Pipes.tres" id="15_wkrqd"]
 [ext_resource type="Material" uid="uid://cm8k2eqkq2id5" path="res://Materials/Tileset Materials/MAT Pipe Teal.tres" id="18_lgw7h"]
 [ext_resource type="TileSet" uid="uid://cb1ngag1vd12p" path="res://Tilesets/TS Pipes BG.tres" id="20_74wfw"]
+[ext_resource type="AudioStream" uid="uid://by5ufsi48dx7b" path="res://Audio/Music/Pipes/MUS Pipes Loop.wav" id="21_4irpa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bm0u"]
 shader = ExtResource("2_uyveh")
@@ -473,6 +474,11 @@ layer_0/tile_data = PackedInt32Array(-983022, 196608, 2, -917486, 196608, 2, -85
 
 [node name="Active" type="Node" parent="."]
 process_mode = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_4irpa")
+volume_db = -15.0
+autoplay = true
 
 [editable path="Pausable/Hazards/Paths/Path"]
 [editable path="Pausable/Platforms/Long Platform/Ability Change Area"]
