@@ -6,9 +6,11 @@ res://Materials/Player Particle Material.tres
 res://Shaders/PaletteShader.gdshader
 res://Materials/Player Material.tres
 res://Materials/Player Particle Material NoFlash.tres
+res://Shaders/HudShader.gdshader
 res://Materials/Hazard Material.tres
 res://Materials/Tileset Materials/MAT Pipe BG.tres
 res://Tilesets/TS Pipes.tres
 res://Materials/Tileset Materials/MAT Pipe Teal.tres
 res://Tilesets/TS Pipes BG.tres
 res://Rooms/Test Room.tscn
+res://Packed Scenes/GUI.tscn

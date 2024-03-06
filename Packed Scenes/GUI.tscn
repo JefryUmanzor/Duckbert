@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdbcsqv2nym4g"]
+
+[ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/Hud Tex.png" id="1_8w5oj"]
+[ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="1_n64py"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yicyj"]
+shader = ExtResource("1_n64py")
+shader_parameter/base_alpha = 0.75
+shader_parameter/albedo = Color(0, 0.392157, 0.490196, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Base" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Base"]
+material = SubResource("ShaderMaterial_yicyj")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8w5oj")
+
+[node name="Hud Holder" type="HBoxContainer" parent="Base/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

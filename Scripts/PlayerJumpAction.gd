@@ -33,7 +33,7 @@ func _on_release(player : Player):
 		jumping = false;
 		player.velocity.y *= jump_release_scale;
 
-func _process(_delta):
+func _physics_process(_delta):
 	if active:
 		if jumping:
 			if m_player.velocity.y >= 0:
