@@ -83,7 +83,7 @@ size = Vector2(400, 136)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("1_dh25b")]
+[node name="GUI" parent="." instance=ExtResource("1_dh25b")]
 
 [node name="Pausable" type="Node" parent="."]
 process_mode = 1

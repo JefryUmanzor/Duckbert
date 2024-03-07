@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cdbcsqv2nym4g"]
+[gd_scene load_steps=21 format=3 uid="uid://cdbcsqv2nym4g"]
 
 [ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="1_n64py"]
 [ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="2_op7r4"]
@@ -120,12 +120,19 @@ animation = &"RESET"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mued7"]
 animation = &"RESET"
 
+[sub_resource type="Curve" id="Curve_u3hc3"]
+_data = [Vector2(0.0123077, 0.0103533), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.40154, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_b2fvj"]
+fadein_time = 0.1
+fadeout_time = 0.2
+fadeout_curve = SubResource("Curve_u3hc3")
 
 [sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_ivsnu"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_85uqb"]
-graph_offset = Vector2(-689, 31)
+graph_offset = Vector2(-687.099, 129.421)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_mued7")
 nodes/Animation/position = Vector2(-520, 200)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_bylf1")
@@ -140,7 +147,7 @@ nodes/Animation/position = Vector2(-520, 200)
 "nodes/UI Blend/position" = Vector2(-282, 220)
 node_connections = [&"Level Clear Shot", 0, &"UI Blend", &"Level Clear Shot", 1, &"Animation 2", &"UI Blend", 0, &"Animation 4", &"UI Blend", 1, &"Animation", &"UI Blend", 2, &"Animation 3", &"output", 0, &"Level Clear Shot"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer"]
 
 [node name="Base" type="Control" parent="."]
 layout_mode = 3
@@ -156,7 +163,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.1
-offset_bottom = 2.67029e-05
+offset_bottom = 5.53131e-05
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_op7r4")
