@@ -1,12 +1,144 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdbcsqv2nym4g"]
+[gd_scene load_steps=20 format=3 uid="uid://cdbcsqv2nym4g"]
 
 [ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="1_n64py"]
 [ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="2_op7r4"]
+[ext_resource type="Texture2D" uid="uid://cyawnq5o05q3r" path="res://Sprites/UI/SPR UI Box.png" id="3_e7oxi"]
+[ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="4_70xiw"]
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="5_adh26"]
+[ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="6_cedcd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yicyj"]
 shader = ExtResource("1_n64py")
 shader_parameter/base_alpha = 0.75
 shader_parameter/albedo = Color(0, 0.392157, 0.490196, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7g5tl"]
+shader = ExtResource("5_adh26")
+shader_parameter/use_palette = false
+shader_parameter/current_palette = ExtResource("6_cedcd")
+
+[sub_resource type="Animation" id="Animation_xx6l2"]
+resource_name = "RESET"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Level Clear Holder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Hud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ifjti"]
+resource_name = "Level Clear Transition"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Level Clear Holder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.34151, 1),
+"update": 0,
+"values": [Vector2(-256, 48), Vector2(40, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Hud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 16), Vector2(0, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_33dal"]
+resource_name = "Level Clear Loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Hud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -64)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Level Clear Holder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ync2"]
+_data = {
+"Level Clear Loop": SubResource("Animation_33dal"),
+"Level Clear Transition": SubResource("Animation_ifjti"),
+"RESET": SubResource("Animation_xx6l2")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bylf1"]
+animation = &"Level Clear Transition"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_flavd"]
+animation = &"Level Clear Loop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vvbmp"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mued7"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_b2fvj"]
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_ivsnu"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_85uqb"]
+graph_offset = Vector2(-689, 31)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_mued7")
+nodes/Animation/position = Vector2(-520, 200)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_bylf1")
+"nodes/Animation 2/position" = Vector2(-140, 320)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_flavd")
+"nodes/Animation 3/position" = Vector2(-520, 320)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_vvbmp")
+"nodes/Animation 4/position" = Vector2(-520, 80)
+"nodes/Level Clear Shot/node" = SubResource("AnimationNodeOneShot_b2fvj")
+"nodes/Level Clear Shot/position" = Vector2(0, 60)
+"nodes/UI Blend/node" = SubResource("AnimationNodeBlend3_ivsnu")
+"nodes/UI Blend/position" = Vector2(-282, 220)
+node_connections = [&"Level Clear Shot", 0, &"UI Blend", &"Level Clear Shot", 1, &"Animation 2", &"UI Blend", 0, &"Animation 4", &"UI Blend", 1, &"Animation", &"UI Blend", 2, &"Animation 3", &"output", 0, &"Level Clear Shot"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -18,17 +150,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Base"]
+[node name="Hud" type="NinePatchRect" parent="Base"]
 material = SubResource("ShaderMaterial_yicyj")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.1
+offset_bottom = 2.67029e-05
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_op7r4")
 
-[node name="Hud Holder" type="HBoxContainer" parent="Base/NinePatchRect"]
+[node name="Hud Holder" type="HBoxContainer" parent="Base/Hud"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,3 +169,81 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="Level Clear Holder" type="NinePatchRect" parent="Base"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -64.0
+offset_right = -208.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_e7oxi")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Base/Level Clear Holder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Base/Level Clear Holder/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Level Clear!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Base/Level Clear Holder/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="Next Level" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer" instance=ExtResource("4_70xiw")]
+material = SubResource("ShaderMaterial_7g5tl")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "Next Level"
+
+[node name="Container" type="Control" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Level Select" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer" instance=ExtResource("4_70xiw")]
+material = SubResource("ShaderMaterial_7g5tl")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "Level Select"
+
+[node name="Bottom Margin" type="Control" parent="Base/Level Clear Holder/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0ync2")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0ync2")
+}
+tree_root = SubResource("AnimationNodeBlendTree_85uqb")
+anim_player = NodePath("../AnimationPlayer")
+"parameters/Level Clear Shot/active" = false
+"parameters/Level Clear Shot/internal_active" = false
+"parameters/Level Clear Shot/request" = 0
+"parameters/UI Blend/blend_amount" = 0.0
