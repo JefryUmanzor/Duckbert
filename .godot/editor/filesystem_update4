@@ -1,4 +1,4 @@
-res://Packed Scenes/Player.tscn
+res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
 res://Shaders/PlayerParticleShader.gdshader
@@ -12,5 +12,16 @@ res://Materials/Tileset Materials/MAT Pipe BG.tres
 res://Tilesets/TS Pipes.tres
 res://Materials/Tileset Materials/MAT Pipe Teal.tres
 res://Tilesets/TS Pipes BG.tres
+res://GUI Theme/Style Boxes/StyleBox Disabled.res
+res://GUI Theme/Style Boxes/StyleBox Pressed.res
+res://Packed Scenes/Player.tscn
 res://Rooms/Test Room.tscn
 res://Packed Scenes/GUI.tscn
+res://Rooms/Main Menu.tscn
+res://Packed Scenes/GUI/Default Button.tscn
+res://Scripts/GUI/MainMenuScript.gd
+res://GUI Theme/Style Boxes/StyleBox Selected.res
+res://GUI Theme/Style Boxes/StyleBox Normal.res
+res://Scripts/PlayerAction.gd
+res://Scripts/CameraScript.gd
+res://Scripts/SpringScript.gd

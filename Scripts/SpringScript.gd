@@ -20,7 +20,7 @@ func _ready():
 
 func on_player_enter(body):
 	player = body as Player;
-func on_player_exit(body):
+func on_player_exit(_body):
 	player.is_on_spring = false;
 	player = null;
 

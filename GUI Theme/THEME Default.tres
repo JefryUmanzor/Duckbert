@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://csiun6qsg7qmf"]
+
+[ext_resource type="StyleBox" uid="uid://dyidxbw2tsioi" path="res://GUI Theme/Style Boxes/StyleBox Disabled.res" id="1_jg3l5"]
+[ext_resource type="StyleBox" uid="uid://cmyon4bxyfsx2" path="res://GUI Theme/Style Boxes/StyleBox Normal.res" id="2_pa12t"]
+[ext_resource type="StyleBox" uid="uid://dv72feupvimvr" path="res://GUI Theme/Style Boxes/StyleBox Selected.res" id="3_56w5w"]
+[ext_resource type="StyleBox" uid="uid://bpn3vi2csgftb" path="res://GUI Theme/Style Boxes/StyleBox Pressed.res" id="4_y2lah"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 16
+Button/styles/disabled = ExtResource("1_jg3l5")
+Button/styles/focus = ExtResource("2_pa12t")
+Button/styles/hover = ExtResource("3_56w5w")
+Button/styles/normal = ExtResource("2_pa12t")
+Button/styles/pressed = ExtResource("4_y2lah")

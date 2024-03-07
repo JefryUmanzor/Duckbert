@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Duckbert"
-run/main_scene="res://Rooms/Test Room.tscn"
+run/main_scene="res://Rooms/Main Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
@@ -28,6 +28,10 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
+
+[gui]
+
+theme/custom="res://GUI Theme/THEME Default.tres"
 
 [input]
 
@@ -73,9 +77,9 @@ textures/light_projectors/filter=0
 
 base_palette={
 "type": "sampler2D",
-"value": "res://Sprites/Palettes/PAL Grey.png"
+"value": "res://Palettes/PAL Grey.png"
 }
 player_current_palette={
 "type": "sampler2D",
-"value": "res://Sprites/Palettes/PAL Grey.png"
+"value": "res://Palettes/PAL Grey.png"
 }

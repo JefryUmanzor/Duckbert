@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/SpringScript.gd" id="1_e1e0b"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="2_bce78"]
-[ext_resource type="Texture2D" uid="uid://bqp43o55tsqoe" path="res://Sprites/Palettes/PAL Spring.png" id="3_3xd8s"]
+[ext_resource type="Texture2D" uid="uid://bqp43o55tsqoe" path="res://Palettes/PAL Spring.png" id="3_3xd8s"]
 [ext_resource type="Texture2D" uid="uid://biun4tdx0ursc" path="res://Sprites/Assets/Spring Big.png" id="4_t0wc0"]
 [ext_resource type="AudioStream" uid="uid://blfei1ix50gm6" path="res://Audio/SFX/Assets/SND Spring Bounce.wav" id="5_lts2j"]
 [ext_resource type="AudioStream" uid="uid://m5t3qhv4qsri" path="res://Audio/SFX/Assets/SND Spring Down.wav" id="6_ytqw7"]

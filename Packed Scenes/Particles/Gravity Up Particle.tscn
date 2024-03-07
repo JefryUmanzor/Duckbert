@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_ru7al"]
 [ext_resource type="Shader" path="res://Shaders/ParticleFade.gdshader" id="2_s648u"]
-[ext_resource type="Texture2D" uid="uid://c6el0kgeg7p8e" path="res://Sprites/Palettes/PAL Blue.png" id="3_pem10"]
+[ext_resource type="Texture2D" uid="uid://c6el0kgeg7p8e" path="res://Palettes/PAL Blue.png" id="3_pem10"]
 [ext_resource type="Texture2D" uid="uid://d3by1y7mkpk5k" path="res://Sprites/Particles/Gravity Particle.png" id="4_s0swu"]
 [ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="5_hx16h"]
 

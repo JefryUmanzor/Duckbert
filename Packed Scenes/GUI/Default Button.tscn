@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cboono7eq3fvc"]
+
+[ext_resource type="Material" uid="uid://biy86xh73p2cn" path="res://Materials/GUI/MAT Button Outline.tres" id="1_sv7x1"]
+[ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="2_pdn3h"]
+
+[node name="Button" type="Button"]
+material = ExtResource("1_sv7x1")
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -17.5
+offset_right = 72.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_pdn3h")
+text = "Start"
+text_overrun_behavior = 1
+clip_text = true
+icon_alignment = 1

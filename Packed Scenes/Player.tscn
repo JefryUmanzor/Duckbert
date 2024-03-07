@@ -328,24 +328,25 @@ script = ExtResource("2_7voqr")
 script = ExtResource("3_ct67l")
 jump_strength = -290.0
 jump_release_scale = 0.45
-palette_path = "res://Sprites/Palettes/PAL Yellow.png"
+palette_path = "res://Palettes/PAL Yellow.png"
 
 [node name="PlayerGravityAction" type="Node" parent="Actions"]
 script = ExtResource("4_5xush")
+negative_palette_path = "res://Palettes/PAL Blue.png"
 y_vel_scale = 0.25
-palette_path = "res://Sprites/Palettes/PAL Red.png"
+palette_path = "res://Palettes/PAL Red.png"
 
 [node name="PlayerFlapAction" type="Node" parent="Actions"]
 script = ExtResource("5_ivpuk")
 jump_strength = -250.0
 gravity_scale = 0.75
-palette_path = "res://Sprites/Palettes/PAL Pink.png"
+palette_path = "res://Palettes/PAL Pink.png"
 
 [node name="PlayerHoverAction" type="Node" parent="Actions"]
 script = ExtResource("6_jgesx")
 acceleration = 1000.0
 start_hover_scale = 0.5
-palette_path = "res://Sprites/Palettes/PAL Ice.png"
+palette_path = "res://Palettes/PAL Ice.png"
 
 [node name="SFX" type="Node" parent="."]
 script = ExtResource("12_dxwt0")

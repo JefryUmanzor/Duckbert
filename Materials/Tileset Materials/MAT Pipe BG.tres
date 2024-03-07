@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://u4kicacicut7"]
 
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_jbgva"]
-[ext_resource type="Texture2D" uid="uid://bh8ckt0cts841" path="res://Sprites/Palettes/Tileset Palettes/PAL Pipe BG.png" id="2_qdatr"]
+[ext_resource type="Texture2D" uid="uid://bh8ckt0cts841" path="res://Palettes/Tileset Palettes/PAL Pipe BG.png" id="2_0wnsn"]
 
 [resource]
 shader = ExtResource("1_jbgva")
 shader_parameter/use_palette = true
-shader_parameter/current_palette = ExtResource("2_qdatr")
+shader_parameter/current_palette = ExtResource("2_0wnsn")

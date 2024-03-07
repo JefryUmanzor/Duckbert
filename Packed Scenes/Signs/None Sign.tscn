@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_u853e"]
 [ext_resource type="Texture2D" uid="uid://cbppbqd62o1v" path="res://Sprites/Signs/None Sign.png" id="2_rodkv"]
-[ext_resource type="Texture2D" uid="uid://dfeck83rnyfbt" path="res://Sprites/Palettes/PAL Brown.png" id="2_wkkfx"]
+[ext_resource type="Texture2D" uid="uid://dfeck83rnyfbt" path="res://Palettes/PAL Brown.png" id="2_wkkfx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bnci"]
 shader = ExtResource("1_u853e")

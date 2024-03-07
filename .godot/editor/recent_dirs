@@ -1,4 +1,10 @@
+res://Scripts/GUI
+res://Rooms
+res://Packed Scenes/GUI
+res://Materials/GUI
 res://Shaders
+res://GUI Theme/Style Boxes
+res://GUI Theme
 res://Packed Scenes
 res://Scripts
 res://Materials
@@ -8,6 +14,4 @@ res://Tilesets
 res://Materials/Tileset Materials
 res://Sprites/Assets
 res://Packed Scenes/Signs
-res://Sprites/Palettes
 res://Packed Scenes/Platforms
-res://Rooms

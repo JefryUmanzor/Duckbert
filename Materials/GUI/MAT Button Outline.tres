@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://biy86xh73p2cn"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_tx5hx"]
+[ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="2_qgo11"]
+
+[resource]
+shader = ExtResource("1_tx5hx")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("2_qgo11")

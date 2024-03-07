@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ip887i73lacj"]
 
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_dvntn"]
-[ext_resource type="Texture2D" uid="uid://qcau7rsvfacj" path="res://Sprites/Palettes/PAL Pink.png" id="2_s5gke"]
+[ext_resource type="Texture2D" uid="uid://qcau7rsvfacj" path="res://Palettes/PAL Pink.png" id="2_s5gke"]
 [ext_resource type="Texture2D" uid="uid://c82x346rd2xw" path="res://Sprites/Signs/Fly Sign.png" id="3_46u0s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sovup"]

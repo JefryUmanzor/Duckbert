@@ -1,4 +1,10 @@
+AnimationPlayer
+AnimationTree
+VBoxContainer
+Button
+Label
 NinePatchRect
+AudioStreamPlayer
 CanvasLayer
 ColorRect
 HBoxContainer
@@ -7,9 +13,3 @@ Control
 Node
 SubViewport
 CollisionShape2D
-StaticBody2D
-AudioStreamPlayer
-GPUParticles2D
-DestroyParent
-ParticleHandler
-AudioStreamPlayer2D

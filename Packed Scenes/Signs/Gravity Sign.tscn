@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6f68p42i5als"]
 
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_3ccwj"]
-[ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Sprites/Palettes/PAL Red.png" id="2_bdc5q"]
+[ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Palettes/PAL Red.png" id="2_bdc5q"]
 [ext_resource type="Texture2D" uid="uid://bbbflnbf0v2xp" path="res://Sprites/Signs/Gravity Sign.png" id="3_sbj67"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sovup"]
