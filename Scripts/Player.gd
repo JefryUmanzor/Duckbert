@@ -37,54 +37,58 @@ var coyote_timer = 0.0;
 var is_on_spring = false;
 var turning_around = false;
 
+var can_control : bool = true;
+
 @onready var sfx : PlayerSFX = $SFX
 
 func _ready():
 	starting_action = wrapi(starting_action, 0, actions.get_child_count());
 	current_action = actions.get_child(starting_action) as PlayerAction;
 	current_action._on_enable_action();
+	can_control = true;
 
 func _process(delta):
-	if Input.is_action_just_pressed("PlayerAction"):
-		current_action._activate(self);
-	if Input.is_action_just_released("PlayerAction"):
-		current_action._on_release(self);
-	
-	if is_on_floor() and not grounded and start_timer <= 0:
-		anim.play_land_squash();
-		if not is_on_spring:
-			sfx.play_land_sfx();
-	
-	if not is_on_floor() and grounded:
-		coyote_timer = max_coyote_time;
-	
-	grounded = is_on_floor();
-	
-	if not moving and move_input != 0 and grounded and start_step_timer > 0.0:
-		create_step_particle();
-	moving = move_input != 0 and grounded and abs(velocity.x) > 0.02;
-	
-	if move_input != 0:
-		start_step_timer -= delta;
-	else:
-		start_step_timer = 0.01;
-	
-	if moving:
-		step_timer += delta;
-		if turning_around:
-			step_timer *= 1.5;
-	else:
-		step_timer = 0.0;
+	if can_control:
+		if Input.is_action_just_pressed("PlayerAction"):
+			current_action._activate(self);
+		if Input.is_action_just_released("PlayerAction"):
+			current_action._on_release(self);
 		
-	if step_timer >= max_step_time:
-		step_timer = 0.0;
-		create_step_particle();
-	
-	coyote_timer -= min(delta, coyote_timer);
-	start_timer -= delta;
-	
-	if abs(velocity.y) > 0.0 and sign(velocity.y) == sign(up_direction.y):
-		coyote_timer = 0.0; 
+		if is_on_floor() and not grounded and start_timer <= 0:
+			anim.play_land_squash();
+			if not is_on_spring:
+				sfx.play_land_sfx();
+		
+		if not is_on_floor() and grounded:
+			coyote_timer = max_coyote_time;
+		
+		grounded = is_on_floor();
+		
+		if not moving and move_input != 0 and grounded and start_step_timer > 0.0:
+			create_step_particle();
+		moving = move_input != 0 and grounded and abs(velocity.x) > 0.02;
+		
+		if move_input != 0:
+			start_step_timer -= delta;
+		else:
+			start_step_timer = 0.01;
+		
+		if moving:
+			step_timer += delta;
+			if turning_around:
+				step_timer *= 1.5;
+		else:
+			step_timer = 0.0;
+			
+		if step_timer >= max_step_time:
+			step_timer = 0.0;
+			create_step_particle();
+		
+		coyote_timer -= min(delta, coyote_timer);
+		start_timer -= delta;
+		
+		if abs(velocity.y) > 0.0 and sign(velocity.y) == sign(up_direction.y):
+			coyote_timer = 0.0; 
 
 func reset_coyote_timer():
 	coyote_timer = 0.0;
@@ -109,7 +113,10 @@ func _physics_process(delta):
 		if sign(velocity.y) != sign(up_direction.y):
 			velocity.y = max_vertical_speed * -sign(up_direction.y);
 	
-	move_input = sign(Input.get_axis("PlayerLeft", "PlayerRight"));
+	if can_control:
+		move_input = sign(Input.get_axis("PlayerLeft", "PlayerRight"));
+	else:
+		move_input = 0;
 	var target_speed = top_speed * sign(move_input);
 	var slowing = abs(velocity.x) > abs(target_speed);
 	

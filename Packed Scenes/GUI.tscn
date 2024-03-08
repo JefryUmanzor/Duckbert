@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cdbcsqv2nym4g"]
+[gd_scene load_steps=22 format=3 uid="uid://cdbcsqv2nym4g"]
 
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_7xqw5"]
 [ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="1_n64py"]
 [ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="2_op7r4"]
 [ext_resource type="Texture2D" uid="uid://cyawnq5o05q3r" path="res://Sprites/UI/SPR UI Box.png" id="3_e7oxi"]
@@ -17,32 +18,32 @@ shader = ExtResource("5_adh26")
 shader_parameter/use_palette = false
 shader_parameter/current_palette = ExtResource("6_cedcd")
 
-[sub_resource type="Animation" id="Animation_xx6l2"]
-resource_name = "RESET"
+[sub_resource type="Animation" id="Animation_33dal"]
+resource_name = "Level Clear Loop"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Base/Level Clear Holder:position")
+tracks/0/path = NodePath("Base/Hud:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-256, 48)]
+"values": [Vector2(0, -64)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Base/Hud:position")
+tracks/1/path = NodePath("Base/Level Clear Holder:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(40, 48)]
 }
 
 [sub_resource type="Animation" id="Animation_ifjti"]
@@ -73,32 +74,32 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 16), Vector2(0, -64)]
 }
 
-[sub_resource type="Animation" id="Animation_33dal"]
-resource_name = "Level Clear Loop"
+[sub_resource type="Animation" id="Animation_xx6l2"]
+resource_name = "RESET"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Base/Hud:position")
+tracks/0/path = NodePath("Base/Level Clear Holder:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -64)]
+"values": [Vector2(-256, 48)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Base/Level Clear Holder:position")
+tracks/1/path = NodePath("Base/Hud:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(40, 48)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ync2"]
@@ -125,14 +126,13 @@ _data = [Vector2(0.0123077, 0.0103533), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.40154, 
 point_count = 2
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_b2fvj"]
-fadein_time = 0.1
 fadeout_time = 0.2
 fadeout_curve = SubResource("Curve_u3hc3")
 
 [sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_ivsnu"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_85uqb"]
-graph_offset = Vector2(-687.099, 129.421)
+graph_offset = Vector2(-709.505, 120.88)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_mued7")
 nodes/Animation/position = Vector2(-520, 200)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_bylf1")
@@ -144,10 +144,11 @@ nodes/Animation/position = Vector2(-520, 200)
 "nodes/Level Clear Shot/node" = SubResource("AnimationNodeOneShot_b2fvj")
 "nodes/Level Clear Shot/position" = Vector2(0, 60)
 "nodes/UI Blend/node" = SubResource("AnimationNodeBlend3_ivsnu")
-"nodes/UI Blend/position" = Vector2(-282, 220)
+"nodes/UI Blend/position" = Vector2(-280, 220)
 node_connections = [&"Level Clear Shot", 0, &"UI Blend", &"Level Clear Shot", 1, &"Animation 2", &"UI Blend", 0, &"Animation 4", &"UI Blend", 1, &"Animation", &"UI Blend", 2, &"Animation 3", &"output", 0, &"Level Clear Shot"]
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_7xqw5")
 
 [node name="Base" type="Control" parent="."]
 layout_mode = 3
@@ -159,13 +160,10 @@ grow_vertical = 2
 
 [node name="Hud" type="NinePatchRect" parent="Base"]
 material = SubResource("ShaderMaterial_yicyj")
+layout_direction = 2
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.1
-offset_bottom = 5.53131e-05
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 256.0
+offset_bottom = 22.4
 texture = ExtResource("2_op7r4")
 
 [node name="Hud Holder" type="HBoxContainer" parent="Base/Hud"]
@@ -184,13 +182,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -64.0
-offset_right = -208.0
-offset_bottom = 64.0
+offset_left = -256.0
+offset_top = 48.0
+offset_right = -80.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_e7oxi")
+draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -221,6 +220,7 @@ size_flags_stretch_ratio = 0.25
 material = SubResource("ShaderMaterial_7g5tl")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../Level Select")
 theme_override_font_sizes/font_size = 10
 text = "Next Level"
 
@@ -233,6 +233,7 @@ size_flags_stretch_ratio = 0.1
 material = SubResource("ShaderMaterial_7g5tl")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Next Level")
 theme_override_font_sizes/font_size = 10
 text = "Level Select"
 
@@ -245,6 +246,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+deterministic = false
 libraries = {
 "": SubResource("AnimationLibrary_0ync2")
 }
