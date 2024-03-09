@@ -138,3 +138,4 @@ libraries = {
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="send_to_test_room"]
 [connection signal="focus_entered" from="VBoxContainer/Options" to="." method="on_grab_focus"]
 [connection signal="focus_entered" from="VBoxContainer/Quit" to="." method="on_grab_focus"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="quit_game"]

@@ -1,17 +1,26 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdbcsqv2nym4g"]
+[gd_scene load_steps=34 format=3 uid="uid://cdbcsqv2nym4g"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_7xqw5"]
-[ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="1_n64py"]
+[ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="2_fq1yk"]
+[ext_resource type="Material" uid="uid://buge3kmf8oo40" path="res://Materials/GUI/HUD Material.tres" id="2_hf5jd"]
 [ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="2_op7r4"]
+[ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Palettes/PAL Red.png" id="3_bwdtc"]
 [ext_resource type="Texture2D" uid="uid://cyawnq5o05q3r" path="res://Sprites/UI/SPR UI Box.png" id="3_e7oxi"]
 [ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="4_70xiw"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="5_adh26"]
+[ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="5_xgfds"]
 [ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="6_cedcd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yicyj"]
-shader = ExtResource("1_n64py")
-shader_parameter/base_alpha = 0.75
-shader_parameter/albedo = Color(0, 0.392157, 0.490196, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6i2nt"]
+shader = ExtResource("5_adh26")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("3_bwdtc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_85u14"]
+line_spacing = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ljwdg"]
+font_size = 12
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g5tl"]
 shader = ExtResource("5_adh26")
@@ -45,9 +54,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(40, 48)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Pause Panel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -224)]
+}
 
 [sub_resource type="Animation" id="Animation_ifjti"]
 resource_name = "Level Clear Transition"
+length = 0.5
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -72,6 +94,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 16), Vector2(0, -64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Pause Panel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -224)]
 }
 
 [sub_resource type="Animation" id="Animation_xx6l2"]
@@ -101,12 +135,148 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Pause Panel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -224)]
+}
+
+[sub_resource type="Animation" id="Animation_x1tui"]
+resource_name = "Pause Transition"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Pause Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.378929, 1),
+"update": 0,
+"values": [Vector2(0, -224), Vector2(0, -240), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Hud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.210224, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 224)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Level Clear Holder:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_ahfyn"]
+resource_name = "Pause Loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Pause Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Hud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 224)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Level Clear Holder:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_mlmbt"]
+resource_name = "Unpause Transition"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Pause Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.35, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 16), Vector2(0, -224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Hud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.35, 1),
+"update": 0,
+"values": [Vector2(0, 224), Vector2(0, 240), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Level Clear Holder:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 48)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ync2"]
 _data = {
 "Level Clear Loop": SubResource("Animation_33dal"),
 "Level Clear Transition": SubResource("Animation_ifjti"),
-"RESET": SubResource("Animation_xx6l2")
+"Pause Loop": SubResource("Animation_ahfyn"),
+"Pause Transition": SubResource("Animation_x1tui"),
+"RESET": SubResource("Animation_xx6l2"),
+"Unpause Transition": SubResource("Animation_mlmbt")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bylf1"]
@@ -116,7 +286,13 @@ animation = &"Level Clear Transition"
 animation = &"Level Clear Loop"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vvbmp"]
-animation = &"RESET"
+animation = &"Pause Loop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d6ftd"]
+animation = &"Pause Transition"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ge56t"]
+animation = &"Unpause Transition"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mued7"]
 animation = &"RESET"
@@ -129,23 +305,38 @@ point_count = 2
 fadeout_time = 0.2
 fadeout_curve = SubResource("Curve_u3hc3")
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_s61om"]
+fadeout_time = 0.1
+
 [sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_ivsnu"]
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_fu352"]
+fadeout_time = 0.1
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_85uqb"]
-graph_offset = Vector2(-709.505, 120.88)
+graph_offset = Vector2(-449.203, -0.296127)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_mued7")
 nodes/Animation/position = Vector2(-520, 200)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_bylf1")
-"nodes/Animation 2/position" = Vector2(-140, 320)
+"nodes/Animation 2/position" = Vector2(440, 440)
 "nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_flavd")
 "nodes/Animation 3/position" = Vector2(-520, 320)
 "nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_vvbmp")
 "nodes/Animation 4/position" = Vector2(-520, 80)
+"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_d6ftd")
+"nodes/Animation 5/position" = Vector2(-80, 380)
+"nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_ge56t")
+"nodes/Animation 6/position" = Vector2(160, 380)
 "nodes/Level Clear Shot/node" = SubResource("AnimationNodeOneShot_b2fvj")
-"nodes/Level Clear Shot/position" = Vector2(0, 60)
+"nodes/Level Clear Shot/position" = Vector2(580, 180)
+"nodes/Pause Shot/node" = SubResource("AnimationNodeOneShot_s61om")
+"nodes/Pause Shot/position" = Vector2(80, 140)
 "nodes/UI Blend/node" = SubResource("AnimationNodeBlend3_ivsnu")
-"nodes/UI Blend/position" = Vector2(-280, 220)
-node_connections = [&"Level Clear Shot", 0, &"UI Blend", &"Level Clear Shot", 1, &"Animation 2", &"UI Blend", 0, &"Animation 4", &"UI Blend", 1, &"Animation", &"UI Blend", 2, &"Animation 3", &"output", 0, &"Level Clear Shot"]
+"nodes/UI Blend/position" = Vector2(-260, 160)
+"nodes/Unpause Shot/node" = SubResource("AnimationNodeOneShot_fu352")
+"nodes/Unpause Shot/position" = Vector2(320, 160)
+nodes/output/position = Vector2(820, 200)
+node_connections = [&"Level Clear Shot", 0, &"Unpause Shot", &"Level Clear Shot", 1, &"Animation 2", &"Pause Shot", 0, &"UI Blend", &"Pause Shot", 1, &"Animation 5", &"UI Blend", 0, &"Animation 4", &"UI Blend", 1, &"Animation", &"UI Blend", 2, &"Animation 3", &"Unpause Shot", 0, &"Pause Shot", &"Unpause Shot", 1, &"Animation 6", &"output", 0, &"Level Clear Shot"]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_7xqw5")
@@ -158,22 +349,129 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Hud" type="NinePatchRect" parent="Base"]
-material = SubResource("ShaderMaterial_yicyj")
-layout_direction = 2
+[node name="Pause Panel" type="Panel" parent="Base"]
+material = ExtResource("2_hf5jd")
 layout_mode = 1
-offset_right = 256.0
-offset_bottom = 22.4
-texture = ExtResource("2_op7r4")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fq1yk")
 
-[node name="Hud Holder" type="HBoxContainer" parent="Base/Hud"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Base/Pause Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+
+[node name="Control2" type="Control" parent="Base/Pause Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Base/Pause Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_direction = 2
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Base/Pause Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Resume" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+material = SubResource("ShaderMaterial_6i2nt")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Main Menu")
+focus_neighbor_bottom = NodePath("../Restart")
+theme_override_font_sizes/font_size = 9
+text = "Resume
+"
+
+[node name="Restart" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+material = SubResource("ShaderMaterial_6i2nt")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Options")
+theme_override_font_sizes/font_size = 9
+text = "Restart"
+
+[node name="Options" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+material = SubResource("ShaderMaterial_6i2nt")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Restart")
+focus_neighbor_bottom = NodePath("../Level Select")
+theme_override_font_sizes/font_size = 9
+text = "Options"
+
+[node name="Level Select" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+material = SubResource("ShaderMaterial_6i2nt")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../Main Menu")
+theme_override_font_sizes/font_size = 9
+text = "Level Select"
+
+[node name="Main Menu" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+material = SubResource("ShaderMaterial_6i2nt")
+layout_mode = 2
+focus_neighbor_top = NodePath("../Level Select")
+focus_neighbor_bottom = NodePath("../Resume")
+theme_override_font_sizes/font_size = 9
+text = "Main Menu
+"
+
+[node name="Control3" type="Control" parent="Base/Pause Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Control" type="Control" parent="Base/Pause Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Base/Pause Panel/HBoxContainer"]
+layout_mode = 2
+text = "P
+A
+U
+S
+E
+D"
+label_settings = SubResource("LabelSettings_85u14")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="Base/Pause Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="Hud" type="NinePatchRect" parent="Base"]
+material = ExtResource("2_hf5jd")
+layout_direction = 2
+layout_mode = 1
+offset_right = 256.0
+offset_bottom = 22.3999
+texture = ExtResource("2_op7r4")
+
+[node name="ActionText" type="Label" parent="Base/Hud"]
+material = ExtResource("5_xgfds")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.2
+anchor_right = 0.975
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press To: JUMP"
+label_settings = SubResource("LabelSettings_ljwdg")
+vertical_alignment = 1
 
 [node name="Level Clear Holder" type="NinePatchRect" parent="Base"]
 layout_mode = 1
@@ -182,10 +480,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = 48.0
-offset_right = -80.0
-offset_bottom = 176.0
+offset_left = -384.0
+offset_top = -64.0
+offset_right = -208.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_e7oxi")
@@ -255,7 +553,16 @@ anim_player = NodePath("../AnimationPlayer")
 "parameters/Level Clear Shot/active" = false
 "parameters/Level Clear Shot/internal_active" = false
 "parameters/Level Clear Shot/request" = 0
+"parameters/Pause Shot/active" = false
+"parameters/Pause Shot/internal_active" = false
+"parameters/Pause Shot/request" = 0
 "parameters/UI Blend/blend_amount" = 0.0
+"parameters/Unpause Shot/active" = false
+"parameters/Unpause Shot/internal_active" = false
+"parameters/Unpause Shot/request" = 0
 
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Resume" to="." method="unpause"]
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Restart" to="." method="restart_scene"]
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu" to="." method="go_to_main_menu"]
 [connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="." method="on_mouse_enter"]
 [connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="." method="on_mouse_enter"]

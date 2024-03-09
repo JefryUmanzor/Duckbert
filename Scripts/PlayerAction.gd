@@ -2,6 +2,7 @@ class_name PlayerAction
 extends Node
 
 @export var palette_path : String  = "res://Palettes/PAL Grey.png";
+@export var action_name : String = "None";
 @onready var sprite_handler : PlayerAnimationHandler = $"../../Sprite"
 
 var palette_texture : Texture2D;

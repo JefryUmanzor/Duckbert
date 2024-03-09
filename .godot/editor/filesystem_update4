@@ -20,3 +20,7 @@ res://Scripts/HUD.gd
 res://GUI Theme/Style Boxes/StyleBox Selected.res
 res://Rooms/Main Menu.tscn
 res://Scripts/GUI/MainMenuScript.gd
+res://Materials/GUI/HUD Material.tres
+res://Packed Scenes/GUI/Default Button.tscn
+res://Packed Scenes/Player.tscn
+res://Scripts/PlayerAction.gd
