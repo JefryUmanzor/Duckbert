@@ -26,3 +26,4 @@ res://Packed Scenes/Player.tscn
 res://Scripts/PlayerAction.gd
 res://Scripts/Player.gd
 res://GUI Theme/Style Boxes/StyleBox Hover.res
+res://Packed Scenes/GUI/GUI.tscn

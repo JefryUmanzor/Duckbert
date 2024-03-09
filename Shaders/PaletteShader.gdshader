@@ -6,6 +6,7 @@ uniform bool use_palette = false;
 void fragment() {
 	if (use_palette){
 		vec3 value = texture(TEXTURE, UV).rgb;
+		float alpha = texture(TEXTURE, UV).a;
 		vec2 palette_uv = vec2(0.0, 0.0);
 		
 		if (texture(TEXTURE, UV).a >= 0.5){
@@ -23,6 +24,7 @@ void fragment() {
 			}
 			
 			COLOR = texture(current_palette, palette_uv);
+			COLOR.a = alpha;
 		}
 		else{
 			discard;

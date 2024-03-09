@@ -4,7 +4,7 @@ extends Control
 const TEST_ROOM = preload("res://Rooms/Test Room.tscn")
 
 var focused = false;
-@onready var start_button = $VBoxContainer/Start
+@onready var start_button = $"Main Menu/Main Buttons/Start"
 
 func _ready():
 	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);

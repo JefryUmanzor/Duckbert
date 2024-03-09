@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://bbxlvdxnpt2j6"]
 
-[ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI.tscn" id="1_dh25b"]
+[ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_5ogpg"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="1_j0x27"]
 [ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Saw.tscn" id="2_hcdgw"]
 [ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="2_pday0"]
@@ -83,7 +83,7 @@ size = Vector2(400, 136)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="GUI" parent="." instance=ExtResource("1_dh25b")]
+[node name="GUI" parent="." instance=ExtResource("1_5ogpg")]
 
 [node name="Pausable" type="Node" parent="."]
 process_mode = 1

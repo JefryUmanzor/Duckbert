@@ -1,20 +1,20 @@
 [gd_scene load_steps=34 format=3 uid="uid://cdbcsqv2nym4g"]
 
-[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_7xqw5"]
-[ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="2_fq1yk"]
-[ext_resource type="Material" uid="uid://buge3kmf8oo40" path="res://Materials/GUI/HUD Material.tres" id="2_hf5jd"]
-[ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="2_op7r4"]
-[ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Palettes/PAL Red.png" id="3_bwdtc"]
-[ext_resource type="Texture2D" uid="uid://cyawnq5o05q3r" path="res://Sprites/UI/SPR UI Box.png" id="3_e7oxi"]
-[ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="4_70xiw"]
-[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="5_adh26"]
-[ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="5_xgfds"]
-[ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="6_cedcd"]
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_a27be"]
+[ext_resource type="Material" uid="uid://buge3kmf8oo40" path="res://Materials/GUI/HUD Material.tres" id="2_a2cuw"]
+[ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="3_hpjrx"]
+[ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="4_thtp2"]
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="5_lvs6q"]
+[ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Palettes/PAL Red.png" id="6_wsjll"]
+[ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="7_gk263"]
+[ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="8_nqud2"]
+[ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="9_h3u6i"]
+[ext_resource type="Texture2D" uid="uid://djb1ho6g3yfqv" path="res://Sprites/UI/SPR UI Box Transparent.png" id="10_b3hf1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6i2nt"]
-shader = ExtResource("5_adh26")
+shader = ExtResource("5_lvs6q")
 shader_parameter/use_palette = true
-shader_parameter/current_palette = ExtResource("3_bwdtc")
+shader_parameter/current_palette = ExtResource("6_wsjll")
 
 [sub_resource type="LabelSettings" id="LabelSettings_85u14"]
 line_spacing = 1.0
@@ -23,9 +23,9 @@ line_spacing = 1.0
 font_size = 12
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g5tl"]
-shader = ExtResource("5_adh26")
-shader_parameter/use_palette = false
-shader_parameter/current_palette = ExtResource("6_cedcd")
+shader = ExtResource("5_lvs6q")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("9_h3u6i")
 
 [sub_resource type="Animation" id="Animation_33dal"]
 resource_name = "Level Clear Loop"
@@ -339,7 +339,7 @@ nodes/output/position = Vector2(820, 200)
 node_connections = [&"Level Clear Shot", 0, &"Unpause Shot", &"Level Clear Shot", 1, &"Animation 2", &"Pause Shot", 0, &"UI Blend", &"Pause Shot", 1, &"Animation 5", &"UI Blend", 0, &"Animation 4", &"UI Blend", 1, &"Animation", &"UI Blend", 2, &"Animation 3", &"Unpause Shot", 0, &"Pause Shot", &"Unpause Shot", 1, &"Animation 6", &"output", 0, &"Level Clear Shot"]
 
 [node name="GUI" type="CanvasLayer"]
-script = ExtResource("1_7xqw5")
+script = ExtResource("1_a27be")
 
 [node name="Base" type="Control" parent="."]
 layout_mode = 3
@@ -350,7 +350,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Pause Panel" type="Panel" parent="Base"]
-material = ExtResource("2_hf5jd")
+material = ExtResource("2_a2cuw")
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -359,7 +359,7 @@ offset_top = -224.0
 offset_bottom = -224.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_fq1yk")
+theme = ExtResource("3_hpjrx")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Base/Pause Panel"]
 layout_mode = 1
@@ -384,44 +384,64 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Resume" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+[node name="Resume" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Main Menu")
+focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Restart")
+focus_next = NodePath("../Restart")
+focus_previous = NodePath("../Main Menu")
 theme_override_font_sizes/font_size = 9
 text = "Resume
 "
 
-[node name="Restart" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+[node name="Restart" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Options")
+focus_next = NodePath("../Options")
+focus_previous = NodePath("../Resume")
 theme_override_font_sizes/font_size = 9
 text = "Restart"
 
-[node name="Options" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+[node name="Options" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Restart")
+focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Level Select")
+focus_next = NodePath("../Level Select")
+focus_previous = NodePath("../Restart")
 theme_override_font_sizes/font_size = 9
 text = "Options"
 
-[node name="Level Select" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+[node name="Level Select" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Options")
+focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Main Menu")
+focus_next = NodePath("../Main Menu")
+focus_previous = NodePath("../Options")
 theme_override_font_sizes/font_size = 9
 text = "Level Select"
 
-[node name="Main Menu" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_70xiw")]
+[node name="Main Menu" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
+focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Level Select")
+focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Resume")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath("../Level Select")
 theme_override_font_sizes/font_size = 9
 text = "Main Menu
 "
@@ -452,15 +472,15 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Hud" type="NinePatchRect" parent="Base"]
-material = ExtResource("2_hf5jd")
+material = ExtResource("2_a2cuw")
 layout_direction = 2
 layout_mode = 1
 offset_right = 256.0
 offset_bottom = 22.3999
-texture = ExtResource("2_op7r4")
+texture = ExtResource("7_gk263")
 
 [node name="ActionText" type="Label" parent="Base/Hud"]
-material = ExtResource("5_xgfds")
+material = ExtResource("8_nqud2")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
@@ -474,6 +494,7 @@ label_settings = SubResource("LabelSettings_ljwdg")
 vertical_alignment = 1
 
 [node name="Level Clear Holder" type="NinePatchRect" parent="Base"]
+material = SubResource("ShaderMaterial_7g5tl")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -486,7 +507,7 @@ offset_right = -208.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_e7oxi")
+texture = ExtResource("10_b3hf1")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6
@@ -514,7 +535,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
 
-[node name="Next Level" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer" instance=ExtResource("4_70xiw")]
+[node name="Next Level" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_7g5tl")
 layout_mode = 2
 size_flags_horizontal = 3
@@ -527,7 +548,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="Level Select" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer" instance=ExtResource("4_70xiw")]
+[node name="Level Select" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_7g5tl")
 layout_mode = 2
 size_flags_horizontal = 3
