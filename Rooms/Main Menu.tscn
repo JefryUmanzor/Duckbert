@@ -1,8 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://caa1tt7gmfscc"]
+[gd_scene load_steps=25 format=3 uid="uid://caa1tt7gmfscc"]
 
 [ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="1_42oty"]
 [ext_resource type="Script" path="res://Scripts/GUI/MainMenuScript.gd" id="1_yn63n"]
 [ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="3_hdljr"]
+[ext_resource type="Material" uid="uid://biy86xh73p2cn" path="res://Materials/GUI/MAT Button Outline.tres" id="4_csgxu"]
+[ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="4_q26nb"]
+[ext_resource type="StyleBox" uid="uid://brfdy7wimc62d" path="res://GUI Theme/Style Boxes/Stylebox Panel Override.tres" id="6_m2usd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hsml3"]
 shader = ExtResource("3_hdljr")
@@ -11,6 +14,7 @@ shader_parameter/albedo = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_mvmyl"]
 resource_name = "Boot Up"
+length = 0.66
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -83,37 +87,194 @@ tracks/2/path = NodePath("Options:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(-0.00612828, 0),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-256, 0), Vector2(-256, 0)]
+"values": [Vector2(-256, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main Menu:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ykf1m"]
+resource_name = "Options Transition"
+length = 0.22
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-10, 0), Vector2(256, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(-256, 0), Vector2(-266, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wh0r7"]
+resource_name = "Options Menu"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uevt4"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Menu/Main Buttons:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 110)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main Menu/Main Buttons:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4]
+}
+
+[sub_resource type="Animation" id="Animation_6456o"]
+resource_name = "OptMain Transition"
+length = 0.22
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1.5, 1),
+"update": 0,
+"values": [Vector2(256, 0), Vector2(272, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(16, 0), Vector2(-256, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ra4av"]
 _data = {
 "Boot Up": SubResource("Animation_mvmyl"),
-"Main Menu": SubResource("Animation_qw3ra")
+"Main Menu": SubResource("Animation_qw3ra"),
+"OptMain Transition": SubResource("Animation_6456o"),
+"Options Menu": SubResource("Animation_wh0r7"),
+"Options Transition": SubResource("Animation_ykf1m"),
+"RESET": SubResource("Animation_uevt4")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2kiv5"]
 animation = &"Boot Up"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gobvo"]
+animation = &"Options Menu"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_14i1p"]
+animation = &"Options Transition"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1mhsn"]
+animation = &"OptMain Transition"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3ct8"]
 animation = &"Main Menu"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_grqcx"]
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_160tr"]
 fadeout_time = 0.1
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_gkmix"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_3v8rp"]
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_to2gf"]
-graph_offset = Vector2(-538, 25)
+graph_offset = Vector2(-472.596, -5.24934)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_i3ct8")
-nodes/Animation/position = Vector2(-180, 140)
+nodes/Animation/position = Vector2(-620, 120)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_2kiv5")
-"nodes/Animation 2/position" = Vector2(-181, 267)
+"nodes/Animation 2/position" = Vector2(-20, 340)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_gobvo")
+"nodes/Animation 3/position" = Vector2(-620, 260)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_14i1p")
+"nodes/Animation 4/position" = Vector2(220, 340)
+"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_1mhsn")
+"nodes/Animation 5/position" = Vector2(580, 340)
+nodes/Blend/node = SubResource("AnimationNodeBlend2_grqcx")
+nodes/Blend/position = Vector2(-420, 100)
 "nodes/Main Shot/node" = SubResource("AnimationNodeOneShot_160tr")
 "nodes/Main Shot/position" = Vector2(-20, 100)
-nodes/output/position = Vector2(180, 100)
-node_connections = [&"Main Shot", 0, &"Animation", &"Main Shot", 1, &"Animation 2", &"output", 0, &"Main Shot"]
+"nodes/Options Return Shot/node" = SubResource("AnimationNodeOneShot_gkmix")
+"nodes/Options Return Shot/position" = Vector2(580, 100)
+"nodes/Options Shot/node" = SubResource("AnimationNodeOneShot_3v8rp")
+"nodes/Options Shot/position" = Vector2(260, 100)
+nodes/output/position = Vector2(980, 80)
+node_connections = [&"Blend", 0, &"Animation", &"Blend", 1, &"Animation 3", &"Main Shot", 0, &"Blend", &"Main Shot", 1, &"Animation 2", &"Options Return Shot", 0, &"Options Shot", &"Options Return Shot", 1, &"Animation 5", &"Options Shot", 0, &"Main Shot", &"Options Shot", 1, &"Animation 4", &"output", 0, &"Options Return Shot"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -129,6 +290,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -6.10352e-05
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -197,13 +359,297 @@ grow_vertical = 2
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.5
-anchor_right = 0.4
-anchor_bottom = 1.0
-offset_top = -104.0
-offset_right = 12.0
-offset_bottom = -11.0
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fullscreen Holder" type="Panel" parent="Options/VBoxContainer2"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_q26nb")
+theme_override_styles/panel = ExtResource("6_m2usd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/Fullscreen Holder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/Fullscreen Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Fullscreen"
+vertical_alignment = 1
+
+[node name="Fullscreen Toggle" type="CheckBox" parent="Options/VBoxContainer2/Fullscreen Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../../Back/HBoxContainer/Back Button")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+focus_next = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+focus_previous = NodePath("../../../Back/HBoxContainer/Back Button")
+theme = ExtResource("4_q26nb")
+
+[node name="Fullscreen Scale Holder" type="Panel" parent="Options/VBoxContainer2"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_q26nb")
+theme_override_styles/panel = ExtResource("6_m2usd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/Fullscreen Scale Holder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Stretch to Fit Window"
+vertical_alignment = 1
+
+[node name="Fullscreen Stretch Toggle" type="CheckBox" parent="Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../../Fullscreen Holder/HBoxContainer/Fullscreen Toggle")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
+focus_next = NodePath("../../../Fullscreen Holder/HBoxContainer/Fullscreen Toggle")
+focus_previous = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
+theme = ExtResource("4_q26nb")
+
+[node name="Window Scale Holder" type="Panel" parent="Options/VBoxContainer2"]
+visible = false
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_q26nb")
+theme_override_styles/panel = ExtResource("6_m2usd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/Window Scale Holder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Window Scale"
+vertical_alignment = 1
+
+[node name="Scale Left" type="Button" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+focus_neighbor_left = NodePath("../Scale Right")
+focus_neighbor_top = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+focus_neighbor_right = NodePath("../Scale Right")
+focus_neighbor_bottom = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
+focus_next = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
+focus_previous = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+theme = ExtResource("4_q26nb")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Left"]
+material = ExtResource("4_csgxu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scale Text" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+text = "1x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scale Right" type="Button" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+focus_neighbor_left = NodePath("../Scale Left")
+focus_neighbor_top = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+focus_neighbor_right = NodePath("../Scale Left")
+focus_neighbor_bottom = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
+focus_next = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
+focus_previous = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+theme = ExtResource("4_q26nb")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Right"]
+material = ExtResource("4_csgxu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = ">"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music Holder" type="Panel" parent="Options/VBoxContainer2"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_q26nb")
+theme_override_styles/panel = ExtResource("6_m2usd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/Music Holder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/Music Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Music"
+vertical_alignment = 1
+
+[node name="Music Toggle" type="CheckBox" parent="Options/VBoxContainer2/Music Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../../SFX Holder/HBoxContainer/SFX Toggle")
+focus_next = NodePath("../../../SFX Holder/HBoxContainer/SFX Toggle")
+focus_previous = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
+theme = ExtResource("4_q26nb")
+button_pressed = true
+
+[node name="SFX Holder" type="Panel" parent="Options/VBoxContainer2"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_q26nb")
+theme_override_styles/panel = ExtResource("6_m2usd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/SFX Holder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/SFX Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+text = " SFX"
+vertical_alignment = 1
+
+[node name="SFX Toggle" type="CheckBox" parent="Options/VBoxContainer2/SFX Holder/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+theme = ExtResource("4_q26nb")
+button_pressed = true
+
+[node name="Back" type="Panel" parent="Options/VBoxContainer2"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_q26nb")
+theme_override_styles/panel = ExtResource("6_m2usd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/Back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options/VBoxContainer2/Back/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+text = " Back to Menu"
+vertical_alignment = 1
+
+[node name="Back Button" type="Button" parent="Options/VBoxContainer2/Back/HBoxContainer"]
+material = ExtResource("4_csgxu")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../../SFX Holder/HBoxContainer/SFX Toggle")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../../Fullscreen Holder/HBoxContainer/Fullscreen Toggle")
+focus_next = NodePath("../../../Fullscreen Holder/HBoxContainer/Fullscreen Toggle")
+focus_previous = NodePath("../../../SFX Holder/HBoxContainer/SFX Toggle")
+theme = ExtResource("4_q26nb")
+theme_override_font_sizes/font_size = 12
+text = "<<<<"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -211,9 +657,16 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeBlendTree_to2gf")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Blend/blend_amount = 0.0
 "parameters/Main Shot/active" = false
 "parameters/Main Shot/internal_active" = false
 "parameters/Main Shot/request" = 0
+"parameters/Options Return Shot/active" = false
+"parameters/Options Return Shot/internal_active" = false
+"parameters/Options Return Shot/request" = 0
+"parameters/Options Shot/active" = false
+"parameters/Options Shot/internal_active" = false
+"parameters/Options Shot/request" = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -223,5 +676,12 @@ libraries = {
 [connection signal="focus_entered" from="Main Menu/Main Buttons/Start" to="." method="on_grab_focus"]
 [connection signal="pressed" from="Main Menu/Main Buttons/Start" to="." method="send_to_test_room"]
 [connection signal="focus_entered" from="Main Menu/Main Buttons/Options" to="." method="on_grab_focus"]
+[connection signal="pressed" from="Main Menu/Main Buttons/Options" to="." method="switch_to_options"]
 [connection signal="focus_entered" from="Main Menu/Main Buttons/Quit" to="." method="on_grab_focus"]
 [connection signal="pressed" from="Main Menu/Main Buttons/Quit" to="." method="quit_game"]
+[connection signal="toggled" from="Options/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle" to="." method="toggle_fullscreen"]
+[connection signal="toggled" from="Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="." method="toggle_fs_stretch"]
+[connection signal="tree_exited" from="Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="." method="toggle_fs_stretch"]
+[connection signal="pressed" from="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Left" to="." method="change_scale" binds= [-1]]
+[connection signal="pressed" from="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Right" to="." method="change_scale" binds= [1]]
+[connection signal="pressed" from="Options/VBoxContainer2/Back/HBoxContainer/Back Button" to="." method="switch_to_main"]

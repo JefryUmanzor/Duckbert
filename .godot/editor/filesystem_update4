@@ -1,9 +1,11 @@
-res://Packed Scenes/GUI.tscn
+res://Rooms/Main Menu.tscn
+res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
 res://Shaders/PlayerParticleShader.gdshader
 res://Materials/Player Particle Material.tres
 res://Shaders/HudShader.gdshader
+res://Materials/GUI/HUD Material.tres
 res://Shaders/PaletteShader.gdshader
 res://Materials/GUI/MAT Button Outline.tres
 res://Materials/Player Material.tres
@@ -13,17 +15,7 @@ res://Materials/Tileset Materials/MAT Pipe BG.tres
 res://Tilesets/TS Pipes.tres
 res://Materials/Tileset Materials/MAT Pipe Teal.tres
 res://Tilesets/TS Pipes BG.tres
-res://Packed Scenes/Flag.tscn
-res://Rooms/Test Room.tscn
-res://GUI Theme/THEME Default.tres
-res://Scripts/HUD.gd
-res://GUI Theme/Style Boxes/StyleBox Selected.res
-res://Rooms/Main Menu.tscn
 res://Scripts/GUI/MainMenuScript.gd
-res://Materials/GUI/HUD Material.tres
-res://Packed Scenes/GUI/Default Button.tscn
-res://Packed Scenes/Player.tscn
-res://Scripts/PlayerAction.gd
-res://Scripts/Player.gd
+res://Rooms/Test Room.tscn
 res://GUI Theme/Style Boxes/StyleBox Hover.res
-res://Packed Scenes/GUI/GUI.tscn
+res://Scripts/OptionsHolder.gd

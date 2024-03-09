@@ -1,14 +1,14 @@
+Label
+Button
 Control
 Panel
 HBoxContainer
+CheckBox
 VBoxContainer
-Label
 AnimationTree
 AnimationPlayer
 Container
 NinePatchRect
-Button
 AudioStreamPlayer
 CanvasLayer
 ColorRect
-Node

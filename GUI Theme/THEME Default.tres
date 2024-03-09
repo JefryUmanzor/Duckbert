@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://csiun6qsg7qmf"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://csiun6qsg7qmf"]
 
 [ext_resource type="StyleBox" uid="uid://dyidxbw2tsioi" path="res://GUI Theme/Style Boxes/StyleBox Disabled.res" id="1_jg3l5"]
 [ext_resource type="StyleBox" uid="uid://cmyon4bxyfsx2" path="res://GUI Theme/Style Boxes/StyleBox Normal.res" id="2_pa12t"]
@@ -6,6 +6,8 @@
 [ext_resource type="StyleBox" uid="uid://g2pgesk2cant" path="res://GUI Theme/Style Boxes/StyleBox Hover.res" id="3_vmoui"]
 [ext_resource type="StyleBox" uid="uid://bpn3vi2csgftb" path="res://GUI Theme/Style Boxes/StyleBox Pressed.res" id="4_y2lah"]
 [ext_resource type="Texture2D" uid="uid://b00wl104iql7k" path="res://Sprites/UI/Pause Gradient.png" id="5_w4i0q"]
+[ext_resource type="Texture2D" uid="uid://dfej27ct4p6eq" path="res://Sprites/UI/SPR Check.png" id="6_xn3oi"]
+[ext_resource type="Texture2D" uid="uid://dkhir8d847dxq" path="res://Sprites/UI/SPR UnCheck.png" id="7_nqinf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rqm7"]
 texture = ExtResource("5_w4i0q")
@@ -18,4 +20,14 @@ Button/styles/focus = ExtResource("3_56w5w")
 Button/styles/hover = ExtResource("3_vmoui")
 Button/styles/normal = ExtResource("2_pa12t")
 Button/styles/pressed = ExtResource("4_y2lah")
+CheckBox/icons/checked = ExtResource("6_xn3oi")
+CheckBox/icons/checked_disabled = ExtResource("6_xn3oi")
+CheckBox/icons/unchecked = ExtResource("7_nqinf")
+CheckBox/icons/unchecked_disabled = ExtResource("7_nqinf")
+CheckBox/styles/disabled = ExtResource("1_jg3l5")
+CheckBox/styles/focus = ExtResource("3_56w5w")
+CheckBox/styles/hover = ExtResource("3_vmoui")
+CheckBox/styles/hover_pressed = ExtResource("4_y2lah")
+CheckBox/styles/normal = ExtResource("2_pa12t")
+CheckBox/styles/pressed = ExtResource("4_y2lah")
 Panel/styles/panel = SubResource("StyleBoxTexture_0rqm7")

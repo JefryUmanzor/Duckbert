@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Duckbert"
-run/main_scene="res://Rooms/Test Room.tscn"
+run/main_scene="res://Rooms/Main Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
@@ -22,6 +22,7 @@ boot_splash/use_filter=false
 window/size/viewport_width=256
 window/size/viewport_height=224
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
