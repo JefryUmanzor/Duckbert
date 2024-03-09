@@ -9,7 +9,7 @@
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 16
 Button/styles/disabled = ExtResource("1_jg3l5")
-Button/styles/focus = ExtResource("2_pa12t")
+Button/styles/focus = ExtResource("3_56w5w")
 Button/styles/hover = ExtResource("3_56w5w")
 Button/styles/normal = ExtResource("2_pa12t")
 Button/styles/pressed = ExtResource("4_y2lah")

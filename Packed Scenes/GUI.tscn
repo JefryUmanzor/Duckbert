@@ -256,3 +256,6 @@ anim_player = NodePath("../AnimationPlayer")
 "parameters/Level Clear Shot/internal_active" = false
 "parameters/Level Clear Shot/request" = 0
 "parameters/UI Blend/blend_amount" = 0.0
+
+[connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="." method="on_mouse_enter"]
+[connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="." method="on_mouse_enter"]
