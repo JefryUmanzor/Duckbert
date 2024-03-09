@@ -27,3 +27,6 @@ res://Packed Scenes/Spring.tscn
 res://Packed Scenes/Spring Big.tscn
 res://Scripts/DuckbergAnimHandler.gd
 res://Rooms/Base Room.tscn
+res://Scripts/Backend/OptionsData.gd
+res://Scripts/Backend/OptionsHolder.gd
+res://Scripts/GUI/HUD.gd

@@ -17,6 +17,10 @@ boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 
+[autoload]
+
+SaveLoadHandler="*res://Scripts/Backend/OptionsHolder.gd"
+
 [display]
 
 window/size/viewport_width=256

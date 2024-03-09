@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjcdqvtqkg1n2"]
 
-[ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_njc8i"]
-[ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="2_c2yea"]
+[ext_resource type="Script" path="res://Scripts/Helper/ParticleHandler.gd" id="1_njc8i"]
+[ext_resource type="Script" path="res://Scripts/Helper/DestroyParent.gd" id="2_c2yea"]
 [ext_resource type="Material" uid="uid://d03movyvcpo5w" path="res://Materials/Player Particle Material NoFlash.tres" id="3_vs6xg"]
 [ext_resource type="Texture2D" uid="uid://bjbmntitbpe3n" path="res://Sprites/Particles/SPR Feather Particle.png" id="4_hnxs0"]
 [ext_resource type="Texture2D" uid="uid://6mkxaocyipw6" path="res://Sprites/Particles/SPR Feather Particle 2.png" id="5_soee5"]

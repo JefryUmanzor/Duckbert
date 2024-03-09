@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhhjbw8o4gyvi"]
 
-[ext_resource type="Script" path="res://Scripts/ParticleHandler.gd" id="1_xx5cb"]
+[ext_resource type="Script" path="res://Scripts/Helper/ParticleHandler.gd" id="1_xx5cb"]
 [ext_resource type="Texture2D" uid="uid://dqm0eq0nje16h" path="res://Sprites/Particles/Particle 1.png" id="2_efgfs"]
 [ext_resource type="Material" uid="uid://drijph2mred7s" path="res://Materials/Particle Material.tres" id="2_k1lq1"]
-[ext_resource type="Script" path="res://Scripts/DestroyParent.gd" id="3_38h3g"]
+[ext_resource type="Script" path="res://Scripts/Helper/DestroyParent.gd" id="3_38h3g"]
 
 [sub_resource type="Curve" id="Curve_laph2"]
 max_value = 75.0

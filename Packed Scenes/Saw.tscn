@@ -2,8 +2,8 @@
 
 [ext_resource type="Material" uid="uid://bbff42pqthcde" path="res://Materials/Hazard Material.tres" id="1_bgasx"]
 [ext_resource type="Texture2D" uid="uid://22c0ukia6jir" path="res://Sprites/Assets/Saw.png" id="1_ptl72"]
-[ext_resource type="Script" path="res://Scripts/BaseHazardScript.gd" id="1_thkb3"]
-[ext_resource type="Script" path="res://Scripts/ConstantRotate.gd" id="2_og26b"]
+[ext_resource type="Script" path="res://Scripts/Assets/BaseHazardScript.gd" id="1_thkb3"]
+[ext_resource type="Script" path="res://Scripts/Helper/ConstantRotate.gd" id="2_og26b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ava7w"]
 radius = 3.5

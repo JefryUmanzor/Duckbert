@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://chbr134ce7pte"]
 
-[ext_resource type="Script" path="res://Scripts/SpringScript.gd" id="1_3hsk2"]
+[ext_resource type="Script" path="res://Scripts/Assets/SpringScript.gd" id="1_3hsk2"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="2_2qjqw"]
 [ext_resource type="Texture2D" uid="uid://dsyxw83uvmy3c" path="res://Sprites/Assets/Spring.png" id="2_qtb6r"]
 [ext_resource type="Texture2D" uid="uid://bqp43o55tsqoe" path="res://Palettes/PAL Spring.png" id="3_rslr1"]

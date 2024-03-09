@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bidwvipwp45l8"]
 
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_ab7yy"]
-[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="2_3y7mo"]
+[ext_resource type="Script" path="res://Scripts/Helper/CameraScript.gd" id="2_3y7mo"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="2_w7211"]
 [ext_resource type="PackedScene" uid="uid://dmr5qu0rtvr2t" path="res://Packed Scenes/Flag.tscn" id="3_u0l4i"]
 [ext_resource type="Material" uid="uid://cm8k2eqkq2id5" path="res://Materials/Tileset Materials/MAT Pipe Teal.tres" id="4_nmo02"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://dmr5qu0rtvr2t"]
 
 [ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="1_22ivd"]
-[ext_resource type="Script" path="res://Scripts/Flag.gd" id="1_s6j4l"]
+[ext_resource type="Script" path="res://Scripts/Assets/Flag.gd" id="1_s6j4l"]
 [ext_resource type="Texture2D" uid="uid://ckxgl8k4lwc4q" path="res://Sprites/Assets/Flag.png" id="2_5w4at"]
-[ext_resource type="Script" path="res://Scripts/StartDefaultAnim.gd" id="3_hdpfa"]
+[ext_resource type="Script" path="res://Scripts/Helper/StartDefaultAnim.gd" id="3_hdpfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2x2x"]
 size = Vector2(16, 16)

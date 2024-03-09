@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_5ogpg"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="1_j0x27"]
 [ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Saw.tscn" id="2_hcdgw"]
-[ext_resource type="Script" path="res://Scripts/CameraScript.gd" id="2_pday0"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="2_uyveh"]
+[ext_resource type="Script" path="res://Scripts/Helper/CameraScript.gd" id="3_5vkis"]
 [ext_resource type="PackedScene" uid="uid://dmr5qu0rtvr2t" path="res://Packed Scenes/Flag.tscn" id="3_errgd"]
 [ext_resource type="Material" uid="uid://u4kicacicut7" path="res://Materials/Tileset Materials/MAT Pipe BG.tres" id="3_jtj3v"]
 [ext_resource type="Texture2D" uid="uid://ci270v854o1gp" path="res://Sprites/Backgrounds/Dither BG.png" id="4_8lmaw"]
@@ -91,7 +91,7 @@ process_mode = 1
 [node name="Camera2D" type="Camera2D" parent="Pausable" node_paths=PackedStringArray("target", "bounds")]
 material = SubResource("ShaderMaterial_1bm0u")
 position = Vector2(-512, 104)
-script = ExtResource("2_pday0")
+script = ExtResource("3_5vkis")
 target = NodePath("../Player")
 bounds = NodePath("../Camera Collision/CollisionShape2D")
 
@@ -101,7 +101,7 @@ size = Vector2i(256, 224)
 [node name="Camera2D2" type="Camera2D" parent="Pausable/SubViewport" node_paths=PackedStringArray("target", "bounds")]
 material = SubResource("ShaderMaterial_1bm0u")
 position = Vector2(-512, 104)
-script = ExtResource("2_pday0")
+script = ExtResource("3_5vkis")
 target = NodePath("../../Player")
 bounds = NodePath("../../Camera Collision/CollisionShape2D")
 

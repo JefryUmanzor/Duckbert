@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfjnc6p3qiy2k"]
 
-[ext_resource type="Script" path="res://Scripts/PathFollower.gd" id="1_fh6ka"]
+[ext_resource type="Script" path="res://Scripts/Assets/PathFollower.gd" id="1_fh6ka"]
 [ext_resource type="Texture2D" uid="uid://b1vfybvf33s1h" path="res://Sprites/Assets/Path Trail.png" id="2_6sahj"]
-[ext_resource type="Script" path="res://Scripts/LineAutoGenerate.gd" id="3_vvij5"]
+[ext_resource type="Script" path="res://Scripts/Assets/LineAutoGenerate.gd" id="3_vvij5"]
 
 [sub_resource type="Curve2D" id="Curve2D_hb6lq"]
 _data = {
