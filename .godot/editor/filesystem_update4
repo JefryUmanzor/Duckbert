@@ -24,3 +24,5 @@ res://Materials/GUI/HUD Material.tres
 res://Packed Scenes/GUI/Default Button.tscn
 res://Packed Scenes/Player.tscn
 res://Scripts/PlayerAction.gd
+res://Scripts/Player.gd
+res://GUI Theme/Style Boxes/StyleBox Hover.res

@@ -115,7 +115,7 @@ shape = SubResource("RectangleShape2D_2011j")
 disabled = true
 
 [node name="Player" parent="Pausable" instance=ExtResource("1_j0x27")]
-position = Vector2(-512, 96)
+position = Vector2(-484, 96)
 max_coyote_time = 0.12
 
 [node name="Flag" parent="Pausable" instance=ExtResource("3_errgd")]

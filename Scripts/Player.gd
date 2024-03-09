@@ -40,11 +40,17 @@ var turning_around = false;
 var can_control : bool = true;
 
 @onready var sfx : PlayerSFX = $SFX
+var hud : HUD = null;
 
 func _ready():
+	hud = get_tree().current_scene.get_node("GUI") as HUD;
+	
 	starting_action = wrapi(starting_action, 0, actions.get_child_count());
 	current_action = actions.get_child(starting_action) as PlayerAction;
 	current_action._on_enable_action();
+	
+	hud.on_action_switch(current_action.action_name);
+	
 	can_control = true;
 
 func _process(delta):
@@ -150,6 +156,8 @@ func change_ability(action_index):
 		
 		current_action =  target_action as PlayerAction;
 		current_action._on_enable_action();
+		
+		hud.on_action_switch(current_action.action_name);
 		
 		if start_timer <= 0:
 			create_ability_particle();
