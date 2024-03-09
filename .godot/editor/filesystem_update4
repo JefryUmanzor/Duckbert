@@ -19,3 +19,5 @@ res://Scripts/GUI/MainMenuScript.gd
 res://Rooms/Test Room.tscn
 res://GUI Theme/Style Boxes/StyleBox Hover.res
 res://Scripts/OptionsHolder.gd
+res://Packed Scenes/GUI/GUI.tscn
+res://Scripts/HUD.gd

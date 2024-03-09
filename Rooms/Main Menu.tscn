@@ -290,7 +290,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -6.10352e-05
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -302,7 +301,7 @@ anchor_top = 0.5
 anchor_right = 0.4
 anchor_bottom = 1.0
 offset_top = -2.0
-offset_right = 12.0
+offset_bottom = -1.0
 grow_vertical = 2
 
 [node name="Start" parent="Main Menu/Main Buttons" instance=ExtResource("1_42oty")]
@@ -443,98 +442,6 @@ focus_neighbor_bottom = NodePath("../../../Music Holder/HBoxContainer/Music Togg
 focus_next = NodePath("../../../Fullscreen Holder/HBoxContainer/Fullscreen Toggle")
 focus_previous = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
 theme = ExtResource("4_q26nb")
-
-[node name="Window Scale Holder" type="Panel" parent="Options/VBoxContainer2"]
-visible = false
-material = ExtResource("4_csgxu")
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("4_q26nb")
-theme_override_styles/panel = ExtResource("6_m2usd")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer2/Window Scale Holder"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
-material = ExtResource("4_csgxu")
-layout_mode = 2
-size_flags_horizontal = 3
-text = " Window Scale"
-vertical_alignment = 1
-
-[node name="Scale Left" type="Button" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
-material = ExtResource("4_csgxu")
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.15
-focus_neighbor_left = NodePath("../Scale Right")
-focus_neighbor_top = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
-focus_neighbor_right = NodePath("../Scale Right")
-focus_neighbor_bottom = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
-focus_next = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
-focus_previous = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
-theme = ExtResource("4_q26nb")
-theme_override_font_sizes/font_size = 8
-text = "
-"
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Left"]
-material = ExtResource("4_csgxu")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "<"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Scale Text" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
-material = ExtResource("4_csgxu")
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.1
-text = "1x"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Scale Right" type="Button" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer"]
-material = ExtResource("4_csgxu")
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.15
-focus_neighbor_left = NodePath("../Scale Left")
-focus_neighbor_top = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
-focus_neighbor_right = NodePath("../Scale Left")
-focus_neighbor_bottom = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
-focus_next = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
-focus_previous = NodePath("../../../Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle")
-theme = ExtResource("4_q26nb")
-theme_override_font_sizes/font_size = 8
-text = "
-"
-
-[node name="Label" type="Label" parent="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Right"]
-material = ExtResource("4_csgxu")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = ">"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Music Holder" type="Panel" parent="Options/VBoxContainer2"]
 material = ExtResource("4_csgxu")
@@ -681,7 +588,4 @@ libraries = {
 [connection signal="pressed" from="Main Menu/Main Buttons/Quit" to="." method="quit_game"]
 [connection signal="toggled" from="Options/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle" to="." method="toggle_fullscreen"]
 [connection signal="toggled" from="Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="." method="toggle_fs_stretch"]
-[connection signal="tree_exited" from="Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="." method="toggle_fs_stretch"]
-[connection signal="pressed" from="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Left" to="." method="change_scale" binds= [-1]]
-[connection signal="pressed" from="Options/VBoxContainer2/Window Scale Holder/HBoxContainer/Scale Right" to="." method="change_scale" binds= [1]]
 [connection signal="pressed" from="Options/VBoxContainer2/Back/HBoxContainer/Back Button" to="." method="switch_to_main"]

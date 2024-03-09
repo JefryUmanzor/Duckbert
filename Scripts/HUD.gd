@@ -10,6 +10,7 @@ var level_cleared = false;
 var focused = false;
 
 var paused = false;
+var in_options = false;
 
 @onready var resume = $"Base/Pause Panel/HBoxContainer/VBoxContainer/Resume"
 @onready var restart = $"Base/Pause Panel/HBoxContainer/VBoxContainer/Restart"
@@ -21,20 +22,27 @@ var player : Player = null;
 
 @onready var action_text = $Base/Hud/ActionText
 
+@onready var fullscreen_toggle = $"Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle"
+
+
 func _ready():
 	player = get_tree().current_scene.get_node("Pausable").get_node("Player") as Player;
 
 func _process(delta):
 	if Input.is_action_just_pressed("Pause") and not level_cleared:
-		paused = !paused;
-		if paused:
-			player.can_control = false;
-			animation_tree.set("parameters/UI Blend/blend_amount", -1.0);
-			animation_tree.set("parameters/Pause Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
-			
-			resume.grab_focus();
+		if not in_options:
+			paused = !paused;
+			if paused:
+				player.can_control = false;
+				animation_tree.set("parameters/UI Blend/blend_amount", -1.0);
+				animation_tree.set("parameters/Pause Blend/blend_amount", 0.0);
+				animation_tree.set("parameters/Pause Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+				
+				resume.grab_focus();
+			else:
+				unpause();
 		else:
-			unpause();
+			exit_options();
 
 func unpause():
 	paused = false;
@@ -48,6 +56,17 @@ func unpause():
 	options.release_focus();
 	pause_level_select.release_focus();
 	main_menu.release_focus();
+
+func exit_options():
+	in_options = false;
+	options.grab_focus();
+	animation_tree.set("parameters/Pause Blend/blend_amount", 0.0);
+	animation_tree.set("parameters/Exit Options Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+func enter_options():
+	in_options = false;
+	fullscreen_toggle.grab_focus();
+	animation_tree.set("parameters/Pause Blend/blend_amount", 1.0);
+	animation_tree.set("parameters/Options Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 
 func restart_scene():
 	get_tree().reload_current_scene();
@@ -68,3 +87,14 @@ func on_action_switch(new_text : String):
 		action_text.text = "Press to: " + new_text;
 	else:
 		action_text.text = "No action"
+
+func toggle_fullscreen(fullscreen):
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN);
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED);
+func toggle_fs_stretch(stretch):
+	if stretch:
+		get_tree().root.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_FRACTIONAL;
+	else:
+		get_tree().root.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_INTEGER;
