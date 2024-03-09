@@ -1,3 +1,9 @@
+ParallaxLayer
+Camera2D
+TileMap
+Sprite2D
+ParallaxBackground
+Node
 HBoxContainer
 Label
 Button
@@ -6,9 +12,3 @@ Panel
 CheckBox
 VBoxContainer
 AnimationTree
-AnimationPlayer
-Container
-NinePatchRect
-AudioStreamPlayer
-CanvasLayer
-ColorRect

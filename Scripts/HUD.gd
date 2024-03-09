@@ -28,7 +28,7 @@ var player : Player = null;
 func _ready():
 	player = get_tree().current_scene.get_node("Pausable").get_node("Player") as Player;
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Pause") and not level_cleared:
 		if not in_options:
 			paused = !paused;

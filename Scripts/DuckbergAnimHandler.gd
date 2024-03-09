@@ -33,10 +33,10 @@ func remove_palette():
 	sprite.material.set_shader_parameter("use_palette", true);
 
 func create_land_particle():
-	var floor = player.up_direction.y < 0;
+	var floor_down = player.up_direction.y < 0;
 	var particle = LAND_PARTICLE.instantiate();
 	get_tree().current_scene.get_node("Pausable").add_child(particle);
-	particle.global_position = player.global_position + (Vector2.UP * (0.0 if floor else 12.0));
+	particle.global_position = player.global_position + (Vector2.UP * (0.0 if floor_down else 12.0));
 
 func play_jump():
 	if scale_animation.is_playing():
