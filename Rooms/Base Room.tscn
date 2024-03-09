@@ -16,6 +16,7 @@ size = Vector2(304, 208)
 [node name="Room" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource("1_ab7yy")]
+visible = false
 
 [node name="Pausable" type="Node" parent="."]
 

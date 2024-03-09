@@ -31,6 +31,7 @@ var options_loaded : bool = false;
 var save_data : Options;
 
 func _ready():
+	visible = true;
 	player = get_tree().current_scene.get_node("Pausable").get_node("Player") as Player;
 	save_data = get_tree().current_scene.get_node("/root/SaveLoadHandler") as Options;
 
@@ -47,20 +48,21 @@ func _process(_delta):
 		if save_data.options_loaded:
 			on_options_loaded();
 	
-	if Input.is_action_just_pressed("Pause") and not level_cleared:
-		if not in_options:
-			paused = !paused;
-			if paused:
-				player.can_control = false;
-				animation_tree.set("parameters/UI Blend/blend_amount", -1.0);
-				animation_tree.set("parameters/Pause Blend/blend_amount", 0.0);
-				animation_tree.set("parameters/Pause Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
-				
-				resume.grab_focus();
+	if not player.special_intro:
+		if Input.is_action_just_pressed("Pause") and not level_cleared:
+			if not in_options:
+				paused = !paused;
+				if paused:
+					player.can_control = false;
+					animation_tree.set("parameters/UI Blend/blend_amount", -1.0);
+					animation_tree.set("parameters/Pause Blend/blend_amount", 0.0);
+					animation_tree.set("parameters/Pause Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+					
+					resume.grab_focus();
+				else:
+					unpause();
 			else:
-				unpause();
-		else:
-			exit_options();
+				exit_options();
 
 func unpause():
 	paused = false;

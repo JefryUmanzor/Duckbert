@@ -38,6 +38,7 @@ var is_on_spring = false;
 var turning_around = false;
 
 var can_control : bool = true;
+@export var special_intro = false;
 
 @onready var sfx : PlayerSFX = $SFX
 var hud : HUD = null;
@@ -51,7 +52,7 @@ func _ready():
 	
 	hud.on_action_switch(current_action.action_name);
 	
-	can_control = true;
+	can_control = !special_intro;
 
 func _process(delta):
 	if can_control:
@@ -94,7 +95,14 @@ func _process(delta):
 		start_timer -= delta;
 		
 		if abs(velocity.y) > 0.0 and sign(velocity.y) == sign(up_direction.y):
-			coyote_timer = 0.0; 
+			coyote_timer = 0.0;
+	elif special_intro:
+		if is_on_floor():
+			special_intro = false;
+			can_control = true;
+			
+			anim.play_land_squash();
+			sfx.play_land_sfx();
 
 func reset_coyote_timer():
 	coyote_timer = 0.0;

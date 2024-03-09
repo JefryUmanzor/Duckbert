@@ -84,6 +84,7 @@ size = Vector2(400, 136)
 [node name="Node2D" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource("1_5ogpg")]
+visible = false
 
 [node name="Pausable" type="Node" parent="."]
 process_mode = 1

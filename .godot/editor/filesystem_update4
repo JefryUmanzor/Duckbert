@@ -30,3 +30,5 @@ res://Rooms/Base Room.tscn
 res://Scripts/Backend/OptionsData.gd
 res://Scripts/Backend/OptionsHolder.gd
 res://Scripts/GUI/HUD.gd
+res://Rooms/Main Levels/Level 1.tscn
+res://Scripts/Player/Player.gd
