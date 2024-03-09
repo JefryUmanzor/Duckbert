@@ -33,6 +33,11 @@ func switch_to_main():
 	animation_tree.set("parameters/Blend/blend_amount", 0.0);
 	options_button.grab_focus();
 
+func toggle_music(music_on):
+	AudioServer.set_bus_mute(1, !music_on);
+func toggle_sfx(sfx_on):
+	AudioServer.set_bus_mute(2, !sfx_on);
+
 func toggle_fullscreen(fullscreen):
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN);

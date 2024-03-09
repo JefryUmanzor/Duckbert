@@ -63,10 +63,15 @@ func exit_options():
 	animation_tree.set("parameters/Pause Blend/blend_amount", 0.0);
 	animation_tree.set("parameters/Exit Options Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 func enter_options():
-	in_options = false;
+	in_options = true;
 	fullscreen_toggle.grab_focus();
 	animation_tree.set("parameters/Pause Blend/blend_amount", 1.0);
 	animation_tree.set("parameters/Options Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+
+func toggle_music(music_on):
+	AudioServer.set_bus_mute(1, !music_on);
+func toggle_sfx(sfx_on):
+	AudioServer.set_bus_mute(2, !sfx_on);
 
 func restart_scene():
 	get_tree().reload_current_scene();

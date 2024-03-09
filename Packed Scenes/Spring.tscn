@@ -238,10 +238,12 @@ parameters/TimeScale/scale = 1.5
 [node name="Bounce SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bkgdh")
 volume_db = 2.5
+bus = &"SFX"
 
 [node name="Down SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ihrr7")
 volume_db = -2.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="on_player_enter"]
 [connection signal="body_exited" from="Area2D" to="." method="on_player_exit"]

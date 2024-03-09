@@ -361,19 +361,24 @@ flap_pitch_max = 0.9
 
 [node name="Step SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("12_ukcwm")
+bus = &"SFX"
 
 [node name="Land SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("14_ca8fd")
 volume_db = -2.0
+bus = &"SFX"
 
 [node name="Jump SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("15_4qd0n")
 volume_db = 4.0
+bus = &"SFX"
 
 [node name="Gravity SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("16_4n5jt")
 volume_db = -3.0
+bus = &"SFX"
 
 [node name="Flap SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("17_3cneq")
 volume_db = -3.5
+bus = &"SFX"

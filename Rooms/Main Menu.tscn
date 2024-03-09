@@ -105,8 +105,8 @@ tracks/3/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ykf1m"]
-resource_name = "Options Transition"
+[sub_resource type="Animation" id="Animation_6456o"]
+resource_name = "OptMain Transition"
 length = 0.22
 step = 0.05
 tracks/0/type = "value"
@@ -117,9 +117,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 2, 1),
+"transitions": PackedFloat32Array(1, 1.5, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-10, 0), Vector2(256, 0)]
+"values": [Vector2(256, 0), Vector2(272, 0), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -129,9 +129,9 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 2, 1),
+"transitions": PackedFloat32Array(1, 1.5, 1),
 "update": 0,
-"values": [Vector2(-256, 0), Vector2(-266, 0), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(16, 0), Vector2(-256, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wh0r7"]
@@ -163,6 +163,35 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ykf1m"]
+resource_name = "Options Transition"
+length = 0.22
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-10, 0), Vector2(256, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(-256, 0), Vector2(-266, 0), Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_uevt4"]
 resource_name = "RESET"
 tracks/0/type = "value"
@@ -188,35 +217,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.4]
-}
-
-[sub_resource type="Animation" id="Animation_6456o"]
-resource_name = "OptMain Transition"
-length = 0.22
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main Menu:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1.5, 1),
-"update": 0,
-"values": [Vector2(256, 0), Vector2(272, 0), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1.5, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(16, 0), Vector2(-256, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ra4av"]
@@ -588,4 +588,6 @@ libraries = {
 [connection signal="pressed" from="Main Menu/Main Buttons/Quit" to="." method="quit_game"]
 [connection signal="toggled" from="Options/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle" to="." method="toggle_fullscreen"]
 [connection signal="toggled" from="Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="." method="toggle_fs_stretch"]
+[connection signal="toggled" from="Options/VBoxContainer2/Music Holder/HBoxContainer/Music Toggle" to="." method="toggle_music"]
+[connection signal="toggled" from="Options/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle" to="." method="toggle_sfx"]
 [connection signal="pressed" from="Options/VBoxContainer2/Back/HBoxContainer/Back Button" to="." method="switch_to_main"]

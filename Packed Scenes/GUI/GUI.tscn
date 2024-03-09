@@ -1,25 +1,35 @@
-[gd_scene load_steps=45 format=3 uid="uid://cdbcsqv2nym4g"]
+[gd_scene load_steps=47 format=3 uid="uid://cdbcsqv2nym4g"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_a27be"]
 [ext_resource type="Material" uid="uid://buge3kmf8oo40" path="res://Materials/GUI/HUD Material.tres" id="2_a2cuw"]
-[ext_resource type="Material" uid="uid://biy86xh73p2cn" path="res://Materials/GUI/MAT Button Outline.tres" id="3_gxdlu"]
 [ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="3_hpjrx"]
 [ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="4_thtp2"]
 [ext_resource type="StyleBox" uid="uid://brfdy7wimc62d" path="res://GUI Theme/Style Boxes/Stylebox Panel Override.tres" id="5_j41fa"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="5_lvs6q"]
 [ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Palettes/PAL Red.png" id="6_wsjll"]
 [ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="7_gk263"]
+[ext_resource type="Texture2D" uid="uid://c6el0kgeg7p8e" path="res://Palettes/PAL Blue.png" id="7_lpqoo"]
 [ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="8_nqud2"]
 [ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="9_h3u6i"]
 [ext_resource type="Texture2D" uid="uid://djb1ho6g3yfqv" path="res://Sprites/UI/SPR UI Box Transparent.png" id="10_b3hf1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_85u14"]
-line_spacing = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6i2nt"]
 shader = ExtResource("5_lvs6q")
 shader_parameter/use_palette = true
 shader_parameter/current_palette = ExtResource("6_wsjll")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_60qvm"]
+shader = ExtResource("5_lvs6q")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("7_lpqoo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r4lgk"]
+shader = ExtResource("5_lvs6q")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("7_lpqoo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_85u14"]
+line_spacing = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ljwdg"]
 font_size = 12
@@ -634,7 +644,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Fullscreen Holder" type="Panel" parent="Base/Options/HBoxContainer/VBoxContainer2"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_hpjrx")
@@ -653,7 +663,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -661,7 +671,7 @@ text = "Fullscreen"
 vertical_alignment = 1
 
 [node name="Fullscreen Toggle" type="CheckBox" parent="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_60qvm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
@@ -674,7 +684,7 @@ focus_previous = NodePath("../../../Back/HBoxContainer/Back Button")
 theme = ExtResource("3_hpjrx")
 
 [node name="Fullscreen Scale Holder" type="Panel" parent="Base/Options/HBoxContainer/VBoxContainer2"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_hpjrx")
@@ -693,7 +703,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -701,7 +711,7 @@ text = "Stretch"
 vertical_alignment = 1
 
 [node name="Fullscreen Stretch Toggle" type="CheckBox" parent="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_r4lgk")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
@@ -714,7 +724,7 @@ focus_previous = NodePath("../../../Music Holder/HBoxContainer/Music Toggle")
 theme = ExtResource("3_hpjrx")
 
 [node name="Music Holder" type="Panel" parent="Base/Options/HBoxContainer/VBoxContainer2"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_hpjrx")
@@ -733,7 +743,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Base/Options/HBoxContainer/VBoxContainer2/Music Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -741,7 +751,7 @@ text = "Music"
 vertical_alignment = 1
 
 [node name="Music Toggle" type="CheckBox" parent="Base/Options/HBoxContainer/VBoxContainer2/Music Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_r4lgk")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
@@ -755,7 +765,7 @@ theme = ExtResource("3_hpjrx")
 button_pressed = true
 
 [node name="SFX Holder" type="Panel" parent="Base/Options/HBoxContainer/VBoxContainer2"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_hpjrx")
@@ -774,7 +784,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Base/Options/HBoxContainer/VBoxContainer2/SFX Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -782,7 +792,7 @@ text = "SFX"
 vertical_alignment = 1
 
 [node name="SFX Toggle" type="CheckBox" parent="Base/Options/HBoxContainer/VBoxContainer2/SFX Holder/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_r4lgk")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
@@ -790,7 +800,7 @@ theme = ExtResource("3_hpjrx")
 button_pressed = true
 
 [node name="Back" type="Panel" parent="Base/Options/HBoxContainer/VBoxContainer2"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_hpjrx")
@@ -809,7 +819,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Base/Options/HBoxContainer/VBoxContainer2/Back/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 12
@@ -817,7 +827,7 @@ text = "Back"
 vertical_alignment = 1
 
 [node name="Back Button" type="Button" parent="Base/Options/HBoxContainer/VBoxContainer2/Back/HBoxContainer"]
-material = ExtResource("3_gxdlu")
+material = SubResource("ShaderMaterial_r4lgk")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
@@ -1093,6 +1103,8 @@ anim_player = NodePath("../AnimationPlayer")
 
 [connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle" to="." method="toggle_fullscreen"]
 [connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="." method="toggle_fs_stretch"]
+[connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/Music Holder/HBoxContainer/Music Toggle" to="." method="toggle_music"]
+[connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle" to="." method="toggle_sfx"]
 [connection signal="pressed" from="Base/Options/HBoxContainer/VBoxContainer2/Back/HBoxContainer/Back Button" to="." method="exit_options"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Resume" to="." method="unpause"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Restart" to="." method="restart_scene"]

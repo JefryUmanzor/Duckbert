@@ -21,3 +21,7 @@ res://GUI Theme/Style Boxes/StyleBox Hover.res
 res://Scripts/OptionsHolder.gd
 res://Packed Scenes/GUI/GUI.tscn
 res://Scripts/HUD.gd
+res://default_bus_layout.tres
+res://Packed Scenes/Player.tscn
+res://Packed Scenes/Spring.tscn
+res://Packed Scenes/Spring Big.tscn
