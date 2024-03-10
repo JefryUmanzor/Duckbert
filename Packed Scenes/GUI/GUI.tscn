@@ -929,33 +929,17 @@ layout_mode = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../Restart")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../Level Select")
-focus_next = NodePath("../Level Select")
 focus_previous = NodePath("../Restart")
 theme_override_font_sizes/font_size = 9
 text = "Options"
-
-[node name="Level Select" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_thtp2")]
-material = SubResource("ShaderMaterial_6i2nt")
-layout_mode = 2
-focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../Options")
-focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../Main Menu")
-focus_next = NodePath("../Main Menu")
-focus_previous = NodePath("../Options")
-theme_override_font_sizes/font_size = 9
-text = "Level Select"
 
 [node name="Main Menu" parent="Base/Pause Panel/HBoxContainer/VBoxContainer" instance=ExtResource("4_thtp2")]
 material = SubResource("ShaderMaterial_6i2nt")
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../Level Select")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../Resume")
 focus_next = NodePath("../Resume")
-focus_previous = NodePath("../Level Select")
 theme_override_font_sizes/font_size = 9
 text = "Main Menu
 "
@@ -1053,9 +1037,14 @@ size_flags_stretch_ratio = 0.25
 material = SubResource("ShaderMaterial_7g5tl")
 layout_mode = 2
 size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Level Select")
+focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../Level Select")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../Level Select")
+focus_previous = NodePath("../Level Select")
 theme_override_font_sizes/font_size = 10
-text = "Test Room"
+text = "Next Level"
 
 [node name="Container" type="Control" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -1067,8 +1056,13 @@ material = SubResource("ShaderMaterial_7g5tl")
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Next Level")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Next Level")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../Next Level")
+focus_previous = NodePath("../Next Level")
 theme_override_font_sizes/font_size = 10
-text = "Quit Game"
+text = "Main Menu"
 
 [node name="Bottom Margin" type="Control" parent="Base/Level Clear Holder/VBoxContainer"]
 layout_mode = 2
@@ -1135,16 +1129,11 @@ bus = &"SFX"
 [connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Options" to="MoveSFX" method="play"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Options" to="." method="enter_options"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Options" to="PressSFX" method="play"]
-[connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Level Select" to="MoveSFX" method="play"]
-[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Level Select" to="PressSFX" method="play"]
 [connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu" to="MoveSFX" method="play"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu" to="." method="go_to_main_menu"]
-[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu" to="PressSFX" method="play"]
 [connection signal="focus_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="MoveSFX" method="play"]
 [connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="." method="on_mouse_enter"]
-[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="." method="go_to_main_menu"]
-[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="PressSFX" method="play"]
+[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="." method="go_to_next_level"]
 [connection signal="focus_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="MoveSFX" method="play"]
 [connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="." method="on_mouse_enter"]
-[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="." method="quit_game"]
-[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="PressSFX" method="play"]
+[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="." method="go_to_main_menu"]

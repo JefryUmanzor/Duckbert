@@ -37,6 +37,8 @@ func change_track(scene_name):
 		menu_music.play();
 		return;
 	if scene_name == "Level 1":
+		if music_playing & 4 != 0:
+			return;
 		stop_all_tracks();
 		return;
 	if scene_name == "World 1":

@@ -15,7 +15,6 @@ var in_options = false;
 @onready var resume = $"Base/Pause Panel/HBoxContainer/VBoxContainer/Resume"
 @onready var restart = $"Base/Pause Panel/HBoxContainer/VBoxContainer/Restart"
 @onready var options = $"Base/Pause Panel/HBoxContainer/VBoxContainer/Options"
-@onready var pause_level_select = $"Base/Pause Panel/HBoxContainer/VBoxContainer/Level Select"
 @onready var main_menu = $"Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu"
 
 var player : Player = null;
@@ -74,7 +73,6 @@ func unpause():
 	resume.release_focus();
 	restart.release_focus();
 	options.release_focus();
-	pause_level_select.release_focus();
 	main_menu.release_focus();
 
 func exit_options():
@@ -102,8 +100,9 @@ func restart_scene():
 
 func go_to_main_menu():
 	get_tree().current_scene.get_node("/root/RoomChanger").change_room("res://Rooms/Main Menu.tscn");
-func quit_game():
-	get_tree().quit();
+func go_to_next_level():
+	var next_level_path = get_tree().current_scene.next_level_path;
+	get_tree().current_scene.get_node("/root/RoomChanger").change_room(next_level_path);
 
 func level_clear():
 	animation_tree.set("parameters/Level Clear Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);

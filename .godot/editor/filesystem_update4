@@ -26,3 +26,5 @@ res://Scripts/Backend/RoomManager.gd
 res://Scripts/GUI/HUD.gd
 res://Scripts/Player/PlayerSFXScript.gd
 res://Scripts/GUI/MainMenuScript.gd
+res://Packed Scenes/GUI/GUI.tscn
+res://Scripts/LevelHolder.gd

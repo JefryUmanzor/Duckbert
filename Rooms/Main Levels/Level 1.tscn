@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://dep8w4b37cx5"]
+[gd_scene load_steps=24 format=3 uid="uid://dep8w4b37cx5"]
 
+[ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_pxdi2"]
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_tlvw7"]
 [ext_resource type="Script" path="res://Scripts/Helper/CameraScript.gd" id="2_hn6bb"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="3_pmu5b"]
@@ -68,6 +69,7 @@ point_count = 2
 size = Vector2(64, 20)
 
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_pxdi2")
 
 [node name="GUI" parent="." instance=ExtResource("1_tlvw7")]
 visible = false

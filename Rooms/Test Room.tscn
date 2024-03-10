@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://bbxlvdxnpt2j6"]
+[gd_scene load_steps=38 format=3 uid="uid://bbxlvdxnpt2j6"]
 
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_5ogpg"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="1_j0x27"]
+[ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_wm17k"]
 [ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Hazards/Saw.tscn" id="2_hcdgw"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="2_uyveh"]
 [ext_resource type="Script" path="res://Scripts/Helper/CameraScript.gd" id="3_5vkis"]
@@ -82,6 +83,8 @@ size = Vector2(184, 112)
 size = Vector2(400, 136)
 
 [node name="World 1" type="Node2D"]
+script = ExtResource("1_wm17k")
+next_level_path = "res://Rooms/Main Levels/Level 1.tscn"
 
 [node name="GUI" parent="." instance=ExtResource("1_5ogpg")]
 visible = false
