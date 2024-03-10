@@ -16,6 +16,8 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+config/icon="res://Sprites/Icons/Duckbert Icon 256.png"
+config/windows_native_icon="res://Sprites/Icons/DuckbertIcon.ico"
 
 [autoload]
 
