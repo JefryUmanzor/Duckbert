@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cnri2u2a1qkfs"]
+[gd_scene load_steps=45 format=3 uid="uid://cnri2u2a1qkfs"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_fk0wl"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAction.gd" id="2_7voqr"]
@@ -11,9 +11,11 @@
 [ext_resource type="Script" path="res://Scripts/Player/PlayerFlapAction.gd" id="5_ivpuk"]
 [ext_resource type="Texture2D" uid="uid://b1rtpwgakcj66" path="res://Sprites/Duckbert Flap Up Sprite.png" id="6_dqa8q"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerHoverAction.gd" id="6_jgesx"]
-[ext_resource type="Script" path="res://Packed Scenes/PlayerSFXScript.gd" id="12_dxwt0"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerSFXScript.gd" id="12_dxwt0"]
 [ext_resource type="AudioStream" uid="uid://dj2oyi50okb1g" path="res://Audio/SFX/Player/SND Player Walk.wav" id="12_ukcwm"]
+[ext_resource type="AudioStream" uid="uid://02guchdwwv4v" path="res://Audio/SFX/Player/SND Player Fall.wav" id="13_katc7"]
 [ext_resource type="AudioStream" uid="uid://3ugi0rwg3xvx" path="res://Audio/SFX/Player/SND Player Land.wav" id="14_ca8fd"]
+[ext_resource type="AudioStream" uid="uid://tfa45elfuoou" path="res://Audio/SFX/Player/SND Player Fall Land.wav" id="14_nmjuj"]
 [ext_resource type="AudioStream" uid="uid://ym31b3v6dgjp" path="res://Audio/SFX/Player/SND Player Jump.wav" id="15_4qd0n"]
 [ext_resource type="AudioStream" uid="uid://d01c8c33wv4yq" path="res://Audio/SFX/Player/SND Player Gravity.wav" id="16_4n5jt"]
 [ext_resource type="AudioStream" uid="uid://divy52rrlefga" path="res://Audio/SFX/Player/SND Player Flap.wav" id="17_3cneq"]
@@ -259,7 +261,7 @@ nodes/output/position = Vector2(1160, 160)
 node_connections = [&"Add2", 0, &"Gravity Switched", &"Add2", 1, &"SPR Scale", &"Flap Shot", 0, &"Add2", &"Flap Shot", 1, &"Animation 2", &"Gravity Switched", 0, &"Walk Blend", &"Gravity Switched", 1, &"Grav Walk Blend", &"SPR Scale", 0, &"SPR Time", &"SPR Time", 0, &"Animation", &"output", 0, &"Flap Shot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5soe"]
-size = Vector2(16, 16)
+size = Vector2(14, 16)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 32768
@@ -315,7 +317,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_o5soe")
 
@@ -358,6 +359,16 @@ gravity_pitch_min = 1.4
 gravity_pitch_max = 1.5
 flap_pitch_min = 0.75
 flap_pitch_max = 0.9
+
+[node name="Fall SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("13_katc7")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="Fall Land SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("14_nmjuj")
+volume_db = -4.0
+bus = &"SFX"
 
 [node name="Step SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("12_ukcwm")

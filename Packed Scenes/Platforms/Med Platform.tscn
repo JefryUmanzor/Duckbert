@@ -16,10 +16,13 @@ shader_parameter/current_palette = ExtResource("2_yxdgf")
 position = Vector2(24, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_3r66b")
 one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 material = SubResource("ShaderMaterial_8w3kf")
+position = Vector2(0, 4)
 texture = ExtResource("3_ajnwf")

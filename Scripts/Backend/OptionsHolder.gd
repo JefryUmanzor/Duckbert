@@ -51,7 +51,7 @@ func apply_options():
 	
 	get_tree().root.content_scale_stretch = options_save.options.stretch_mode as int;
 	
-	AudioServer.set_bus_mute(1, options_save.options.music_on as bool);
-	AudioServer.set_bus_mute(2, options_save.options.sfx_on as bool);
+	AudioServer.set_bus_mute(1, not(options_save.options.music_on as bool));
+	AudioServer.set_bus_mute(2, not(options_save.options.sfx_on as bool));
 	
 	options_loaded = true;

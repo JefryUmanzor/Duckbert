@@ -18,6 +18,16 @@ extends Node
 @export var flap_pitch_min : float = 0.8;
 @export var flap_pitch_max : float = 1.15;
 
+@onready var fall_sfx = $"Fall SFX"
+@onready var fall_land_sfx = $"Fall Land SFX"
+
+func play_fall_sfx():
+	fall_sfx.play();
+func stop_fall_sfx():
+	fall_sfx.stop();
+func play_fall_land_sfx():
+	fall_land_sfx.play();
+
 func play_step_sfx():
 	step_sfx.stop();
 	step_sfx.pitch_scale = randf_range(step_pitch_min, step_pitch_max);

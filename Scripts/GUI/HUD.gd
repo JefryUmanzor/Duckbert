@@ -101,7 +101,9 @@ func restart_scene():
 	get_tree().reload_current_scene();
 
 func go_to_main_menu():
-	get_tree().change_scene_to_file("res://Rooms/Main Menu.tscn");
+	get_tree().current_scene.get_node("/root/RoomChanger").change_room("res://Rooms/Main Menu.tscn");
+func quit_game():
+	get_tree().quit();
 
 func level_clear():
 	animation_tree.set("parameters/Level Clear Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);

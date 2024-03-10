@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://caa1tt7gmfscc"]
+[gd_scene load_steps=27 format=3 uid="uid://caa1tt7gmfscc"]
 
 [ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="1_42oty"]
 [ext_resource type="Script" path="res://Scripts/GUI/MainMenuScript.gd" id="1_yn63n"]
@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://biy86xh73p2cn" path="res://Materials/GUI/MAT Button Outline.tres" id="4_csgxu"]
 [ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="4_q26nb"]
 [ext_resource type="StyleBox" uid="uid://brfdy7wimc62d" path="res://GUI Theme/Style Boxes/Stylebox Panel Override.tres" id="6_m2usd"]
+[ext_resource type="AudioStream" uid="uid://b3rus0qpfgjiq" path="res://Audio/SFX/UI/SND Menu Button.wav" id="7_eyyxv"]
+[ext_resource type="AudioStream" uid="uid://baiu6wqxit3wk" path="res://Audio/SFX/UI/SND Menu Button Press.wav" id="8_fwbny"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hsml3"]
 shader = ExtResource("3_hdljr")
@@ -276,7 +278,7 @@ nodes/Blend/position = Vector2(-420, 100)
 nodes/output/position = Vector2(980, 80)
 node_connections = [&"Blend", 0, &"Animation", &"Blend", 1, &"Animation 3", &"Main Shot", 0, &"Blend", &"Main Shot", 1, &"Animation 2", &"Options Return Shot", 0, &"Options Shot", &"Options Return Shot", 1, &"Animation 5", &"Options Shot", 0, &"Main Shot", &"Options Shot", 1, &"Animation 4", &"output", 0, &"Options Return Shot"]
 
-[node name="Control" type="Control"]
+[node name="Main Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -579,6 +581,14 @@ parameters/Blend/blend_amount = 0.0
 libraries = {
 "": SubResource("AnimationLibrary_ra4av")
 }
+
+[node name="MoveSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_eyyxv")
+bus = &"SFX"
+
+[node name="PressSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fwbny")
+bus = &"SFX"
 
 [connection signal="focus_entered" from="Main Menu/Main Buttons/Start" to="." method="on_grab_focus"]
 [connection signal="pressed" from="Main Menu/Main Buttons/Start" to="." method="send_to_test_room"]

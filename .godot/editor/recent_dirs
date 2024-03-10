@@ -1,5 +1,6 @@
-res://Rooms/Main Levels
 res://Scripts/Backend
+res://Packed Scenes
+res://Rooms/Main Levels
 res://Rooms
 res://GUI Theme/Style Boxes
 res://GUI Theme
@@ -8,7 +9,6 @@ res://Scripts
 res://Scripts/GUI
 res://Packed Scenes/GUI
 res://Shaders
-res://Packed Scenes
 res://Materials
 res://Packed Scenes/Particles
 res://Sprites/Tilesets

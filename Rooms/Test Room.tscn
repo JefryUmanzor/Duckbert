@@ -2,23 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_5ogpg"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="1_j0x27"]
-[ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Saw.tscn" id="2_hcdgw"]
+[ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Hazards/Saw.tscn" id="2_hcdgw"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="2_uyveh"]
 [ext_resource type="Script" path="res://Scripts/Helper/CameraScript.gd" id="3_5vkis"]
-[ext_resource type="PackedScene" uid="uid://dmr5qu0rtvr2t" path="res://Packed Scenes/Flag.tscn" id="3_errgd"]
+[ext_resource type="PackedScene" uid="uid://dmr5qu0rtvr2t" path="res://Packed Scenes/Assets/Flag.tscn" id="3_errgd"]
 [ext_resource type="Material" uid="uid://u4kicacicut7" path="res://Materials/Tileset Materials/MAT Pipe BG.tres" id="3_jtj3v"]
 [ext_resource type="Texture2D" uid="uid://ci270v854o1gp" path="res://Sprites/Backgrounds/Dither BG.png" id="4_8lmaw"]
-[ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Spike.tscn" id="4_oxofq"]
-[ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/PathFollower.tscn" id="5_hu7vc"]
+[ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Hazards/Spike.tscn" id="4_oxofq"]
+[ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/Assets/PathFollower.tscn" id="5_hu7vc"]
 [ext_resource type="PackedScene" uid="uid://c6vvdw6g7hqen" path="res://Packed Scenes/Platforms/Long Platform.tscn" id="6_gkidq"]
 [ext_resource type="PackedScene" uid="uid://c6f68p42i5als" path="res://Packed Scenes/Signs/Gravity Sign.tscn" id="7_37bir"]
 [ext_resource type="PackedScene" uid="uid://bkd8fene3gwra" path="res://Packed Scenes/Platforms/Short Platform.tscn" id="7_iv7ri"]
 [ext_resource type="PackedScene" uid="uid://rlluu6g1m7g0" path="res://Packed Scenes/Platforms/Med Platform.tscn" id="8_2i6c2"]
-[ext_resource type="PackedScene" uid="uid://b7jy4k5nkohpk" path="res://Packed Scenes/Ability Change Area.tscn" id="9_7nair"]
+[ext_resource type="PackedScene" uid="uid://b7jy4k5nkohpk" path="res://Packed Scenes/Assets/Ability Change Area.tscn" id="9_7nair"]
 [ext_resource type="PackedScene" uid="uid://fw0l3a0tyrk1" path="res://Packed Scenes/Signs/Jump Sign.tscn" id="11_m8v08"]
 [ext_resource type="PackedScene" uid="uid://ip887i73lacj" path="res://Packed Scenes/Signs/Fly Sign.tscn" id="12_ww4xu"]
-[ext_resource type="PackedScene" uid="uid://chbr134ce7pte" path="res://Packed Scenes/Spring.tscn" id="13_crrah"]
-[ext_resource type="PackedScene" uid="uid://bn0l231vh72il" path="res://Packed Scenes/Spring Big.tscn" id="14_phbk1"]
+[ext_resource type="PackedScene" uid="uid://chbr134ce7pte" path="res://Packed Scenes/Assets/Spring.tscn" id="13_crrah"]
+[ext_resource type="PackedScene" uid="uid://bn0l231vh72il" path="res://Packed Scenes/Assets/Spring Big.tscn" id="14_phbk1"]
 [ext_resource type="TileSet" uid="uid://tjg3w1mnba3i" path="res://Tilesets/TS Pipes.tres" id="15_wkrqd"]
 [ext_resource type="Material" uid="uid://cm8k2eqkq2id5" path="res://Materials/Tileset Materials/MAT Pipe Teal.tres" id="18_lgw7h"]
 [ext_resource type="TileSet" uid="uid://cb1ngag1vd12p" path="res://Tilesets/TS Pipes BG.tres" id="20_74wfw"]
@@ -81,7 +81,7 @@ size = Vector2(184, 112)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seedh"]
 size = Vector2(400, 136)
 
-[node name="Node2D" type="Node2D"]
+[node name="World 1" type="Node2D"]
 
 [node name="GUI" parent="." instance=ExtResource("1_5ogpg")]
 visible = false
@@ -213,10 +213,8 @@ rotation = 3.14159
 [node name="Platforms" type="Node" parent="Pausable"]
 
 [node name="Long Platform" parent="Pausable/Platforms" instance=ExtResource("6_gkidq")]
-position = Vector2(24, 72)
 
 [node name="Gravity Sign2" parent="Pausable/Platforms/Long Platform" instance=ExtResource("7_37bir")]
-position = Vector2(0, -4)
 
 [node name="Ability Change Area" parent="Pausable/Platforms/Long Platform" instance=ExtResource("9_7nair")]
 action_index = 2
@@ -226,7 +224,7 @@ position = Vector2(0, -29)
 shape = SubResource("RectangleShape2D_mt8lg")
 
 [node name="Long Platform2" parent="Pausable/Platforms" instance=ExtResource("6_gkidq")]
-position = Vector2(-84, -128)
+position = Vector2(-84, -120)
 rotation = -3.14159
 
 [node name="Paths" type="Node" parent="Pausable/Platforms"]
@@ -241,11 +239,11 @@ rotation = -1.5708
 ease_type = 1
 
 [node name="RemoteTransform2D" parent="Pausable/Platforms/Paths/Path2/PathFollow2D" index="0"]
-position = Vector2(-8, -2.89599e-05)
+position = Vector2(0, 2.18279e-11)
 remote_path = NodePath("../../../../Long Platform")
 
 [node name="Path3" parent="Pausable/Platforms/Paths" instance=ExtResource("5_hu7vc")]
-position = Vector2(-84, -68)
+position = Vector2(-84, -60)
 curve = SubResource("Curve2D_argis")
 
 [node name="PathFollow2D" parent="Pausable/Platforms/Paths/Path3" index="0"]
@@ -317,20 +315,21 @@ ease_type = 1
 remote_path = NodePath("../../../../../Hazards/Saws/Hazard13")
 
 [node name="Short Platform" parent="Pausable/Platforms" instance=ExtResource("7_iv7ri")]
-position = Vector2(-496, 44)
+position = Vector2(-496, 40)
 
 [node name="Short Platform3" parent="Pausable/Platforms" instance=ExtResource("7_iv7ri")]
 position = Vector2(-524, -8)
 
 [node name="Short Platform2" parent="Pausable/Platforms" instance=ExtResource("7_iv7ri")]
-position = Vector2(-456, 48)
+position = Vector2(-456, 43)
 
 [node name="Med Platform" parent="Pausable/Platforms" instance=ExtResource("8_2i6c2")]
-position = Vector2(-536, 76)
+position = Vector2(-536, 72)
 
 [node name="Ability Areas" type="Node" parent="Pausable"]
 
 [node name="Ability Change Area3" parent="Pausable/Ability Areas" instance=ExtResource("9_7nair")]
+visible = false
 position = Vector2(-616, 0)
 action_index = 1
 metadata/_edit_group_ = true

@@ -43,6 +43,8 @@ var can_control : bool = true;
 @onready var sfx : PlayerSFX = $SFX
 var hud : HUD = null;
 
+signal special_intro_end;
+
 func _ready():
 	hud = get_tree().current_scene.get_node("GUI") as HUD;
 	
@@ -53,6 +55,8 @@ func _ready():
 	hud.on_action_switch(current_action.action_name);
 	
 	can_control = !special_intro;
+	if special_intro:
+		sfx.play_fall_sfx();
 
 func _process(delta):
 	if can_control:
@@ -102,7 +106,14 @@ func _process(delta):
 			can_control = true;
 			
 			anim.play_land_squash();
-			sfx.play_land_sfx();
+			sfx.stop_fall_sfx();
+			sfx.play_fall_land_sfx();
+			
+			var music_manager : MusicManager = get_tree().current_scene.get_node("/root/MusicHandler") as MusicManager;
+			if not music_manager.music_playing & 4:
+				music_manager.start_1_music();
+			
+			special_intro_end.emit();
 
 func reset_coyote_timer():
 	coyote_timer = 0.0;

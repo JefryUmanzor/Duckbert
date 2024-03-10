@@ -20,6 +20,8 @@ boot_splash/use_filter=false
 [autoload]
 
 SaveLoadHandler="*res://Scripts/Backend/OptionsHolder.gd"
+MusicHandler="*res://Packed Scenes/Music Manager.tscn"
+RoomChanger="*res://Scripts/Backend/RoomManager.gd"
 
 [display]
 

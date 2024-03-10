@@ -2,21 +2,49 @@ extends Control
 
 @onready var animation_tree = $AnimationTree
 
-var focused = false;
 @onready var start_button = $"Main Menu/Main Buttons/Start"
 @onready var options_button = $"Main Menu/Main Buttons/Options"
+@onready var quit = $"Main Menu/Main Buttons/Quit"
 
 @onready var fullscreen_toggle = $"Options/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle"
 @onready var fullscreen_stretch_toggle = $"Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle"
 @onready var music_toggle = $"Options/VBoxContainer2/Music Holder/HBoxContainer/Music Toggle"
 @onready var sfx_toggle = $"Options/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle"
+@onready var back_button = $"Options/VBoxContainer2/Back/HBoxContainer/Back Button"
 
 var options_loaded : bool = false;
 var save_data : Options;
 
+@onready var move_sfx = $MoveSFX
+@onready var press_sfx = $PressSFX
+
 func _ready():
 	save_data = get_tree().current_scene.get_node("/root/SaveLoadHandler") as Options;
 	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+	start_button.grab_focus();
+	
+	set_sfx();
+
+func set_sfx():
+	start_button.focus_entered.connect(move_sfx.play);
+	options_button.focus_entered.connect(move_sfx.play);
+	quit.focus_entered.connect(move_sfx.play);
+	
+	fullscreen_toggle.focus_entered.connect(move_sfx.play);
+	fullscreen_stretch_toggle.focus_entered.connect(move_sfx.play);
+	music_toggle.focus_entered.connect(move_sfx.play);
+	sfx_toggle.focus_entered.connect(move_sfx.play);
+	back_button.focus_entered.connect(move_sfx.play);
+	
+	start_button.pressed.connect(press_sfx.play);
+	options_button.pressed.connect(press_sfx.play);
+	quit.pressed.connect(press_sfx.play);
+	
+	fullscreen_toggle.pressed.connect(press_sfx.play);
+	fullscreen_stretch_toggle.pressed.connect(press_sfx.play);
+	music_toggle.pressed.connect(press_sfx.play);
+	sfx_toggle.pressed.connect(press_sfx.play);
+	back_button.pressed.connect(press_sfx.play);
 
 func on_options_loaded():
 	fullscreen_toggle.button_pressed = save_data.options_save.options.is_fullscreen as bool;
@@ -30,16 +58,9 @@ func _process(_delta):
 	if !options_loaded:
 		if save_data.options_loaded:
 			on_options_loaded();
-	
-	if not focused:
-		if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
-			start_button.grab_focus();
-
-func on_grab_focus():
-	focused = true;
 
 func send_to_test_room():
-	get_tree().call_deferred("change_scene_to_file", "res://Rooms/Test Room.tscn");
+	get_tree().current_scene.get_node("/root/RoomChanger").change_room("res://Rooms/Main Levels/Level 1.tscn");
 func quit_game():
 	get_tree().quit();
 

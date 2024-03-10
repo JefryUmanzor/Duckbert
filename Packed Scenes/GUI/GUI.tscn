@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cdbcsqv2nym4g"]
+[gd_scene load_steps=49 format=3 uid="uid://cdbcsqv2nym4g"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/HUD.gd" id="1_a27be"]
 [ext_resource type="Material" uid="uid://buge3kmf8oo40" path="res://Materials/GUI/HUD Material.tres" id="2_a2cuw"]
@@ -12,6 +12,8 @@
 [ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="8_nqud2"]
 [ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="9_h3u6i"]
 [ext_resource type="Texture2D" uid="uid://djb1ho6g3yfqv" path="res://Sprites/UI/SPR UI Box Transparent.png" id="10_b3hf1"]
+[ext_resource type="AudioStream" uid="uid://b3rus0qpfgjiq" path="res://Audio/SFX/UI/SND Menu Button.wav" id="13_y7umf"]
+[ext_resource type="AudioStream" uid="uid://baiu6wqxit3wk" path="res://Audio/SFX/UI/SND Menu Button Press.wav" id="14_fqe8v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6i2nt"]
 shader = ExtResource("5_lvs6q")
@@ -38,6 +40,46 @@ font_size = 12
 shader = ExtResource("5_lvs6q")
 shader_parameter/use_palette = true
 shader_parameter/current_palette = ExtResource("9_h3u6i")
+
+[sub_resource type="Animation" id="Animation_y63y2"]
+resource_name = "Exit Options"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Options:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Pause Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(0, 224), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Hud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(0, 448), Vector2(0, 224)]
+}
 
 [sub_resource type="Animation" id="Animation_33dal"]
 resource_name = "Level Clear Loop"
@@ -142,6 +184,110 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -448)]
+}
+
+[sub_resource type="Animation" id="Animation_3vdhf"]
+resource_name = "Options Loop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Options:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Pause Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 224)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Hud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 448)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Base/Level Clear Holder:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_32usl"]
+resource_name = "Pause Transition"
+length = 0.31
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Pause Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Base/Hud:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.2, 1),
+"update": 0,
+"values": [Vector2(0, 224), Vector2(0, 208), Vector2(0, 448)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Base/Level Clear Holder:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 48)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Base/Options:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 0.2, 1),
+"update": 0,
+"values": [Vector2(0, -224), Vector2(0, -240), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ahfyn"]
@@ -351,150 +497,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 0.2, 1),
 "update": 0,
 "values": [Vector2(0, -224), Vector2(0, -208), Vector2(0, -448)]
-}
-
-[sub_resource type="Animation" id="Animation_32usl"]
-resource_name = "Pause Transition"
-length = 0.31
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Base/Pause Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 0.2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -16), Vector2(0, 224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Base/Hud:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 0.2, 1),
-"update": 0,
-"values": [Vector2(0, 224), Vector2(0, 208), Vector2(0, 448)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Base/Level Clear Holder:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 48)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Base/Options:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 0.2, 1),
-"update": 0,
-"values": [Vector2(0, -224), Vector2(0, -240), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_3vdhf"]
-resource_name = "Options Loop"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Base/Options:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Base/Pause Panel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 224)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Base/Hud:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 448)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Base/Level Clear Holder:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 48)]
-}
-
-[sub_resource type="Animation" id="Animation_y63y2"]
-resource_name = "Exit Options"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Base/Options:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Base/Pause Panel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.2, 1),
-"update": 0,
-"values": [Vector2(0, 224), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Base/Hud:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(0.2, 1),
-"update": 0,
-"values": [Vector2(0, 448), Vector2(0, 224)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ync2"]
@@ -1053,7 +1055,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_right = NodePath("../Level Select")
 theme_override_font_sizes/font_size = 10
-text = "Next Level"
+text = "Test Room"
 
 [node name="Container" type="Control" parent="Base/Level Clear Holder/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -1066,7 +1068,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Next Level")
 theme_override_font_sizes/font_size = 10
-text = "Level Select"
+text = "Quit Game"
 
 [node name="Bottom Margin" type="Control" parent="Base/Level Clear Holder/VBoxContainer"]
 layout_mode = 2
@@ -1101,14 +1103,48 @@ anim_player = NodePath("../AnimationPlayer")
 "parameters/Unpause Shot/internal_active" = false
 "parameters/Unpause Shot/request" = 0
 
+[node name="MoveSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_y7umf")
+bus = &"SFX"
+
+[node name="PressSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_fqe8v")
+bus = &"SFX"
+
+[connection signal="focus_entered" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle" to="MoveSFX" method="play"]
+[connection signal="pressed" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle" to="PressSFX" method="play"]
 [connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle" to="." method="toggle_fullscreen"]
+[connection signal="focus_entered" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="MoveSFX" method="play"]
+[connection signal="pressed" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="PressSFX" method="play"]
 [connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle" to="." method="toggle_fs_stretch"]
+[connection signal="focus_entered" from="Base/Options/HBoxContainer/VBoxContainer2/Music Holder/HBoxContainer/Music Toggle" to="MoveSFX" method="play"]
+[connection signal="pressed" from="Base/Options/HBoxContainer/VBoxContainer2/Music Holder/HBoxContainer/Music Toggle" to="PressSFX" method="play"]
 [connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/Music Holder/HBoxContainer/Music Toggle" to="." method="toggle_music"]
+[connection signal="focus_entered" from="Base/Options/HBoxContainer/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle" to="MoveSFX" method="play"]
+[connection signal="pressed" from="Base/Options/HBoxContainer/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle" to="PressSFX" method="play"]
 [connection signal="toggled" from="Base/Options/HBoxContainer/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle" to="." method="toggle_sfx"]
+[connection signal="focus_entered" from="Base/Options/HBoxContainer/VBoxContainer2/Back/HBoxContainer/Back Button" to="MoveSFX" method="play"]
 [connection signal="pressed" from="Base/Options/HBoxContainer/VBoxContainer2/Back/HBoxContainer/Back Button" to="." method="exit_options"]
+[connection signal="pressed" from="Base/Options/HBoxContainer/VBoxContainer2/Back/HBoxContainer/Back Button" to="PressSFX" method="play"]
+[connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Resume" to="MoveSFX" method="play"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Resume" to="." method="unpause"]
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Resume" to="PressSFX" method="play"]
+[connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Restart" to="MoveSFX" method="play"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Restart" to="." method="restart_scene"]
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Restart" to="PressSFX" method="play"]
+[connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Options" to="MoveSFX" method="play"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Options" to="." method="enter_options"]
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Options" to="PressSFX" method="play"]
+[connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Level Select" to="MoveSFX" method="play"]
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Level Select" to="PressSFX" method="play"]
+[connection signal="focus_entered" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu" to="MoveSFX" method="play"]
 [connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu" to="." method="go_to_main_menu"]
+[connection signal="pressed" from="Base/Pause Panel/HBoxContainer/VBoxContainer/Main Menu" to="PressSFX" method="play"]
+[connection signal="focus_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="MoveSFX" method="play"]
 [connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="." method="on_mouse_enter"]
+[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="." method="go_to_main_menu"]
+[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Next Level" to="PressSFX" method="play"]
+[connection signal="focus_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="MoveSFX" method="play"]
 [connection signal="mouse_entered" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="." method="on_mouse_enter"]
+[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="." method="quit_game"]
+[connection signal="pressed" from="Base/Level Clear Holder/VBoxContainer/HBoxContainer/Level Select" to="PressSFX" method="play"]

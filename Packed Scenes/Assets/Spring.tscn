@@ -64,10 +64,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmgd7"]
-size = Vector2(18, 1)
+size = Vector2(14, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32jb5"]
-size = Vector2(16, 5)
+size = Vector2(12, 5)
 
 [sub_resource type="Animation" id="Animation_gix4q"]
 resource_name = "Bounce"
