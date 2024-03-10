@@ -2,9 +2,9 @@ extends Control
 
 @onready var animation_tree = $AnimationTree
 
-@onready var start_button = $"Main Menu/Main Buttons/Start"
-@onready var options_button = $"Main Menu/Main Buttons/Options"
-@onready var quit = $"Main Menu/Main Buttons/Quit"
+@onready var start_button = $"Main Screen/Main Buttons/Start"
+@onready var options_button = $"Main Screen/Main Buttons/Options"
+@onready var quit = $"Main Screen/Main Buttons/Quit"
 
 @onready var fullscreen_toggle = $"Options/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle"
 @onready var fullscreen_stretch_toggle = $"Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle"
@@ -12,8 +12,14 @@ extends Control
 @onready var sfx_toggle = $"Options/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle"
 @onready var back_button = $"Options/VBoxContainer2/Back/HBoxContainer/Back Button"
 
+@onready var level_1_button = $"Level Select/Panel/VBoxContainer/World 1/1-1"
+@onready var level_back_button = $"Level Select/Panel/VBoxContainer/HBoxContainer4/Back"
+
 var options_loaded : bool = false;
 var save_data : Options;
+
+var in_options : bool = false;
+var in_levels : bool = false;
 
 @onready var move_sfx = $MoveSFX
 @onready var press_sfx = $PressSFX
@@ -45,7 +51,6 @@ func set_sfx():
 	music_toggle.pressed.connect(press_sfx.play);
 	sfx_toggle.pressed.connect(press_sfx.play);
 	back_button.pressed.connect(press_sfx.play);
-
 func on_options_loaded():
 	fullscreen_toggle.button_pressed = save_data.options_save.options.is_fullscreen as bool;
 	fullscreen_stretch_toggle.button_pressed = save_data.options_save.options.stretch_mode == Window.CONTENT_SCALE_STRETCH_FRACTIONAL;
@@ -59,8 +64,6 @@ func _process(_delta):
 		if save_data.options_loaded:
 			on_options_loaded();
 
-func send_to_test_room():
-	get_tree().current_scene.get_node("/root/RoomChanger").change_room("res://Rooms/Main Levels/Level 1.tscn");
 func quit_game():
 	get_tree().quit();
 
@@ -68,10 +71,23 @@ func switch_to_options():
 	animation_tree.set("parameters/Options Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 	animation_tree.set("parameters/Blend/blend_amount", 1.0);
 	fullscreen_toggle.grab_focus();
+	in_options = true;
 func switch_to_main():
-	animation_tree.set("parameters/Options Return Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+	if in_options:
+		animation_tree.set("parameters/Options Return Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+	elif in_levels:
+		animation_tree.set("parameters/Level Return Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+	
+	in_options = false;
+	in_levels = false;
+	
 	animation_tree.set("parameters/Blend/blend_amount", 0.0);
 	options_button.grab_focus();
+func switch_to_levels():
+	animation_tree.set("parameters/Level Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+	animation_tree.set("parameters/Blend/blend_amount", -1.0);
+	level_1_button.grab_focus();
+	in_levels = true;
 
 func toggle_music(music_on):
 	if options_loaded:
@@ -97,3 +113,14 @@ func toggle_fs_stretch(stretch):
 		else:
 			get_tree().root.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_INTEGER;
 			save_data.switch_stretch(Window.CONTENT_SCALE_STRETCH_INTEGER);
+
+func send_to_level(path):
+	get_tree().current_scene.get_node("/root/RoomChanger").change_room(path);
+func set_back_neighbors(column : int):
+	var bot = "../../World 1/1-" + str(column);
+	var top = "../../World 3/3-" + str(column);
+	
+	level_back_button.focus_neighbor_top = NodePath(top);
+	level_back_button.focus_neighbor_bottom = NodePath(bot);
+	level_back_button.focus_previous = NodePath(top);
+	level_back_button.focus_next = NodePath(bot);

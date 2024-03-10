@@ -33,3 +33,4 @@ res://Packed Scenes/Assets/Spring Big.tscn
 res://Rooms/Spring Test.tscn
 res://Packed Scenes/Player.tscn
 res://Scripts/Assets/SpringScript.gd
+res://Shaders/HudShader Down.gdshader
