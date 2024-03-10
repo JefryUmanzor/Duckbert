@@ -17,8 +17,8 @@ func _activate(player : Player):
 		player.anim.play_flap();
 		create_flap_particle()
 
-func _on_enable_action():
-	super._on_enable_action();
+func _on_enable_action(first):
+	super._on_enable_action(first);
 	m_player.gravity_scale = gravity_scale;
 	player_max_v_speed = m_player.max_vertical_speed;
 	m_player.max_vertical_speed = max_vertical_speed;

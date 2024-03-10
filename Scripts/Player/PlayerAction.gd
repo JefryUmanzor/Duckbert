@@ -5,6 +5,8 @@ extends Node
 @export var action_name : String = "None";
 @onready var sprite_handler : PlayerAnimationHandler = $"../../Sprite"
 
+signal on_activated;
+
 var palette_texture : Texture2D;
 var active = false;
 
@@ -16,7 +18,9 @@ func _activate(_player : Player):
 func _on_release(_player : Player):
 	pass;
 
-func _on_enable_action():
+func _on_enable_action(first):
+	if not first:
+		on_activated.emit();
 	active = true;
 	sprite_handler.set_palette(palette_texture);
 	RenderingServer.global_shader_parameter_set("player_current_palette", palette_texture);

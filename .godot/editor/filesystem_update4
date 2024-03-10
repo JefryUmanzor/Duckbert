@@ -22,3 +22,11 @@ res://Materials/Hazard Material.tres
 res://Rooms/Main Levels/Level 1-1.tscn
 res://Packed Scenes/Assets/Checkpoint.tscn
 res://Scripts/Assets/CheckpointScript.gd
+res://Packed Scenes/Assets/Ability Change Area.tscn
+res://Packed Scenes/Player.tscn
+res://Scripts/Player/PlayerAction.gd
+res://Scripts/Player/PlayerJumpAction.gd
+res://Scripts/Player/PlayerGravityAction.gd
+res://Scripts/Player/PlayerFlapAction.gd
+res://Scripts/Player/PlayerHoverAction.gd
+res://Scripts/Player/Player.gd

@@ -52,7 +52,7 @@ func _ready():
 	
 	starting_action = wrapi(starting_action, 0, actions.get_child_count());
 	current_action = actions.get_child(starting_action) as PlayerAction;
-	current_action._on_enable_action();
+	current_action._on_enable_action(true);
 	
 	hud.on_action_switch(current_action.action_name);
 	
@@ -181,7 +181,7 @@ func change_ability(action_index):
 		current_action._on_disable_action();
 		
 		current_action =  target_action as PlayerAction;
-		current_action._on_enable_action();
+		current_action._on_enable_action(false);
 		
 		hud.on_action_switch(current_action.action_name);
 		

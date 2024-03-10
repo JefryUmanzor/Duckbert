@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cnri2u2a1qkfs"]
+[gd_scene load_steps=46 format=3 uid="uid://cnri2u2a1qkfs"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_fk0wl"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerAction.gd" id="2_7voqr"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://02guchdwwv4v" path="res://Audio/SFX/Player/SND Player Fall.wav" id="13_katc7"]
 [ext_resource type="AudioStream" uid="uid://3ugi0rwg3xvx" path="res://Audio/SFX/Player/SND Player Land.wav" id="14_ca8fd"]
 [ext_resource type="AudioStream" uid="uid://tfa45elfuoou" path="res://Audio/SFX/Player/SND Player Fall Land.wav" id="14_nmjuj"]
+[ext_resource type="AudioStream" uid="uid://cngujprbi44r4" path="res://Audio/SFX/Player/SND Player Quack.wav" id="14_v04u1"]
 [ext_resource type="AudioStream" uid="uid://ym31b3v6dgjp" path="res://Audio/SFX/Player/SND Player Jump.wav" id="15_4qd0n"]
 [ext_resource type="AudioStream" uid="uid://d01c8c33wv4yq" path="res://Audio/SFX/Player/SND Player Gravity.wav" id="16_4n5jt"]
 [ext_resource type="AudioStream" uid="uid://divy52rrlefga" path="res://Audio/SFX/Player/SND Player Flap.wav" id="17_3cneq"]
@@ -366,6 +367,11 @@ stream = ExtResource("13_katc7")
 volume_db = -4.0
 bus = &"SFX"
 
+[node name="Quack SFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("14_v04u1")
+volume_db = 3.0
+bus = &"SFX"
+
 [node name="Fall Land SFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("14_nmjuj")
 volume_db = -4.0
@@ -394,3 +400,9 @@ bus = &"SFX"
 stream = ExtResource("17_3cneq")
 volume_db = -3.5
 bus = &"SFX"
+
+[connection signal="on_activated" from="Actions/PlayerNullAction" to="SFX/Quack SFX" method="play"]
+[connection signal="on_activated" from="Actions/PlayerJumpAction" to="SFX/Quack SFX" method="play"]
+[connection signal="on_activated" from="Actions/PlayerGravityAction" to="SFX/Quack SFX" method="play"]
+[connection signal="on_activated" from="Actions/PlayerFlapAction" to="SFX/Quack SFX" method="play"]
+[connection signal="on_activated" from="Actions/PlayerHoverAction" to="SFX/Quack SFX" method="play"]

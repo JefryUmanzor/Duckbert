@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/PlayerChangeArea.gd" id="1_4d2ha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1qtt"]
+size = Vector2(32, 136)
 
 [node name="Ability Change Area" type="Area2D"]
 collision_mask = 32768
@@ -10,4 +11,5 @@ monitorable = false
 script = ExtResource("1_4d2ha")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -68)
 shape = SubResource("RectangleShape2D_r1qtt")
