@@ -32,3 +32,5 @@ res://Scripts/Player/Player.gd
 res://Rooms/Spring Test.tscn
 res://Packed Scenes/Hazards/Spike.tscn
 res://Scripts/Assets/BaseHazardScript.gd
+res://Packed Scenes/Platforms/Med Platform.tscn
+res://Packed Scenes/Assets/Spring.tscn
