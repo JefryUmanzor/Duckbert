@@ -5,10 +5,12 @@ extends Node2D
 var activated = false;
 
 signal on_touch(this : Checkpoint);
+@onready var sfx = $SFX
 
 func on_touch_player(_player):
 	if not activated:
 		activated = true;
 		animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 		animation_tree.set("parameters/Blend2/blend_amount", 1.0);
+		sfx.play();
 		on_touch.emit(self);

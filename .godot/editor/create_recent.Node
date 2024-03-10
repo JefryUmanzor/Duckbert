@@ -1,3 +1,4 @@
+AudioStreamPlayer
 Node
 CollisionShape2D
 Area2D
@@ -10,5 +11,4 @@ Control
 HBoxContainer
 VBoxContainer
 GridContainer
-AudioStreamPlayer
 StaticBody2D

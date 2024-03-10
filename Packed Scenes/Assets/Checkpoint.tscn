@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://c3cwuv30ahb4n"]
+[gd_scene load_steps=24 format=3 uid="uid://c3cwuv30ahb4n"]
 
 [ext_resource type="Script" path="res://Scripts/Assets/CheckpointScript.gd" id="1_s8os0"]
 [ext_resource type="Texture2D" uid="uid://c5g6rs8eao41l" path="res://Sprites/Assets/SPR Checkpoint.png" id="2_d6vbv"]
 [ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="2_xghdl"]
+[ext_resource type="AudioStream" uid="uid://b3elu4v6bav10" path="res://Audio/SFX/Assets/SND Checkpoint.wav" id="4_mccwm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_62t2j"]
 atlas = ExtResource("2_d6vbv")
@@ -228,5 +229,9 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_dh48y")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mccwm")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="on_touch_player"]

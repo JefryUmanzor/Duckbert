@@ -17,3 +17,8 @@ res://Materials/Tileset Materials/MAT Pipe BG.tres
 res://Tilesets/TS Pipes BG.tres
 res://Shaders/HudShader Down.gdshader
 res://Shaders/TitleBGShader.gdshader
+res://Rooms/Main Levels/Level 1-2.tscn
+res://Materials/Hazard Material.tres
+res://Rooms/Main Levels/Level 1-1.tscn
+res://Packed Scenes/Assets/Checkpoint.tscn
+res://Scripts/Assets/CheckpointScript.gd

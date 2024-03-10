@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/CheckpointManager.gd" id="6_1tunw"]
 [ext_resource type="TileSet" uid="uid://tjg3w1mnba3i" path="res://Tilesets/TS Pipes.tres" id="6_k0bq3"]
 [ext_resource type="PackedScene" uid="uid://c3cwuv30ahb4n" path="res://Packed Scenes/Assets/Checkpoint.tscn" id="6_muh25"]
-[ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/Assets/PathFollower.tscn" id="6_t7i5e"]
+[ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/PathFollower.tscn" id="6_t7i5e"]
 [ext_resource type="Material" uid="uid://u4kicacicut7" path="res://Materials/Tileset Materials/MAT Pipe BG.tres" id="7_e026v"]
 [ext_resource type="PackedScene" uid="uid://chbr134ce7pte" path="res://Packed Scenes/Assets/Spring.tscn" id="7_xjvjh"]
 [ext_resource type="PackedScene" uid="uid://bkd8fene3gwra" path="res://Packed Scenes/Platforms/Short Platform.tscn" id="8_8utdw"]
@@ -76,6 +76,7 @@ size = Vector2(64, 20)
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_pxdi2")
+next_level_path = "res://Rooms/Main Levels/Level 1-2.tscn"
 
 [node name="GUI" parent="." instance=ExtResource("1_tlvw7")]
 visible = false

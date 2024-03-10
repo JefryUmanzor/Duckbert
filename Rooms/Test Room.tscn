@@ -10,7 +10,7 @@
 [ext_resource type="Material" uid="uid://u4kicacicut7" path="res://Materials/Tileset Materials/MAT Pipe BG.tres" id="3_jtj3v"]
 [ext_resource type="Texture2D" uid="uid://ci270v854o1gp" path="res://Sprites/Backgrounds/Dither BG.png" id="4_8lmaw"]
 [ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Hazards/Spike.tscn" id="4_oxofq"]
-[ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/Assets/PathFollower.tscn" id="5_hu7vc"]
+[ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/PathFollower.tscn" id="5_hu7vc"]
 [ext_resource type="PackedScene" uid="uid://c6vvdw6g7hqen" path="res://Packed Scenes/Platforms/Long Platform.tscn" id="6_gkidq"]
 [ext_resource type="Script" path="res://Scripts/CheckpointManager.gd" id="7_6q80t"]
 [ext_resource type="PackedScene" uid="uid://c6f68p42i5als" path="res://Packed Scenes/Signs/Gravity Sign.tscn" id="7_37bir"]
