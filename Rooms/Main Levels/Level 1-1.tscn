@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dep8w4b37cx5"]
+[gd_scene load_steps=28 format=3 uid="uid://dep8w4b37cx5"]
 
 [ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_pxdi2"]
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_tlvw7"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ci270v854o1gp" path="res://Sprites/Backgrounds/Dither BG.png" id="8_mrmlh"]
 [ext_resource type="TileSet" uid="uid://cb1ngag1vd12p" path="res://Tilesets/TS Pipes BG.tres" id="9_vc5vl"]
 [ext_resource type="PackedScene" uid="uid://rlluu6g1m7g0" path="res://Packed Scenes/Platforms/Med Platform.tscn" id="11_2832y"]
+[ext_resource type="Script" path="res://Scripts/Assets/BaseHazardScript.gd" id="18_bm5b7"]
 
 [sub_resource type="Animation" id="Animation_3wq3d"]
 resource_name = "InitialShake"
@@ -66,6 +67,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 104, -32)
 }
 point_count = 2
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v4ghm"]
+distance = -64.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4l3fw"]
 size = Vector2(64, 20)
@@ -352,6 +356,13 @@ layer_0/tile_data = PackedInt32Array(-131076, 458752, 6, -131075, 458752, 6, -13
 
 [node name="Active" type="Node" parent="."]
 
+[node name="World Boundary2" type="Area2D" parent="."]
+collision_mask = 32768
+script = ExtResource("18_bm5b7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundary2"]
+shape = SubResource("WorldBoundaryShape2D_v4ghm")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, -200)
 
@@ -361,6 +372,7 @@ shape = SubResource("RectangleShape2D_4l3fw")
 one_way_collision = true
 
 [connection signal="special_intro_end" from="Pausable/Player" to="Pausable/Camera2D/AnimationPlayer" method="play" binds= ["InitialShake"]]
+[connection signal="body_entered" from="World Boundary2" to="World Boundary2" method="_on_body_enter"]
 
 [editable path="Pausable/Paths/Path"]
 [editable path="Pausable/Paths/Path2"]

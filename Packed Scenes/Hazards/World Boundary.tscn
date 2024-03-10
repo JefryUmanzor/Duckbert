@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6x22mbo5oq2"]
+
+[ext_resource type="Script" path="res://Scripts/Assets/BaseHazardScript.gd" id="1_16xv2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ay0y1"]
+distance = -64.0
+
+[node name="World Boundary" type="Area2D"]
+collision_mask = 32768
+script = ExtResource("1_16xv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_ay0y1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_enter"]

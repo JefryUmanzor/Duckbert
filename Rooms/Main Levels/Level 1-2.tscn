@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://caksjrda2adj1"]
+[gd_scene load_steps=23 format=3 uid="uid://caksjrda2adj1"]
 
 [ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_e6yom"]
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="2_6u8bp"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://rlluu6g1m7g0" path="res://Packed Scenes/Platforms/Med Platform.tscn" id="12_xxxj0"]
 [ext_resource type="PackedScene" uid="uid://b7jy4k5nkohpk" path="res://Packed Scenes/Assets/Ability Change Area.tscn" id="13_3d0ks"]
 [ext_resource type="PackedScene" uid="uid://fw0l3a0tyrk1" path="res://Packed Scenes/Signs/Jump Sign.tscn" id="14_cx801"]
+[ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Hazards/Spike.tscn" id="17_dkt28"]
+[ext_resource type="Script" path="res://Scripts/Assets/BaseHazardScript.gd" id="18_pjiu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbvr7"]
 size = Vector2(800, 336)
@@ -28,6 +30,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -64, 80, 0, 0, 0, 0, 0, 0)
 }
 point_count = 2
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gsqyc"]
+distance = -64.0
 
 [node name="World 1" type="Node2D"]
 script = ExtResource("1_e6yom")
@@ -125,7 +130,25 @@ position = Vector2(96, 0)
 
 [node name="Hazards" type="Node" parent="Pausable"]
 
+[node name="Spike" parent="Pausable/Hazards" instance=ExtResource("17_dkt28")]
+position = Vector2(488, -48)
+
+[node name="Spike2" parent="Pausable/Hazards" instance=ExtResource("17_dkt28")]
+position = Vector2(504, -48)
+
+[node name="Spike3" parent="Pausable/Hazards" instance=ExtResource("17_dkt28")]
+position = Vector2(520, -48)
+
 [node name="Active" type="Node" parent="."]
+
+[node name="World Boundary" type="Area2D" parent="."]
+collision_mask = 32768
+script = ExtResource("18_pjiu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundary"]
+shape = SubResource("WorldBoundaryShape2D_gsqyc")
+
+[connection signal="body_entered" from="World Boundary" to="World Boundary" method="_on_body_enter"]
 
 [editable path="Pausable/Areas/Ability Change Area"]
 [editable path="Pausable/Paths/Path"]
