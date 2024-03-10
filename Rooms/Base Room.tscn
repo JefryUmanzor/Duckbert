@@ -37,7 +37,6 @@ shape = SubResource("RectangleShape2D_cbvr7")
 disabled = true
 
 [node name="Player" parent="Pausable" instance=ExtResource("2_w7211")]
-starting_action = 3
 
 [node name="Flag" parent="Pausable" instance=ExtResource("3_u0l4i")]
 position = Vector2(248, 0)

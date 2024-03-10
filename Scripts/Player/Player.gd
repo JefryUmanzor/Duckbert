@@ -162,9 +162,6 @@ func _physics_process(delta):
 	velocity.x += accel;
 	
 	move_and_slide();
-	
-	if is_on_floor():
-		velocity.y = 0.0;
 
 func change_ability(action_index):
 	action_index = wrapi(action_index, 0, actions.get_child_count());

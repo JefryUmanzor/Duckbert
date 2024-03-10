@@ -28,3 +28,8 @@ res://Scripts/Player/PlayerSFXScript.gd
 res://Scripts/GUI/MainMenuScript.gd
 res://Packed Scenes/GUI/GUI.tscn
 res://Scripts/LevelHolder.gd
+res://Packed Scenes/Assets/Spring.tscn
+res://Packed Scenes/Assets/Spring Big.tscn
+res://Rooms/Spring Test.tscn
+res://Packed Scenes/Player.tscn
+res://Scripts/Assets/SpringScript.gd

@@ -324,7 +324,7 @@ position = Vector2(-496, 40)
 position = Vector2(-524, -8)
 
 [node name="Short Platform2" parent="Pausable/Platforms" instance=ExtResource("7_iv7ri")]
-position = Vector2(-456, 43)
+position = Vector2(-456, 48)
 
 [node name="Med Platform" parent="Pausable/Platforms" instance=ExtResource("8_2i6c2")]
 position = Vector2(-536, 72)
@@ -439,7 +439,7 @@ position = Vector2(392, 96)
 position = Vector2(-72, 96)
 
 [node name="Spring2" parent="Pausable/Springs" instance=ExtResource("13_crrah")]
-position = Vector2(-456, 44)
+position = Vector2(-456, 48)
 
 [node name="Spring4" parent="Pausable/Springs" instance=ExtResource("13_crrah")]
 position = Vector2(504, 96)

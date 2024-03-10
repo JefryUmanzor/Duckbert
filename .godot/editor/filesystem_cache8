@@ -13,7 +13,7 @@ preview.tscn::PackedScene::48940320948976937::1709413555::0::1::::<><>::res://ad
 ::res://Audio/::1709513216
 ::res://Audio/Music/::1710034536
 MUS Main Menu.wav::AudioStreamWAV::3537863822879293958::1710034535::1710034536::1::::<><>::
-::res://Audio/Music/Pipes/::1709766750
+::res://Audio/Music/Pipes/::1710036065
 MUS Pipes Intro.wav::AudioStreamWAV::7482136765606653791::1710036027::1710036064::1::::<><>::
 MUS Pipes Loop.wav::AudioStreamWAV::4134108491593135205::1710036053::1710036065::1::::<><>::
 ::res://Audio/SFX/::1710028461
@@ -52,18 +52,18 @@ MAT Button Outline.tres::ShaderMaterial::2999536739609795893::1710032137::0::1::
 ::res://Materials/Tileset Materials/::1710032138
 MAT Pipe BG.tres::ShaderMaterial::1464265389055649222::1710032137::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://bh8ckt0cts841::::res://Palettes/Tileset Palettes/PAL Pipe BG.png
 MAT Pipe Teal.tres::ShaderMaterial::5683887578576737596::1710032138::0::1::::<><>::res://Shaders/PaletteShader.gdshader<>uid://8bid7mlfxh62::::res://Palettes/Tileset Palettes/PAL Pipe Teal.png
-::res://Packed Scenes/::1710035972
-Music Manager.tscn::PackedScene::5912593227872359788::1710035972::0::1::::<><>::res://Scripts/Backend/MusicManager.gd<>uid://deunx1qi5r3pj::::res://Audio/Music/Pipes/MUS Pipes Intro.wav<>uid://bqn1dn6gmc8yc::::res://Audio/Music/MUS Main Menu.wav<>uid://by5ufsi48dx7b::::res://Audio/Music/Pipes/MUS Pipes Loop.wav
+::res://Packed Scenes/::1710037609
+Music Manager.tscn::PackedScene::5912593227872359788::1710037609::0::1::::<><>::res://Scripts/Backend/MusicManager.gd<>uid://deunx1qi5r3pj::::res://Audio/Music/Pipes/MUS Pipes Intro.wav<>uid://bqn1dn6gmc8yc::::res://Audio/Music/MUS Main Menu.wav<>uid://by5ufsi48dx7b::::res://Audio/Music/Pipes/MUS Pipes Loop.wav
 Player.tscn::PackedScene::5720925801089310660::1710028212::0::1::::<><>::res://Scripts/Player/Player.gd<>res://Scripts/Player/PlayerAction.gd<>res://Scripts/Player/DuckbergAnimHandler.gd<>res://Scripts/Player/PlayerJumpAction.gd<>uid://cfuuypf4pwdxo::::res://Materials/Player Material.tres<>uid://ccxfuu7jupuja::::res://Sprites/Duckbert Sprite.png<>res://Scripts/Player/PlayerGravityAction.gd<>uid://besa4mnmchhq8::::res://Sprites/Duckbert Walk Sprite.png<>res://Scripts/Player/PlayerFlapAction.gd<>uid://b1rtpwgakcj66::::res://Sprites/Duckbert Flap Up Sprite.png<>res://Scripts/Player/PlayerHoverAction.gd<>res://Scripts/Player/PlayerSFXScript.gd<>uid://dj2oyi50okb1g::::res://Audio/SFX/Player/SND Player Walk.wav<>uid://02guchdwwv4v::::res://Audio/SFX/Player/SND Player Fall.wav<>uid://3ugi0rwg3xvx::::res://Audio/SFX/Player/SND Player Land.wav<>uid://tfa45elfuoou::::res://Audio/SFX/Player/SND Player Fall Land.wav<>uid://ym31b3v6dgjp::::res://Audio/SFX/Player/SND Player Jump.wav<>uid://d01c8c33wv4yq::::res://Audio/SFX/Player/SND Player Gravity.wav<>uid://divy52rrlefga::::res://Audio/SFX/Player/SND Player Flap.wav
-::res://Packed Scenes/Assets/::1710025285
+::res://Packed Scenes/Assets/::1710037609
 Ability Change Area.tscn::PackedScene::4652552647928529108::1710010177::0::1::::<><>::res://Scripts/Player/PlayerChangeArea.gd
 Flag.tscn::PackedScene::8038473768925932069::1710010166::0::1::::<><>::uid://cfuuypf4pwdxo::::res://Materials/Player Material.tres<>res://Scripts/Assets/Flag.gd<>uid://ckxgl8k4lwc4q::::res://Sprites/Assets/Flag.png<>res://Scripts/Helper/StartDefaultAnim.gd
 PathFollower.tscn::PackedScene::5143159530546512896::1710025285::0::1::::<><>::res://Scripts/Assets/PathFollower.gd<>uid://b1vfybvf33s1h::::res://Sprites/Assets/Path Trail.png<>res://Scripts/Assets/LineAutoGenerate.gd
-Spring Big.tscn::PackedScene::3351202709978386071::1710010138::0::1::::<><>::res://Scripts/Assets/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://bqp43o55tsqoe::::res://Palettes/PAL Spring.png<>uid://biun4tdx0ursc::::res://Sprites/Assets/Spring Big.png<>uid://blfei1ix50gm6::::res://Audio/SFX/Assets/SND Spring Bounce.wav<>uid://m5t3qhv4qsri::::res://Audio/SFX/Assets/SND Spring Down.wav
-Spring.tscn::PackedScene::5267307785675669766::1710025285::0::1::::<><>::res://Scripts/Assets/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://dsyxw83uvmy3c::::res://Sprites/Assets/Spring.png<>uid://bqp43o55tsqoe::::res://Palettes/PAL Spring.png<>uid://blfei1ix50gm6::::res://Audio/SFX/Assets/SND Spring Bounce.wav<>uid://m5t3qhv4qsri::::res://Audio/SFX/Assets/SND Spring Down.wav
-::res://Packed Scenes/GUI/::1710029705
+Spring Big.tscn::PackedScene::3351202709978386071::1710037913::0::1::::<><>::res://Scripts/Assets/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://bqp43o55tsqoe::::res://Palettes/PAL Spring.png<>uid://biun4tdx0ursc::::res://Sprites/Assets/Spring Big.png<>uid://blfei1ix50gm6::::res://Audio/SFX/Assets/SND Spring Bounce.wav<>uid://m5t3qhv4qsri::::res://Audio/SFX/Assets/SND Spring Down.wav
+Spring.tscn::PackedScene::5267307785675669766::1710037910::0::1::::<><>::res://Scripts/Assets/SpringScript.gd<>res://Shaders/PaletteShader.gdshader<>uid://dsyxw83uvmy3c::::res://Sprites/Assets/Spring.png<>uid://bqp43o55tsqoe::::res://Palettes/PAL Spring.png<>uid://blfei1ix50gm6::::res://Audio/SFX/Assets/SND Spring Bounce.wav<>uid://m5t3qhv4qsri::::res://Audio/SFX/Assets/SND Spring Down.wav
+::res://Packed Scenes/GUI/::1710037223
 Default Button.tscn::PackedScene::4872805537765438912::1709951402::0::1::::<><>::uid://biy86xh73p2cn::::res://Materials/GUI/MAT Button Outline.tres<>uid://csiun6qsg7qmf::::res://GUI Theme/THEME Default.tres
-GUI.tscn::PackedScene::4985626728389762112::1710029704::0::1::::<><>::res://Scripts/GUI/HUD.gd<>uid://buge3kmf8oo40::::res://Materials/GUI/HUD Material.tres<>uid://csiun6qsg7qmf::::res://GUI Theme/THEME Default.tres<>uid://cboono7eq3fvc::::res://Packed Scenes/GUI/Default Button.tscn<>uid://brfdy7wimc62d::::res://GUI Theme/Style Boxes/Stylebox Panel Override.tres<>res://Shaders/PaletteShader.gdshader<>uid://br81cva81rlfr::::res://Palettes/PAL Red.png<>uid://ds0yneexg1et0::::res://Sprites/UI/Hud Tex.png<>uid://c6el0kgeg7p8e::::res://Palettes/PAL Blue.png<>uid://cfuuypf4pwdxo::::res://Materials/Player Material.tres<>uid://b1i0afscagc2d::::res://Palettes/PAL Yellow.png<>uid://djb1ho6g3yfqv::::res://Sprites/UI/SPR UI Box Transparent.png<>uid://b3rus0qpfgjiq::::res://Audio/SFX/UI/SND Menu Button.wav<>uid://baiu6wqxit3wk::::res://Audio/SFX/UI/SND Menu Button Press.wav
+GUI.tscn::PackedScene::4985626728389762112::1710037223::0::1::::<><>::res://Scripts/GUI/HUD.gd<>uid://buge3kmf8oo40::::res://Materials/GUI/HUD Material.tres<>uid://csiun6qsg7qmf::::res://GUI Theme/THEME Default.tres<>uid://cboono7eq3fvc::::res://Packed Scenes/GUI/Default Button.tscn<>uid://brfdy7wimc62d::::res://GUI Theme/Style Boxes/Stylebox Panel Override.tres<>res://Shaders/PaletteShader.gdshader<>uid://br81cva81rlfr::::res://Palettes/PAL Red.png<>uid://ds0yneexg1et0::::res://Sprites/UI/Hud Tex.png<>uid://c6el0kgeg7p8e::::res://Palettes/PAL Blue.png<>uid://cfuuypf4pwdxo::::res://Materials/Player Material.tres<>uid://b1i0afscagc2d::::res://Palettes/PAL Yellow.png<>uid://djb1ho6g3yfqv::::res://Sprites/UI/SPR UI Box Transparent.png<>uid://b3rus0qpfgjiq::::res://Audio/SFX/UI/SND Menu Button.wav<>uid://baiu6wqxit3wk::::res://Audio/SFX/UI/SND Menu Button Press.wav
 ::res://Packed Scenes/Hazards/::1710026858
 Saw.tscn::PackedScene::2681238742576324649::1710010147::0::1::::<><>::uid://bbff42pqthcde::::res://Materials/Hazard Material.tres<>uid://22c0ukia6jir::::res://Sprites/Assets/Saw.png<>res://Scripts/Assets/BaseHazardScript.gd<>res://Scripts/Helper/ConstantRotate.gd
 Spike.tscn::PackedScene::6537948266949637649::1710026858::0::1::::<><>::uid://dvw6c255y64j5::::res://Sprites/Assets/Spike.png<>uid://bbff42pqthcde::::res://Materials/Hazard Material.tres<>res://Scripts/Assets/BaseHazardScript.gd
@@ -98,26 +98,28 @@ PAL Yellow.png::CompressedTexture2D::4229363855647922961::1709334689::1709769255
 ::res://Palettes/Tileset Palettes/::1709769255
 PAL Pipe BG.png::CompressedTexture2D::2946007383648653240::1709493319::1709769255::1::::<><>::
 PAL Pipe Teal.png::CompressedTexture2D::2318789010925216957::1709413480::1709769255::1::::<><>::
-::res://Rooms/::1710035972
-Base Room.tscn::PackedScene::2955498285952071143::1710032158::0::1::::<><>::uid://cdbcsqv2nym4g::::res://Packed Scenes/GUI/GUI.tscn<>res://Scripts/Helper/CameraScript.gd<>uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Assets/Flag.tscn<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres
+::res://Rooms/::1710037609
+Base Room.tscn::PackedScene::2955498285952071143::1710037071::0::1::::<><>::res://Scripts/LevelHolder.gd<>uid://cdbcsqv2nym4g::::res://Packed Scenes/GUI/GUI.tscn<>res://Scripts/Helper/CameraScript.gd<>uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Assets/Flag.tscn<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres
 Main Menu.tscn::PackedScene::4774454986948583222::1710034979::0::1::::<><>::uid://cboono7eq3fvc::::res://Packed Scenes/GUI/Default Button.tscn<>res://Scripts/GUI/MainMenuScript.gd<>res://Shaders/HudShader.gdshader<>uid://biy86xh73p2cn::::res://Materials/GUI/MAT Button Outline.tres<>uid://csiun6qsg7qmf::::res://GUI Theme/THEME Default.tres<>uid://brfdy7wimc62d::::res://GUI Theme/Style Boxes/Stylebox Panel Override.tres<>uid://b3rus0qpfgjiq::::res://Audio/SFX/UI/SND Menu Button.wav<>uid://baiu6wqxit3wk::::res://Audio/SFX/UI/SND Menu Button Press.wav
-Test Room.tscn::PackedScene::2504795797978978085::1710035972::0::1::::<><>::uid://cdbcsqv2nym4g::::res://Packed Scenes/GUI/GUI.tscn<>uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://beg2u0tpfru78::::res://Packed Scenes/Hazards/Saw.tscn<>res://Shaders/PaletteShader.gdshader<>res://Scripts/Helper/CameraScript.gd<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Assets/Flag.tscn<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://c0fbb18klyh1r::::res://Packed Scenes/Hazards/Spike.tscn<>uid://cfjnc6p3qiy2k::::res://Packed Scenes/Assets/PathFollower.tscn<>uid://c6vvdw6g7hqen::::res://Packed Scenes/Platforms/Long Platform.tscn<>uid://c6f68p42i5als::::res://Packed Scenes/Signs/Gravity Sign.tscn<>uid://bkd8fene3gwra::::res://Packed Scenes/Platforms/Short Platform.tscn<>uid://rlluu6g1m7g0::::res://Packed Scenes/Platforms/Med Platform.tscn<>uid://b7jy4k5nkohpk::::res://Packed Scenes/Assets/Ability Change Area.tscn<>uid://fw0l3a0tyrk1::::res://Packed Scenes/Signs/Jump Sign.tscn<>uid://ip887i73lacj::::res://Packed Scenes/Signs/Fly Sign.tscn<>uid://chbr134ce7pte::::res://Packed Scenes/Assets/Spring.tscn<>uid://bn0l231vh72il::::res://Packed Scenes/Assets/Spring Big.tscn<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres
-::res://Rooms/Main Levels/::1710035972
-Level 1.tscn::PackedScene::219794928417839700::1710035972::0::1::::<><>::uid://cdbcsqv2nym4g::::res://Packed Scenes/GUI/GUI.tscn<>res://Scripts/Helper/CameraScript.gd<>uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Assets/Flag.tscn<>uid://c0fbb18klyh1r::::res://Packed Scenes/Hazards/Spike.tscn<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://cfjnc6p3qiy2k::::res://Packed Scenes/Assets/PathFollower.tscn<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://chbr134ce7pte::::res://Packed Scenes/Assets/Spring.tscn<>uid://bkd8fene3gwra::::res://Packed Scenes/Platforms/Short Platform.tscn<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres<>uid://rlluu6g1m7g0::::res://Packed Scenes/Platforms/Med Platform.tscn
-::res://Scripts/::1710023833
+Spring Test.tscn::PackedScene::5124554591309840437::1710037941::0::1::::<><>::res://Scripts/LevelHolder.gd<>uid://cdbcsqv2nym4g::::res://Packed Scenes/GUI/GUI.tscn<>res://Scripts/Helper/CameraScript.gd<>uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Assets/Flag.tscn<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres
+Test Room.tscn::PackedScene::2504795797978978085::1710037609::0::1::::<><>::uid://cdbcsqv2nym4g::::res://Packed Scenes/GUI/GUI.tscn<>uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>res://Scripts/LevelHolder.gd<>uid://beg2u0tpfru78::::res://Packed Scenes/Hazards/Saw.tscn<>res://Shaders/PaletteShader.gdshader<>res://Scripts/Helper/CameraScript.gd<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Assets/Flag.tscn<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://c0fbb18klyh1r::::res://Packed Scenes/Hazards/Spike.tscn<>uid://cfjnc6p3qiy2k::::res://Packed Scenes/Assets/PathFollower.tscn<>uid://c6vvdw6g7hqen::::res://Packed Scenes/Platforms/Long Platform.tscn<>uid://c6f68p42i5als::::res://Packed Scenes/Signs/Gravity Sign.tscn<>uid://bkd8fene3gwra::::res://Packed Scenes/Platforms/Short Platform.tscn<>uid://rlluu6g1m7g0::::res://Packed Scenes/Platforms/Med Platform.tscn<>uid://b7jy4k5nkohpk::::res://Packed Scenes/Assets/Ability Change Area.tscn<>uid://fw0l3a0tyrk1::::res://Packed Scenes/Signs/Jump Sign.tscn<>uid://ip887i73lacj::::res://Packed Scenes/Signs/Fly Sign.tscn<>uid://chbr134ce7pte::::res://Packed Scenes/Assets/Spring.tscn<>uid://bn0l231vh72il::::res://Packed Scenes/Assets/Spring Big.tscn<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres
+::res://Rooms/Main Levels/::1710037609
+Level 1.tscn::PackedScene::219794928417839700::1710037609::0::1::::<><>::res://Scripts/LevelHolder.gd<>uid://cdbcsqv2nym4g::::res://Packed Scenes/GUI/GUI.tscn<>res://Scripts/Helper/CameraScript.gd<>uid://cnri2u2a1qkfs::::res://Packed Scenes/Player.tscn<>uid://dmr5qu0rtvr2t::::res://Packed Scenes/Assets/Flag.tscn<>uid://c0fbb18klyh1r::::res://Packed Scenes/Hazards/Spike.tscn<>uid://cm8k2eqkq2id5::::res://Materials/Tileset Materials/MAT Pipe Teal.tres<>uid://tjg3w1mnba3i::::res://Tilesets/TS Pipes.tres<>uid://cfjnc6p3qiy2k::::res://Packed Scenes/Assets/PathFollower.tscn<>uid://u4kicacicut7::::res://Materials/Tileset Materials/MAT Pipe BG.tres<>uid://chbr134ce7pte::::res://Packed Scenes/Assets/Spring.tscn<>uid://bkd8fene3gwra::::res://Packed Scenes/Platforms/Short Platform.tscn<>uid://ci270v854o1gp::::res://Sprites/Backgrounds/Dither BG.png<>uid://cb1ngag1vd12p::::res://Tilesets/TS Pipes BG.tres<>uid://rlluu6g1m7g0::::res://Packed Scenes/Platforms/Med Platform.tscn
+::res://Scripts/::1710036957
+LevelHolder.gd::GDScript::-1::1710036957::0::1::::LevelHolder<>Node<>::
 ::res://Scripts/Assets/::1710025755
 BaseHazardScript.gd::GDScript::-1::1710025755::0::1::::<>Area2D<>::
 Flag.gd::GDScript::-1::1709862236::0::1::::<>Node2D<>::
 LineAutoGenerate.gd::GDScript::-1::1709258323::0::1::::<>Line2D<>::
 PathFollower.gd::GDScript::-1::1709257760::0::1::::<>PathFollow2D<>::
 SpringScript.gd::GDScript::-1::1709771701::0::1::::<>Node2D<>::
-::res://Scripts/Backend/::1710035969
-MusicManager.gd::GDScript::-1::1710035969::0::1::::MusicManager<>Node<>::
+::res://Scripts/Backend/::1710037323
+MusicManager.gd::GDScript::-1::1710037323::0::1::::MusicManager<>Node<>::
 OptionsData.gd::GDScript::-1::1710010621::0::1::::OptionsData<>Resource<>::
 OptionsHolder.gd::GDScript::-1::1710027651::0::1::::Options<>Node<>::
 RoomManager.gd::GDScript::-1::1710035922::0::1::::RoomManager<>Node<>::
-::res://Scripts/GUI/::1710035631
-HUD.gd::GDScript::-1::1710035631::0::1::::HUD<>CanvasLayer<>::
+::res://Scripts/GUI/::1710037407
+HUD.gd::GDScript::-1::1710037407::0::1::::HUD<>CanvasLayer<>::
 MainMenuScript.gd::GDScript::-1::1710035604::0::1::::<>Control<>::
 ::res://Scripts/Helper/::1710010183
 CameraScript.gd::GDScript::-1::1709771701::0::1::::<>Camera2D<>::
@@ -125,9 +127,9 @@ ConstantRotate.gd::GDScript::-1::1709255502::0::1::::<>Sprite2D<>::
 DestroyParent.gd::GDScript::-1::1709336827::0::1::::DestroyParent<>Timer<>::
 ParticleHandler.gd::GDScript::-1::1709337025::0::1::::ParticleHandler<>Node2D<>::
 StartDefaultAnim.gd::GDScript::-1::1709254659::0::1::::<>AnimatedSprite2D<>::
-::res://Scripts/Player/::1710035535
+::res://Scripts/Player/::1710036288
 DuckbergAnimHandler.gd::GDScript::-1::1710009297::0::1::::PlayerAnimationHandler<>Node2D<>::
-Player.gd::GDScript::-1::1710034976::0::1::::Player<>CharacterBody2D<>::
+Player.gd::GDScript::-1::1710036288::0::1::::Player<>CharacterBody2D<>::
 PlayerAction.gd::GDScript::-1::1709950716::0::1::::PlayerAction<>Node<>::
 PlayerChangeArea.gd::GDScript::-1::1709347783::0::1::::<>Area2D<>::
 PlayerFlapAction.gd::GDScript::-1::1709518741::0::1::::<>PlayerAction<>::
@@ -136,11 +138,11 @@ PlayerHoverAction.gd::GDScript::-1::1709355193::0::1::::<>PlayerAction<>::
 PlayerJumpAction.gd::GDScript::-1::1709691476::0::1::::<>PlayerAction<>::
 PlayerParticleFollower.gd::GDScript::-1::1709353903::0::1::::<>GPUParticles2D<>::
 PlayerSFXScript.gd::GDScript::-1::1710035535::0::1::::PlayerSFX<>Node<>::
-::res://Shaders/::1710035972
-HudShader.gdshader::Shader::-1::1710035972::0::1::::<><>::
-PaletteShader.gdshader::Shader::-1::1710035972::0::1::::<><>::
-ParticleFade.gdshader::Shader::-1::1710035972::0::1::::<><>::
-PlayerParticleShader.gdshader::Shader::-1::1710035972::0::1::::<><>::
+::res://Shaders/::1710037609
+HudShader.gdshader::Shader::-1::1710037913::0::1::::<><>::
+PaletteShader.gdshader::Shader::-1::1710037913::0::1::::<><>::
+ParticleFade.gdshader::Shader::-1::1710037913::0::1::::<><>::
+PlayerParticleShader.gdshader::Shader::-1::1710037913::0::1::::<><>::
 ::res://Sprites/::1709769255
 Duckbert Flap Up Sprite.png::CompressedTexture2D::4247606614668078609::1709346746::1709346748::1::::<><>::
 Duckbert Sprite.png::CompressedTexture2D::4961040144184574682::1709259870::1709259871::1::::<><>::

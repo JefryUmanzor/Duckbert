@@ -3,7 +3,7 @@ extends Node2D
 @export var bounce_strength : float = -300;
 @onready var animation_tree = $AnimationTree
 @onready var animatable_body_2d = $AnimatableBody2D
-@onready var area_2d = $Area2D
+@onready var area_2d = $AnimatableBody2D/Area2D
 
 @onready var bounce_sfx = $"Bounce SFX"
 @onready var down_sfx = $"Down SFX"
@@ -25,6 +25,9 @@ func on_player_exit(_body):
 	player = null;
 
 func _process(_delta):
+	if player != null and started_bounce:
+		player.is_on_spring = true;
+	
 	if player != null and not started_bounce:
 		if up_direction < 0:
 			if actual_player.global_position.y <= area_2d.global_position.y and player.velocity.y >= 0.0: 
