@@ -101,9 +101,11 @@ func toggle_sfx(sfx_on):
 func toggle_fullscreen(fullscreen):
 	if options_loaded:
 		if fullscreen:
+			save_data.reset_window_size();
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN);
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED);
+			save_data.set_windowed_size();
 		save_data.toggle_fullscreen(fullscreen);
 func toggle_fs_stretch(stretch):
 	if options_loaded:

@@ -21,8 +21,6 @@ func get_max_scale():
 	var max_res = min(screen_resolution.x / (BASE_WIDTH as float), screen_resolution.y / (BASE_HEIGHT as float));
 	
 	max_scale = get_closest_power_of_two(max_res);
-	
-	print(max_scale);
 
 func get_closest_power_of_two(val : float) -> int:
 	var n : int = ceili(val);
@@ -67,15 +65,24 @@ func load_options():
 	
 	options_save.options = parse_result;
 
-func apply_options():
+func set_windowed_size():
 	var window_size : Vector2i = Vector2i(BASE_WIDTH * max_scale, BASE_HEIGHT * max_scale);
 	DisplayServer.window_set_size(window_size);
 	var size : Vector2i = DisplayServer.screen_get_size(0) / 2;
 	DisplayServer.window_set_position((DisplayServer.screen_get_position(0) + size)  - (window_size / 2));
+
+func reset_window_size():
+	var window_size : Vector2i = Vector2i(BASE_WIDTH, BASE_HEIGHT);
+	DisplayServer.window_set_size(window_size);
+	DisplayServer.window_request_attention();
+
+func apply_options():
+	set_windowed_size();
 	
 	var fullscreen : bool = options_save.options.is_fullscreen;
 	
 	if fullscreen:
+		reset_window_size()
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN);
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED);

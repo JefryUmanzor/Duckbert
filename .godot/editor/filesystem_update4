@@ -36,3 +36,4 @@ res://Packed Scenes/Platforms/Med Platform.tscn
 res://Packed Scenes/Assets/Spring.tscn
 res://Rooms/Main Levels/Level 1-3.tscn
 res://Scripts/Backend/OptionsHolder.gd
+res://Scripts/GUI/HUD.gd
