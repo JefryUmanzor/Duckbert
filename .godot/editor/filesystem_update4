@@ -1,36 +1,34 @@
-res://Rooms/Main Levels/Level 1.tscn
+res://Rooms/Main Menu.tscn
 res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
 res://Shaders/PlayerParticleShader.gdshader
 res://Materials/Player Particle Material.tres
-res://Shaders/HudShader.gdshader
-res://Materials/GUI/HUD Material.tres
+res://Materials/Player Particle Material NoFlash.tres
 res://Shaders/PaletteShader.gdshader
 res://Materials/GUI/MAT Button Outline.tres
+res://Shaders/TitleBGShader.gdshader
+res://Shaders/HudShader.gdshader
 res://GUI Theme/Style Boxes/Stylebox Panel Override.tres
+res://Shaders/HudShader Down.gdshader
+res://Scripts/GUI/MainMenuScript.gd
+res://Rooms/Test Room.tscn
+res://Materials/GUI/HUD Material.tres
 res://Materials/Player Material.tres
-res://Materials/Player Particle Material NoFlash.tres
 res://Materials/Hazard Material.tres
 res://Materials/Tileset Materials/MAT Pipe BG.tres
 res://Tilesets/TS Pipes.tres
 res://Materials/Tileset Materials/MAT Pipe Teal.tres
 res://Tilesets/TS Pipes BG.tres
-res://Scripts/Backend/MusicManager.gd
-res://Rooms/Test Room.tscn
-res://Rooms/Base Room.tscn
-res://Packed Scenes/Music Manager.tscn
-res://Rooms/Main Menu.tscn
-res://Scripts/Player/Player.gd
-res://Scripts/Backend/RoomManager.gd
-res://Scripts/GUI/HUD.gd
-res://Scripts/Player/PlayerSFXScript.gd
-res://Scripts/GUI/MainMenuScript.gd
-res://Packed Scenes/GUI/GUI.tscn
-res://Scripts/LevelHolder.gd
-res://Packed Scenes/Assets/Spring.tscn
-res://Packed Scenes/Assets/Spring Big.tscn
-res://Rooms/Spring Test.tscn
+res://Rooms/Main Levels/Level 1-2.tscn
+res://Rooms/Main Levels/Level 1-1.tscn
+res://Packed Scenes/Assets/PathFollower.tscn
+res://Scripts/Assets/CheckpointScript.gd
+res://Packed Scenes/Assets/Checkpoint.tscn
 res://Packed Scenes/Player.tscn
-res://Scripts/Assets/SpringScript.gd
-res://Shaders/HudShader Down.gdshader
+res://Scripts/CheckpointManager.gd
+res://Rooms/Base Room.tscn
+res://Scripts/Player/Player.gd
+res://Rooms/Spring Test.tscn
+res://Packed Scenes/Hazards/Spike.tscn
+res://Scripts/Assets/BaseHazardScript.gd

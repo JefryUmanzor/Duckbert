@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dep8w4b37cx5"]
+[gd_scene load_steps=26 format=3 uid="uid://dep8w4b37cx5"]
 
 [ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_pxdi2"]
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_tlvw7"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dmr5qu0rtvr2t" path="res://Packed Scenes/Assets/Flag.tscn" id="4_m8wb7"]
 [ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Hazards/Spike.tscn" id="5_1cl7n"]
 [ext_resource type="Material" uid="uid://cm8k2eqkq2id5" path="res://Materials/Tileset Materials/MAT Pipe Teal.tres" id="5_jlj68"]
+[ext_resource type="Script" path="res://Scripts/CheckpointManager.gd" id="6_1tunw"]
 [ext_resource type="TileSet" uid="uid://tjg3w1mnba3i" path="res://Tilesets/TS Pipes.tres" id="6_k0bq3"]
+[ext_resource type="PackedScene" uid="uid://c3cwuv30ahb4n" path="res://Packed Scenes/Assets/Checkpoint.tscn" id="6_muh25"]
 [ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/Assets/PathFollower.tscn" id="6_t7i5e"]
 [ext_resource type="Material" uid="uid://u4kicacicut7" path="res://Materials/Tileset Materials/MAT Pipe BG.tres" id="7_e026v"]
 [ext_resource type="PackedScene" uid="uid://chbr134ce7pte" path="res://Packed Scenes/Assets/Spring.tscn" id="7_xjvjh"]
@@ -103,6 +105,24 @@ special_intro = true
 
 [node name="Flag" parent="Pausable" instance=ExtResource("4_m8wb7")]
 position = Vector2(1688, -64)
+
+[node name="Checkpoints" type="Node" parent="Pausable"]
+script = ExtResource("6_1tunw")
+
+[node name="Checkpoint" parent="Pausable/Checkpoints" instance=ExtResource("6_muh25")]
+position = Vector2(96, 0)
+
+[node name="Checkpoint2" parent="Pausable/Checkpoints" instance=ExtResource("6_muh25")]
+position = Vector2(696, -48)
+
+[node name="Checkpoint3" parent="Pausable/Checkpoints" instance=ExtResource("6_muh25")]
+position = Vector2(968, -16)
+
+[node name="Checkpoint4" parent="Pausable/Checkpoints" instance=ExtResource("6_muh25")]
+position = Vector2(1224, -48)
+
+[node name="Checkpoint5" parent="Pausable/Checkpoints" instance=ExtResource("6_muh25")]
+position = Vector2(1496, -80)
 
 [node name="Hazards" type="Node" parent="Pausable"]
 
@@ -251,7 +271,6 @@ curve = SubResource("Curve2D_kldmq")
 
 [node name="PathFollow2D" parent="Pausable/Paths/Path" index="0"]
 position = Vector2(0, 0)
-transition_type = 0
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Med Platform")
@@ -263,8 +282,6 @@ curve = SubResource("Curve2D_o7fiu")
 [node name="PathFollow2D" parent="Pausable/Paths/Path2" index="0"]
 position = Vector2(-8, 0)
 duration = 2.0
-transition_type = 1
-ease_type = 2
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path2/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Short Platform")
@@ -276,8 +293,6 @@ curve = SubResource("Curve2D_cbtny")
 [node name="PathFollow2D" parent="Pausable/Paths/Path3" index="0"]
 position = Vector2(0, 0)
 duration = 2.0
-transition_type = 1
-ease_type = 2
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path3/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Med Platform2")
@@ -289,8 +304,6 @@ curve = SubResource("Curve2D_jq5i2")
 [node name="PathFollow2D" parent="Pausable/Paths/Path4" index="0"]
 position = Vector2(0, 0)
 duration = 2.0
-transition_type = 1
-ease_type = 2
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path4/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Med Platform3")

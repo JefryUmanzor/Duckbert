@@ -1,0 +1,232 @@
+[gd_scene load_steps=23 format=3 uid="uid://c3cwuv30ahb4n"]
+
+[ext_resource type="Script" path="res://Scripts/Assets/CheckpointScript.gd" id="1_s8os0"]
+[ext_resource type="Texture2D" uid="uid://c5g6rs8eao41l" path="res://Sprites/Assets/SPR Checkpoint.png" id="2_d6vbv"]
+[ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="2_xghdl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62t2j"]
+atlas = ExtResource("2_d6vbv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_286k7"]
+atlas = ExtResource("2_d6vbv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0ga7"]
+atlas = ExtResource("2_d6vbv")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkm4b"]
+atlas = ExtResource("2_d6vbv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuymh"]
+atlas = ExtResource("2_d6vbv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deahh"]
+atlas = ExtResource("2_d6vbv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_from8"]
+atlas = ExtResource("2_d6vbv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0blku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62t2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_286k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0ga7")
+}],
+"loop": true,
+"name": &"Activated",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkm4b")
+}],
+"loop": true,
+"name": &"Deactivated",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuymh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deahh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_from8")
+}],
+"loop": false,
+"name": &"Touched",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_iwf1q"]
+resource_name = "Activated"
+length = 0.36
+loop_mode = 1
+step = 0.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"Activated", &"Activated", &"Activated", &"Activated"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 2]
+}
+
+[sub_resource type="Animation" id="Animation_bcm2c"]
+resource_name = "Default"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"Deactivated", &"Deactivated"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_fljig"]
+resource_name = "Touched"
+length = 0.250005
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(0, 0, 0, 0),
+"update": 1,
+"values": [0, 1, 2, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"Touched", &"Touched", &"Touched", &"Touched"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkygp"]
+_data = {
+"Activated": SubResource("Animation_iwf1q"),
+"Default": SubResource("Animation_bcm2c"),
+"Touched": SubResource("Animation_fljig")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mt1sx"]
+animation = &"Activated"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k1vl6"]
+animation = &"Touched"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7rx05"]
+animation = &"Default"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_igip3"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_fajap"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hedgb"]
+graph_offset = Vector2(-554.293, 67.0986)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_7rx05")
+nodes/Animation/position = Vector2(-320, 120)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_k1vl6")
+"nodes/Animation 2/position" = Vector2(60, 360)
+"nodes/Animation 2 2/node" = SubResource("AnimationNodeAnimation_mt1sx")
+"nodes/Animation 2 2/position" = Vector2(-340, 280)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_igip3")
+nodes/Blend2/position = Vector2(-95.946, 180.702)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_fajap")
+nodes/OneShot/position = Vector2(80, 120)
+node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2 2", &"OneShot", 0, &"Blend2", &"OneShot", 1, &"Animation 2", &"output", 0, &"OneShot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh48y"]
+size = Vector2(16, 64)
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_s8os0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_xghdl")
+sprite_frames = SubResource("SpriteFrames_0blku")
+animation = &"Deactivated"
+offset = Vector2(0, -8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pkygp")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pkygp")
+}
+tree_root = SubResource("AnimationNodeBlendTree_hedgb")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Blend2/blend_amount = 0.0
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 32768
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_dh48y")
+
+[connection signal="body_entered" from="Area2D" to="." method="on_touch_player"]

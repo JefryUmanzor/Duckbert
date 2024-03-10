@@ -42,11 +42,13 @@ var can_control : bool = true;
 
 @onready var sfx : PlayerSFX = $SFX
 var hud : HUD = null;
+var checkpoint_manager : CheckpointManager;
 
 signal special_intro_end;
 
 func _ready():
 	hud = get_tree().current_scene.get_node("GUI") as HUD;
+	checkpoint_manager = get_tree().current_scene.get_node("Pausable").get_node("Checkpoints") as CheckpointManager;
 	
 	starting_action = wrapi(starting_action, 0, actions.get_child_count());
 	current_action = actions.get_child(starting_action) as PlayerAction;
@@ -55,8 +57,11 @@ func _ready():
 	hud.on_action_switch(current_action.action_name);
 	
 	can_control = !special_intro;
+	
 	if special_intro:
 		sfx.play_fall_sfx();
+	else:
+		checkpoint_manager.set_initial_position(global_position);
 
 func _process(delta):
 	if can_control:
@@ -104,6 +109,8 @@ func _process(delta):
 		if is_on_floor():
 			special_intro = false;
 			can_control = true;
+			
+			checkpoint_manager.set_initial_position(global_position);
 			
 			anim.play_land_squash();
 			sfx.stop_fall_sfx();
@@ -162,6 +169,9 @@ func _physics_process(delta):
 	velocity.x += accel;
 	
 	move_and_slide();
+
+func start_death():
+	checkpoint_manager.respawn_player();
 
 func change_ability(action_index):
 	action_index = wrapi(action_index, 0, actions.get_child_count());

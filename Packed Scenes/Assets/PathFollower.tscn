@@ -19,7 +19,8 @@ rotation = 1.5708
 rotates = false
 script = ExtResource("1_fh6ka")
 duration = 1.5
-transition_type = 7
+transition_type = 1
+ease_type = 2
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 update_rotation = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bidwvipwp45l8"]
+[gd_scene load_steps=14 format=3 uid="uid://bidwvipwp45l8"]
 
 [ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_2hjdo"]
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_ab7yy"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ci270v854o1gp" path="res://Sprites/Backgrounds/Dither BG.png" id="6_r2rtv"]
 [ext_resource type="Material" uid="uid://u4kicacicut7" path="res://Materials/Tileset Materials/MAT Pipe BG.tres" id="7_a3ufs"]
 [ext_resource type="TileSet" uid="uid://cb1ngag1vd12p" path="res://Tilesets/TS Pipes BG.tres" id="8_2w2cm"]
+[ext_resource type="Script" path="res://Scripts/CheckpointManager.gd" id="11_5e08i"]
+[ext_resource type="PackedScene" uid="uid://c3cwuv30ahb4n" path="res://Packed Scenes/Assets/Checkpoint.tscn" id="12_n2mbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbvr7"]
 size = Vector2(304, 208)
@@ -40,6 +42,12 @@ disabled = true
 
 [node name="Flag" parent="Pausable" instance=ExtResource("3_u0l4i")]
 position = Vector2(248, 0)
+
+[node name="Checkpoints" type="Node" parent="Pausable"]
+script = ExtResource("11_5e08i")
+
+[node name="Checkpoint" parent="Pausable/Checkpoints" instance=ExtResource("12_n2mbj")]
+position = Vector2(64, 0)
 
 [node name="Tiles" type="Node" parent="Pausable"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bbxlvdxnpt2j6"]
+[gd_scene load_steps=40 format=3 uid="uid://bbxlvdxnpt2j6"]
 
 [ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="1_5ogpg"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="1_j0x27"]
@@ -12,9 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Hazards/Spike.tscn" id="4_oxofq"]
 [ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/Assets/PathFollower.tscn" id="5_hu7vc"]
 [ext_resource type="PackedScene" uid="uid://c6vvdw6g7hqen" path="res://Packed Scenes/Platforms/Long Platform.tscn" id="6_gkidq"]
+[ext_resource type="Script" path="res://Scripts/CheckpointManager.gd" id="7_6q80t"]
 [ext_resource type="PackedScene" uid="uid://c6f68p42i5als" path="res://Packed Scenes/Signs/Gravity Sign.tscn" id="7_37bir"]
 [ext_resource type="PackedScene" uid="uid://bkd8fene3gwra" path="res://Packed Scenes/Platforms/Short Platform.tscn" id="7_iv7ri"]
 [ext_resource type="PackedScene" uid="uid://rlluu6g1m7g0" path="res://Packed Scenes/Platforms/Med Platform.tscn" id="8_2i6c2"]
+[ext_resource type="PackedScene" uid="uid://c3cwuv30ahb4n" path="res://Packed Scenes/Assets/Checkpoint.tscn" id="8_dxnsf"]
 [ext_resource type="PackedScene" uid="uid://b7jy4k5nkohpk" path="res://Packed Scenes/Assets/Ability Change Area.tscn" id="9_7nair"]
 [ext_resource type="PackedScene" uid="uid://fw0l3a0tyrk1" path="res://Packed Scenes/Signs/Jump Sign.tscn" id="11_m8v08"]
 [ext_resource type="PackedScene" uid="uid://ip887i73lacj" path="res://Packed Scenes/Signs/Fly Sign.tscn" id="12_ww4xu"]
@@ -84,7 +86,7 @@ size = Vector2(400, 136)
 
 [node name="World 1" type="Node2D"]
 script = ExtResource("1_wm17k")
-next_level_path = "res://Rooms/Main Levels/Level 1.tscn"
+next_level_path = "res://Rooms/Main Levels/Level 1-1.tscn"
 
 [node name="GUI" parent="." instance=ExtResource("1_5ogpg")]
 visible = false
@@ -124,6 +126,12 @@ max_coyote_time = 0.12
 
 [node name="Flag" parent="Pausable" instance=ExtResource("3_errgd")]
 position = Vector2(280, -16)
+
+[node name="Checkpoints" type="Node" parent="Pausable"]
+script = ExtResource("7_6q80t")
+
+[node name="Checkpoint" parent="Pausable/Checkpoints" instance=ExtResource("8_dxnsf")]
+position = Vector2(-160, 96)
 
 [node name="Hazards" type="Node" parent="Pausable"]
 

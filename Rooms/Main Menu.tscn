@@ -1,10 +1,13 @@
-[gd_scene load_steps=40 format=3 uid="uid://caa1tt7gmfscc"]
+[gd_scene load_steps=46 format=3 uid="uid://caa1tt7gmfscc"]
 
 [ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="1_42oty"]
 [ext_resource type="Script" path="res://Scripts/GUI/MainMenuScript.gd" id="1_yn63n"]
+[ext_resource type="Shader" path="res://Shaders/TitleBGShader.gdshader" id="2_reskw"]
 [ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="3_hdljr"]
+[ext_resource type="Texture2D" uid="uid://cxdcoc57ub61h" path="res://Sprites/Backgrounds/BG Title.png" id="3_ly3su"]
 [ext_resource type="Material" uid="uid://biy86xh73p2cn" path="res://Materials/GUI/MAT Button Outline.tres" id="4_csgxu"]
 [ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="4_q26nb"]
+[ext_resource type="Texture2D" uid="uid://b00wl104iql7k" path="res://Sprites/UI/Pause Gradient.png" id="6_h0u3s"]
 [ext_resource type="StyleBox" uid="uid://brfdy7wimc62d" path="res://GUI Theme/Style Boxes/Stylebox Panel Override.tres" id="6_m2usd"]
 [ext_resource type="AudioStream" uid="uid://b3rus0qpfgjiq" path="res://Audio/SFX/UI/SND Menu Button.wav" id="7_eyyxv"]
 [ext_resource type="Shader" path="res://Shaders/HudShader Down.gdshader" id="7_pb011"]
@@ -12,18 +15,35 @@
 [ext_resource type="Texture2D" uid="uid://5prasalm7syw" path="res://Sprites/UI/Level Select Gradient.png" id="8_ixtvc"]
 [ext_resource type="StyleBox" uid="uid://dyidxbw2tsioi" path="res://GUI Theme/Style Boxes/StyleBox Disabled.res" id="9_lrjhx"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ao37"]
+shader = ExtResource("2_reskw")
+shader_parameter/scroll_speed = 0.05
+shader_parameter/uv_rotation = -45.0
+shader_parameter/tex = ExtResource("3_ly3su")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7n2u"]
+texture = ExtResource("3_ly3su")
+expand_margin_bottom = 32.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hsml3"]
 shader = ExtResource("3_hdljr")
-shader_parameter/base_alpha = 2.0
-shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/base_alpha = 3.0
+shader_parameter/albedo = Color(0.223529, 0.321569, 0.898039, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4n17"]
+texture = ExtResource("6_h0u3s")
+texture_margin_right = 256.0
+expand_margin_left = 10.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uiteb"]
 shader = ExtResource("7_pb011")
-shader_parameter/base_alpha = 0.95
-shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/base_alpha = 3.0
+shader_parameter/albedo = Color(0.223529, 0.321569, 0.898039, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq5ko"]
 texture = ExtResource("8_ixtvc")
+texture_margin_bottom = 224.0
+expand_margin_top = 10.0
 
 [sub_resource type="Animation" id="Animation_mvmyl"]
 resource_name = "Boot Up"
@@ -88,6 +108,128 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ea0sq"]
+resource_name = "Levels Loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Level Select:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7cuk6"]
+resource_name = "Levels Transition"
+length = 0.22
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Level Select:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, -224), Vector2(0, -234), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gh7df"]
+resource_name = "LevelsMain Transition"
+length = 0.22
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1.5, 1),
+"update": 0,
+"values": [Vector2(0, 224), Vector2(0, 234), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Level Select:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, -224)]
 }
 
 [sub_resource type="Animation" id="Animation_qw3ra"]
@@ -316,128 +458,6 @@ tracks/2/keys = {
 "values": [Vector2(0, -224)]
 }
 
-[sub_resource type="Animation" id="Animation_7cuk6"]
-resource_name = "Levels Transition"
-length = 0.22
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main Screen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Level Select:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 2, 1),
-"update": 0,
-"values": [Vector2(0, -224), Vector2(0, -234), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ea0sq"]
-resource_name = "Levels Loop"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main Screen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Level Select:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Options:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gh7df"]
-resource_name = "LevelsMain Transition"
-length = 0.22
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main Screen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1.5, 1),
-"update": 0,
-"values": [Vector2(0, 224), Vector2(0, 234), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Level Select:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1.5, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, -224)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ra4av"]
 _data = {
 "Boot Up": SubResource("Animation_mvmyl"),
@@ -530,15 +550,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yn63n")
 
-[node name="Main Screen" type="Control" parent="."]
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_7ao37")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 0.00012207
-offset_bottom = 0.000183105
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r7n2u")
+
+[node name="Main Screen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 224.0
 
 [node name="Main Buttons" type="VBoxContainer" parent="Main Screen"]
 clip_contents = true
@@ -548,9 +574,7 @@ anchor_top = 0.5
 anchor_right = 0.4
 anchor_bottom = 1.0
 offset_top = -2.00009
-offset_right = 12.0
-offset_bottom = -1.00012
-grow_vertical = 2
+offset_bottom = -1.00018
 
 [node name="Start" parent="Main Screen/Main Buttons" instance=ExtResource("1_42oty")]
 layout_mode = 2
@@ -585,13 +609,9 @@ text = "Quit
 
 [node name="Options" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
 offset_left = -256.0
-offset_right = -256.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_bottom = 224.0
 
 [node name="Panel" type="Panel" parent="Options"]
 material = SubResource("ShaderMaterial_hsml3")
@@ -601,6 +621,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p4n17")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Options"]
 clip_contents = true
@@ -894,6 +915,7 @@ focus_neighbor_bottom = NodePath("../../World 2/2-3")
 focus_next = NodePath("../../World 2/2-3")
 focus_previous = NodePath("../../HBoxContainer4/Back")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "1-3"
 
 [node name="1-4" parent="Level Select/Panel/VBoxContainer/World 1" instance=ExtResource("1_42oty")]
@@ -906,6 +928,7 @@ focus_neighbor_bottom = NodePath("../../World 2/2-4")
 focus_next = NodePath("../../World 2/2-4")
 focus_previous = NodePath("../../HBoxContainer4/Back")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "1-4"
 
 [node name="1-5" parent="Level Select/Panel/VBoxContainer/World 1" instance=ExtResource("1_42oty")]
@@ -918,6 +941,7 @@ focus_neighbor_bottom = NodePath("../../World 2/2-5")
 focus_next = NodePath("../../World 2/2-5")
 focus_previous = NodePath("../../HBoxContainer4/Back")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "1-5"
 
 [node name="World 2" type="HBoxContainer" parent="Level Select/Panel/VBoxContainer"]
@@ -933,6 +957,7 @@ focus_neighbor_bottom = NodePath("../../World 3/3-1")
 focus_next = NodePath("../../World 3/3-1")
 focus_previous = NodePath("../../World 1/1-1")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "2-1"
 
 [node name="2-2" parent="Level Select/Panel/VBoxContainer/World 2" instance=ExtResource("1_42oty")]
@@ -945,6 +970,7 @@ focus_neighbor_bottom = NodePath("../../World 3/3-2")
 focus_next = NodePath("../../World 3/3-2")
 focus_previous = NodePath("../../World 1/1-2")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "2-2"
 
 [node name="2-3" parent="Level Select/Panel/VBoxContainer/World 2" instance=ExtResource("1_42oty")]
@@ -957,6 +983,7 @@ focus_neighbor_bottom = NodePath("../../World 3/3-3")
 focus_next = NodePath("../../World 3/3-3")
 focus_previous = NodePath("../../World 1/1-3")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "2-3"
 
 [node name="2-4" parent="Level Select/Panel/VBoxContainer/World 2" instance=ExtResource("1_42oty")]
@@ -969,6 +996,7 @@ focus_neighbor_bottom = NodePath("../../World 3/3-4")
 focus_next = NodePath("../../World 3/3-4")
 focus_previous = NodePath("../../World 1/1-4")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "2-4"
 
 [node name="2-5" parent="Level Select/Panel/VBoxContainer/World 2" instance=ExtResource("1_42oty")]
@@ -981,6 +1009,7 @@ focus_neighbor_bottom = NodePath("../../World 3/3-5")
 focus_next = NodePath("../../World 3/3-5")
 focus_previous = NodePath("../../World 1/1-5")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "2-5"
 
 [node name="World 3" type="HBoxContainer" parent="Level Select/Panel/VBoxContainer"]
@@ -996,6 +1025,7 @@ focus_neighbor_bottom = NodePath("../../HBoxContainer4/Back")
 focus_next = NodePath("../../HBoxContainer4/Back")
 focus_previous = NodePath("../../World 2/2-5")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "3-1"
 
 [node name="3-2" parent="Level Select/Panel/VBoxContainer/World 3" instance=ExtResource("1_42oty")]
@@ -1008,6 +1038,7 @@ focus_neighbor_bottom = NodePath("../../HBoxContainer4/Back")
 focus_next = NodePath("../../HBoxContainer4/Back")
 focus_previous = NodePath("../../World 2/2-2")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "3-2"
 
 [node name="3-3" parent="Level Select/Panel/VBoxContainer/World 3" instance=ExtResource("1_42oty")]
@@ -1020,6 +1051,7 @@ focus_neighbor_bottom = NodePath("../../HBoxContainer4/Back")
 focus_next = NodePath("../../HBoxContainer4/Back")
 focus_previous = NodePath("../../World 2/2-3")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "3-3"
 
 [node name="3-4" parent="Level Select/Panel/VBoxContainer/World 3" instance=ExtResource("1_42oty")]
@@ -1032,6 +1064,7 @@ focus_neighbor_bottom = NodePath("../../HBoxContainer4/Back")
 focus_next = NodePath("../../HBoxContainer4/Back")
 focus_previous = NodePath("../../World 2/2-4")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "3-4"
 
 [node name="3-5" parent="Level Select/Panel/VBoxContainer/World 3" instance=ExtResource("1_42oty")]
@@ -1044,6 +1077,7 @@ focus_neighbor_bottom = NodePath("../../HBoxContainer4/Back")
 focus_next = NodePath("../../HBoxContainer4/Back")
 focus_previous = NodePath("../../World 2/2-5")
 theme_override_font_sizes/font_size = 10
+disabled = true
 text = "3-5"
 
 [node name="Control2" type="Control" parent="Level Select/Panel/VBoxContainer"]
@@ -1138,7 +1172,7 @@ bus = &"SFX"
 [connection signal="pressed" from="Options/VBoxContainer2/Back/HBoxContainer/Back Button" to="." method="switch_to_main"]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 1/1-1" to="MoveSFX" method="play"]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 1/1-1" to="." method="set_back_neighbors" binds= [1]]
-[connection signal="pressed" from="Level Select/Panel/VBoxContainer/World 1/1-1" to="." method="send_to_level" binds= ["res://Rooms/Main Levels/Level 1.tscn"]]
+[connection signal="pressed" from="Level Select/Panel/VBoxContainer/World 1/1-1" to="." method="send_to_level" binds= ["res://Rooms/Main Levels/Level 1-1.tscn"]]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 1/1-2" to="MoveSFX" method="play"]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 1/1-2" to="." method="set_back_neighbors" binds= [2]]
 [connection signal="pressed" from="Level Select/Panel/VBoxContainer/World 1/1-2" to="." method="send_to_level" binds= ["res://Rooms/Test Room.tscn"]]
