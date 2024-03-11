@@ -1,28 +1,20 @@
-res://Rooms/Main Levels/Level 1-1.tscn
+res://Rooms/Base Room 2.tscn
 res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
 res://Shaders/PlayerParticleShader.gdshader
 res://Materials/Player Particle Material.tres
-res://Materials/Player Particle Material NoFlash.tres
-res://Shaders/PaletteShader.gdshader
 res://Shaders/HudShader.gdshader
-res://Shaders/HudShader Down.gdshader
-res://Shaders/TitleBGShader.gdshader
 res://Materials/GUI/HUD Material.tres
+res://Shaders/PaletteShader.gdshader
 res://Materials/GUI/MAT Button Outline.tres
 res://GUI Theme/Style Boxes/Stylebox Panel Override.tres
 res://Materials/Player Material.tres
-res://Materials/Hazard Material.tres
-res://Materials/Tileset Materials/MAT Pipe Teal.tres
-res://Tilesets/TS Pipes.tres
-res://Materials/Tileset Materials/MAT Pipe BG.tres
-res://Tilesets/TS Pipes BG.tres
-res://Rooms/Main Levels/Level 1-2.tscn
-res://Packed Scenes/Player.tscn
-res://Rooms/Main Levels/Level 1-3.tscn
-res://Packed Scenes/GUI/GUI.tscn
-res://Tilesets/TS Catacombs.tres
-res://Rooms/Base Room 2.tscn
-res://Tilesets/TS Catacombs BG.tres
 res://Materials/GUI/HUD Material 2.tres
+res://Materials/Player Particle Material NoFlash.tres
+res://Materials/Tileset Materials/MAT Catacomb Purple.tres
+res://Materials/Tileset Materials/MAT Catacomb BG.tres
+res://Tilesets/TS Catacombs.tres
+res://Tilesets/TS Catacombs BG.tres
+res://Shaders/HudShader Down.gdshader
+res://Shaders/TitleBGShader.gdshader
