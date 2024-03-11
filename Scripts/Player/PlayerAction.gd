@@ -18,6 +18,9 @@ func _activate(_player : Player):
 func _on_release(_player : Player):
 	pass;
 
+func _on_death(_player : Player):
+	pass;
+
 func _on_enable_action(first):
 	if not first:
 		on_activated.emit();

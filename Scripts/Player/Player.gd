@@ -172,6 +172,8 @@ func _physics_process(delta):
 
 func start_death():
 	checkpoint_manager.respawn_player();
+	sfx.play_fall_land_sfx();
+	current_action._on_death(self);
 
 func change_ability(action_index):
 	action_index = wrapi(action_index, 0, actions.get_child_count());

@@ -266,7 +266,9 @@ size = Vector2(14, 16)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 32768
+floor_constant_speed = true
 floor_block_on_wall = false
+floor_snap_length = 6.0
 platform_on_leave = 1
 script = ExtResource("1_fk0wl")
 top_speed = 150.0

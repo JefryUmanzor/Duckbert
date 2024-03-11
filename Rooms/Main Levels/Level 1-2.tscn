@@ -15,7 +15,7 @@
 [ext_resource type="TileSet" uid="uid://cb1ngag1vd12p" path="res://Tilesets/TS Pipes BG.tres" id="10_svs8c"]
 [ext_resource type="PackedScene" uid="uid://cfjnc6p3qiy2k" path="res://Packed Scenes/PathFollower.tscn" id="11_2o60w"]
 [ext_resource type="PackedScene" uid="uid://rlluu6g1m7g0" path="res://Packed Scenes/Platforms/Med Platform.tscn" id="12_xxxj0"]
-[ext_resource type="PackedScene" uid="uid://b7jy4k5nkohpk" path="res://Packed Scenes/Assets/Ability Change Area.tscn" id="13_3d0ks"]
+[ext_resource type="PackedScene" uid="uid://b7jy4k5nkohpk" path="res://Packed Scenes/Ability Change Area.tscn" id="13_3d0ks"]
 [ext_resource type="PackedScene" uid="uid://fw0l3a0tyrk1" path="res://Packed Scenes/Signs/Jump Sign.tscn" id="14_cx801"]
 [ext_resource type="PackedScene" uid="uid://c6vvdw6g7hqen" path="res://Packed Scenes/Platforms/Long Platform.tscn" id="17_0tr1m"]
 [ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Hazards/Spike.tscn" id="17_dkt28"]

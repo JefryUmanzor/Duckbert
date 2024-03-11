@@ -35,6 +35,16 @@ func _activate(player : Player):
 		spawn_particle(flipped);
 		sprite_handler.set_palette(palette_texture if player.gravity_scale == 1 else negative_palette_texture);
 
+func _on_death(_player : Player):
+	if _player.gravity_scale < 0:
+		_player.velocity.y *= y_vel_scale;
+		_player.gravity_scale *= -1;
+		_player.up_direction *= -1;
+		
+		flipped = false;
+		_player.char_sprite.flip_v = flipped; 
+		sprite_handler.set_palette(palette_texture);
+
 func _on_disable_action():
 	if m_player.gravity_scale < 0:
 		m_player.velocity.y *= y_vel_scale;

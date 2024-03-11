@@ -22,6 +22,7 @@ size = Vector2(304, 208)
 script = ExtResource("1_e8pyg")
 
 [node name="GUI" parent="." instance=ExtResource("2_5750q")]
+visible = false
 
 [node name="Panel" parent="GUI/Base/Options" index="0"]
 material = ExtResource("3_mj48v")
