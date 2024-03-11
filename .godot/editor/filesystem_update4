@@ -32,3 +32,4 @@ res://Scripts/GUI/MainMenuScript.gd
 res://Rooms/Main Menu.tscn
 res://Rooms/Main Levels/Level 2-2.tscn
 res://Scripts/Assets/Flag.gd
+res://Packed Scenes/NewPathFollower.tscn
