@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cwrdgntghat4a"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_pvah1"]
+[ext_resource type="Texture2D" uid="uid://3ktxn035boqu" path="res://Palettes/Tileset Palettes/PAL Catacomb Purple.png" id="2_5np1e"]
+
+[resource]
+shader = ExtResource("1_pvah1")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("2_5np1e")

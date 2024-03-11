@@ -1,3 +1,7 @@
+res://Materials/GUI
+res://Materials/Tileset Materials
+res://Sprites/Tilesets
+res://Tilesets
 F:/_Game Projects/Archives/Duckbert Archives/Export
 res://Sprites/Icons
 res://Sprites
@@ -13,9 +17,6 @@ res://Packed Scenes
 res://Rooms
 res://GUI Theme/Style Boxes
 res://GUI Theme
-res://Materials/GUI
 res://Scripts/GUI
 res://Packed Scenes/GUI
 res://Materials
-res://Packed Scenes/Particles
-res://Sprites/Tilesets

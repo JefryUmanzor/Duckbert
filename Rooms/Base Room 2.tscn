@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://bkkylvxt1k6gh"]
+
+[ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_e8pyg"]
+[ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="2_5750q"]
+[ext_resource type="Script" path="res://Scripts/Helper/CameraScript.gd" id="3_iuoyq"]
+[ext_resource type="Material" uid="uid://bqgkugkaogvme" path="res://Materials/GUI/HUD Material 2.tres" id="3_mj48v"]
+[ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="4_u5ach"]
+[ext_resource type="PackedScene" uid="uid://dmr5qu0rtvr2t" path="res://Packed Scenes/Assets/Flag.tscn" id="5_ymt8v"]
+[ext_resource type="Script" path="res://Scripts/CheckpointManager.gd" id="6_mo1vh"]
+[ext_resource type="PackedScene" uid="uid://c3cwuv30ahb4n" path="res://Packed Scenes/Assets/Checkpoint.tscn" id="7_imjkr"]
+[ext_resource type="Material" uid="uid://cwrdgntghat4a" path="res://Materials/Tileset Materials/MAT Catacomb Purple.tres" id="8_fpmk8"]
+[ext_resource type="Material" uid="uid://cvicp8jd2c3mm" path="res://Materials/Tileset Materials/MAT Catacomb BG.tres" id="10_6m0sf"]
+[ext_resource type="TileSet" uid="uid://dosihv2id7hv3" path="res://Tilesets/TS Catacombs.tres" id="10_dyskg"]
+[ext_resource type="Texture2D" uid="uid://bhbuft1jxn55b" path="res://Sprites/Backgrounds/Dither BG Inward.png" id="11_0iaif"]
+[ext_resource type="PackedScene" uid="uid://bx6x22mbo5oq2" path="res://Packed Scenes/Hazards/World Boundary.tscn" id="13_clvyj"]
+[ext_resource type="TileSet" uid="uid://cw8u2phgaf0qv" path="res://Tilesets/TS Catacombs BG.tres" id="13_iepep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbvr7"]
+size = Vector2(304, 208)
+
+[node name="World 2" type="Node2D"]
+script = ExtResource("1_e8pyg")
+
+[node name="GUI" parent="." instance=ExtResource("2_5750q")]
+
+[node name="Panel" parent="GUI/Base/Options" index="0"]
+material = ExtResource("3_mj48v")
+
+[node name="Pause Panel" parent="GUI/Base" index="1"]
+material = ExtResource("3_mj48v")
+
+[node name="Hud" parent="GUI/Base" index="2"]
+material = ExtResource("3_mj48v")
+
+[node name="Pausable" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Pausable" node_paths=PackedStringArray("target", "bounds")]
+script = ExtResource("3_iuoyq")
+target = NodePath("../Player")
+bounds = NodePath("../Camera Collision/CollisionShape2D")
+
+[node name="Camera Collision" type="StaticBody2D" parent="Pausable"]
+position = Vector2(-512, 104)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pausable/Camera Collision"]
+position = Vector2(616, -192)
+shape = SubResource("RectangleShape2D_cbvr7")
+disabled = true
+
+[node name="Player" parent="Pausable" instance=ExtResource("4_u5ach")]
+
+[node name="Flag" parent="Pausable" instance=ExtResource("5_ymt8v")]
+position = Vector2(248, 0)
+
+[node name="Checkpoints" type="Node" parent="Pausable"]
+script = ExtResource("6_mo1vh")
+
+[node name="Checkpoint" parent="Pausable/Checkpoints" instance=ExtResource("7_imjkr")]
+position = Vector2(64, 0)
+
+[node name="Tiles" type="Node" parent="Pausable"]
+
+[node name="TileMap" type="TileMap" parent="Pausable/Tiles"]
+material = ExtResource("8_fpmk8")
+tile_set = ExtResource("10_dyskg")
+format = 2
+layer_0/name = "Base"
+layer_0/tile_data = PackedInt32Array(65533, 655360, 268435463, 65534, 589824, 7, 65535, 589824, 7, 0, 589824, 7, 1, 589824, 7, 2, 589824, 7, 3, 589824, 7, 4, 589824, 7, 5, 589824, 7, 6, 589824, 7, 7, 589824, 7, 8, 589824, 7, 9, 589824, 7, 10, 589824, 7, 11, 589824, 7, 12, 589824, 7, 13, 589824, 7, 14, 589824, 7, 15, 655360, 7, 131070, 589824, 8, 131071, 589824, 8, 65536, 589824, 8, 65537, 589824, 8, 65538, 589824, 8, 65539, 589824, 8, 65540, 589824, 8, 65541, 589824, 8, 65542, 589824, 8, 65543, 589824, 8, 65544, 589824, 8, 65545, 589824, 8, 65546, 589824, 8, 65547, 589824, 8, 65548, 589824, 8, 65549, 589824, 8, 65550, 589824, 8, 131086, 589824, 8, 131085, 589824, 8, 131084, 589824, 8, 131083, 589824, 8, 196619, 589824, 8, 196618, 589824, 8, 196617, 589824, 8, 196616, 589824, 8, 196615, 589824, 8, 131079, 589824, 8, 131078, 589824, 8, 131077, 589824, 8, 131076, 589824, 8, 131075, 589824, 8, 131074, 589824, 8, 131073, 589824, 8, 131072, 589824, 8, 196607, 589824, 8, 196606, 589824, 8, 262143, 589824, 8, 196608, 589824, 8, 196609, 589824, 8, 196610, 589824, 8, 196611, 589824, 8, 196612, 589824, 8, 262142, 589824, 8, 196613, 589824, 8, 196614, 589824, 8, 131081, 589824, 8, 131080, 589824, 8, 131082, 589824, 8, 196620, 589824, 8, 196621, 589824, 8, 196622, 589824, 8, 131069, 524288, 8, 196605, 524288, 8, 262141, 524288, 8, 65551, 524288, 268435464, 131087, 524288, 268435464, 196623, 524288, 268435464, -720897, 589824, 8, -786432, 589824, 8, -786431, 589824, 8, -786430, 589824, 8, -786429, 589824, 8, -786428, 589824, 8, -786427, 589824, 8, -786426, 589824, 8, -786425, 589824, 8, -786424, 589824, 8, -786423, 589824, 8, -786422, 589824, 8, -786421, 589824, 8, -786420, 589824, 8, -786419, 589824, 8, -786418, 589824, 8, -720899, 655360, 805306376, -458737, 655360, 1342177287, -393219, 655360, 1073741831, -393218, 589824, 805306375, -393217, 589824, 805306375, -458752, 589824, 805306375, -458751, 589824, 805306375, -458750, 589824, 805306375, -458749, 589824, 805306375, -458748, 589824, 805306375, -458747, 589824, 805306375, -458746, 589824, 805306375, -458745, 589824, 805306375, -458744, 589824, 805306375, -458743, 589824, 805306375, -458742, 589824, 805306375, -458741, 589824, 805306375, -458739, 589824, 805306375, -458738, 589824, 805306375, -458740, 589824, 805306375, -655363, 655360, 805306376, -589827, 655360, 805306376, -524291, 655360, 805306376, -458755, 655360, 805306376, -786417, 655360, 8, -720881, 655360, 8, -655345, 655360, 8, -589809, 655360, 8, -524273, 655360, 8, -720898, 589824, 8, -655362, 589824, 8, -589826, 589824, 8, -524290, 589824, 8, -458754, 589824, 8, -655361, 589824, 8, -589825, 589824, 8, -524289, 589824, 8, -458753, 589824, 8, -720896, 589824, 8, -655360, 589824, 8, -589824, 589824, 8, -524288, 589824, 8, -720895, 589824, 8, -655359, 589824, 8, -589823, 589824, 8, -524287, 589824, 8, -720894, 589824, 8, -655358, 589824, 8, -589822, 589824, 8, -524286, 589824, 8, -720893, 589824, 8, -655357, 589824, 8, -589821, 589824, 8, -524285, 589824, 8, -720892, 589824, 8, -655356, 589824, 8, -589820, 589824, 8, -524284, 589824, 8, -720891, 589824, 8, -655355, 589824, 8, -589819, 589824, 8, -524283, 589824, 8, -720890, 589824, 8, -655354, 589824, 8, -589818, 589824, 8, -524282, 589824, 8, -720889, 589824, 8, -655353, 589824, 8, -589817, 589824, 8, -524281, 589824, 8, -720888, 589824, 8, -655352, 589824, 8, -589816, 589824, 8, -524280, 589824, 8, -720887, 589824, 8, -655351, 589824, 8, -589815, 589824, 8, -524279, 589824, 8, -720886, 589824, 8, -655350, 589824, 8, -589814, 589824, 8, -524278, 589824, 8, -720885, 589824, 8, -655349, 589824, 8, -589813, 589824, 8, -524277, 589824, 8, -720884, 589824, 8, -655348, 589824, 8, -589812, 589824, 8, -524276, 589824, 8, -720883, 589824, 8, -655347, 589824, 8, -589811, 589824, 8, -524275, 589824, 8, -720882, 589824, 8, -655346, 589824, 8, -589810, 589824, 8, -524274, 589824, 8, -917506, 589824, 8, -851970, 589824, 8, -786434, 589824, 8, -917505, 589824, 8, -851969, 589824, 8, -786433, 589824, 8, -983040, 589824, 8, -917504, 589824, 8, -851968, 589824, 8, -983039, 589824, 8, -917503, 589824, 8, -851967, 589824, 8, -983038, 589824, 8, -917502, 589824, 8, -851966, 589824, 8, -983037, 589824, 8, -917501, 589824, 8, -851965, 589824, 8, -983036, 589824, 8, -917500, 589824, 8, -851964, 589824, 8, -983035, 589824, 8, -917499, 589824, 8, -851963, 589824, 8, -983034, 589824, 8, -917498, 589824, 8, -851962, 589824, 8, -983033, 589824, 8, -917497, 589824, 8, -851961, 589824, 8, -983032, 589824, 8, -917496, 589824, 8, -851960, 589824, 8, -983031, 589824, 8, -917495, 589824, 8, -851959, 589824, 8, -983030, 589824, 8, -917494, 589824, 8, -851958, 589824, 8, -983029, 589824, 8, -917493, 589824, 8, -851957, 589824, 8, -983028, 589824, 8, -917492, 589824, 8, -851956, 589824, 8, -983027, 589824, 8, -917491, 589824, 8, -851955, 589824, 8, -983026, 589824, 8, -917490, 589824, 8, -851954, 589824, 8, -983025, 655360, 8, -917489, 655360, 8, -851953, 655360, 8, -917507, 655360, 805306376, -851971, 655360, 805306376, -786435, 655360, 805306376)
+layer_1/name = "Decal"
+layer_1/navigation_enabled = false
+layer_1/tile_data = PackedInt32Array(65544, 720896, 3, 131075, 720896, 4, 131083, 720896, 5, 65536, 655360, 3, 131086, 655360, 5, -589815, 655360, 5, -524288, 720896, 4, -655355, 720896, 5)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Pausable/Tiles"]
+
+[node name="BG" type="ParallaxLayer" parent="Pausable/Tiles/ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_offset = Vector2(128, 112)
+
+[node name="BG" type="Sprite2D" parent="Pausable/Tiles/ParallaxBackground/BG"]
+z_index = -20
+material = ExtResource("10_6m0sf")
+texture = ExtResource("11_0iaif")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Pausable/Tiles/ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="TileMap" type="TileMap" parent="Pausable/Tiles/ParallaxBackground/ParallaxLayer"]
+z_index = -10
+material = ExtResource("10_6m0sf")
+tile_set = ExtResource("13_iepep")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131063, 720896, 3)
+
+[node name="Active" type="Node" parent="."]
+
+[node name="World Boundary" parent="." instance=ExtResource("13_clvyj")]
+
+[editable path="GUI"]

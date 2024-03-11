@@ -22,3 +22,7 @@ res://Rooms/Main Levels/Level 1-2.tscn
 res://Packed Scenes/Player.tscn
 res://Rooms/Main Levels/Level 1-3.tscn
 res://Packed Scenes/GUI/GUI.tscn
+res://Tilesets/TS Catacombs.tres
+res://Rooms/Base Room 2.tscn
+res://Tilesets/TS Catacombs BG.tres
+res://Materials/GUI/HUD Material 2.tres
