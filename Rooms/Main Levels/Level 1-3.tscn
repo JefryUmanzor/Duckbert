@@ -98,6 +98,7 @@ size = Vector2(32, 120)
 
 [node name="World 1" type="Node2D"]
 script = ExtResource("1_o6h8k")
+next_level_path = "res://Rooms/Main Levels/Level 2-1.tscn"
 
 [node name="GUI" parent="." instance=ExtResource("2_8et11")]
 visible = false

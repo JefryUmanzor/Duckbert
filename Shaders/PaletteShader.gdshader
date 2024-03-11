@@ -2,11 +2,12 @@ shader_type canvas_item;
 global uniform sampler2D base_palette : filter_nearest;
 uniform sampler2D current_palette : filter_nearest;
 uniform bool use_palette = false;
+uniform float alpha_threshold = 0.5;
 
 void fragment() {
 	if (use_palette){
 		vec3 value = texture(TEXTURE, UV).rgb;
-		float alpha = float(texture(TEXTURE, UV).a > 0.5);
+		float alpha = float(texture(TEXTURE, UV).a > alpha_threshold);
 		vec2 palette_uv = vec2(0.0, 0.0);
 		
 		if (texture(TEXTURE, UV).a >= 0.5){

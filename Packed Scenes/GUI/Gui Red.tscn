@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bkyutpw5phmx8"]
+[gd_scene load_steps=54 format=3 uid="uid://bkyutpw5phmx8"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/HUD.gd" id="1_rscjh"]
 [ext_resource type="Material" uid="uid://bqgkugkaogvme" path="res://Materials/GUI/HUD Material 2.tres" id="2_iuiqn"]
@@ -19,29 +19,35 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6i2nt"]
 shader = ExtResource("3_5xi7v")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("4_uwc80")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_60qvm"]
 shader = ExtResource("3_5xi7v")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("7_78qd2")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r4lgk"]
 shader = ExtResource("3_5xi7v")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("7_78qd2")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_484h5"]
 shader = ExtResource("3_5xi7v")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("8_ddddg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_85u14"]
 line_spacing = 1.0
+font_size = 18
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_scwt4"]
 shader = ExtResource("3_5xi7v")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("8_ddddg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ljwdg"]
@@ -50,7 +56,17 @@ font_size = 12
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g5tl"]
 shader = ExtResource("3_5xi7v")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("12_shg6q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsdid"]
+shader = ExtResource("3_5xi7v")
+shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
+shader_parameter/current_palette = ExtResource("8_ddddg")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vbfor"]
+font_size = 17
 
 [sub_resource type="Animation" id="Animation_y63y2"]
 resource_name = "Exit Options"
@@ -1037,9 +1053,11 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="Base/Level Clear Holder/VBoxContainer"]
+material = SubResource("ShaderMaterial_lsdid")
 layout_mode = 2
 size_flags_vertical = 3
 text = "Level Clear!"
+label_settings = SubResource("LabelSettings_vbfor")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Base/Level Clear Holder/VBoxContainer"]
 layout_mode = 2

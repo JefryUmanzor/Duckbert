@@ -6,4 +6,5 @@
 [resource]
 shader = ExtResource("1_fbwan")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("2_oaxuy")
