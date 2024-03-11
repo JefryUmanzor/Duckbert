@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1xvvncak5u1t"]
+[gd_scene load_steps=20 format=3 uid="uid://b1xvvncak5u1t"]
 
 [ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_q18bu"]
-[ext_resource type="PackedScene" uid="uid://cdbcsqv2nym4g" path="res://Packed Scenes/GUI/GUI.tscn" id="2_ry4w1"]
-[ext_resource type="Material" uid="uid://bqgkugkaogvme" path="res://Materials/GUI/HUD Material 2.tres" id="3_pmupt"]
+[ext_resource type="PackedScene" uid="uid://bkyutpw5phmx8" path="res://Packed Scenes/GUI/Gui Red.tscn" id="2_w0rpr"]
 [ext_resource type="Script" path="res://Scripts/Helper/CameraScript.gd" id="4_ss51v"]
 [ext_resource type="PackedScene" uid="uid://cnri2u2a1qkfs" path="res://Packed Scenes/Player.tscn" id="5_31f2j"]
 [ext_resource type="PackedScene" uid="uid://dmr5qu0rtvr2t" path="res://Packed Scenes/Assets/Flag.tscn" id="6_hjk3v"]
@@ -29,25 +28,7 @@ distance = -512.0
 [node name="World 2" type="Node2D"]
 script = ExtResource("1_q18bu")
 
-[node name="GUI" parent="." instance=ExtResource("2_ry4w1")]
-
-[node name="Options" parent="GUI/Base" index="0"]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 256.0
-offset_bottom = -224.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="Panel" parent="GUI/Base/Options" index="0"]
-material = ExtResource("3_pmupt")
-
-[node name="Pause Panel" parent="GUI/Base" index="1"]
-material = ExtResource("3_pmupt")
-
-[node name="Hud" parent="GUI/Base" index="2"]
-material = ExtResource("3_pmupt")
+[node name="GUI" parent="." instance=ExtResource("2_w0rpr")]
 
 [node name="Pausable" type="Node" parent="."]
 
@@ -425,5 +406,4 @@ position = Vector2(648, -32)
 [node name="CollisionShape2D" parent="Hazards/World Boundary2" index="0"]
 shape = SubResource("WorldBoundaryShape2D_hfvuc")
 
-[editable path="GUI"]
 [editable path="Hazards/World Boundary2"]
