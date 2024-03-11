@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dy6mp6tv7uqv"
+path="res://.godot/imported/MUS Catacombs Intro.wav-4b502f647ec748a1cb4bd6a75e57001e.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Catacombs/MUS Catacombs Intro.wav"
+dest_files=["res://.godot/imported/MUS Catacombs Intro.wav-4b502f647ec748a1cb4bd6a75e57001e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

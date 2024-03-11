@@ -1,10 +1,12 @@
 class_name MusicManager;
 extends Node
-@export_flags("Intro", "Menu", "Music1") var music_playing : int = 0;
+@export_flags("Intro", "Menu", "Music1", "Music2") var music_playing : int = 0;
 
 @onready var menu_music = $"Menu Music"
 @onready var music_1_intro = $"Music 1 Intro"
 @onready var music_1_loop = $"Music 1 Loop"
+@onready var music_2_intro = $"Music 2 Intro"
+@onready var music_2_loop = $"Music 2 Loop"
 
 var stopping_track : AudioStreamPlayer = null;
 var stop_amount = 1.0;
@@ -46,6 +48,11 @@ func change_track(scene_name):
 			return;
 		music_playing = 4;
 	
+	if scene_name == "World 2":
+		if music_playing & 8 != 0:
+			return;
+		music_playing = 8;
+	
 	for track : AudioStreamPlayer in get_children():
 		if track.playing:
 			track.stop();
@@ -75,6 +82,11 @@ func start_intro_music():
 	
 	if music_playing & 4:
 		music_1_intro.play();
+		return;
+	
+	if music_playing & 8:
+		music_2_intro.play();
+		return;
 
 func switch_to_loop():
 	if music_playing & 1 == 1:
@@ -82,7 +94,16 @@ func switch_to_loop():
 	
 	if music_playing & 4:
 		music_1_loop.play();
+		return;
+	
+	if music_playing & 8:
+		music_2_loop.play();
+		return;
 
 func loop_track():
 	if music_playing & 4:
 		music_1_loop.play();
+		return;
+	if music_playing & 8:
+		music_2_loop.play();
+		return;

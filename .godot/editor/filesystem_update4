@@ -18,3 +18,5 @@ res://Tilesets/TS Catacombs.tres
 res://Tilesets/TS Catacombs BG.tres
 res://Shaders/HudShader Down.gdshader
 res://Shaders/TitleBGShader.gdshader
+res://Scripts/Backend/MusicManager.gd
+res://Packed Scenes/Music Manager.tscn
