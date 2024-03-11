@@ -1,4 +1,4 @@
-res://Rooms/Main Levels/Level 2-1.tscn
+res://Packed Scenes/Music Manager.tscn
 res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
@@ -10,15 +10,13 @@ res://Materials/Player Particle Material NoFlash.tres
 res://Shaders/HudShader.gdshader
 res://Shaders/HudShader Down.gdshader
 res://Shaders/TitleBGShader.gdshader
-res://Materials/GUI/HUD Material.tres
-res://Materials/GUI/MAT Button Outline.tres
-res://GUI Theme/Style Boxes/Stylebox Panel Override.tres
 res://Materials/GUI/HUD Material 2.tres
+res://GUI Theme/Style Boxes/Stylebox Panel Override.tres
+res://Materials/GUI/MAT Button Outline.tres
 res://Materials/Tileset Materials/MAT Catacomb Purple.tres
 res://Tilesets/TS Catacombs.tres
 res://Materials/Tileset Materials/MAT Catacomb BG.tres
 res://Tilesets/TS Catacombs BG.tres
 res://Materials/Hazard Material.tres
-res://Rooms/Base Room 2.tscn
-res://Packed Scenes/Music Manager.tscn
 res://Packed Scenes/Player.tscn
+res://Rooms/Main Levels/Level 2-1.tscn
