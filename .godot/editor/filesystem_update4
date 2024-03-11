@@ -30,3 +30,5 @@ res://Scripts/Player/PlayerGravityAction.gd
 res://Scripts/Player/PlayerFlapAction.gd
 res://Scripts/Player/PlayerHoverAction.gd
 res://Scripts/Player/Player.gd
+res://Rooms/Main Menu.tscn
+res://Scripts/GUI/MainMenuScript.gd
