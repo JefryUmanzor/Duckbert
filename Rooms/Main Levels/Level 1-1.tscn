@@ -276,6 +276,7 @@ curve = SubResource("Curve2D_kldmq")
 
 [node name="PathFollow2D" parent="Pausable/Paths/Path" index="0"]
 position = Vector2(0, 0)
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Med Platform")
@@ -286,7 +287,7 @@ curve = SubResource("Curve2D_o7fiu")
 
 [node name="PathFollow2D" parent="Pausable/Paths/Path2" index="0"]
 position = Vector2(-8, 0)
-duration = 2.0
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path2/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Short Platform")
@@ -297,7 +298,7 @@ curve = SubResource("Curve2D_cbtny")
 
 [node name="PathFollow2D" parent="Pausable/Paths/Path3" index="0"]
 position = Vector2(0, 0)
-duration = 2.0
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path3/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Med Platform2")
@@ -308,7 +309,7 @@ curve = SubResource("Curve2D_jq5i2")
 
 [node name="PathFollow2D" parent="Pausable/Paths/Path4" index="0"]
 position = Vector2(0, 0)
-duration = 2.0
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Pausable/Paths/Path4/PathFollow2D" index="0"]
 remote_path = NodePath("../../../../Assets/Med Platform3")

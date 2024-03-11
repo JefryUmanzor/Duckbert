@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cdbcsqv2nym4g"]
+[gd_scene load_steps=52 format=3 uid="uid://cdbcsqv2nym4g"]
 
 [ext_resource type="Script" path="res://Scripts/GUI/HUD.gd" id="1_a27be"]
 [ext_resource type="Material" uid="uid://buge3kmf8oo40" path="res://Materials/GUI/HUD Material.tres" id="2_a2cuw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://br81cva81rlfr" path="res://Palettes/PAL Red.png" id="6_wsjll"]
 [ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="7_gk263"]
 [ext_resource type="Texture2D" uid="uid://c6el0kgeg7p8e" path="res://Palettes/PAL Blue.png" id="7_lpqoo"]
+[ext_resource type="Texture2D" uid="uid://nqfi4oujluqd" path="res://Palettes/PAL Grey.png" id="8_mkn4v"]
 [ext_resource type="Material" uid="uid://cfuuypf4pwdxo" path="res://Materials/Player Material.tres" id="8_nqud2"]
 [ext_resource type="Texture2D" uid="uid://b1i0afscagc2d" path="res://Palettes/PAL Yellow.png" id="9_h3u6i"]
 [ext_resource type="Texture2D" uid="uid://djb1ho6g3yfqv" path="res://Sprites/UI/SPR UI Box Transparent.png" id="10_b3hf1"]
@@ -30,8 +31,18 @@ shader = ExtResource("5_lvs6q")
 shader_parameter/use_palette = true
 shader_parameter/current_palette = ExtResource("7_lpqoo")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_484h5"]
+shader = ExtResource("5_lvs6q")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("8_mkn4v")
+
 [sub_resource type="LabelSettings" id="LabelSettings_85u14"]
 line_spacing = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_scwt4"]
+shader = ExtResource("5_lvs6q")
+shader_parameter/use_palette = true
+shader_parameter/current_palette = ExtResource("8_mkn4v")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ljwdg"]
 font_size = 12
@@ -848,6 +859,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Base/Options/HBoxContainer"]
+material = SubResource("ShaderMaterial_484h5")
 layout_mode = 2
 text = "O
 P
@@ -955,6 +967,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Base/Pause Panel/HBoxContainer"]
+material = SubResource("ShaderMaterial_scwt4")
 layout_mode = 2
 text = "P
 A

@@ -329,7 +329,7 @@ script = ExtResource("2_7voqr")
 
 [node name="PlayerJumpAction" type="Node" parent="Actions"]
 script = ExtResource("3_ct67l")
-jump_strength = -290.0
+jump_strength = -315.0
 jump_release_scale = 0.45
 palette_path = "res://Palettes/PAL Yellow.png"
 action_name = "Jump"

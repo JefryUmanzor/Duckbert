@@ -451,6 +451,7 @@ curve = SubResource("Curve2D_1owbh")
 
 [node name="PathFollow2D" parent="Paths/Path" index="0"]
 position = Vector2(0, 0)
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path/PathFollow2D" index="0"]
 remote_path = NodePath("../../../Med Platform")
