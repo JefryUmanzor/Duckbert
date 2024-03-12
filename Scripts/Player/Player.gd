@@ -173,6 +173,7 @@ func _physics_process(delta):
 func start_death():
 	checkpoint_manager.respawn_player();
 	sfx.play_fall_land_sfx();
+	velocity = Vector2.ZERO;
 	current_action._on_death(self);
 
 func change_ability(action_index):

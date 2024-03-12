@@ -15,7 +15,7 @@ var player : Player = null;
 var started_bounce = false;
 
 func _ready():
-	up_direction = sign(-transform.y.y);
+	up_direction = sign(-global_transform.y.y);
 	actual_player = get_tree().current_scene.get_node("Pausable").get_node("Player");
 
 func on_player_enter(body):

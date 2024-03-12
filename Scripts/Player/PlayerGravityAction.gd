@@ -16,7 +16,7 @@ func _ready():
 	negative_palette_texture = load(negative_palette_path) as Texture2D
 
 func _activate(player : Player):
-	if player.is_on_floor() or player.coyote_timer > 0:
+	if (player.is_on_floor() or player.coyote_timer > 0) and not player.is_on_spring:
 		player.sfx.play_gravity_sfx()
 		player.reset_coyote_timer();
 		
