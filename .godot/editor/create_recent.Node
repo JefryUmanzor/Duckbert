@@ -1,5 +1,5 @@
-Timer
 Node
+Timer
 Node2D
 AudioStreamPlayer
 CollisionShape2D
@@ -12,4 +12,3 @@ Panel
 Control
 HBoxContainer
 VBoxContainer
-GridContainer

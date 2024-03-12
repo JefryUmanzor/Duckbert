@@ -9,6 +9,7 @@ size = Vector2(32, 136)
 collision_mask = 32768
 monitorable = false
 script = ExtResource("1_4d2ha")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -68)
