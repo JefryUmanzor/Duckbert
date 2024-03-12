@@ -47,6 +47,7 @@ var dead : bool = false;
 var hud : HUD = null;
 var checkpoint_manager : CheckpointManager;
 
+@export var cant_change : bool = false;
 signal special_intro_end;
 
 func _ready():
@@ -190,16 +191,17 @@ func respawn():
 	current_action._on_death(self);
 
 func change_ability(action_index):
-	action_index = wrapi(action_index, 0, actions.get_child_count());
-	var target_action = actions.get_child(action_index);
-	
-	if current_action != target_action:
-		current_action._on_disable_action();
+	if not cant_change:
+		action_index = wrapi(action_index, 0, actions.get_child_count());
+		var target_action = actions.get_child(action_index);
 		
-		current_action =  target_action as PlayerAction;
-		current_action._on_enable_action(false);
-		
-		hud.on_action_switch(current_action.action_name);
-		
-		if start_timer <= 0:
-			create_ability_particle();
+		if current_action != target_action:
+			current_action._on_disable_action();
+			
+			current_action =  target_action as PlayerAction;
+			current_action._on_enable_action(false);
+			
+			hud.on_action_switch(current_action.action_name);
+			
+			if start_timer <= 0:
+				create_ability_particle();

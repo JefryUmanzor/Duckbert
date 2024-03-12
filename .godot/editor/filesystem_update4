@@ -1,4 +1,4 @@
-res://Rooms/Main Levels/Level 2-3.tscn
+res://Rooms/Main Levels/Level 2-2.tscn
 res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
@@ -18,7 +18,9 @@ res://Tilesets/TS Catacombs BG.tres
 res://Materials/Hazard Material.tres
 res://Shaders/HudShader Down.gdshader
 res://Shaders/TitleBGShader.gdshader
-res://Rooms/Main Levels/Level 2-2.tscn
 res://Rooms/Main Levels/Level 2-1.tscn
+res://Rooms/Main Levels/Level 2-3.tscn
 res://Packed Scenes/Player.tscn
-res://Packed Scenes/Ability Change Area.tscn
+res://Scripts/Player/Player.gd
+res://Scripts/GUI/MainMenuScript.gd
+res://Rooms/Main Menu.tscn
