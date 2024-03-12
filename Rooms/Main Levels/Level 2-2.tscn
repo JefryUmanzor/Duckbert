@@ -99,6 +99,7 @@ distance = -512.0
 
 [node name="World 2" type="Node2D"]
 script = ExtResource("1_udgj4")
+next_level_path = "res://Rooms/Main Levels/Level 2-3.tscn"
 
 [node name="GUI" parent="." instance=ExtResource("2_5nsss")]
 visible = false

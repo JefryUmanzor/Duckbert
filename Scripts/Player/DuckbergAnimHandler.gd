@@ -48,6 +48,14 @@ func play_land_squash():
 	
 	create_land_particle();
 	scale_animation.play("Land");
+func play_death():
+	if scale_animation.is_playing():
+		scale_animation.stop();
+	scale_animation.play("Death");
+
+func stop_death():
+	scale_animation.stop();
+	scale_animation.play("RESET");
 
 func play_flap():
 	sprite_animation.set("parameters/Flap Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);

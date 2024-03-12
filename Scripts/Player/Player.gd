@@ -4,6 +4,8 @@ extends CharacterBody2D
 var grav_path = "physics/2d/default_gravity"
 var grav_dir_path = "physics/2d/default_gravity_vector"
 
+@onready var death_timer = $"Death Timer"
+
 @export var top_speed : float = 500;
 @export var acceleration : float = 200;
 @export var turnaround_accel : float = 500;
@@ -32,12 +34,13 @@ const ABILITY_CHANGE_PARTICLE = preload("res://Packed Scenes/Particles/Ability C
 var start_timer = 0.05;
 var start_step_timer = 0.02;
 
-var coyote_timer = 0.0;
+var coyote_timer : float = 0.0;
 @export var max_coyote_time = 0.15;
 var is_on_spring = false;
 var turning_around = false;
 
 var can_control : bool = true;
+var dead : bool = false;
 @export var special_intro = false;
 
 @onready var sfx : PlayerSFX = $SFX
@@ -139,7 +142,8 @@ func create_ability_particle():
 
 func _physics_process(delta):
 	var gravity = (ProjectSettings.get_setting(grav_dir_path) as Vector2) * (ProjectSettings.get_setting(grav_path) as float)
-	velocity += gravity * gravity_scale * delta;
+	if not dead:
+		velocity += gravity * gravity_scale * delta;
 	
 	if abs(velocity.y) > max_vertical_speed:
 		if sign(velocity.y) != sign(up_direction.y):
@@ -171,9 +175,18 @@ func _physics_process(delta):
 	move_and_slide();
 
 func start_death():
-	checkpoint_manager.respawn_player();
+	can_control = false;
+	death_timer.start();
+	dead = true;
+	anim.play_death();
 	sfx.play_fall_land_sfx();
 	velocity = Vector2.ZERO;
+
+func respawn():
+	checkpoint_manager.respawn_player();
+	anim.stop_death();
+	dead = false;
+	can_control = true;
 	current_action._on_death(self);
 
 func change_ability(action_index):
