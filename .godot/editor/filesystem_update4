@@ -15,14 +15,6 @@ res://Materials/Tileset Materials/MAT Catacomb Purple.tres
 res://Tilesets/TS Catacombs.tres
 res://Materials/Tileset Materials/MAT Catacomb BG.tres
 res://Tilesets/TS Catacombs BG.tres
+res://Materials/Hazard Material.tres
 res://Shaders/HudShader Down.gdshader
 res://Shaders/TitleBGShader.gdshader
-res://Materials/Hazard Material.tres
-res://Rooms/Main Levels/Level 2-1.tscn
-res://Scripts/Player/PlayerGravityAction.gd
-res://Packed Scenes/Assets/Checkpoint.tscn
-res://Scripts/Assets/CheckpointScript.gd
-res://Packed Scenes/Player.tscn
-res://Scripts/Player/Player.gd
-res://Scripts/Assets/SpringScript.gd
-res://Rooms/Main Levels/Level 2-3.tscn
