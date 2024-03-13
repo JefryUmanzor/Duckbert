@@ -1,4 +1,4 @@
-res://Rooms/Main Menu.tscn
+res://Rooms/Main Levels/Level 1-2.tscn
 res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
@@ -14,16 +14,13 @@ res://Materials/Player Particle Material NoFlash.tres
 res://Materials/Tileset Materials/MAT Underground.tres
 res://Tilesets/TS Underground.tres
 res://Materials/Tileset Materials/MAT Underground BG.tres
-res://Materials/Tileset Materials/MAT Underground BG Animated.tres
 res://Materials/Hazard Material.tres
-res://Shaders/TitleBGShader.gdshader
 res://Shaders/HudShader Down.gdshader
-res://Rooms/Main Levels/Level 3-2.tscn
-res://Scripts/Helper/DefaultAnimationPlayer.gd
+res://Shaders/TitleBGShader.gdshader
+res://Materials/GUI/HUD Material.tres
+res://Materials/Tileset Materials/MAT Pipe Teal.tres
+res://Tilesets/TS Pipes.tres
+res://Materials/Tileset Materials/MAT Pipe BG.tres
+res://Tilesets/TS Pipes BG.tres
 res://Rooms/Main Levels/Level 3-3.tscn
-res://Scripts/Assets/Flag.gd
-res://Scripts/Helper/SetVisible.gd
-res://Scripts/Helper/CameraScript.gd
-res://Packed Scenes/GUI/GUI Black.tscn
-res://Packed Scenes/Assets/Spring Big.tscn
 res://Scripts/Player/Player.gd

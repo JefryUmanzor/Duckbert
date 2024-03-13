@@ -49,6 +49,7 @@ var checkpoint_manager : CheckpointManager;
 
 @export var cant_change : bool = false;
 signal special_intro_end;
+var invincibility_timer = 0.0;
 
 func _ready():
 	hud = get_tree().current_scene.get_node("GUI") as HUD;
@@ -69,6 +70,9 @@ func _ready():
 
 func _process(delta):
 	if can_control:
+		if invincibility_timer > 0:
+			invincibility_timer = move_toward(invincibility_timer, 0.0, delta);
+		
 		if Input.is_action_just_pressed("PlayerAction"):
 			current_action._activate(self);
 		if Input.is_action_just_released("PlayerAction"):
@@ -178,10 +182,11 @@ func _physics_process(delta):
 	move_and_slide();
 
 func start_death():
-	if not dead:
+	if not dead and invincibility_timer <= 0.0:
 		can_control = false;
 		death_timer.start();
 		dead = true;
+		invincibility_timer = (5.0/60.0);
 		anim.play_death();
 		sfx.play_fall_land_sfx();
 		velocity = Vector2.ZERO;
