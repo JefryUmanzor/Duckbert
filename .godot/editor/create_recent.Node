@@ -1,3 +1,4 @@
+Node
 CanvasLayer
 SubViewport
 ColorRect
@@ -7,9 +8,7 @@ Control
 Panel
 CollisionShape2D
 Area2D
-Node
 TileMap
 Timer
 Node2D
 AudioStreamPlayer
-AnimationTree

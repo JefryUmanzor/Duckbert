@@ -145,6 +145,8 @@ func _physics_process(delta):
 	var gravity = (ProjectSettings.get_setting(grav_dir_path) as Vector2) * (ProjectSettings.get_setting(grav_path) as float)
 	if not dead:
 		velocity += gravity * gravity_scale * delta;
+	else:
+		velocity.y = 0.0;
 	
 	if abs(velocity.y) > max_vertical_speed:
 		if sign(velocity.y) != sign(up_direction.y):

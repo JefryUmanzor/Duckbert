@@ -25,3 +25,5 @@ res://Scripts/Assets/Flag.gd
 res://Scripts/Helper/SetVisible.gd
 res://Scripts/Helper/CameraScript.gd
 res://Packed Scenes/GUI/GUI Black.tscn
+res://Packed Scenes/Assets/Spring Big.tscn
+res://Scripts/Player/Player.gd

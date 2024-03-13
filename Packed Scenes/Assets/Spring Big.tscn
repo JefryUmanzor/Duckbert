@@ -195,7 +195,7 @@ node_connections = [&"Bounce Shot", 0, &"Idle", &"Bounce Shot", 1, &"TimeScale",
 
 [node name="Big Spring" type="Node2D"]
 script = ExtResource("1_e1e0b")
-bounce_strength = 385.0
+bounce_strength = 395.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -2
