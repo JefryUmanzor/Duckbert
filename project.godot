@@ -39,7 +39,8 @@ enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
 
 folder_colors={
 "res://Packed Scenes/": "green",
-"res://Rooms/": "red"
+"res://Rooms/": "red",
+"res://Scripts/": "blue"
 }
 
 [gui]

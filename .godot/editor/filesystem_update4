@@ -21,3 +21,7 @@ res://Shaders/HudShader Down.gdshader
 res://Rooms/Main Levels/Level 3-2.tscn
 res://Scripts/Helper/DefaultAnimationPlayer.gd
 res://Rooms/Main Levels/Level 3-3.tscn
+res://Scripts/Assets/Flag.gd
+res://Scripts/Helper/SetVisible.gd
+res://Scripts/Helper/CameraScript.gd
+res://Packed Scenes/GUI/GUI Black.tscn

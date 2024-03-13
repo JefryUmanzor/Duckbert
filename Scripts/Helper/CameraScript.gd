@@ -4,6 +4,7 @@ extends Camera2D
 var target_position : Vector2;
 @export_flags_2d_physics var ray_mask : int = 8;
 @export var bounds : CollisionShape2D;
+var follow_target = true;
 
 func _ready():
 	target_position = target.global_position;
@@ -19,7 +20,8 @@ func _physics_process(_delta):
 	call_deferred("resolve_movement");
 
 func resolve_movement():
-	target_position = target.global_position - (Vector2(0.0, 8));
-	var final_position : Vector2 = target_position;
-	
-	global_position = final_position;
+	if follow_target:
+		target_position = target.global_position - (Vector2(0.0, 8));
+		var final_position : Vector2 = target_position;
+		
+		global_position = final_position;

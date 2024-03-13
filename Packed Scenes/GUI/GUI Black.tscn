@@ -894,7 +894,7 @@ layout_mode = 2
 [node name="Pause Panel" type="Panel" parent="Base"]
 material = ExtResource("2_ehjwg")
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -224.0

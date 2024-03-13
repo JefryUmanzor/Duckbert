@@ -1,3 +1,6 @@
+CanvasLayer
+SubViewport
+ColorRect
 AnimationPlayer
 TextureRect
 Control
@@ -10,5 +13,3 @@ Timer
 Node2D
 AudioStreamPlayer
 AnimationTree
-AnimatedSprite2D
-Sprite2D
