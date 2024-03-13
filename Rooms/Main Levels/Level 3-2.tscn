@@ -1517,7 +1517,6 @@ visible = false
 
 [node name="Saw" parent="Hazards/Moving Saws7" instance=ExtResource("17_stlhc")]
 z_index = -1
-scale = Vector2(1, 1)
 
 [node name="Saw2" parent="Hazards/Moving Saws7/Saw" instance=ExtResource("17_stlhc")]
 z_index = -2
@@ -1674,7 +1673,6 @@ visible = false
 
 [node name="Saw" parent="Hazards/Moving Saws3" instance=ExtResource("17_stlhc")]
 z_index = -1
-scale = Vector2(1, 1)
 
 [node name="Saw9" parent="Hazards/Moving Saws3/Saw" instance=ExtResource("17_stlhc")]
 z_index = -2
@@ -1715,7 +1713,6 @@ visible = false
 
 [node name="Saw" parent="Hazards/Moving Saws4" instance=ExtResource("17_stlhc")]
 z_index = -1
-scale = Vector2(1, 1)
 
 [node name="Saw9" parent="Hazards/Moving Saws4/Saw" instance=ExtResource("17_stlhc")]
 z_index = -2
@@ -1756,7 +1753,6 @@ visible = false
 
 [node name="Saw" parent="Hazards/Moving Saws5" instance=ExtResource("17_stlhc")]
 z_index = -1
-scale = Vector2(1, 1)
 
 [node name="Saw9" parent="Hazards/Moving Saws5/Saw" instance=ExtResource("17_stlhc")]
 z_index = -2

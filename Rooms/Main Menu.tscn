@@ -1,15 +1,17 @@
-[gd_scene load_steps=46 format=3 uid="uid://caa1tt7gmfscc"]
+[gd_scene load_steps=50 format=3 uid="uid://caa1tt7gmfscc"]
 
 [ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="1_42oty"]
 [ext_resource type="Script" path="res://Scripts/GUI/MainMenuScript.gd" id="1_yn63n"]
 [ext_resource type="Shader" path="res://Shaders/TitleBGShader.gdshader" id="2_reskw"]
 [ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="3_hdljr"]
 [ext_resource type="Texture2D" uid="uid://cxdcoc57ub61h" path="res://Sprites/Backgrounds/BG Title.png" id="3_ly3su"]
+[ext_resource type="Texture2D" uid="uid://5cgqxao8fy07" path="res://Sprites/Backgrounds/BG Logo.png" id="4_ccidj"]
 [ext_resource type="Material" uid="uid://biy86xh73p2cn" path="res://Materials/GUI/MAT Button Outline.tres" id="4_csgxu"]
 [ext_resource type="Theme" uid="uid://csiun6qsg7qmf" path="res://GUI Theme/THEME Default.tres" id="4_q26nb"]
 [ext_resource type="Texture2D" uid="uid://b00wl104iql7k" path="res://Sprites/UI/Pause Gradient.png" id="6_h0u3s"]
 [ext_resource type="StyleBox" uid="uid://brfdy7wimc62d" path="res://GUI Theme/Style Boxes/Stylebox Panel Override.tres" id="6_m2usd"]
 [ext_resource type="AudioStream" uid="uid://b3rus0qpfgjiq" path="res://Audio/SFX/UI/SND Menu Button.wav" id="7_eyyxv"]
+[ext_resource type="Script" path="res://Scripts/Helper/DefaultAnimationPlayer.gd" id="7_f5ec7"]
 [ext_resource type="Shader" path="res://Shaders/HudShader Down.gdshader" id="7_pb011"]
 [ext_resource type="AudioStream" uid="uid://baiu6wqxit3wk" path="res://Audio/SFX/UI/SND Menu Button Press.wav" id="8_fwbny"]
 [ext_resource type="Texture2D" uid="uid://5prasalm7syw" path="res://Sprites/UI/Level Select Gradient.png" id="8_ixtvc"]
@@ -24,6 +26,29 @@ shader_parameter/tex = ExtResource("3_ly3su")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7n2u"]
 texture = ExtResource("3_ly3su")
 expand_margin_bottom = 32.0
+
+[sub_resource type="Animation" id="Animation_5kb7e"]
+resource_name = "default"
+length = 0.75
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75),
+"transitions": PackedFloat32Array(0, 0, 0, 0, 0, 0),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-256, 0), Vector2(-512, 0), Vector2(-768, 0), Vector2(-1024, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nefv3"]
+_data = {
+"default": SubResource("Animation_5kb7e")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hsml3"]
 shader = ExtResource("3_hdljr")
@@ -47,7 +72,6 @@ expand_margin_top = 10.0
 
 [sub_resource type="Animation" id="Animation_mvmyl"]
 resource_name = "Boot Up"
-length = 0.66
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -56,10 +80,10 @@ tracks/0/path = NodePath("Main Screen/Main Buttons:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.35, 0.65),
-"transitions": PackedFloat32Array(2.07053, 6.9644, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.35, 0.55, 0.85),
+"transitions": PackedFloat32Array(1, 2.07053, 6.9644, 1, 1),
 "update": 0,
-"values": [Vector2(-32, 110), Vector2(16, 110), Vector2(0, 110), Vector2(0, 110)]
+"values": [Vector2(-32, 110), Vector2(-32, 110), Vector2(16, 110), Vector2(0, 110), Vector2(0, 110)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,10 +92,10 @@ tracks/1/path = NodePath("Main Screen/Main Buttons:anchor_right")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.35, 0.65),
-"transitions": PackedFloat32Array(1, 0.297302, 1),
+"times": PackedFloat32Array(0, 0.2, 0.55, 0.85),
+"transitions": PackedFloat32Array(1, 1, 0.297302, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.4]
+"values": [0.0, 0.0, 0.0, 0.4]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -108,6 +132,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Main Screen/Logo Control:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.35, 0.55),
+"transitions": PackedFloat32Array(1.5, 0.5, 0.5, 2, 1),
+"update": 0,
+"values": [Vector2(0, -128), Vector2(0, 32), Vector2(0, 32), Vector2(0, -32), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ea0sq"]
@@ -295,6 +331,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0, -224)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Main Screen/Logo Control:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_6456o"]
 resource_name = "OptMain Transition"
@@ -457,6 +505,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, -224)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main Screen/Logo Control:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ra4av"]
 _data = {
@@ -509,7 +569,6 @@ fadeout_time = 0.1
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_3v8rp"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_to2gf"]
-graph_offset = Vector2(-706.882, 80.6595)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_i3ct8")
 nodes/Animation/position = Vector2(-700, 320)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_2kiv5")
@@ -574,6 +633,7 @@ anchor_top = 0.5
 anchor_right = 0.4
 anchor_bottom = 1.0
 offset_top = -2.0
+offset_right = 12.0
 offset_bottom = -1.0
 
 [node name="Start" parent="Main Screen/Main Buttons" instance=ExtResource("1_42oty")]
@@ -606,6 +666,26 @@ focus_next = NodePath("../Start")
 focus_previous = NodePath("../Options")
 text = "Quit
 "
+
+[node name="Logo Control" type="Control" parent="Main Screen"]
+clip_contents = true
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 224.0
+
+[node name="TextureRect" type="TextureRect" parent="Main Screen/Logo Control"]
+material = ExtResource("4_csgxu")
+layout_mode = 0
+offset_left = -256.0
+offset_right = 1024.0
+offset_bottom = 224.0
+texture = ExtResource("4_ccidj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main Screen/Logo Control"]
+libraries = {
+"": SubResource("AnimationLibrary_nefv3")
+}
+script = ExtResource("7_f5ec7")
 
 [node name="Options" type="Control" parent="."]
 layout_mode = 1

@@ -1,6 +1,9 @@
+AnimationPlayer
+TextureRect
+Control
+Panel
 CollisionShape2D
 Area2D
-AnimationPlayer
 Node
 TileMap
 Timer
@@ -9,6 +12,3 @@ AudioStreamPlayer
 AnimationTree
 AnimatedSprite2D
 Sprite2D
-Panel
-Control
-HBoxContainer
