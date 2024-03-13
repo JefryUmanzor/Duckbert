@@ -1,5 +1,5 @@
-TileMap
 Node
+TileMap
 Timer
 Node2D
 AudioStreamPlayer
@@ -12,4 +12,3 @@ Sprite2D
 Panel
 Control
 HBoxContainer
-VBoxContainer
