@@ -96,6 +96,7 @@ point_count = 2
 
 [node name="World 2" type="Node2D"]
 script = ExtResource("1_0mmuj")
+next_level_path = "res://Rooms/Main Levels/Level 3-1.tscn"
 
 [node name="GUI" parent="." instance=ExtResource("2_adsqy")]
 visible = false
@@ -880,6 +881,18 @@ position = Vector2(3288, -408)
 
 [node name="Saw12" parent="Hazards" instance=ExtResource("21_ojwuf")]
 position = Vector2(3288, -424)
+
+[node name="Saw16" parent="Hazards" instance=ExtResource("21_ojwuf")]
+position = Vector2(3368, -392)
+
+[node name="Saw17" parent="Hazards" instance=ExtResource("21_ojwuf")]
+position = Vector2(3384, -392)
+
+[node name="Saw18" parent="Hazards" instance=ExtResource("21_ojwuf")]
+position = Vector2(3384, -408)
+
+[node name="Saw19" parent="Hazards" instance=ExtResource("21_ojwuf")]
+position = Vector2(3368, -408)
 
 [node name="Spike25" parent="Hazards" instance=ExtResource("14_iarub")]
 position = Vector2(1016, -272)

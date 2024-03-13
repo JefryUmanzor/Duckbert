@@ -7,6 +7,8 @@ extends Node
 @onready var music_1_loop = $"Music 1 Loop"
 @onready var music_2_intro = $"Music 2 Intro"
 @onready var music_2_loop = $"Music 2 Loop"
+@onready var music_3_intro = $"Music 3 Intro"
+@onready var music_3_loop = $"Music 3 Loop"
 
 var stopping_track : AudioStreamPlayer = null;
 var stop_amount = 1.0;
@@ -52,6 +54,11 @@ func change_track(scene_name):
 		if music_playing & 8 != 0:
 			return;
 		music_playing = 8;
+		
+	if scene_name == "World 3":
+		if music_playing & 16 != 0:
+			return;
+		music_playing = 16;
 	
 	for track : AudioStreamPlayer in get_children():
 		if track.playing:
@@ -87,6 +94,10 @@ func start_intro_music():
 	if music_playing & 8:
 		music_2_intro.play();
 		return;
+	
+	if music_playing & 16:
+		music_3_intro.play();
+		return;
 
 func switch_to_loop():
 	if music_playing & 1 == 1:
@@ -99,6 +110,10 @@ func switch_to_loop():
 	if music_playing & 8:
 		music_2_loop.play();
 		return;
+	
+	if music_playing & 16:
+		music_3_loop.play();
+		return;
 
 func loop_track():
 	if music_playing & 4:
@@ -106,4 +121,7 @@ func loop_track():
 		return;
 	if music_playing & 8:
 		music_2_loop.play();
+		return;
+	if music_playing & 16:
+		music_3_loop.play();
 		return;

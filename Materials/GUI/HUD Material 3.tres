@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cm05ctk7ln6f1"]
+
+[ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="1_tb1qk"]
+
+[resource]
+shader = ExtResource("1_tb1qk")
+shader_parameter/base_alpha = 0.95
+shader_parameter/albedo = Color(0, 0, 0, 1)

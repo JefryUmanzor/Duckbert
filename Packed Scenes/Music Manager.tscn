@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqidst5pfov45"]
+[gd_scene load_steps=9 format=3 uid="uid://cqidst5pfov45"]
 
 [ext_resource type="Script" path="res://Scripts/Backend/MusicManager.gd" id="1_jyrb7"]
 [ext_resource type="AudioStream" uid="uid://deunx1qi5r3pj" path="res://Audio/Music/Pipes/MUS Pipes Intro.wav" id="2_0hg7t"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://by5ufsi48dx7b" path="res://Audio/Music/Pipes/MUS Pipes Loop.wav" id="4_jn7bf"]
 [ext_resource type="AudioStream" uid="uid://dy6mp6tv7uqv" path="res://Audio/Music/Catacombs/MUS Catacombs Intro.wav" id="5_wv7f3"]
 [ext_resource type="AudioStream" uid="uid://di4aqpm4y87us" path="res://Audio/Music/Catacombs/MUS Catacombs Loop.wav" id="6_4152s"]
+[ext_resource type="AudioStream" uid="uid://b7bticv2hvpbj" path="res://Audio/Music/Underground/MUS Underground Intro.wav" id="7_ty8yn"]
+[ext_resource type="AudioStream" uid="uid://cy4i057yaa3ji" path="res://Audio/Music/Underground/MUS Underground Loop.wav" id="8_uimc7"]
 
 [node name="Music Manager" type="Node"]
 script = ExtResource("1_jyrb7")
@@ -30,7 +32,17 @@ bus = &"Music"
 stream = ExtResource("6_4152s")
 bus = &"Music"
 
+[node name="Music 3 Intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ty8yn")
+bus = &"Music"
+
+[node name="Music 3 Loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_uimc7")
+bus = &"Music"
+
 [connection signal="finished" from="Music 1 Intro" to="." method="switch_to_loop"]
 [connection signal="finished" from="Music 1 Loop" to="." method="loop_track"]
 [connection signal="finished" from="Music 2 Intro" to="." method="switch_to_loop"]
 [connection signal="finished" from="Music 2 Loop" to="." method="loop_track"]
+[connection signal="finished" from="Music 3 Intro" to="." method="switch_to_loop"]
+[connection signal="finished" from="Music 3 Loop" to="." method="loop_track"]
