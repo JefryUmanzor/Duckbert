@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cfujpkkh3t4ox"]
+[gd_scene load_steps=48 format=3 uid="uid://cfujpkkh3t4ox"]
 
 [ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_ajktr"]
 [ext_resource type="PackedScene" uid="uid://bsxkipk6ym6um" path="res://Packed Scenes/GUI/GUI Black.tscn" id="2_l8gb2"]
@@ -25,7 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://c6f68p42i5als" path="res://Packed Scenes/Signs/Gravity Sign.tscn" id="20_6n3mv"]
 [ext_resource type="PackedScene" uid="uid://bn0l231vh72il" path="res://Packed Scenes/Assets/Spring Big.tscn" id="20_djljl"]
 [ext_resource type="PackedScene" uid="uid://rlluu6g1m7g0" path="res://Packed Scenes/Platforms/Med Platform.tscn" id="20_geeam"]
+[ext_resource type="PackedScene" uid="uid://ch1y2djv7vpid" path="res://Packed Scenes/Signs/None Sign.tscn" id="21_ygeh1"]
 [ext_resource type="PackedScene" uid="uid://beg2u0tpfru78" path="res://Packed Scenes/Hazards/Saw.tscn" id="24_s4osf"]
+[ext_resource type="PackedScene" uid="uid://c0fbb18klyh1r" path="res://Packed Scenes/Hazards/Spike.tscn" id="27_ybtjq"]
 
 [sub_resource type="Animation" id="Animation_v45jo"]
 resource_name = "default"
@@ -169,6 +171,9 @@ pattern_5 = SubResource("TileMapPattern_q1mq6")
 pattern_6 = SubResource("TileMapPattern_y0y1g")
 pattern_7 = SubResource("TileMapPattern_ggafx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8ik8"]
+size = Vector2(16, 64)
+
 [sub_resource type="Curve2D" id="Curve2D_c1y0f"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 0)
@@ -246,6 +251,7 @@ shape = SubResource("RectangleShape2D_cbvr7")
 disabled = true
 
 [node name="Player" parent="Pausable" instance=ExtResource("4_20rnc")]
+position = Vector2(1176, -128)
 
 [node name="Flag" parent="Pausable" instance=ExtResource("5_tmjy3")]
 position = Vector2(5928, -1280)
@@ -305,6 +311,51 @@ position = Vector2(1192, -128)
 action_index = 2
 
 [node name="Gravity Sign" parent="Areas/Ability Change Area" instance=ExtResource("20_6n3mv")]
+
+[node name="Ability Change Area3" parent="Areas" instance=ExtResource("19_2w2fn")]
+position = Vector2(1408, -128)
+action_index = 2
+
+[node name="Gravity Sign" parent="Areas/Ability Change Area3" instance=ExtResource("20_6n3mv")]
+
+[node name="Ability Change Area7" parent="Areas" instance=ExtResource("19_2w2fn")]
+position = Vector2(1504, -128)
+action_index = 2
+
+[node name="Gravity Sign" parent="Areas/Ability Change Area7" instance=ExtResource("20_6n3mv")]
+
+[node name="Ability Change Area4" parent="Areas" instance=ExtResource("19_2w2fn")]
+position = Vector2(1320, -128)
+action_index = 2
+
+[node name="Gravity Sign" parent="Areas/Ability Change Area4" instance=ExtResource("20_6n3mv")]
+
+[node name="Ability Change Area6" parent="Areas" instance=ExtResource("19_2w2fn")]
+position = Vector2(1576, -144)
+action_index = 2
+
+[node name="Gravity Sign" parent="Areas/Ability Change Area6" instance=ExtResource("20_6n3mv")]
+
+[node name="None Sign" parent="Areas" instance=ExtResource("21_ygeh1")]
+position = Vector2(136, 0)
+
+[node name="Ability Change Area2" parent="Areas" instance=ExtResource("19_2w2fn")]
+position = Vector2(1368, -128)
+
+[node name="CollisionShape2D" parent="Areas/Ability Change Area2" index="0"]
+position = Vector2(8, -72)
+shape = SubResource("RectangleShape2D_k8ik8")
+
+[node name="None Sign" parent="Areas/Ability Change Area2" instance=ExtResource("21_ygeh1")]
+
+[node name="Ability Change Area5" parent="Areas" instance=ExtResource("19_2w2fn")]
+position = Vector2(1536, -128)
+
+[node name="CollisionShape2D" parent="Areas/Ability Change Area5" index="0"]
+position = Vector2(8, -80)
+shape = SubResource("RectangleShape2D_k8ik8")
+
+[node name="None Sign" parent="Areas/Ability Change Area5" instance=ExtResource("21_ygeh1")]
 
 [node name="Springs" type="Node" parent="."]
 
@@ -502,8 +553,90 @@ position = Vector2(0, -32)
 [node name="Saw4" parent="Hazards/Saw4" instance=ExtResource("24_s4osf")]
 position = Vector2(0, -48)
 
+[node name="Spike" parent="Hazards" instance=ExtResource("27_ybtjq")]
+position = Vector2(1304, -192)
+rotation = 3.14159
+
+[node name="Spike2" parent="Hazards/Spike" instance=ExtResource("27_ybtjq")]
+position = Vector2(-16, -6.10352e-05)
+
+[node name="Spike3" parent="Hazards/Spike" instance=ExtResource("27_ybtjq")]
+position = Vector2(-32, -0.000147374)
+
+[node name="Spike4" parent="Hazards/Spike" instance=ExtResource("27_ybtjq")]
+position = Vector2(-48, -0.000218455)
+
+[node name="Spike4" parent="Hazards" instance=ExtResource("27_ybtjq")]
+position = Vector2(1528, -224)
+rotation = 3.14159
+
+[node name="Spike2" parent="Hazards/Spike4" instance=ExtResource("27_ybtjq")]
+position = Vector2(-16, -6.10352e-05)
+
+[node name="Spike3" parent="Hazards/Spike4" instance=ExtResource("27_ybtjq")]
+position = Vector2(-32, -0.000147374)
+
+[node name="Spike4" parent="Hazards/Spike4" instance=ExtResource("27_ybtjq")]
+position = Vector2(-48, -0.000218455)
+
+[node name="Spike2" parent="Hazards" instance=ExtResource("27_ybtjq")]
+position = Vector2(1352, -192)
+rotation = 3.14159
+
+[node name="Spike2" parent="Hazards/Spike2" instance=ExtResource("27_ybtjq")]
+position = Vector2(-16, -6.10352e-05)
+
+[node name="Spike3" parent="Hazards/Spike2" instance=ExtResource("27_ybtjq")]
+position = Vector2(-32, -0.000147374)
+
+[node name="Spike4" parent="Hazards/Spike2" instance=ExtResource("27_ybtjq")]
+position = Vector2(-48, -0.000218455)
+
+[node name="Spike3" parent="Hazards" instance=ExtResource("27_ybtjq")]
+position = Vector2(1480, -128)
+rotation = 6.28318
+
+[node name="Spike2" parent="Hazards/Spike3" instance=ExtResource("27_ybtjq")]
+position = Vector2(-16, -6.10352e-05)
+
+[node name="Spike3" parent="Hazards/Spike3" instance=ExtResource("27_ybtjq")]
+position = Vector2(-32, -0.000147374)
+
+[node name="Spike4" parent="Hazards/Spike3" instance=ExtResource("27_ybtjq")]
+position = Vector2(-48, -0.000218455)
+
+[node name="Spike5" parent="Hazards/Spike3" instance=ExtResource("27_ybtjq")]
+position = Vector2(-96, -0.000850931)
+
+[node name="Moving Saws" parent="Hazards" instance=ExtResource("19_kbt86")]
+position = Vector2(1472, -192)
+rotation = 0.0169735
+curve = SubResource("Curve2D_c1y0f")
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" parent="Hazards/Moving Saws" index="0"]
+position = Vector2(0, 0)
+
+[node name="RemoteTransform2D" parent="Hazards/Moving Saws/PathFollow2D" index="0"]
+remote_path = NodePath("../../Saw6")
+
+[node name="Saw6" parent="Hazards/Moving Saws" instance=ExtResource("24_s4osf")]
+rotation = 1.57079
+scale = Vector2(1.00002, 1.00002)
+
+[node name="Saw2" parent="Hazards/Moving Saws/Saw6" instance=ExtResource("24_s4osf")]
+position = Vector2(0, -16)
+
+[node name="Saw3" parent="Hazards/Moving Saws/Saw6" instance=ExtResource("24_s4osf")]
+position = Vector2(0, -32)
+
+[node name="Saw4" parent="Hazards/Moving Saws/Saw6" instance=ExtResource("24_s4osf")]
+position = Vector2(0, -48)
+
 [connection signal="on_player_teleport" from="Pausable/Flag" to="CanvasLayer/Control/AnimationPlayer" method="play" binds= ["ending transition"]]
 
+[editable path="Areas/Ability Change Area2"]
+[editable path="Areas/Ability Change Area5"]
 [editable path="Paths/Path"]
 [editable path="Paths/Path2"]
 [editable path="Paths/Path4"]
@@ -512,3 +645,4 @@ position = Vector2(0, -48)
 [editable path="Paths/Path5"]
 [editable path="Paths/Path8"]
 [editable path="Paths/Path7"]
+[editable path="Hazards/Moving Saws"]

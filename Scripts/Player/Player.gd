@@ -189,9 +189,9 @@ func start_death():
 func respawn():
 	checkpoint_manager.respawn_player();
 	anim.stop_death();
-	dead = false;
 	can_control = true;
 	current_action._on_death(self);
+	dead = false;
 
 func change_ability(action_index):
 	if not cant_change:

@@ -632,9 +632,8 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.4
 anchor_bottom = 1.0
-offset_top = 110.0
-offset_right = 114.4
-offset_bottom = 223.0
+offset_top = -2.0
+offset_bottom = -1.0
 
 [node name="Start" parent="Main Screen/Main Buttons" instance=ExtResource("1_42oty")]
 layout_mode = 2
