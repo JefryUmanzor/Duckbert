@@ -10,6 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_51x3d"]
 shader = ExtResource("2_bce78")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("3_3xd8s")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qdpim"]

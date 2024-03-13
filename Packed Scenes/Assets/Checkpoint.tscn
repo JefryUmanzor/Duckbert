@@ -195,7 +195,7 @@ nodes/OneShot/position = Vector2(80, 120)
 node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2 2", &"OneShot", 0, &"Blend2", &"OneShot", 1, &"Animation 2", &"output", 0, &"OneShot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dh48y"]
-size = Vector2(16, 64)
+size = Vector2(23, 64)
 
 [node name="Checkpoint" type="Node2D"]
 script = ExtResource("1_s8os0")

@@ -176,12 +176,13 @@ func _physics_process(delta):
 	move_and_slide();
 
 func start_death():
-	can_control = false;
-	death_timer.start();
-	dead = true;
-	anim.play_death();
-	sfx.play_fall_land_sfx();
-	velocity = Vector2.ZERO;
+	if not dead:
+		can_control = false;
+		death_timer.start();
+		dead = true;
+		anim.play_death();
+		sfx.play_fall_land_sfx();
+		velocity = Vector2.ZERO;
 
 func respawn():
 	checkpoint_manager.respawn_player();

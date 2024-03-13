@@ -32,7 +32,7 @@ size = Vector2(96, 136)
 size = Vector2(64, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3pqq"]
-size = Vector2(64, 16)
+size = Vector2(64, 94)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1us1m"]
 size = Vector2(64, 24)
@@ -256,7 +256,6 @@ shape = SubResource("RectangleShape2D_bw4kj")
 position = Vector2(544, -120)
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area2" index="0"]
-position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_y3pqq")
 
 [node name="None Sign" parent="Areas/Ability Change Area2" instance=ExtResource("15_b6bde")]
@@ -267,14 +266,13 @@ rotation = 3.14159
 position = Vector2(696, -152)
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area5" index="0"]
-position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_y3pqq")
 
 [node name="Ability Change Area8" parent="Areas" instance=ExtResource("17_g64jj")]
 position = Vector2(1200, -168)
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area8" index="0"]
-position = Vector2(0, 0)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_y3pqq")
 
 [node name="Ability Change Area11" parent="Areas" instance=ExtResource("17_g64jj")]
@@ -282,14 +280,12 @@ position = Vector2(2144, -328)
 action_index = 2
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area11" index="0"]
-position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_y3pqq")
+position = Vector2(0, -40)
 
 [node name="Ability Change Area4" parent="Areas" instance=ExtResource("17_g64jj")]
 position = Vector2(640, -184)
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area4" index="0"]
-position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_y3pqq")
 
 [node name="None Sign" parent="Areas/Ability Change Area4" instance=ExtResource("15_b6bde")]
@@ -300,7 +296,7 @@ rotation = 3.14159
 position = Vector2(1056, -264)
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area7" index="0"]
-position = Vector2(0, 0)
+position = Vector2(0, -47)
 shape = SubResource("RectangleShape2D_y3pqq")
 
 [node name="None Sign" parent="Areas/Ability Change Area7" instance=ExtResource("15_b6bde")]
@@ -311,7 +307,6 @@ rotation = 3.14159
 position = Vector2(1536, -360)
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area9" index="0"]
-position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_y3pqq")
 
 [node name="None Sign" parent="Areas/Ability Change Area9" instance=ExtResource("15_b6bde")]
@@ -322,7 +317,6 @@ rotation = 3.14159
 position = Vector2(1808, -328)
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area10" index="0"]
-position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_y3pqq")
 
 [node name="None Sign" parent="Areas/Ability Change Area10" instance=ExtResource("15_b6bde")]

@@ -17,3 +17,20 @@ res://Materials/Tileset Materials/MAT Underground BG.tres
 res://Shaders/HudShader Down.gdshader
 res://Shaders/TitleBGShader.gdshader
 res://Materials/Hazard Material.tres
+res://Packed Scenes/Assets/Spring Big.tscn
+res://Rooms/Main Levels/Level 3-1.tscn
+res://Scripts/Player/Player.gd
+res://Materials/Tileset Materials/MAT Underground BG Animated.tres
+res://Scripts/Helper/SetBGAnimatedPalette.gd
+res://Scripts/Helper/BGColorChangeScript.gd
+res://Materials/Level 3-1.tscn
+res://Packed Scenes/Assets/Checkpoint.tscn
+res://Packed Scenes/Ability Change Area.tscn
+res://Materials/GUI/HUD Material 2.tres
+res://Materials/Tileset Materials/MAT Catacomb Purple.tres
+res://Tilesets/TS Catacombs.tres
+res://Materials/Tileset Materials/MAT Catacomb BG.tres
+res://Tilesets/TS Catacombs BG.tres
+res://Rooms/Main Levels/Level 2-3.tscn
+res://Scripts/GUI/MainMenuScript.gd
+res://Rooms/Main Menu.tscn

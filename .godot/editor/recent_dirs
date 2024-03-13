@@ -1,7 +1,9 @@
+res://Scripts/Helper
+res://Shaders
+res://Materials/Tileset Materials
 res://Rooms/Main Levels
 res://Packed Scenes/GUI
 res://Materials/GUI
-res://Materials/Tileset Materials
 res://Tilesets
 res://Rooms
 F:/_Game Projects/Archives/Duckbert Archives/Export/Duckbert Build 02 - Second 3 Levels Done (12 MAR 2024)
@@ -14,9 +16,7 @@ res://Scripts
 res://Packed Scenes/Assets
 res://Scripts/Assets
 res://Sprites/Assets
-res://Shaders
 res://Scripts/Backend
 res://Packed Scenes
 res://GUI Theme/Style Boxes
 res://GUI Theme
-res://Scripts/GUI

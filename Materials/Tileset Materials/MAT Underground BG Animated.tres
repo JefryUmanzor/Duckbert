@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dyhtex8kc11yj"]
+
+[ext_resource type="Shader" uid="uid://bsa1cwwru25mi" path="res://Shaders/Animated Palette Shader.tres" id="1_j42gf"]
+[ext_resource type="Texture2D" uid="uid://bn3jlnusmmxcn" path="res://Palettes/Tileset Palettes/PAL Underground BG Animated.png" id="1_ut77m"]
+[ext_resource type="Texture2D" uid="uid://k6k8gft7c10a" path="res://Palettes/Tileset Palettes/PAL Underground BG.png" id="2_fejan"]
+
+[resource]
+shader = ExtResource("1_j42gf")
+shader_parameter/alpha_threshold = 0.5
+shader_parameter/blend_amount = 0.0
+shader_parameter/current_palette = ExtResource("2_fejan")
+shader_parameter/blend_palette = ExtResource("1_ut77m")

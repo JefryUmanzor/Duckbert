@@ -1037,7 +1037,6 @@ focus_neighbor_bottom = NodePath("../../HBoxContainer4/Back")
 focus_next = NodePath("../../HBoxContainer4/Back")
 focus_previous = NodePath("../../World 2/2-2")
 theme_override_font_sizes/font_size = 10
-disabled = true
 text = "3-2"
 
 [node name="3-3" parent="Level Select/Panel/VBoxContainer/World 3" instance=ExtResource("1_42oty")]
@@ -1202,6 +1201,7 @@ bus = &"SFX"
 [connection signal="pressed" from="Level Select/Panel/VBoxContainer/World 3/3-1" to="." method="send_to_level" binds= ["res://Rooms/Main Levels/Level 3-1.tscn"]]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 3/3-2" to="MoveSFX" method="play"]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 3/3-2" to="." method="set_back_neighbors" binds= [2]]
+[connection signal="pressed" from="Level Select/Panel/VBoxContainer/World 3/3-2" to="." method="send_to_level" binds= ["res://Rooms/Main Levels/Level 3-2.tscn"]]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 3/3-3" to="MoveSFX" method="play"]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 3/3-3" to="." method="set_back_neighbors" binds= [3]]
 [connection signal="focus_entered" from="Level Select/Panel/VBoxContainer/World 3/3-4" to="MoveSFX" method="play"]
