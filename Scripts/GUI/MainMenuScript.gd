@@ -94,6 +94,7 @@ func quit_game():
 	get_tree().quit();
 
 func switch_to_options():
+	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
 	animation_tree.set("parameters/Options Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 	animation_tree.set("parameters/Blend/blend_amount", 1.0);
 	fullscreen_toggle.grab_focus();
@@ -101,15 +102,17 @@ func switch_to_options():
 func switch_to_main():
 	if in_options:
 		animation_tree.set("parameters/Options Return Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+		options_button.grab_focus();
 	elif in_levels:
+		start_button.grab_focus();
 		animation_tree.set("parameters/Level Return Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 	
 	in_options = false;
 	in_levels = false;
 	
 	animation_tree.set("parameters/Blend/blend_amount", 0.0);
-	options_button.grab_focus();
 func switch_to_levels():
+	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
 	animation_tree.set("parameters/Level Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 	animation_tree.set("parameters/Blend/blend_amount", -1.0);
 	level_1_button.grab_focus();
