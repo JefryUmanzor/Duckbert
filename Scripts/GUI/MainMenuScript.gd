@@ -81,14 +81,14 @@ func on_game_loaded():
 	game_loaded = true;
 	var levels_unlocked : int = save_data.game_save.save;
 	
-	_1_2.disabled = levels_unlocked & 2 != 0;
-	_1_3.disabled = levels_unlocked & 4 != 0;
-	_2_1.disabled = levels_unlocked & 8 != 0;
-	_2_2.disabled = levels_unlocked & 16 != 0;
-	_2_3.disabled = levels_unlocked & 32 != 0;
-	_3_1.disabled = levels_unlocked & 64 != 0;
-	_3_2.disabled = levels_unlocked & 128 != 0;
-	_3_3.disabled = levels_unlocked & 256 != 0;
+	_1_2.disabled = levels_unlocked & 2 == 0;
+	_1_3.disabled = levels_unlocked & 4 == 0;
+	_2_1.disabled = levels_unlocked & 8 == 0;
+	_2_2.disabled = levels_unlocked & 16 == 0;
+	_2_3.disabled = levels_unlocked & 32 == 0;
+	_3_1.disabled = levels_unlocked & 64 == 0;
+	_3_2.disabled = levels_unlocked & 128 == 0;
+	_3_3.disabled = levels_unlocked & 256 == 0;
 
 func quit_game():
 	get_tree().quit();

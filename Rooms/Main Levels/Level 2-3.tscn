@@ -123,6 +123,7 @@ starting_action = 1
 
 [node name="Flag" parent="Pausable" instance=ExtResource("5_uvo14")]
 position = Vector2(3448, -480)
+level_to_unlock = 64
 
 [node name="Checkpoints" type="Node" parent="Pausable"]
 script = ExtResource("6_fgrqh")

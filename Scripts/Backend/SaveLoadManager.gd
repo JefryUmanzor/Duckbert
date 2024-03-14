@@ -53,7 +53,7 @@ func load_game():
 	game_loaded.close();
 	game_save_loaded = true;
 
-func write_save(level_bit):
+func write_save(level_bit : int):
 	if game_save.save & level_bit == 0:
 		game_save.save = game_save.save | level_bit;
 		save_game();

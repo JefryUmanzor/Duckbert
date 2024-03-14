@@ -107,6 +107,7 @@ disabled = true
 
 [node name="Flag" parent="Pausable" instance=ExtResource("5_4b5p6")]
 position = Vector2(2504, -336)
+level_to_unlock = 4
 
 [node name="Checkpoints" type="Node" parent="Pausable"]
 script = ExtResource("6_i1o2o")

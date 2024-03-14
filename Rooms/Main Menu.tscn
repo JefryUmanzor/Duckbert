@@ -625,6 +625,26 @@ anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 224.0
 
+[node name="Logo Control" type="Control" parent="Main Screen"]
+clip_contents = true
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 224.0
+
+[node name="TextureRect" type="TextureRect" parent="Main Screen/Logo Control"]
+material = ExtResource("4_csgxu")
+layout_mode = 0
+offset_left = -512.0
+offset_right = 768.0
+offset_bottom = 224.0
+texture = ExtResource("4_ccidj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main Screen/Logo Control"]
+libraries = {
+"": SubResource("AnimationLibrary_nefv3")
+}
+script = ExtResource("7_f5ec7")
+
 [node name="Main Buttons" type="VBoxContainer" parent="Main Screen"]
 clip_contents = true
 layout_mode = 1
@@ -665,26 +685,6 @@ focus_next = NodePath("../Start")
 focus_previous = NodePath("../Options")
 text = "Quit
 "
-
-[node name="Logo Control" type="Control" parent="Main Screen"]
-clip_contents = true
-anchors_preset = 0
-offset_right = 256.0
-offset_bottom = 224.0
-
-[node name="TextureRect" type="TextureRect" parent="Main Screen/Logo Control"]
-material = ExtResource("4_csgxu")
-layout_mode = 0
-offset_left = -512.0
-offset_right = 768.0
-offset_bottom = 224.0
-texture = ExtResource("4_ccidj")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main Screen/Logo Control"]
-libraries = {
-"": SubResource("AnimationLibrary_nefv3")
-}
-script = ExtResource("7_f5ec7")
 
 [node name="Options" type="Control" parent="."]
 layout_mode = 1

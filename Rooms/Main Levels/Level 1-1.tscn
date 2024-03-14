@@ -110,6 +110,7 @@ special_intro = true
 
 [node name="Flag" parent="Pausable" instance=ExtResource("4_m8wb7")]
 position = Vector2(1688, -64)
+level_to_unlock = 2
 
 [node name="Checkpoints" type="Node" parent="Pausable"]
 script = ExtResource("6_1tunw")

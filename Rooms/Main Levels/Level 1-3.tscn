@@ -124,6 +124,7 @@ starting_action = 1
 
 [node name="Flag" parent="Pausable" instance=ExtResource("5_dxp0n")]
 position = Vector2(3032, -336)
+level_to_unlock = 8
 
 [node name="Checkpoints" type="Node" parent="Pausable"]
 script = ExtResource("6_uupir")
@@ -624,7 +625,6 @@ remote_path = NodePath("../../../Med Platform5")
 position = Vector2(2544, -336)
 
 [node name="Ability Change Area5" parent="Paths/Med Platform5" instance=ExtResource("20_l35w6")]
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Paths/Med Platform5/Ability Change Area5" index="0"]
 position = Vector2(0, -67)
@@ -666,7 +666,6 @@ position = Vector2(2768, -280)
 
 [node name="Ability Change Area5" parent="Paths/Med Platform7" instance=ExtResource("20_l35w6")]
 action_index = 1
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Paths/Med Platform7/Ability Change Area5" index="0"]
 position = Vector2(0, -4)
@@ -692,7 +691,6 @@ position = Vector2(2952, -344)
 
 [node name="Ability Change Area" parent="Areas" instance=ExtResource("20_l35w6")]
 position = Vector2(536, -96)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area" index="0"]
 position = Vector2(0, -60)
@@ -700,7 +698,6 @@ shape = SubResource("RectangleShape2D_vvmdj")
 
 [node name="Ability Change Area3" parent="Areas" instance=ExtResource("20_l35w6")]
 position = Vector2(1424, -208)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area3" index="0"]
 position = Vector2(0, -60)
@@ -709,7 +706,6 @@ shape = SubResource("RectangleShape2D_vvmdj")
 [node name="Ability Change Area4" parent="Areas" instance=ExtResource("20_l35w6")]
 position = Vector2(2088, -272)
 action_index = 1
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area4" index="0"]
 position = Vector2(0, -60)
@@ -718,7 +714,6 @@ shape = SubResource("RectangleShape2D_vvmdj")
 [node name="Ability Change Area2" parent="Areas" instance=ExtResource("20_l35w6")]
 position = Vector2(920, -96)
 action_index = 1
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Areas/Ability Change Area2" index="0"]
 position = Vector2(0, -60)

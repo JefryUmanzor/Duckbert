@@ -27,12 +27,12 @@ var player : Player = null;
 @onready var sfx_toggle = $"Base/Options/HBoxContainer/VBoxContainer2/SFX Holder/HBoxContainer/SFX Toggle"
 
 var options_loaded : bool = false;
-var save_data : Options;
+var save_data : SaveLoad;
 
 func _ready():
 	visible = true;
 	player = get_tree().current_scene.get_node("Pausable").get_node("Player") as Player;
-	save_data = get_tree().current_scene.get_node("/root/SaveLoadHandler") as Options;
+	save_data = get_tree().current_scene.get_node("/root/SaveLoadHandler") as SaveLoad;
 
 func on_options_loaded():
 	fullscreen_toggle.button_pressed = save_data.options_save.options.is_fullscreen as bool;

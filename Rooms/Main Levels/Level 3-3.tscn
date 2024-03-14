@@ -328,6 +328,7 @@ disabled = true
 [node name="Flag" parent="Pausable" instance=ExtResource("5_tmjy3")]
 position = Vector2(1672, -960)
 teleport_player = true
+level_to_unlock = 512
 
 [node name="Checkpoints" type="Node" parent="Pausable"]
 script = ExtResource("6_or6lm")
@@ -679,7 +680,6 @@ position = Vector2(0, 0)
 [node name="Moving Saws" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2280, -440)
 rotation = 0.0169735
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_vgi8q")
 metadata/_edit_group_ = true
 
@@ -717,7 +717,6 @@ position = Vector2(-1.08582, -63.9867)
 [node name="Moving Saws2" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2312, -472)
 rotation = -1.57079
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_3apok")
 metadata/_edit_group_ = true
 
@@ -747,7 +746,6 @@ position = Vector2(0, -48)
 [node name="Moving Saws3" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2264, -552)
 rotation = -1.57079
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_3apok")
 metadata/_edit_group_ = true
 
@@ -797,7 +795,6 @@ position = Vector2(0.000436881, -175.991)
 [node name="Moving Saws4" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2312, -648)
 rotation = -1.57079
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_3apok")
 metadata/_edit_group_ = true
 
@@ -848,7 +845,6 @@ position = Vector2(0.000436881, -175.991)
 [node name="Moving Saws5" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2424, -728)
 rotation = 1.57079
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_3apok")
 metadata/_edit_group_ = true
 
@@ -883,7 +879,6 @@ position = Vector2(0, -48)
 [node name="Moving Saws6" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2296, -728)
 rotation = 3.14159
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_3apok")
 metadata/_edit_group_ = true
 
@@ -918,7 +913,6 @@ position = Vector2(0, -48)
 [node name="Moving Saws7" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2216, -824)
 rotation = 6.28318
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_3apok")
 metadata/_edit_group_ = true
 
@@ -975,7 +969,6 @@ position = Vector2(0.000132119, -64.0011)
 [node name="Moving Saws10" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(1592, -856)
 rotation = 6.28318
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_irmx1")
 metadata/_edit_group_ = true
 
@@ -1005,7 +998,6 @@ position = Vector2(0, -32)
 [node name="Moving Saws8" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2072, -712)
 rotation = 3.92699
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_2b1ls")
 metadata/_edit_group_ = true
 
@@ -1040,7 +1032,6 @@ position = Vector2(0.000821114, -67.8833)
 [node name="Moving Saws9" parent="Flying Hazards" instance=ExtResource("19_kbt86")]
 position = Vector2(2056, -824)
 rotation = 0.785397
-scale = Vector2(1, 1)
 curve = SubResource("Curve2D_2b1ls")
 metadata/_edit_group_ = true
 
