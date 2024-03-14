@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://idlr7ra1kf11"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="1_ijuyn"]
+[ext_resource type="Texture2D" uid="uid://ciotnaqlqcdh5" path="res://Palettes/Final Cutscene Palettes/PAL Sky and Water.png" id="2_e84g4"]
+
+[resource]
+shader = ExtResource("1_ijuyn")
+shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
+shader_parameter/current_palette = ExtResource("2_e84g4")

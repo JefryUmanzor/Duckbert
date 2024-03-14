@@ -1,0 +1,142 @@
+[gd_scene load_steps=16 format=3 uid="uid://ca544uif6fpb8"]
+
+[ext_resource type="Script" path="res://Scripts/Helper/SetVisible.gd" id="1_ki60y"]
+[ext_resource type="Texture2D" uid="uid://5prasalm7syw" path="res://Sprites/UI/Level Select Gradient.png" id="2_4wap5"]
+[ext_resource type="Script" path="res://Scripts/Helper/DefaultAnimationPlayer.gd" id="3_k0f6u"]
+[ext_resource type="Material" uid="uid://idlr7ra1kf11" path="res://Materials/Ending/MAT SkyWater.tres" id="4_4xd1p"]
+[ext_resource type="Texture2D" uid="uid://ci270v854o1gp" path="res://Sprites/Backgrounds/Dither BG.png" id="5_d8y0a"]
+[ext_resource type="Texture2D" uid="uid://bpjl5iinn3sqx" path="res://Sprites/Tilesets/SPR Ending Tiles.png" id="6_i1s4j"]
+[ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="7_070fa"]
+[ext_resource type="Texture2D" uid="uid://dk66poido773o" path="res://Palettes/Final Cutscene Palettes/PAL Grass Dirt.png" id="8_o7rce"]
+
+[sub_resource type="Animation" id="Animation_aesbh"]
+resource_name = "default"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, -224), Vector2(0, -224), Vector2(0, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26m7q"]
+_data = {
+"default": SubResource("Animation_aesbh")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxo5h"]
+texture = ExtResource("6_i1s4j")
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:8/animation_columns = 4
+7:8/animation_frame_0/duration = 0.15
+7:8/animation_frame_1/duration = 0.15
+7:8/animation_frame_2/duration = 0.15
+7:8/animation_frame_3/duration = 0.15
+7:8/0 = 0
+7:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t1v3o"]
+sources/0 = SubResource("TileSetAtlasSource_uxo5h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_acblt"]
+shader = ExtResource("7_070fa")
+shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
+shader_parameter/current_palette = ExtResource("8_o7rce")
+
+[sub_resource type="Animation" id="Animation_oa3jv"]
+resource_name = "default"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i00pq"]
+_data = {
+"default": SubResource("Animation_oa3jv")
+}
+
+[node name="Ending" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ki60y")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 224.0
+offset_right = 256.0
+offset_bottom = 448.0
+texture = ExtResource("2_4wap5")
+stretch_mode = 2
+flip_v = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/TextureRect"]
+layout_mode = 0
+offset_top = 224.0
+offset_right = 256.0
+offset_bottom = 448.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control"]
+libraries = {
+"": SubResource("AnimationLibrary_26m7q")
+}
+script = ExtResource("3_k0f6u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+material = ExtResource("4_4xd1p")
+texture = ExtResource("5_d8y0a")
+
+[node name="Actors" type="Node" parent="."]
+
+[node name="Water TileMap" type="TileMap" parent="."]
+material = ExtResource("4_4xd1p")
+tile_set = SubResource("TileSet_t1v3o")
+format = 2
+layer_0/tile_data = PackedInt32Array(131076, 458752, 8, 196612, 458752, 9, 131077, 458752, 8, 196613, 458752, 9, 131078, 458752, 8, 196614, 458752, 9, 131079, 458752, 8, 196615, 458752, 9, 131080, 458752, 8, 196616, 458752, 9, 131081, 458752, 8, 196617, 458752, 9, 131082, 458752, 8, 196618, 458752, 9)
+
+[node name="Grass TileMap" type="TileMap" parent="."]
+material = SubResource("ShaderMaterial_acblt")
+tile_set = SubResource("TileSet_t1v3o")
+format = 2
+layer_0/tile_data = PackedInt32Array(262148, 327680, 5, 327684, 327680, 5, 393220, 327680, 5, 262149, 327680, 5, 327685, 327680, 5, 393221, 327680, 5, 262150, 327680, 5, 327686, 327680, 5, 393222, 327680, 5, 262151, 327680, 5, 327687, 327680, 5, 393223, 327680, 5, 262152, 327680, 5, 327688, 327680, 5, 393224, 327680, 5, 262153, 327680, 5, 327689, 327680, 5, 393225, 327680, 5, 262154, 327680, 5, 327690, 327680, 5, 393226, 327680, 5, 196611, 327680, 4, 196610, 327680, 4, 196609, 327680, 4, 196608, 327680, 4, 262143, 327680, 4, 262142, 262144, 4, 262139, 393216, 4, 262138, 327680, 4, 262137, 327680, 4, 262136, 327680, 4, 262135, 327680, 4, 327675, 393216, 5, 393211, 393216, 5, 458747, 393216, 5, 524283, 393216, 5, 589819, 393216, 5, 327678, 262144, 5, 393214, 262144, 5, 458750, 262144, 5, 524286, 262144, 5, 589822, 262144, 5, 327679, 327680, 5, 393215, 327680, 5, 458751, 327680, 5, 262144, 327680, 5, 327680, 327680, 5, 393216, 327680, 5, 262145, 327680, 5, 327681, 327680, 5, 393217, 327680, 5, 262146, 327680, 5, 327682, 327680, 5, 393218, 327680, 5, 262147, 327680, 5, 327683, 327680, 5, 393219, 327680, 5, 327671, 327680, 5, 393207, 327680, 5, 458743, 327680, 5, 327672, 327680, 5, 393208, 327680, 5, 458744, 327680, 5, 327673, 327680, 5, 393209, 327680, 5, 458745, 327680, 5, 327674, 327680, 5, 393210, 327680, 5, 458746, 327680, 5, 196619, 327680, 4, 196620, 327680, 4, 196621, 327680, 4, 196622, 393216, 4, 262155, 327680, 5, 327691, 327680, 5, 393227, 327680, 5, 262156, 327680, 5, 327692, 327680, 5, 393228, 327680, 5, 262157, 327680, 5, 327693, 327680, 5, 393229, 327680, 5, 262158, 393216, 5, 327694, 393216, 5, 393230, 393216, 5, 458766, 393216, 5, 524302, 393216, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i00pq")
+}
+script = ExtResource("3_k0f6u")

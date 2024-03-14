@@ -24,3 +24,6 @@ res://Materials/Tileset Materials/MAT Pipe BG.tres
 res://Tilesets/TS Pipes BG.tres
 res://Rooms/Main Levels/Level 3-3.tscn
 res://Scripts/Player/Player.gd
+res://Rooms/Ending Cutscene.tscn
+res://Materials/Ending/MAT SkyWater.tres
+res://Materials/Tileset Materials/MAT Catacomb BG.tres
