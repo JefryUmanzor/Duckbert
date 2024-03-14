@@ -33,3 +33,11 @@ res://Scripts/Helper/EndingScript.gd
 res://Scripts/GUI/MainMenuScript.gd
 res://Rooms/Main Menu.tscn
 res://Scripts/Backend/MusicManager.gd
+res://Materials/GUI/HUD Material 2.tres
+res://Materials/Tileset Materials/MAT Catacomb Purple.tres
+res://Tilesets/TS Catacombs.tres
+res://Tilesets/TS Catacombs BG.tres
+res://Materials/Tileset Materials/MAT Underground BG Animated.tres
+res://Scripts/Backend/SaveData.gd
+res://Scripts/Backend/SaveLoadManager.gd
+res://Scripts/Backend/OptionsData.gd

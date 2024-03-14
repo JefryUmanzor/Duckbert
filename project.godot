@@ -20,7 +20,7 @@ config/windows_native_icon="res://Sprites/Icons/DuckbertIcon.ico"
 
 [autoload]
 
-SaveLoadHandler="*res://Scripts/Backend/OptionsHolder.gd"
+SaveLoadHandler="*res://Scripts/Backend/SaveLoadManager.gd"
 MusicHandler="*res://Packed Scenes/Music Manager.tscn"
 RoomChanger="*res://Scripts/Backend/RoomManager.gd"
 

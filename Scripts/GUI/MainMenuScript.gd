@@ -16,7 +16,8 @@ extends Control
 @onready var level_back_button = $"Level Select/Panel/VBoxContainer/HBoxContainer4/Back"
 
 var options_loaded : bool = false;
-var save_data : Options;
+var game_loaded : bool = false;
+var save_data : SaveLoad;
 
 var in_options : bool = false;
 var in_levels : bool = false;
@@ -24,8 +25,17 @@ var in_levels : bool = false;
 @onready var move_sfx = $MoveSFX
 @onready var press_sfx = $PressSFX
 
+@onready var _1_2 = $"Level Select/Panel/VBoxContainer/World 1/1-2"
+@onready var _1_3 = $"Level Select/Panel/VBoxContainer/World 1/1-3"
+@onready var _2_1 = $"Level Select/Panel/VBoxContainer/World 2/2-1"
+@onready var _2_2 = $"Level Select/Panel/VBoxContainer/World 2/2-2"
+@onready var _2_3 = $"Level Select/Panel/VBoxContainer/World 2/2-3"
+@onready var _3_1 = $"Level Select/Panel/VBoxContainer/World 3/3-1"
+@onready var _3_2 = $"Level Select/Panel/VBoxContainer/World 3/3-2"
+@onready var _3_3 = $"Level Select/Panel/VBoxContainer/World 3/3-3"
+
 func _ready():
-	save_data = get_tree().current_scene.get_node("/root/SaveLoadHandler") as Options;
+	save_data = get_tree().current_scene.get_node("/root/SaveLoadHandler") as SaveLoad;
 	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 	start_button.grab_focus();
 	
@@ -63,6 +73,22 @@ func _process(_delta):
 	if !options_loaded:
 		if save_data.options_loaded:
 			on_options_loaded();
+	if !game_loaded:
+		if save_data.game_save_loaded:
+			on_game_loaded();
+
+func on_game_loaded():
+	game_loaded = true;
+	var levels_unlocked : int = save_data.game_save.save;
+	
+	_1_2.disabled = levels_unlocked & 2 != 0;
+	_1_3.disabled = levels_unlocked & 4 != 0;
+	_2_1.disabled = levels_unlocked & 8 != 0;
+	_2_2.disabled = levels_unlocked & 16 != 0;
+	_2_3.disabled = levels_unlocked & 32 != 0;
+	_3_1.disabled = levels_unlocked & 64 != 0;
+	_3_2.disabled = levels_unlocked & 128 != 0;
+	_3_3.disabled = levels_unlocked & 256 != 0;
 
 func quit_game():
 	get_tree().quit();
