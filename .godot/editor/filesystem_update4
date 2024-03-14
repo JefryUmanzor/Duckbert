@@ -1,52 +1,12 @@
-res://Rooms/Main Levels/Level 1-2.tscn
+res://Rooms/Main Menu.tscn
 res://GUI Theme/THEME Default.tres
 res://Shaders/ParticleFade.gdshader
 res://Materials/Particle Material.tres
 res://Shaders/PlayerParticleShader.gdshader
 res://Materials/Player Particle Material.tres
-res://Shaders/HudShader.gdshader
-res://Materials/GUI/HUD Material 3.tres
 res://Shaders/PaletteShader.gdshader
-res://GUI Theme/Style Boxes/Stylebox Panel Override.tres
 res://Materials/GUI/MAT Button Outline.tres
-res://Materials/Player Material.tres
-res://Materials/Player Particle Material NoFlash.tres
-res://Materials/Tileset Materials/MAT Underground.tres
-res://Tilesets/TS Underground.tres
-res://Materials/Tileset Materials/MAT Underground BG.tres
-res://Materials/Hazard Material.tres
-res://Shaders/HudShader Down.gdshader
 res://Shaders/TitleBGShader.gdshader
-res://Materials/GUI/HUD Material.tres
-res://Materials/Tileset Materials/MAT Pipe Teal.tres
-res://Tilesets/TS Pipes.tres
-res://Materials/Tileset Materials/MAT Pipe BG.tres
-res://Tilesets/TS Pipes BG.tres
-res://Rooms/Main Levels/Level 3-3.tscn
-res://Scripts/Player/Player.gd
-res://Rooms/Ending Cutscene.tscn
-res://Materials/Ending/MAT SkyWater.tres
-res://Materials/Tileset Materials/MAT Catacomb BG.tres
-res://Scripts/Assets/Flag.gd
-res://Scripts/Helper/DuckSine.gd
-res://Scripts/Helper/EndingScript.gd
-res://Scripts/GUI/MainMenuScript.gd
-res://Rooms/Main Menu.tscn
-res://Scripts/Backend/MusicManager.gd
-res://Materials/GUI/HUD Material 2.tres
-res://Materials/Tileset Materials/MAT Catacomb Purple.tres
-res://Tilesets/TS Catacombs.tres
-res://Tilesets/TS Catacombs BG.tres
-res://Materials/Tileset Materials/MAT Underground BG Animated.tres
-res://Scripts/Backend/SaveData.gd
-res://Scripts/Backend/SaveLoadManager.gd
-res://Scripts/Backend/OptionsData.gd
-res://Scripts/GUI/HUD.gd
-res://Packed Scenes/Assets/Flag.tscn
-res://Rooms/Main Levels/Level 1-1.tscn
-res://Rooms/Main Levels/Level 1-3.tscn
-res://Rooms/Main Levels/Level 2-1.tscn
-res://Rooms/Main Levels/Level 2-2.tscn
-res://Rooms/Main Levels/Level 2-3.tscn
-res://Rooms/Main Levels/Level 3-1.tscn
-res://Rooms/Main Levels/Level 3-2.tscn
+res://Shaders/HudShader.gdshader
+res://GUI Theme/Style Boxes/Stylebox Panel Override.tres
+res://Shaders/HudShader Down.gdshader
