@@ -86,6 +86,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Pausable/Flag")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_to_ending"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ulthg"]
 _data = {
@@ -261,7 +275,6 @@ visible = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-visible = false
 z_index = 5
 layout_mode = 3
 anchors_preset = 15
@@ -274,9 +287,8 @@ script = ExtResource("3_r1ph7")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_top = 224.0
+offset_top = -224.0
 offset_right = 256.0
-offset_bottom = 448.0
 texture = ExtResource("3_c38kx")
 stretch_mode = 2
 flip_v = true
@@ -684,7 +696,7 @@ visible = false
 [node name="Saw6" parent="Flying Hazards/Moving Saws" instance=ExtResource("24_s4osf")]
 z_index = -1
 rotation = 3.14159
-scale = Vector2(1.00006, 1.00006)
+scale = Vector2(1.00007, 1.00007)
 
 [node name="Saw2" parent="Flying Hazards/Moving Saws/Saw6" instance=ExtResource("24_s4osf")]
 z_index = -1
@@ -889,7 +901,7 @@ visible = false
 [node name="Saw6" parent="Flying Hazards/Moving Saws6" instance=ExtResource("24_s4osf")]
 z_index = -1
 rotation = 3.14159
-scale = Vector2(0.999993, 0.999993)
+scale = Vector2(0.999992, 0.999992)
 
 [node name="Saw2" parent="Flying Hazards/Moving Saws6/Saw6" instance=ExtResource("24_s4osf")]
 z_index = -1
@@ -924,7 +936,7 @@ visible = false
 [node name="Saw6" parent="Flying Hazards/Moving Saws7" instance=ExtResource("24_s4osf")]
 z_index = -1
 rotation = 3.14159
-scale = Vector2(0.999985, 0.999985)
+scale = Vector2(0.999984, 0.999984)
 
 [node name="Saw2" parent="Flying Hazards/Moving Saws7/Saw6" instance=ExtResource("24_s4osf")]
 z_index = -1

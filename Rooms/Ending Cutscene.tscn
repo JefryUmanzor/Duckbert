@@ -1,13 +1,75 @@
-[gd_scene load_steps=16 format=3 uid="uid://ca544uif6fpb8"]
+[gd_scene load_steps=41 format=3 uid="uid://ca544uif6fpb8"]
 
+[ext_resource type="Script" path="res://Scripts/Helper/EndingScript.gd" id="1_be3bx"]
 [ext_resource type="Script" path="res://Scripts/Helper/SetVisible.gd" id="1_ki60y"]
 [ext_resource type="Texture2D" uid="uid://5prasalm7syw" path="res://Sprites/UI/Level Select Gradient.png" id="2_4wap5"]
+[ext_resource type="Shader" path="res://Shaders/HudShader.gdshader" id="2_me0aw"]
+[ext_resource type="Texture2D" uid="uid://ds0yneexg1et0" path="res://Sprites/UI/Hud Tex.png" id="3_f0e4h"]
 [ext_resource type="Script" path="res://Scripts/Helper/DefaultAnimationPlayer.gd" id="3_k0f6u"]
 [ext_resource type="Material" uid="uid://idlr7ra1kf11" path="res://Materials/Ending/MAT SkyWater.tres" id="4_4xd1p"]
 [ext_resource type="Texture2D" uid="uid://ci270v854o1gp" path="res://Sprites/Backgrounds/Dither BG.png" id="5_d8y0a"]
+[ext_resource type="Texture2D" uid="uid://nqfi4oujluqd" path="res://Palettes/PAL Grey.png" id="5_ja0v2"]
+[ext_resource type="Texture2D" uid="uid://df61xhxayay0n" path="res://Sprites/Other Duck Sprite.png" id="6_gxrn8"]
 [ext_resource type="Texture2D" uid="uid://bpjl5iinn3sqx" path="res://Sprites/Tilesets/SPR Ending Tiles.png" id="6_i1s4j"]
+[ext_resource type="Material" uid="uid://flr6062b7hwc" path="res://Materials/Ending/MAT duck.tres" id="6_qmlx4"]
 [ext_resource type="Shader" path="res://Shaders/PaletteShader.gdshader" id="7_070fa"]
+[ext_resource type="Texture2D" uid="uid://ccxfuu7jupuja" path="res://Sprites/Duckbert Sprite.png" id="7_evaxx"]
+[ext_resource type="Script" path="res://Scripts/Helper/DuckSine.gd" id="7_l30jr"]
 [ext_resource type="Texture2D" uid="uid://dk66poido773o" path="res://Palettes/Final Cutscene Palettes/PAL Grass Dirt.png" id="8_o7rce"]
+[ext_resource type="AudioStream" uid="uid://3ugi0rwg3xvx" path="res://Audio/SFX/Player/SND Player Land.wav" id="17_c4tay"]
+[ext_resource type="AudioStream" uid="uid://ym31b3v6dgjp" path="res://Audio/SFX/Player/SND Player Jump.wav" id="18_oyxjq"]
+[ext_resource type="AudioStream" uid="uid://tfa45elfuoou" path="res://Audio/SFX/Player/SND Player Fall Land.wav" id="19_c1cgc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ab0mu"]
+shader = ExtResource("2_me0aw")
+shader_parameter/base_alpha = 0.95
+shader_parameter/albedo = Color(0.0196078, 0.219608, 0.380392, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ge0dv"]
+shader = ExtResource("7_070fa")
+shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
+shader_parameter/current_palette = ExtResource("5_ja0v2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ljwdg"]
+font_size = 12
+
+[sub_resource type="Animation" id="Animation_an7t7"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Hud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -24)]
+}
+
+[sub_resource type="Animation" id="Animation_8owf0"]
+resource_name = "show_text"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base/Hud:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -24), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3t1f"]
+_data = {
+"default": SubResource("Animation_an7t7"),
+"show_text": SubResource("Animation_8owf0")
+}
 
 [sub_resource type="Animation" id="Animation_aesbh"]
 resource_name = "default"
@@ -42,6 +104,92 @@ _data = {
 "default": SubResource("Animation_aesbh")
 }
 
+[sub_resource type="Curve2D" id="Curve2D_blfyq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -48, 160, -30.4173, -235.751, 0, 0, -16, 40, 0, 0, 0, 0, 56, 40, -19.334, -68.4105, 19.334, 68.4105, 102, 48)
+}
+point_count = 4
+
+[sub_resource type="Animation" id="Animation_10u2p"]
+resource_name = "no rotation"
+length = 0.50001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Duckbert:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Duckbert:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7gou0"]
+resource_name = "walking"
+length = 0.933337
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Duckbert:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.466667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 0), Vector2(0, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Duckbert:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.466667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.122173, 0.0, 0.122173, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5i8g"]
+_data = {
+"no rotation": SubResource("Animation_10u2p"),
+"walking": SubResource("Animation_7gou0")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0xds"]
+animation = &"no rotation"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u1l72"]
+animation = &"walking"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_0pp17"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_o0xds")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_u1l72")
+blend_point_1/pos = 1.0
+min_space = 0.0
+snap = 1.0
+value_label = "Blend"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxo5h"]
 texture = ExtResource("6_i1s4j")
 4:4/0 = 0
@@ -60,6 +208,17 @@ texture = ExtResource("6_i1s4j")
 7:8/animation_frame_3/duration = 0.15
 7:8/0 = 0
 7:9/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+14:5/0 = 0
+14:6/0 = 0
+13:6/0 = 0
+12:6/0 = 0
+12:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_t1v3o"]
 sources/0 = SubResource("TileSetAtlasSource_uxo5h")
@@ -72,17 +231,187 @@ shader_parameter/current_palette = ExtResource("8_o7rce")
 
 [sub_resource type="Animation" id="Animation_oa3jv"]
 resource_name = "default"
+length = 20.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.13333, 4, 5.8),
+"transitions": PackedFloat32Array(1, 1, 2, 0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(48, 0), Vector2(96, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Actors/Duckbert Path/PathFollow2D:progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.33333, 1.76667, 2.13333, 4, 5.8, 6.16667, 6.53333),
+"transitions": PackedFloat32Array(1, 0.5, 2, 1, 1.6245, 0.757858, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 201.0, 288.0, 288.0, 323.636, 358.0, 398.931, 435.554]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Actors/Duckbert Path/PathFollow2D:v_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.76667, 1.86667, 1.96667, 6.53333, 6.7, 6.86667, 7, 7.13333),
+"transitions": PackedFloat32Array(1, 0.75, 1.5, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -4.0, 0.0, 0.0, 8.0, -6.0, 2.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Actors/Duckbert Holder/Duckbert Rotation Tree:parameters/blend_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.13333, 2.76667, 5.8),
+"transitions": PackedFloat32Array(1, 1.5, 8, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Actors/Duckbert Holder/Duckbert:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 6.66667),
+"transitions": PackedFloat32Array(0, 0),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Actors/Duckbert Holder/Audio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_c4tay")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("18_oyxjq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("19_c1cgc")
+}],
+"times": PackedFloat32Array(1.76667, 5.8, 6.53333)
+}
+tracks/5/use_blend = true
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("End Text/AnimationPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["default"],
+"method": &"play"
+}, {
+"args": ["show_text"],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d3235"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Actors/Duckbert Path/PathFollow2D:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [323.636]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i00pq"]
 _data = {
+"RESET": SubResource("Animation_d3235"),
 "default": SubResource("Animation_oa3jv")
 }
 
 [node name="Ending" type="Node2D"]
 
+[node name="End Text" type="CanvasLayer" parent="."]
+script = ExtResource("1_be3bx")
+
+[node name="Base" type="Control" parent="End Text"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hud" type="NinePatchRect" parent="End Text/Base"]
+material = SubResource("ShaderMaterial_ab0mu")
+layout_direction = 2
+layout_mode = 0
+offset_top = -24.0
+offset_right = 256.0
+offset_bottom = -1.60001
+texture = ExtResource("3_f0e4h")
+
+[node name="ActionText" type="Label" parent="End Text/Base/Hud"]
+material = SubResource("ShaderMaterial_ge0dv")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.2
+anchor_right = 0.975
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press To: End"
+label_settings = SubResource("LabelSettings_ljwdg")
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="End Text"]
+libraries = {
+"": SubResource("AnimationLibrary_h3t1f")
+}
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
 z_index = 5
 layout_mode = 3
 anchors_preset = 15
@@ -95,9 +424,8 @@ script = ExtResource("1_ki60y")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_top = 224.0
+offset_top = -224.0
 offset_right = 256.0
-offset_bottom = 448.0
 texture = ExtResource("2_4wap5")
 stretch_mode = 2
 flip_v = true
@@ -116,26 +444,103 @@ libraries = {
 script = ExtResource("3_k0f6u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(96, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+z_index = -11
 material = ExtResource("4_4xd1p")
 texture = ExtResource("5_d8y0a")
 
 [node name="Actors" type="Node" parent="."]
 
+[node name="Duckbert Path" type="Path2D" parent="Actors"]
+curve = SubResource("Curve2D_blfyq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Actors/Duckbert Path"]
+position = Vector2(-18.0177, 40.0943)
+rotation = 1.44248
+progress = 323.636
+h_offset = -4.0
+rotates = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Actors/Duckbert Path/PathFollow2D"]
+remote_path = NodePath("../../../Duckbert Holder")
+update_rotation = false
+update_scale = false
+
+[node name="Duckbert Holder" type="Node2D" parent="Actors"]
+position = Vector2(-18.0177, 40.0943)
+
+[node name="Duckbert" type="Sprite2D" parent="Actors/Duckbert Holder"]
+z_index = -2
+material = ExtResource("6_qmlx4")
+position = Vector2(0, -2.87294e-05)
+rotation = -0.122171
+texture = ExtResource("7_evaxx")
+offset = Vector2(0, -5)
+script = ExtResource("7_l30jr")
+sine_offset = 0.25
+speed = 4.0
+enabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Actors/Duckbert Holder"]
+libraries = {
+"": SubResource("AnimationLibrary_s5i8g")
+}
+
+[node name="Duckbert Rotation Tree" type="AnimationTree" parent="Actors/Duckbert Holder"]
+libraries = {
+"": SubResource("AnimationLibrary_s5i8g")
+}
+tree_root = SubResource("AnimationNodeBlendSpace1D_0pp17")
+anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = 0.0572592
+
+[node name="Audio" type="AudioStreamPlayer" parent="Actors/Duckbert Holder"]
+bus = &"SFX"
+
+[node name="Audio2" type="AudioStreamPlayer" parent="Actors/Duckbert Holder"]
+bus = &"SFX"
+
+[node name="Duck 1 Holder" type="Node2D" parent="Actors"]
+position = Vector2(136, 48)
+
+[node name="Duck 1" type="Sprite2D" parent="Actors/Duck 1 Holder"]
+z_index = -2
+material = ExtResource("6_qmlx4")
+texture = ExtResource("6_gxrn8")
+offset = Vector2(0, -5)
+flip_h = true
+script = ExtResource("7_l30jr")
+sine_offset = 1.0
+speed = 4.0
+
+[node name="Duck 2 Holder" type="Node2D" parent="Actors"]
+position = Vector2(152, 48)
+
+[node name="Duck 2" type="Sprite2D" parent="Actors/Duck 2 Holder"]
+z_index = -2
+material = ExtResource("6_qmlx4")
+texture = ExtResource("6_gxrn8")
+offset = Vector2(0, -5)
+flip_h = true
+script = ExtResource("7_l30jr")
+speed = 4.0
+
 [node name="Water TileMap" type="TileMap" parent="."]
 material = ExtResource("4_4xd1p")
 tile_set = SubResource("TileSet_t1v3o")
 format = 2
-layer_0/tile_data = PackedInt32Array(131076, 458752, 8, 196612, 458752, 9, 131077, 458752, 8, 196613, 458752, 9, 131078, 458752, 8, 196614, 458752, 9, 131079, 458752, 8, 196615, 458752, 9, 131080, 458752, 8, 196616, 458752, 9, 131081, 458752, 8, 196617, 458752, 9, 131082, 458752, 8, 196618, 458752, 9)
+layer_0/tile_data = PackedInt32Array(196612, 458752, 9, 196613, 458752, 9, 196614, 458752, 9, 196615, 458752, 9, 196616, 458752, 9, 196617, 458752, 9, 196618, 458752, 9, 131076, 458752, 8, 131077, 458752, 8, 131078, 458752, 8, 131079, 458752, 8, 131080, 458752, 8, 131081, 458752, 8, 131082, 458752, 8)
 
 [node name="Grass TileMap" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_acblt")
 tile_set = SubResource("TileSet_t1v3o")
 format = 2
-layer_0/tile_data = PackedInt32Array(262148, 327680, 5, 327684, 327680, 5, 393220, 327680, 5, 262149, 327680, 5, 327685, 327680, 5, 393221, 327680, 5, 262150, 327680, 5, 327686, 327680, 5, 393222, 327680, 5, 262151, 327680, 5, 327687, 327680, 5, 393223, 327680, 5, 262152, 327680, 5, 327688, 327680, 5, 393224, 327680, 5, 262153, 327680, 5, 327689, 327680, 5, 393225, 327680, 5, 262154, 327680, 5, 327690, 327680, 5, 393226, 327680, 5, 196611, 327680, 4, 196610, 327680, 4, 196609, 327680, 4, 196608, 327680, 4, 262143, 327680, 4, 262142, 262144, 4, 262139, 393216, 4, 262138, 327680, 4, 262137, 327680, 4, 262136, 327680, 4, 262135, 327680, 4, 327675, 393216, 5, 393211, 393216, 5, 458747, 393216, 5, 524283, 393216, 5, 589819, 393216, 5, 327678, 262144, 5, 393214, 262144, 5, 458750, 262144, 5, 524286, 262144, 5, 589822, 262144, 5, 327679, 327680, 5, 393215, 327680, 5, 458751, 327680, 5, 262144, 327680, 5, 327680, 327680, 5, 393216, 327680, 5, 262145, 327680, 5, 327681, 327680, 5, 393217, 327680, 5, 262146, 327680, 5, 327682, 327680, 5, 393218, 327680, 5, 262147, 327680, 5, 327683, 327680, 5, 393219, 327680, 5, 327671, 327680, 5, 393207, 327680, 5, 458743, 327680, 5, 327672, 327680, 5, 393208, 327680, 5, 458744, 327680, 5, 327673, 327680, 5, 393209, 327680, 5, 458745, 327680, 5, 327674, 327680, 5, 393210, 327680, 5, 458746, 327680, 5, 196619, 327680, 4, 196620, 327680, 4, 196621, 327680, 4, 196622, 393216, 4, 262155, 327680, 5, 327691, 327680, 5, 393227, 327680, 5, 262156, 327680, 5, 327692, 327680, 5, 393228, 327680, 5, 262157, 327680, 5, 327693, 327680, 5, 393229, 327680, 5, 262158, 393216, 5, 327694, 393216, 5, 393230, 393216, 5, 458766, 393216, 5, 524302, 393216, 5)
+layer_0/tile_data = PackedInt32Array(327684, 327680, 5, 393220, 327680, 5, 327685, 327680, 5, 393221, 327680, 5, 327686, 327680, 5, 393222, 327680, 5, 327687, 327680, 5, 393223, 327680, 5, 327688, 327680, 5, 393224, 327680, 5, 327689, 327680, 5, 393225, 327680, 5, 327690, 327680, 5, 393226, 327680, 5, 196611, 393216, 4, 196610, 327680, 4, 196609, 327680, 4, 196608, 327680, 4, 262143, 327680, 4, 262142, 262144, 4, 262139, 393216, 4, 262138, 327680, 4, 262137, 327680, 4, 262136, 327680, 4, 262135, 327680, 4, 327675, 393216, 5, 393211, 393216, 5, 458747, 393216, 5, 524283, 393216, 5, 589819, 393216, 5, 327678, 262144, 5, 393214, 262144, 5, 458750, 262144, 5, 524286, 262144, 5, 589822, 262144, 5, 327679, 327680, 5, 393215, 327680, 5, 458751, 327680, 5, 262144, 327680, 5, 327680, 327680, 5, 393216, 327680, 5, 262145, 327680, 5, 327681, 327680, 5, 393217, 327680, 5, 262146, 327680, 5, 327682, 327680, 5, 393218, 327680, 5, 327683, 327680, 5, 393219, 327680, 5, 327671, 327680, 5, 393207, 327680, 5, 458743, 327680, 5, 327672, 327680, 5, 393208, 327680, 5, 458744, 327680, 5, 327673, 327680, 5, 393209, 327680, 5, 458745, 327680, 5, 327674, 327680, 5, 393210, 327680, 5, 458746, 327680, 5, 196619, 393216, 268435460, 196620, 327680, 4, 196621, 327680, 4, 196622, 393216, 4, 327691, 327680, 5, 393227, 327680, 5, 262156, 327680, 5, 327692, 327680, 5, 393228, 327680, 5, 262157, 327680, 5, 327693, 327680, 5, 393229, 327680, 5, 262158, 393216, 5, 327694, 393216, 5, 393230, 393216, 5, 458766, 393216, 5, 524302, 393216, 5, 262147, 917504, 268435462, 262148, 589824, 4, 262149, 589824, 4, 262150, 589824, 4, 262151, 589824, 4, 262152, 589824, 4, 262153, 589824, 4, 262154, 589824, 4, 262155, 917504, 6)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Cutscene" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_i00pq")
 }

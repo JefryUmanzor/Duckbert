@@ -6,6 +6,9 @@ extends Node2D
 
 signal on_player_teleport;
 
+func send_to_ending():
+	get_node("/root/RoomChanger").change_room("res://Rooms/Ending Cutscene.tscn");
+
 func on_touch_player(_player):
 	if not teleport_player:
 		get_tree().current_scene.get_node("GUI").level_clear();

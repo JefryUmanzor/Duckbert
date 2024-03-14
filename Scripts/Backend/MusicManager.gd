@@ -60,6 +60,10 @@ func change_track(scene_name):
 			return;
 		music_playing = 16;
 	
+	if scene_name == "Ending":
+		stop_all_tracks();
+		return;
+	
 	for track : AudioStreamPlayer in get_children():
 		if track.playing:
 			track.stop();

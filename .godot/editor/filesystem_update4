@@ -27,3 +27,9 @@ res://Scripts/Player/Player.gd
 res://Rooms/Ending Cutscene.tscn
 res://Materials/Ending/MAT SkyWater.tres
 res://Materials/Tileset Materials/MAT Catacomb BG.tres
+res://Scripts/Assets/Flag.gd
+res://Scripts/Helper/DuckSine.gd
+res://Scripts/Helper/EndingScript.gd
+res://Scripts/GUI/MainMenuScript.gd
+res://Rooms/Main Menu.tscn
+res://Scripts/Backend/MusicManager.gd
