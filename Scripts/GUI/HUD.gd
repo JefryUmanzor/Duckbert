@@ -50,16 +50,17 @@ func _process(_delta):
 	if not player.special_intro:
 		if Input.is_action_just_pressed("Pause") and not level_cleared:
 			if not in_options:
-				paused = !paused;
-				if paused:
-					player.can_control = false;
-					animation_tree.set("parameters/UI Blend/blend_amount", -1.0);
-					animation_tree.set("parameters/Pause Blend/blend_amount", 0.0);
-					animation_tree.set("parameters/Pause Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
-					
-					resume.grab_focus();
-				else:
-					unpause();
+				if player.is_on_floor():
+					paused = !paused;
+					if paused:
+						player.can_control = false;
+						animation_tree.set("parameters/UI Blend/blend_amount", -1.0);
+						animation_tree.set("parameters/Pause Blend/blend_amount", 0.0);
+						animation_tree.set("parameters/Pause Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+						
+						resume.grab_focus();
+					else:
+						unpause();
 			else:
 				exit_options();
 

@@ -27,6 +27,7 @@ func on_player_exit(_body):
 func _process(_delta):
 	if player != null and started_bounce:
 		player.is_on_spring = true;
+		player.velocity.x = 0.0;
 	
 	if player != null and not started_bounce:
 		if up_direction < 0:

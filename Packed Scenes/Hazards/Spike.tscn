@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/Assets/BaseHazardScript.gd" id="2_2adb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syn15"]
-size = Vector2(6, 10)
+size = Vector2(4, 8)
 
 [node name="Spike" type="Node2D"]
 
@@ -19,7 +19,7 @@ collision_mask = 32768
 script = ExtResource("2_2adb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -5)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_syn15")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_enter"]

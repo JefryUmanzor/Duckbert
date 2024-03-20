@@ -90,7 +90,7 @@ func _process(delta):
 		
 		if not moving and move_input != 0 and grounded and start_step_timer > 0.0:
 			create_step_particle();
-		moving = move_input != 0 and grounded and abs(velocity.x) > 0.02;
+		moving = move_input != 0 and !is_on_spring and grounded and abs(velocity.x) > 0.02;
 		
 		if move_input != 0:
 			start_step_timer -= delta;
@@ -156,7 +156,7 @@ func _physics_process(delta):
 		if sign(velocity.y) != sign(up_direction.y):
 			velocity.y = max_vertical_speed * -sign(up_direction.y);
 	
-	if can_control:
+	if can_control and not is_on_spring:
 		move_input = sign(Input.get_axis("PlayerLeft", "PlayerRight"));
 	else:
 		move_input = 0;

@@ -387,7 +387,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path6" index="0"]
 position = Vector2(0, 0)
-duration = 1.75
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path6/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -411,7 +411,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path7" index="0"]
 position = Vector2(0, 0)
-duration = 1.75
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path7/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -435,7 +435,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path8" index="0"]
 position = Vector2(0, 0)
-duration = 1.75
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path8/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -459,7 +459,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path9" index="0"]
 position = Vector2(0, 0)
-duration = 1.75
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path9/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -474,7 +474,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path11" index="0"]
 position = Vector2(0, 0)
-duration = 2.0
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Paths/Path11/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -496,7 +496,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path12" index="0"]
 position = Vector2(0, 0)
-duration = 2.0
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Paths/Path12/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -536,7 +536,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path4" index="0"]
 position = Vector2(0, 0)
-duration = 1.75
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path4/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -553,7 +553,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path10" index="0"]
 position = Vector2(0, 0)
-duration = 1.75
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path10/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -570,7 +570,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path5" index="0"]
 position = Vector2(0, 0)
-duration = 1.75
+duration = 2.0
 
 [node name="RemoteTransform2D" parent="Paths/Path5/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -587,7 +587,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path13" index="0"]
 position = Vector2(0, 0)
-duration = 2.0
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Paths/Path13/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -611,7 +611,7 @@ metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Paths/Path14" index="0"]
 position = Vector2(0, 0)
-duration = 2.0
+duration = 2.5
 
 [node name="RemoteTransform2D" parent="Paths/Path14/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")

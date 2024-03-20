@@ -10,6 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_51x3d"]
 shader = ExtResource("2_2qjqw")
 shader_parameter/use_palette = true
+shader_parameter/alpha_threshold = 0.5
 shader_parameter/current_palette = ExtResource("3_rslr1")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2c4p"]
@@ -64,7 +65,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32jb5"]
-size = Vector2(16, 5)
+size = Vector2(16, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmgd7"]
 size = Vector2(18, 1)
@@ -95,7 +96,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.25, 0.7),
 "transitions": PackedFloat32Array(10, 10, 0, 0),
 "update": 0,
-"values": [Vector2(0, -10), Vector2(0, -5), Vector2(0, -25), Vector2(0, -11)]
+"values": [Vector2(0, -10), Vector2(0, -6), Vector2(0, -25), Vector2(0, -11)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -198,11 +199,13 @@ bounce_strength = 330.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -2
 material = SubResource("ShaderMaterial_51x3d")
+scale = Vector2(1.1, 0.95)
 sprite_frames = SubResource("SpriteFrames_26ak3")
+animation = &"B1"
 offset = Vector2(0, -12)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(0, -10)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
@@ -211,7 +214,7 @@ shape = SubResource("RectangleShape2D_32jb5")
 one_way_collision = true
 
 [node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
-position = Vector2(0, -5)
+position = Vector2(0, -4)
 collision_mask = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
@@ -224,6 +227,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_m1ktv")
 }
