@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://caa1tt7gmfscc"]
+[gd_scene load_steps=67 format=3 uid="uid://caa1tt7gmfscc"]
 
 [ext_resource type="PackedScene" uid="uid://cboono7eq3fvc" path="res://Packed Scenes/GUI/Default Button.tscn" id="1_42oty"]
 [ext_resource type="Script" path="res://Scripts/GUI/MainMenuScript.gd" id="1_yn63n"]
@@ -16,6 +16,14 @@
 [ext_resource type="AudioStream" uid="uid://baiu6wqxit3wk" path="res://Audio/SFX/UI/SND Menu Button Press.wav" id="8_fwbny"]
 [ext_resource type="Texture2D" uid="uid://5prasalm7syw" path="res://Sprites/UI/Level Select Gradient.png" id="8_ixtvc"]
 [ext_resource type="StyleBox" uid="uid://dyidxbw2tsioi" path="res://GUI Theme/Style Boxes/StyleBox Disabled.res" id="9_lrjhx"]
+[ext_resource type="PackedScene" uid="uid://yiqot2saxnvm" path="res://Packed Scenes/Particles/Step Particle.tscn" id="17_eop1h"]
+[ext_resource type="PackedScene" uid="uid://h12u1jcpkl33" path="res://Packed Scenes/Particles/Jump Particle.tscn" id="18_pgmi8"]
+[ext_resource type="PackedScene" uid="uid://cve26yddktjs1" path="res://Packed Scenes/Particles/Grav Step Particle.tscn" id="19_eo0xr"]
+[ext_resource type="PackedScene" uid="uid://ckya4u5x1eq8c" path="res://Packed Scenes/Particles/Ability Change Particle.tscn" id="20_4tlst"]
+[ext_resource type="PackedScene" uid="uid://bjcdqvtqkg1n2" path="res://Packed Scenes/Particles/Flap Particle.tscn" id="21_x7pam"]
+[ext_resource type="PackedScene" uid="uid://f8sfwakl5ih0" path="res://Packed Scenes/Particles/Gravity Down Particle.tscn" id="22_plkoo"]
+[ext_resource type="PackedScene" uid="uid://dlhcbfi6ejuxw" path="res://Packed Scenes/Particles/Gravity Up Particle.tscn" id="23_o15p0"]
+[ext_resource type="PackedScene" uid="uid://bhhjbw8o4gyvi" path="res://Packed Scenes/Particles/Land Particle.tscn" id="24_p0x6h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ao37"]
 shader = ExtResource("2_reskw")
@@ -158,6 +166,164 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_sq8vg"]
+resource_name = "Credits Loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Level Select:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -224)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u1gn4"]
+resource_name = "Credits Transition"
+length = 0.22
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, -224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Level Select:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -224)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 224), Vector2(0, 234), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qh2lu"]
+resource_name = "CreditsMain Transition"
+length = 0.22
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1.5, 1),
+"update": 0,
+"values": [Vector2(0, -224), Vector2(0, -234), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Level Select:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -224)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Credits:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 224)]
 }
 
 [sub_resource type="Animation" id="Animation_ea0sq"]
@@ -542,164 +708,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 224)]
-}
-
-[sub_resource type="Animation" id="Animation_u1gn4"]
-resource_name = "Credits Transition"
-length = 0.22
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main Screen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, -224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Level Select:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -224)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Credits:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 2, 1),
-"update": 0,
-"values": [Vector2(0, 224), Vector2(0, 234), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_sq8vg"]
-resource_name = "Credits Loop"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main Screen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -224)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Level Select:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -224)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Options:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Credits:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_qh2lu"]
-resource_name = "CreditsMain Transition"
-length = 0.22
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Main Screen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1.5, 1),
-"update": 0,
-"values": [Vector2(0, -224), Vector2(0, -234), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Options:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-256, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Level Select:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -224)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Credits:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 2, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 224)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ra4av"]
@@ -1653,6 +1661,27 @@ bus = &"SFX"
 stream = ExtResource("8_fwbny")
 bus = &"SFX"
 
+[node name="Node2D" type="Node2D" parent="."]
+z_index = -5
+position = Vector2(336, 24)
+
+[node name="Step Particle2" parent="Node2D" instance=ExtResource("17_eop1h")]
+
+[node name="Jump Particle" parent="Node2D" instance=ExtResource("18_pgmi8")]
+
+[node name="Step Particle" parent="Node2D" instance=ExtResource("19_eo0xr")]
+
+[node name="ParticleHandler" parent="Node2D" instance=ExtResource("20_4tlst")]
+show_behind_parent = true
+
+[node name="ParticleHandler2" parent="Node2D" instance=ExtResource("21_x7pam")]
+
+[node name="ParticleHandler3" parent="Node2D" instance=ExtResource("22_plkoo")]
+
+[node name="ParticleHandler4" parent="Node2D" instance=ExtResource("23_o15p0")]
+
+[node name="Land Particle" parent="Node2D" instance=ExtResource("24_p0x6h")]
+
 [connection signal="focus_entered" from="Main Screen/Main Buttons/Start" to="." method="on_grab_focus"]
 [connection signal="pressed" from="Main Screen/Main Buttons/Start" to="." method="switch_to_levels"]
 [connection signal="focus_entered" from="Main Screen/Main Buttons/Options" to="." method="on_grab_focus"]
@@ -1713,3 +1742,4 @@ bus = &"SFX"
 [connection signal="pressed" from="Credits/VBoxContainer2/Jef Holder/HBoxContainer/Link Button" to="." method="link_to_jef"]
 
 [editable path="Main Screen/Main Buttons/Start"]
+[editable path="Node2D/ParticleHandler"]

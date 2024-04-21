@@ -1,23 +1,23 @@
 res://addons/anthonyec.camera_preview/preview.tscn::5bda523664ec4679a7409130bb0c60ca::1709417155::res://.godot/exported/133200997/export-3b88bc956636ac73548e66524dcf9741-preview.scn
-res://GUI Theme/Style Boxes/Stylebox Panel Override.tres::d106b5401efd8fbff3cf3752239a1924::1710384518::res://.godot/exported/133200997/export-d67014ec586ce7d7972d29c5962dc340-Stylebox Panel Override.res
-res://GUI Theme/THEME Default.tres::40ec76526da9c2241dfbef0c65a12117::1710384518::res://.godot/exported/133200997/export-22c65df8a4ddbf2a1f437fc0851111f0-THEME Default.res
-res://Materials/GUI/HUD Material.tres::410f94e73ac2b983b187cb41d3ce9f14::1710379284::res://.godot/exported/133200997/export-f3096f02c41feb11f1c3e0809feb5753-HUD Material.res
-res://Materials/GUI/MAT Button Outline.tres::2c696ef50c360e436e4dfba524bedd97::1710384518::res://.godot/exported/133200997/export-24309390de0519571aadea3c499d50b6-MAT Button Outline.res
-res://Materials/Tileset Materials/MAT Pipe BG.tres::6e98bc1b05967bcbcc9435466a73abc4::1710374322::res://.godot/exported/133200997/export-58a9c496a93c9a105e8f3a98c9e3dec2-MAT Pipe BG.res
-res://Materials/Tileset Materials/MAT Pipe Teal.tres::c7a57104a96899cfcbe9c6dfa612f331::1710380126::res://.godot/exported/133200997/export-85680271a7673ea42838c7c5093cd70e-MAT Pipe Teal.res
-res://Materials/Hazard Material.tres::5af829d4b4306a50fcc6059705ca07ae::1710366555::res://.godot/exported/133200997/export-7e9fad28b1363837efda43990467aace-Hazard Material.res
-res://Materials/Particle Material.tres::b5d9645834dc8ef8c3cc02b3ce2cc00e::1710384518::res://.godot/exported/133200997/export-c0921413be01c57c9061bbace8ecec26-Particle Material.res
-res://Materials/Player Material.tres::7cbd73f432382e0545f8bebdbdf83904::1710366554::res://.godot/exported/133200997/export-4129f9ff18e2274c88cebe7e6b6cadbf-Player Material.res
-res://Materials/Player Particle Material NoFlash.tres::2c078765a5a7eddbe813379d83eb773f::1710366554::res://.godot/exported/133200997/export-e3dd3b664079986e4f6cf67dce295446-Player Particle Material NoFlash.res
-res://Materials/Player Particle Material.tres::26431560a50e3940f000c2bd788a1c68::1710384518::res://.godot/exported/133200997/export-81cc20e330bb68b7560ec959fb18e703-Player Particle Material.res
+res://GUI Theme/Style Boxes/Stylebox Panel Override.tres::d106b5401efd8fbff3cf3752239a1924::1713666300::res://.godot/exported/133200997/export-d67014ec586ce7d7972d29c5962dc340-Stylebox Panel Override.res
+res://GUI Theme/THEME Default.tres::40ec76526da9c2241dfbef0c65a12117::1713663874::res://.godot/exported/133200997/export-22c65df8a4ddbf2a1f437fc0851111f0-THEME Default.res
+res://Materials/GUI/HUD Material.tres::410f94e73ac2b983b187cb41d3ce9f14::1713666300::res://.godot/exported/133200997/export-f3096f02c41feb11f1c3e0809feb5753-HUD Material.res
+res://Materials/GUI/MAT Button Outline.tres::2c696ef50c360e436e4dfba524bedd97::1713663874::res://.godot/exported/133200997/export-24309390de0519571aadea3c499d50b6-MAT Button Outline.res
+res://Materials/Tileset Materials/MAT Pipe BG.tres::6e98bc1b05967bcbcc9435466a73abc4::1713666300::res://.godot/exported/133200997/export-58a9c496a93c9a105e8f3a98c9e3dec2-MAT Pipe BG.res
+res://Materials/Tileset Materials/MAT Pipe Teal.tres::c7a57104a96899cfcbe9c6dfa612f331::1713666300::res://.godot/exported/133200997/export-85680271a7673ea42838c7c5093cd70e-MAT Pipe Teal.res
+res://Materials/Hazard Material.tres::5af829d4b4306a50fcc6059705ca07ae::1713666300::res://.godot/exported/133200997/export-7e9fad28b1363837efda43990467aace-Hazard Material.res
+res://Materials/Particle Material.tres::b5d9645834dc8ef8c3cc02b3ce2cc00e::1713663874::res://.godot/exported/133200997/export-c0921413be01c57c9061bbace8ecec26-Particle Material.res
+res://Materials/Player Material.tres::7cbd73f432382e0545f8bebdbdf83904::1713666300::res://.godot/exported/133200997/export-4129f9ff18e2274c88cebe7e6b6cadbf-Player Material.res
+res://Materials/Player Particle Material NoFlash.tres::2c078765a5a7eddbe813379d83eb773f::1713666300::res://.godot/exported/133200997/export-e3dd3b664079986e4f6cf67dce295446-Player Particle Material NoFlash.res
+res://Materials/Player Particle Material.tres::26431560a50e3940f000c2bd788a1c68::1713663874::res://.godot/exported/133200997/export-81cc20e330bb68b7560ec959fb18e703-Player Particle Material.res
 res://Packed Scenes/Assets/Checkpoint.tscn::c25d99719e31fe1f604c04ea9613952a::1710305881::res://.godot/exported/133200997/export-68e5448574cde180ba0ad45777962a5a-Checkpoint.scn
 res://Packed Scenes/Assets/Flag.tscn::8803f7a85a9ef5379eb5c3351a1ec5a2::1710381583::res://.godot/exported/133200997/export-bc370c4293511743371bb82ccb33d97c-Flag.scn
-res://Packed Scenes/Assets/Spring Big.tscn::1655f6bf32a66cb897ac586f6591ff68::1710316542::res://.godot/exported/133200997/export-5dc69d0456a2a2d2efd025af61083363-Spring Big.scn
-res://Packed Scenes/Assets/Spring.tscn::cb867ccdb3bb9f2b519580a89705a44a::1710094766::res://.godot/exported/133200997/export-551dd9e9cd42fc9d6eb778e9895e299b-Spring.scn
+res://Packed Scenes/Assets/Spring Big.tscn::60a8d58698a455a35a85970dc3520b0e::1713667737::res://.godot/exported/133200997/export-5dc69d0456a2a2d2efd025af61083363-Spring Big.scn
+res://Packed Scenes/Assets/Spring.tscn::a1aa28e42da66e36c13dbc489b9eacc5::1713667736::res://.godot/exported/133200997/export-551dd9e9cd42fc9d6eb778e9895e299b-Spring.scn
 res://Packed Scenes/GUI/Default Button.tscn::f90ae816a807a25d51ff266cc610bfa4::1709955002::res://.godot/exported/133200997/export-2ab75d49d617f3b4e1d906fcdc312bc3-Default Button.scn
 res://Packed Scenes/GUI/GUI.tscn::3bf325cb269990a8a1f58b6f1ccd06fc::1710173463::res://.godot/exported/133200997/export-6f262a402dac16f8e5ad8d3bde43312b-GUI.scn
-res://Packed Scenes/Hazards/Saw.tscn::2af2a7d595072858ced733c861f2853d::1710013747::res://.godot/exported/133200997/export-062fc33c39bf55674e09a46de666f83b-Saw.scn
-res://Packed Scenes/Hazards/Spike.tscn::85ed7909c5e51018a83c0d07bdd52ffd::1710094766::res://.godot/exported/133200997/export-2172b254250fb868240837d0a617dfe8-Spike.scn
+res://Packed Scenes/Hazards/Saw.tscn::5b0210db985741620f39d207e289439b::1710951598::res://.godot/exported/133200997/export-062fc33c39bf55674e09a46de666f83b-Saw.scn
+res://Packed Scenes/Hazards/Spike.tscn::eb01650650c6b2952834b57ad2680bf5::1710951178::res://.godot/exported/133200997/export-2172b254250fb868240837d0a617dfe8-Spike.scn
 res://Packed Scenes/Hazards/World Boundary.tscn::95f63fa53585e969999b9088f2a0a16a::1710091205::res://.godot/exported/133200997/export-ae906e5e6a2078c08d4ba9ef7c1bb611-World Boundary.scn
 res://Packed Scenes/Particles/Ability Change Particle.tscn::24ee86a5204e6ea70442d75b9963772e::1710013777::res://.godot/exported/133200997/export-042955662a68f4ca97852130627f62e2-Ability Change Particle.scn
 res://Packed Scenes/Particles/Flap Particle.tscn::1526c9f5442ad884755a4643fcc1caee::1710013766::res://.godot/exported/133200997/export-e0268b9392d9a7327d107665dc95543e-Flap Particle.scn
@@ -36,39 +36,39 @@ res://Packed Scenes/Signs/Jump Sign.tscn::55375f3a05a9d8d0cad7dbe144df0481::1709
 res://Packed Scenes/Signs/None Sign.tscn::ed0c97cca16dcccbc9bd837e3b77c3d0::1709772855::res://.godot/exported/133200997/export-de7a2e1f88d24a1ae04c72094d23583b-None Sign.scn
 res://Packed Scenes/Music Manager.tscn::82f5cf914aac2961f411e9ec32b9ac34::1710297146::res://.godot/exported/133200997/export-6c73b65dbf1dab6e1b86a50926339799-Music Manager.scn
 res://Packed Scenes/Player.tscn::2e967b31adacab5a6d544304d70d62d2::1710300660::res://.godot/exported/133200997/export-145b2024e12e6f155b28a91d16829036-Player.scn
-res://Rooms/Main Levels/Level 1-1.tscn::13a868268c6d1904863cd3726b84008f::1710381607::res://.godot/exported/133200997/export-c60e9462dac9ab01556da435f3b970c4-Level 1-1.scn
-res://Rooms/Main Levels/Level 1-2.tscn::7d54cd59ffb88d9ef41c30adb8795011::1710381613::res://.godot/exported/133200997/export-ef009be5045a86c61a6ad0b6ccc30acb-Level 1-2.scn
-res://Rooms/Main Levels/Level 1-3.tscn::7143bff9338368ec19a07ded7f372264::1710381618::res://.godot/exported/133200997/export-a0cb6c57be31c349009f2d0055bb78b6-Level 1-3.scn
+res://Rooms/Main Levels/Level 1-1.tscn::13a868268c6d1904863cd3726b84008f::1713667017::res://.godot/exported/133200997/export-c60e9462dac9ab01556da435f3b970c4-Level 1-1.scn
+res://Rooms/Main Levels/Level 1-2.tscn::7d54cd59ffb88d9ef41c30adb8795011::1713667017::res://.godot/exported/133200997/export-ef009be5045a86c61a6ad0b6ccc30acb-Level 1-2.scn
+res://Rooms/Main Levels/Level 1-3.tscn::628dcd716f98ae6b45adf4113ad6c028::1710951683::res://.godot/exported/133200997/export-a0cb6c57be31c349009f2d0055bb78b6-Level 1-3.scn
 res://Rooms/Base Room.tscn::42428b25c5a0ae88f9e0f0b261d7d1ec::1710296232::res://.godot/exported/133200997/export-c894c1ad935dfc72cdbbb2efe9ba7add-Base Room.scn
-res://Rooms/Main Menu.tscn::19930e2f2b3acb744e04c23aeeb214b7::1710384645::res://.godot/exported/133200997/export-120b4c311c8c5f960badb7d81721c648-Main Menu.scn
+res://Rooms/Main Menu.tscn::33bca9acfbd2b6690d02bfbe1d081e4a::1713667737::res://.godot/exported/133200997/export-120b4c311c8c5f960badb7d81721c648-Main Menu.scn
 res://Rooms/Spring Test.tscn::2054dd1ec4d87b8651c01594f6a53f5f::1710090475::res://.godot/exported/133200997/export-9f09693e6225b29288f08e5dcbba5971-Spring Test.scn
 res://Rooms/Test Room.tscn::ae7b14845793040e1dcb0a79a4731ed6::1710134609::res://.godot/exported/133200997/export-56d9f02ad61b937e76abf62c529a3cac-Test Room.scn
-res://Tilesets/TS Pipes BG.tres::3eede3055bf10bb6cd56cdd18f744fad::1710380126::res://.godot/exported/133200997/export-b178e66d25d93e6dd43405e2f6ad8b77-TS Pipes BG.res
-res://Tilesets/TS Pipes.tres::662ac1de3c58d0d988b82db713acabf9::1710380126::res://.godot/exported/133200997/export-f45e91ecd294450bfe01fe5c048bceaf-TS Pipes.res
+res://Tilesets/TS Pipes BG.tres::3eede3055bf10bb6cd56cdd18f744fad::1713666300::res://.godot/exported/133200997/export-b178e66d25d93e6dd43405e2f6ad8b77-TS Pipes BG.res
+res://Tilesets/TS Pipes.tres::662ac1de3c58d0d988b82db713acabf9::1713666300::res://.godot/exported/133200997/export-f45e91ecd294450bfe01fe5c048bceaf-TS Pipes.res
 res://default_bus_layout.tres::4f510dcf450e256dfe370bc80f33ceda::1710012449::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
 res://Packed Scenes/PathFollower.tscn::2422b83ad4306c5e016a49a5ca6d4f30::1710091140::res://.godot/exported/133200997/export-457c06c610aa8ea31493afdf3c6deb23-PathFollower.scn
-res://Materials/GUI/HUD Material 2.tres::614228c222019c708561f9904f23747a::1710380126::res://.godot/exported/133200997/export-ab5b3d845a3f7ce8afa46b7576f3eccc-HUD Material 2.res
-res://Materials/Tileset Materials/MAT Catacomb BG.tres::ca33d0f3dc10287d6ff5b0703744d90f::1710374603::res://.godot/exported/133200997/export-579252e232bf118a4792c8ffbd429cd6-MAT Catacomb BG.res
-res://Materials/Tileset Materials/MAT Catacomb Purple.tres::81d48e1bfb531adb2dd6acc530a9b382::1710380126::res://.godot/exported/133200997/export-754ac464369a63711648300462a5aaaf-MAT Catacomb Purple.res
+res://Materials/GUI/HUD Material 2.tres::614228c222019c708561f9904f23747a::1710950515::res://.godot/exported/133200997/export-ab5b3d845a3f7ce8afa46b7576f3eccc-HUD Material 2.res
+res://Materials/Tileset Materials/MAT Catacomb BG.tres::ca33d0f3dc10287d6ff5b0703744d90f::1710950515::res://.godot/exported/133200997/export-579252e232bf118a4792c8ffbd429cd6-MAT Catacomb BG.res
+res://Materials/Tileset Materials/MAT Catacomb Purple.tres::81d48e1bfb531adb2dd6acc530a9b382::1710950515::res://.godot/exported/133200997/export-754ac464369a63711648300462a5aaaf-MAT Catacomb Purple.res
 res://Packed Scenes/GUI/Gui Red.tscn::3e2a2500a317d3bbf7d2d7055234739e::1710173451::res://.godot/exported/133200997/export-387bcd8b59b944a0364e7cc3a81a501f-Gui Red.scn
 res://Packed Scenes/Ability Change Area.tscn::ff3ff17a614da331d7cc2fd7fd19add6::1710306177::res://.godot/exported/133200997/export-346dcc59467eb259e71f4563690d1e68-Ability Change Area.scn
 res://Rooms/Main Levels/Level 2-1.tscn::1d3ec572f33a7f16e384a0c26505eeb1::1710381627::res://.godot/exported/133200997/export-c8a74d5ae0ae6d5770fa121bb123afe2-Level 2-1.scn
 res://Rooms/Main Levels/Level 2-2.tscn::db8c062fcdad7239ac581a04fe4b2b71::1710381633::res://.godot/exported/133200997/export-3f94da42dbf9c10d2ee892f933cfcfb6-Level 2-2.scn
-res://Rooms/Main Levels/Level 2-3.tscn::96cd0b773f5514c745131e41b27b5c1e::1710381640::res://.godot/exported/133200997/export-438352630478028ffd808e058785628f-Level 2-3.scn
+res://Rooms/Main Levels/Level 2-3.tscn::0f8ce786acd043d306d8fcf81973cf08::1710950985::res://.godot/exported/133200997/export-438352630478028ffd808e058785628f-Level 2-3.scn
 res://Rooms/Base Room 2.tscn::e99a56c900ef21611e103c54249ded14::1710137280::res://.godot/exported/133200997/export-7b8eb481b772366941d2684ec8866c75-Base Room 2.scn
-res://Tilesets/TS Catacombs BG.tres::f307ab6880a15151777aa6c926bbb6b9::1710380126::res://.godot/exported/133200997/export-a7e98bd61c5dde2f3fd31519e7e533a1-TS Catacombs BG.res
-res://Tilesets/TS Catacombs.tres::c341548d389bb13148354623fb93a552::1710380126::res://.godot/exported/133200997/export-72cfca6401f359c44746bb90bbc6505e-TS Catacombs.res
+res://Tilesets/TS Catacombs BG.tres::f307ab6880a15151777aa6c926bbb6b9::1710950515::res://.godot/exported/133200997/export-a7e98bd61c5dde2f3fd31519e7e533a1-TS Catacombs BG.res
+res://Tilesets/TS Catacombs.tres::c341548d389bb13148354623fb93a552::1710950515::res://.godot/exported/133200997/export-72cfca6401f359c44746bb90bbc6505e-TS Catacombs.res
 res://Materials/Ending/MAT SkyWater.tres::40e4d7c2c584d4718c4efd081ab79e80::1710374603::res://.godot/exported/133200997/export-826341d836a35f9dd043f8af615a6c5e-MAT SkyWater.res
 res://Materials/Ending/MAT duck.tres::dced5b49bf28b7cdb36e9c1b181b5d0f::1710376072::res://.godot/exported/133200997/export-748daaa2dfe97afed845be3e131f2321-MAT duck.res
-res://Materials/GUI/HUD Material 3.tres::4cd4dfbc7f1dc7957e36814d1a27ce5c::1710366554::res://.godot/exported/133200997/export-db11d9be80a46ea019f5b478572d0621-HUD Material 3.res
+res://Materials/GUI/HUD Material 3.tres::4cd4dfbc7f1dc7957e36814d1a27ce5c::1713666871::res://.godot/exported/133200997/export-db11d9be80a46ea019f5b478572d0621-HUD Material 3.res
 res://Materials/Tileset Materials/MAT Underground BG Animated.tres::0df925cb7037572abee3ee56551753eb::1710380126::res://.godot/exported/133200997/export-def838784c44a9b02ca4c481f4f33c8b-MAT Underground BG Animated.res
-res://Materials/Tileset Materials/MAT Underground BG.tres::6a41b8428258f69ec297508f4ae56668::1710366555::res://.godot/exported/133200997/export-d1f65834b4f88681ce003e1b4bd11385-MAT Underground BG.res
-res://Materials/Tileset Materials/MAT Underground.tres::cfbe77b1518a769a5bfca94d041372e1::1710366554::res://.godot/exported/133200997/export-66f9980b1d1cdbc7276060bb47d925bb-MAT Underground.res
+res://Materials/Tileset Materials/MAT Underground BG.tres::6a41b8428258f69ec297508f4ae56668::1713666871::res://.godot/exported/133200997/export-d1f65834b4f88681ce003e1b4bd11385-MAT Underground BG.res
+res://Materials/Tileset Materials/MAT Underground.tres::cfbe77b1518a769a5bfca94d041372e1::1713666871::res://.godot/exported/133200997/export-66f9980b1d1cdbc7276060bb47d925bb-MAT Underground.res
 res://Packed Scenes/GUI/GUI Black.tscn::89240460c9317331f6397e2e24ffcf91::1710314480::res://.godot/exported/133200997/export-83e8f37910fe44d65d62cbc221a2a304-GUI Black.scn
 res://Rooms/Main Levels/Level 3-1.tscn::ea4fa4202ea70e464f3dfe5c1b86b3f2::1710381647::res://.godot/exported/133200997/export-5738770fb3a46ae9a799c5029f97ded5-Level 3-1.scn
 res://Rooms/Main Levels/Level 3-2.tscn::f8e75f5c799b3b6fc48309ad4cb85b18::1710382125::res://.godot/exported/133200997/export-dc9a77d94a02ccb64d312e9d741b08e9-Level 3-2.scn
-res://Rooms/Main Levels/Level 3-3.tscn::a38d09dfeaf54887201a72b52da3eff5::1710381661::res://.godot/exported/133200997/export-532bb8f276132ca4fda732a298552dc8-Level 3-3.scn
+res://Rooms/Main Levels/Level 3-3.tscn::ca14bbb3179f90875c8d637f3d2919c6::1713667737::res://.godot/exported/133200997/export-532bb8f276132ca4fda732a298552dc8-Level 3-3.scn
 res://Rooms/Base Room 3.tscn::e5e8fffdde5c59debf1a4ace7bd4a967::1710300485::res://.godot/exported/133200997/export-16402beffcca463ffd23a70a9a0d8ef3-Base Room 3.scn
 res://Rooms/Ending Cutscene.tscn::f4644ff09d66164f75ff9d8e2d32ec83::1710379873::res://.godot/exported/133200997/export-7bd1a95c7fa15f955e247c7e1067bed2-Ending Cutscene.scn
 res://Shaders/Animated Palette Shader.tres::cde5705d0f7c096ab90852a62381c13a::1710304738::res://.godot/exported/133200997/export-49877b7f8d5f14d37fd393fee3cee31b-Animated Palette Shader.res
-res://Tilesets/TS Underground.tres::81163b73a75cbe5dc979d76dd60ce6a6::1710370602::res://.godot/exported/133200997/export-f09f67920ff6aaabb68ecb18ec7b9eb2-TS Underground.res
+res://Tilesets/TS Underground.tres::81163b73a75cbe5dc979d76dd60ce6a6::1713666871::res://.godot/exported/133200997/export-f09f67920ff6aaabb68ecb18ec7b9eb2-TS Underground.res

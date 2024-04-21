@@ -28,3 +28,4 @@ res://Materials/GUI/HUD Material 3.tres
 res://Materials/Tileset Materials/MAT Underground.tres
 res://Tilesets/TS Underground.tres
 res://Materials/Tileset Materials/MAT Underground BG.tres
+res://Scripts/Player/PlayerParticleFollower.gd
