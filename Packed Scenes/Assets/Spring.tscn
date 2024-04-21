@@ -199,13 +199,11 @@ bounce_strength = 330.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -2
 material = SubResource("ShaderMaterial_51x3d")
-scale = Vector2(1.1, 0.95)
 sprite_frames = SubResource("SpriteFrames_26ak3")
-animation = &"B1"
 offset = Vector2(0, -12)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -11)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
@@ -227,10 +225,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
-libraries = {
-"": SubResource("AnimationLibrary_m1ktv")
-}
 tree_root = SubResource("AnimationNodeBlendTree_wqjmr")
 anim_player = NodePath("../AnimationPlayer")
 "parameters/Bounce Shot/active" = false

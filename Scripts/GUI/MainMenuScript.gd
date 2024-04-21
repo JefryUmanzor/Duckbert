@@ -5,6 +5,7 @@ extends Control
 @onready var start_button = $"Main Screen/Main Buttons/Start"
 @onready var options_button = $"Main Screen/Main Buttons/Options"
 @onready var quit = $"Main Screen/Main Buttons/Quit"
+@onready var credits_button = $"Main Screen/Main Buttons/Credits"
 
 @onready var fullscreen_toggle = $"Options/VBoxContainer2/Fullscreen Holder/HBoxContainer/Fullscreen Toggle"
 @onready var fullscreen_stretch_toggle = $"Options/VBoxContainer2/Fullscreen Scale Holder/HBoxContainer/Fullscreen Stretch Toggle"
@@ -21,6 +22,7 @@ var save_data : SaveLoad;
 
 var in_options : bool = false;
 var in_levels : bool = false;
+var in_credits : bool = false;
 
 @onready var move_sfx = $MoveSFX
 @onready var press_sfx = $PressSFX
@@ -33,6 +35,8 @@ var in_levels : bool = false;
 @onready var _3_1 = $"Level Select/Panel/VBoxContainer/World 3/3-1"
 @onready var _3_2 = $"Level Select/Panel/VBoxContainer/World 3/3-2"
 @onready var _3_3 = $"Level Select/Panel/VBoxContainer/World 3/3-3"
+
+@onready var credits_back_button = $"Credits/VBoxContainer2/Back Holder2/HBoxContainer/Back Button"
 
 func _ready():
 	save_data = get_tree().current_scene.get_node("/root/SaveLoadHandler") as SaveLoad;
@@ -96,7 +100,7 @@ func quit_game():
 func switch_to_options():
 	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
 	animation_tree.set("parameters/Options Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
-	animation_tree.set("parameters/Blend/blend_amount", 1.0);
+	animation_tree.set("parameters/Transition/transition_request", "options");
 	fullscreen_toggle.grab_focus();
 	in_options = true;
 func switch_to_main():
@@ -106,17 +110,27 @@ func switch_to_main():
 	elif in_levels:
 		start_button.grab_focus();
 		animation_tree.set("parameters/Level Return Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+	elif in_credits:
+		credits_button.grab_focus();
+		animation_tree.set("parameters/Credits Return Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
 	
 	in_options = false;
 	in_levels = false;
+	in_credits = false;
 	
-	animation_tree.set("parameters/Blend/blend_amount", 0.0);
+	animation_tree.set("parameters/Transition/transition_request", "main");
 func switch_to_levels():
 	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
 	animation_tree.set("parameters/Level Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
-	animation_tree.set("parameters/Blend/blend_amount", -1.0);
+	animation_tree.set("parameters/Transition/transition_request", "levels");
 	level_1_button.grab_focus();
 	in_levels = true;
+func switch_to_credits():
+	animation_tree.set("parameters/Main Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
+	animation_tree.set("parameters/Credits Shot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+	animation_tree.set("parameters/Transition/transition_request", "credits");
+	credits_back_button.grab_focus();
+	in_credits = true;
 
 func toggle_music(music_on):
 	if options_loaded:
@@ -155,3 +169,8 @@ func set_back_neighbors(column : int):
 	level_back_button.focus_neighbor_bottom = NodePath(bot);
 	level_back_button.focus_previous = NodePath(top);
 	level_back_button.focus_next = NodePath(bot);
+
+func link_to_mak():
+	OS.shell_open("https://www.deviantart.com/butterfly-mak");
+func link_to_jef():
+	OS.shell_open("https://jefry-umanzor.itch.io/");

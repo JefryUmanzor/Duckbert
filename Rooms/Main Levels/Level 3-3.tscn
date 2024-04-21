@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cfujpkkh3t4ox"]
+[gd_scene load_steps=66 format=3 uid="uid://cfujpkkh3t4ox"]
 
 [ext_resource type="Script" path="res://Scripts/LevelHolder.gd" id="1_ajktr"]
 [ext_resource type="PackedScene" uid="uid://bsxkipk6ym6um" path="res://Packed Scenes/GUI/GUI Black.tscn" id="2_l8gb2"]
@@ -260,6 +260,12 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_gxbgf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_07tl7"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -64, 0)
@@ -377,10 +383,6 @@ position = Vector2(1544, -672)
 position = Vector2(1800, -288)
 rotation = 3.14159
 
-[node name="Spring4" parent="Springs" instance=ExtResource("19_eeted")]
-position = Vector2(1896, -288)
-rotation = 3.14159
-
 [node name="Spring5" parent="Springs" instance=ExtResource("19_eeted")]
 position = Vector2(1944, -240)
 rotation = 3.14159
@@ -400,6 +402,10 @@ position = Vector2(528, -48)
 
 [node name="Med Platform" parent="Springs" instance=ExtResource("20_geeam")]
 position = Vector2(528, -48)
+
+[node name="Big Spring4" parent="Springs" instance=ExtResource("20_djljl")]
+position = Vector2(1888, -288)
+rotation = 3.14159
 
 [node name="Tiles" type="Node" parent="."]
 
@@ -1662,6 +1668,10 @@ position = Vector2(1672, -912)
 [node name="Long Platform" parent="Platforms" instance=ExtResource("32_aof0l")]
 position = Vector2(1648, -816)
 
+[node name="Med Platform" parent="Platforms" instance=ExtResource("20_geeam")]
+position = Vector2(1888, -288)
+rotation = -3.14159
+
 [node name="Jump Section" type="Node" parent="."]
 
 [node name="Spike9" parent="Jump Section" instance=ExtResource("27_ybtjq")]
@@ -1939,12 +1949,12 @@ position = Vector2(-16, -0.000141144)
 
 [node name="Path10" parent="Jump Section" instance=ExtResource("19_kbt86")]
 position = Vector2(1408, -656)
-curve = SubResource("Curve2D_c1y0f")
+curve = SubResource("Curve2D_gxbgf")
 metadata/_edit_group_ = true
 
 [node name="PathFollow2D" parent="Jump Section/Path10" index="0"]
 position = Vector2(0, 0)
-duration = 1.25
+duration = 1.75
 
 [node name="RemoteTransform2D" parent="Jump Section/Path10/PathFollow2D" index="0"]
 remote_path = NodePath("../../Med Platform")
@@ -1995,10 +2005,6 @@ position = Vector2(840, -32)
 
 [node name="Short Platform2" parent="." instance=ExtResource("31_yh0ei")]
 position = Vector2(1800, -288)
-rotation = 3.14159
-
-[node name="Short Platform3" parent="." instance=ExtResource("31_yh0ei")]
-position = Vector2(1896, -288)
 rotation = 3.14159
 
 [node name="Short Platform4" parent="." instance=ExtResource("31_yh0ei")]
